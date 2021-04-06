@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-04-06T19:52:16.6360998Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Unified SCADA Engineering System</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="enableWork" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">разрешение работы</MultiLanguageText></Comment></Member>
+    <Member Name="setWeightBunker" Datatype="Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">уставка веса для бункера</MultiLanguageText></Comment></Member>
+    <Member Name="currentWeight" Datatype="Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">текущий вес</MultiLanguageText></Comment></Member>
+    <Member Name="stateDoor" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">состояние лопатки</MultiLanguageText></Comment></Member>
+    <Member Name="stateBunkerLeft" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">состояние левого бункера</MultiLanguageText></Comment></Member>
+    <Member Name="stateBunkerRight" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">состояние правого бункера</MultiLanguageText></Comment></Member>
+    <Member Name="isWorkWithBunker" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">разрешение работать с конкретными бункерами</MultiLanguageText></Comment></Member>
+  </Section>
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="onVibroLot" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">сигнал на включение вибролотков</MultiLanguageText></Comment></Member>
+    <Member Name="closeDoor" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">сигнал на закрытие лопатки</MultiLanguageText></Comment></Member>
+    <Member Name="openDoor" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">сигнал на открытие лопатки</MultiLanguageText></Comment></Member>
+    <Member Name="alarmStop" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">аварийный останов</MultiLanguageText></Comment></Member>
+    <Member Name="isReadyToSort" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">бункер готов к сортировке</MultiLanguageText></Comment></Member>
+    <Member Name="isReadyToDrop" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">бункер готов к сбросу</MultiLanguageText></Comment></Member>
+  </Section>
+  <Section Name="Static">
+    <Member Name="controlDoor" Datatype="&quot;controlValve&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="enableWorkAfterCloseDoor" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">разрешение работы после закрытия бункеров</MultiLanguageText></Comment></Member>
+    <Member Name="tonAfterCloseDoor" Datatype="TON_TIME" Version="1.0" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">выдержка времени после закрытия бункеров</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member>
+    <Member Name="stateBothBunker" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">состояние обоих бункеров</MultiLanguageText></Comment></Member>
+    <Member Name="tonToSetSort" Datatype="TON_TIME" Version="1.0" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">выдержка на выставление готов к сортировке</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member>
+    <Member Name="startToToSetSort" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">бит на старт таймера выше</MultiLanguageText></Comment></Member>
+    <Member Name="isSetSort" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">сигнал что бункер готов к сортировке</MultiLanguageText></Comment></Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="tmpOpen" Datatype="Bool" />
+    <Member Name="tmpClose" Datatype="Bool" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsRetainMemResEnabled>false</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>workVibroLot_AM</Name>
+      <Number>8</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Если собрано разрешение на работу и ReadyToSort=0 и если вес меньше заданного то включен вибролоток и открыта лопатка</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <LineComment Inserted="false" NoClosingBracket="false" UId="21">
+    <Text UId="22">определим состояние бункеров</Text>
+  </LineComment>
+  <NewLine Num="1" UId="23" />
+  <Access Scope="LocalVariable" UId="24">
+    <Symbol UId="25">
+      <Component Name="stateBothBunker" UId="26" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="27" />
+  <Token Text=":=" UId="28" />
+  <Blank Num="1" UId="29" />
+  <Token Text="NOT" UId="30" />
+  <Blank Num="1" UId="31" />
+  <Token Text="(" UId="32" />
+  <Access Scope="LocalVariable" UId="33">
+    <Symbol UId="34">
+      <Component Name="stateBunkerLeft" UId="35" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="36" />
+  <Blank Num="1" UId="37" />
+  <Token Text="AND" UId="38" />
+  <Blank Num="1" UId="39" />
+  <Token Text="NOT" UId="40" />
+  <Blank Num="1" UId="41" />
+  <Token Text="(" UId="42" />
+  <Access Scope="LocalVariable" UId="43">
+    <Symbol UId="44">
+      <Component Name="stateBunkerRight" UId="45" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="46" />
+  <Token Text=";" UId="47" />
+  <NewLine Num="2" UId="48" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="49">
+    <Text UId="50">сигнал выдержки на разрешение работы лотка</Text>
+  </LineComment>
+  <NewLine Num="1" UId="51" />
+  <Access Scope="LocalVariable" UId="52">
+    <Symbol UId="53">
+      <Component Name="tonAfterCloseDoor" UId="54" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="55">
+    <Instruction UId="56">
+      <Token Text="(" UId="57" />
+      <Parameter Name="IN" UId="58">
+        <Token Text=":=" UId="59" />
+        <Access Scope="LocalVariable" UId="60">
+          <Symbol UId="61">
+            <Component Name="stateBothBunker" UId="62" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="63" />
+      <NewLine Num="1" UId="64" />
+      <Blank Num="19" UId="65" />
+      <Parameter Name="PT" UId="66">
+        <Token Text=":=" UId="67" />
+        <Access Scope="TypedConstant" UId="68">
+          <Constant UId="69">
+            <ConstantValue UId="70">t#300ms</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="71" />
+      <NewLine Num="1" UId="72" />
+      <Blank Num="19" UId="73" />
+      <Parameter Name="Q" UId="74">
+        <Token Text="=&gt;" UId="75" />
+        <Access Scope="LocalVariable" UId="76">
+          <Symbol UId="77">
+            <Component Name="enableWorkAfterCloseDoor" UId="78" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="79" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="80" />
+  <NewLine Num="1" UId="81" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="82">
+    <Text UId="83">сигнал выдержки для выставления состояния готов к сортировке</Text>
+  </LineComment>
+  <NewLine Num="1" UId="84" />
+  <Access Scope="LocalVariable" UId="85">
+    <Symbol UId="86">
+      <Component Name="tonToSetSort" UId="87" />
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="88">
+    <Instruction UId="89">
+      <Token Text="(" UId="90" />
+      <Parameter Name="IN" UId="91">
+        <Blank Num="1" UId="92" />
+        <Token Text=":=" UId="93" />
+        <Blank Num="1" UId="94" />
+        <Access Scope="LocalVariable" UId="95">
+          <Symbol UId="96">
+            <Component Name="startToToSetSort" UId="97" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="98" />
+      <NewLine Num="1" UId="99" />
+      <Blank Num="14" UId="100" />
+      <Parameter Name="PT" UId="101">
+        <Blank Num="1" UId="102" />
+        <Token Text=":=" UId="103" />
+        <Blank Num="1" UId="104" />
+        <Access Scope="TypedConstant" UId="105">
+          <Constant UId="106">
+            <ConstantValue UId="107">t#250ms</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="108" />
+      <NewLine Num="1" UId="109" />
+      <Blank Num="14" UId="110" />
+      <Parameter Name="Q" UId="111">
+        <Blank Num="1" UId="112" />
+        <Token Text="=&gt;" UId="113" />
+        <Blank Num="1" UId="114" />
+        <Access Scope="LocalVariable" UId="115">
+          <Symbol UId="116">
+            <Component Name="isSetSort" UId="117" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="118" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="119" />
+  <NewLine Num="2" UId="120" />
+  <Token Text="IF" UId="121" />
+  <Blank Num="1" UId="122" />
+  <Access Scope="LocalVariable" UId="123">
+    <Symbol UId="124">
+      <Component Name="isSetSort" UId="125" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="126" />
+  <Token Text="THEN" UId="127" />
+  <NewLine Num="1" UId="128" />
+  <Blank Num="4" UId="129" />
+  <Access Scope="LocalVariable" UId="130">
+    <Symbol UId="131">
+      <Component Name="isReadyToSort" UId="132" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="133" />
+  <Token Text=":=" UId="134" />
+  <Blank Num="1" UId="135" />
+  <Access Scope="LiteralConstant" UId="136">
+    <Constant UId="137">
+      <ConstantValue UId="139">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="140" />
+  <NewLine Num="1" UId="141" />
+  <Blank Num="4" UId="142" />
+  <Access Scope="LocalVariable" UId="143">
+    <Symbol UId="144">
+      <Component Name="startToToSetSort" UId="145" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="146" />
+  <Token Text=":=" UId="147" />
+  <Blank Num="1" UId="148" />
+  <Access Scope="LiteralConstant" UId="149">
+    <Constant UId="150">
+      <ConstantValue UId="152">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="153" />
+  <NewLine Num="1" UId="154" />
+  <Token Text="END_IF" UId="155" />
+  <Token Text=";" UId="156" />
+  <NewLine Num="2" UId="157" />
+  <Token Text="IF" UId="158" />
+  <Blank Num="1" UId="159" />
+  <Access Scope="LocalVariable" UId="160">
+    <Symbol UId="161">
+      <Component Name="enableWork" UId="162" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="163" />
+  <Token Text="AND" UId="164" />
+  <Blank Num="1" UId="165" />
+  <Token Text="NOT" UId="166" />
+  <Token Text="(" UId="167" />
+  <Access Scope="LocalVariable" UId="168">
+    <Symbol UId="169">
+      <Component Name="alarmStop" UId="170" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="171" />
+  <Blank Num="1" UId="172" />
+  <Token Text="THEN" UId="173" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="174">
+    <Text UId="175">проверяем глобальное разрешение на работу</Text>
+  </LineComment>
+  <NewLine Num="1" UId="176" />
+  <Blank Num="4" UId="177" />
+  <Token Text="IF" UId="178" />
+  <Blank Num="1" UId="179" />
+  <Access Scope="LocalVariable" UId="180">
+    <Symbol UId="181">
+      <Component Name="currentWeight" UId="182" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="183" />
+  <Token Text="&lt;" UId="184" />
+  <Blank Num="1" UId="185" />
+  <Access Scope="LocalVariable" UId="186">
+    <Symbol UId="187">
+      <Component Name="setWeightBunker" UId="188" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="189" />
+  <Token Text="THEN" UId="190" />
+  <NewLine Num="1" UId="191" />
+  <Blank Num="8" UId="192" />
+  <Access Scope="LocalVariable" UId="193">
+    <Symbol UId="194">
+      <Component Name="isReadyToSort" UId="195" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="196" />
+  <Token Text=":=" UId="197" />
+  <Blank Num="1" UId="198" />
+  <Access Scope="LiteralConstant" UId="199">
+    <Constant UId="200">
+      <ConstantValue UId="202">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="203" />
+  <NewLine Num="1" UId="204" />
+  <Blank Num="4" UId="205" />
+  <Token Text="END_IF" UId="206" />
+  <Token Text=";" UId="207" />
+  <NewLine Num="1" UId="208" />
+  <Blank Num="4" UId="209" />
+  <Token Text="IF" UId="210" />
+  <Blank Num="2" UId="211" />
+  <Access Scope="LocalVariable" UId="212">
+    <Symbol UId="213">
+      <Component Name="currentWeight" UId="214" />
+    </Symbol>
+  </Access>
+  <Token Text="&lt;" UId="215" />
+  <Access Scope="LocalVariable" UId="216">
+    <Symbol UId="217">
+      <Component Name="setWeightBunker" UId="218" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="219" />
+  <Token Text="AND" UId="220" />
+  <Blank Num="1" UId="221" />
+  <Token Text="NOT" UId="222" />
+  <Token Text="(" UId="223" />
+  <Access Scope="LocalVariable" UId="224">
+    <Symbol UId="225">
+      <Component Name="isReadyToSort" UId="226" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="227" />
+  <NewLine Num="1" UId="228" />
+  <Blank Num="8" UId="229" />
+  <Token Text="AND" UId="230" />
+  <Blank Num="1" UId="231" />
+  <Token Text="NOT" UId="232" />
+  <Token Text="(" UId="233" />
+  <Access Scope="LocalVariable" UId="234">
+    <Symbol UId="235">
+      <Component Name="isReadyToDrop" UId="236" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="237" />
+  <Blank Num="1" UId="238" />
+  <Token Text="AND" UId="239" />
+  <Blank Num="1" UId="240" />
+  <Access Scope="LocalVariable" UId="241">
+    <Symbol UId="242">
+      <Component Name="isWorkWithBunker" UId="243" />
+    </Symbol>
+  </Access>
+  <NewLine Num="1" UId="244" />
+  <Blank Num="8" UId="245" />
+  <Token Text="AND" UId="246" />
+  <Blank Num="1" UId="247" />
+  <Access Scope="LocalVariable" UId="248">
+    <Symbol UId="249">
+      <Component Name="enableWorkAfterCloseDoor" UId="250" />
+    </Symbol>
+  </Access>
+  <NewLine Num="1" UId="251" />
+  <Blank Num="4" UId="252" />
+  <Token Text="THEN" UId="253" />
+  <NewLine Num="1" UId="254" />
+  <Blank Num="8" UId="255" />
+  <Access Scope="LocalVariable" UId="256">
+    <Symbol UId="257">
+      <Component Name="startToToSetSort" UId="258" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="259" />
+  <Token Text=":=" UId="260" />
+  <Blank Num="1" UId="261" />
+  <Access Scope="LiteralConstant" UId="262">
+    <Constant UId="263">
+      <ConstantValue UId="265">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="266" />
+  <NewLine Num="1" UId="267" />
+  <Blank Num="8" UId="268" />
+  <Access Scope="LocalVariable" UId="269">
+    <Symbol UId="270">
+      <Component Name="onVibroLot" UId="271" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="272" />
+  <Token Text=":=" UId="273" />
+  <Blank Num="1" UId="274" />
+  <Access Scope="LiteralConstant" UId="275">
+    <Constant UId="276">
+      <ConstantValue UId="278">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="279" />
+  <NewLine Num="1" UId="280" />
+  <Blank Num="8" UId="281" />
+  <Token Text="IF" UId="282" />
+  <Blank Num="1" UId="283" />
+  <Token Text="NOT" UId="284" />
+  <Blank Num="1" UId="285" />
+  <Token Text="(" UId="286" />
+  <Access Scope="LocalVariable" UId="287">
+    <Symbol UId="288">
+      <Component Name="stateDoor" UId="289" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="290" />
+  <Blank Num="1" UId="291" />
+  <Token Text="THEN" UId="292" />
+  <NewLine Num="1" UId="293" />
+  <Blank Num="12" UId="294" />
+  <Access Scope="LocalVariable" UId="295">
+    <Symbol UId="296">
+      <Component Name="tmpOpen" UId="297" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="298" />
+  <Token Text=":=" UId="299" />
+  <Blank Num="1" UId="300" />
+  <Access Scope="LiteralConstant" UId="301">
+    <Constant UId="302">
+      <ConstantValue UId="304">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="305" />
+  <NewLine Num="1" UId="306" />
+  <Blank Num="8" UId="307" />
+  <Token Text="END_IF" UId="308" />
+  <Token Text=";" UId="309" />
+  <NewLine Num="1" UId="310" />
+  <Blank Num="8" UId="311" />
+  <NewLine Num="1" UId="312" />
+  <Blank Num="4" UId="313" />
+  <Token Text="ELSE" UId="314" />
+  <NewLine Num="1" UId="315" />
+  <Blank Num="8" UId="316" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="317">
+    <Text UId="318">если мы зашли сюда потому что набрали вес, то заупускаем таймер</Text>
+  </LineComment>
+  <NewLine Num="1" UId="319" />
+  <Blank Num="8" UId="320" />
+  <Token Text="IF" UId="321" />
+  <Blank Num="1" UId="322" />
+  <Access Scope="LocalVariable" UId="323">
+    <Symbol UId="324">
+      <Component Name="currentWeight" UId="325" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="326" />
+  <Token Text="&gt;=" UId="327" />
+  <Blank Num="1" UId="328" />
+  <Access Scope="LocalVariable" UId="329">
+    <Symbol UId="330">
+      <Component Name="setWeightBunker" UId="331" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="332" />
+  <Token Text="AND" UId="333" />
+  <Blank Num="1" UId="334" />
+  <Token Text="NOT" UId="335" />
+  <Token Text="(" UId="336" />
+  <Access Scope="LocalVariable" UId="337">
+    <Symbol UId="338">
+      <Component Name="isReadyToDrop" UId="339" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="340" />
+  <NewLine Num="1" UId="341" />
+  <Blank Num="12" UId="342" />
+  <Token Text="AND" UId="343" />
+  <Blank Num="1" UId="344" />
+  <Token Text="NOT" UId="345" />
+  <Token Text="(" UId="346" />
+  <Access Scope="LocalVariable" UId="347">
+    <Symbol UId="348">
+      <Component Name="isReadyToSort" UId="349" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="350" />
+  <Blank Num="1" UId="351" />
+  <Token Text="AND" UId="352" />
+  <Blank Num="1" UId="353" />
+  <Access Scope="LocalVariable" UId="354">
+    <Symbol UId="355">
+      <Component Name="enableWorkAfterCloseDoor" UId="356" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="357" />
+  <Token Text="THEN" UId="358" />
+  <NewLine Num="1" UId="359" />
+  <Blank Num="12" UId="360" />
+  <Access Scope="LocalVariable" UId="361">
+    <Symbol UId="362">
+      <Component Name="startToToSetSort" UId="363" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="364" />
+  <Token Text=":=" UId="365" />
+  <Blank Num="1" UId="366" />
+  <Access Scope="LiteralConstant" UId="367">
+    <Constant UId="368">
+      <ConstantValue UId="370">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="371" />
+  <NewLine Num="1" UId="372" />
+  <Blank Num="8" UId="373" />
+  <Token Text="END_IF" UId="374" />
+  <Token Text=";" UId="375" />
+  <NewLine Num="1" UId="376" />
+  <Blank Num="8" UId="377" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="378">
+    <Text UId="379">если зашли сюда потому что уже таймер вышел либо, готовы к сбросу,</Text>
+  </LineComment>
+  <NewLine Num="1" UId="380" />
+  <Blank Num="8" UId="381" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="382">
+    <Text UId="383">либо нет разрешений то просто держим лоток выключенным и закрытым</Text>
+  </LineComment>
+  <NewLine Num="1" UId="384" />
+  <Blank Num="8" UId="385" />
+  <Token Text="IF" UId="386" />
+  <Blank Num="1" UId="387" />
+  <Access Scope="LocalVariable" UId="388">
+    <Symbol UId="389">
+      <Component Name="isReadyToDrop" UId="390" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="391" />
+  <Token Text="OR" UId="392" />
+  <Blank Num="1" UId="393" />
+  <Access Scope="LocalVariable" UId="394">
+    <Symbol UId="395">
+      <Component Name="isReadyToSort" UId="396" />
+    </Symbol>
+  </Access>
+  <NewLine Num="1" UId="397" />
+  <Blank Num="12" UId="398" />
+  <Token Text="OR" UId="399" />
+  <Blank Num="1" UId="400" />
+  <Token Text="NOT" UId="401" />
+  <Token Text="(" UId="402" />
+  <Access Scope="LocalVariable" UId="403">
+    <Symbol UId="404">
+      <Component Name="enableWorkAfterCloseDoor" UId="405" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="406" />
+  <Blank Num="1" UId="407" />
+  <Token Text="OR" UId="408" />
+  <Blank Num="1" UId="409" />
+  <Token Text="NOT" UId="410" />
+  <Token Text="(" UId="411" />
+  <Access Scope="LocalVariable" UId="412">
+    <Symbol UId="413">
+      <Component Name="isWorkWithBunker" UId="414" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="415" />
+  <Blank Num="2" UId="416" />
+  <Token Text="THEN" UId="417" />
+  <NewLine Num="1" UId="418" />
+  <Blank Num="12" UId="419" />
+  <Access Scope="LocalVariable" UId="420">
+    <Symbol UId="421">
+      <Component Name="onVibroLot" UId="422" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="423" />
+  <Token Text=":=" UId="424" />
+  <Blank Num="1" UId="425" />
+  <Access Scope="LiteralConstant" UId="426">
+    <Constant UId="427">
+      <ConstantValue UId="429">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="430" />
+  <NewLine Num="1" UId="431" />
+  <Blank Num="12" UId="432" />
+  <Token Text="IF" UId="433" />
+  <Blank Num="1" UId="434" />
+  <Access Scope="LocalVariable" UId="435">
+    <Symbol UId="436">
+      <Component Name="stateDoor" UId="437" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="438" />
+  <Token Text="THEN" UId="439" />
+  <NewLine Num="1" UId="440" />
+  <Blank Num="16" UId="441" />
+  <Access Scope="LocalVariable" UId="442">
+    <Symbol UId="443">
+      <Component Name="tmpClose" UId="444" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="445" />
+  <Token Text=":=" UId="446" />
+  <Blank Num="1" UId="447" />
+  <Access Scope="LiteralConstant" UId="448">
+    <Constant UId="449">
+      <ConstantValue UId="451">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="452" />
+  <NewLine Num="1" UId="453" />
+  <Blank Num="12" UId="454" />
+  <Token Text="END_IF" UId="455" />
+  <Token Text=";" UId="456" />
+  <NewLine Num="1" UId="457" />
+  <Blank Num="8" UId="458" />
+  <Token Text="END_IF" UId="459" />
+  <Token Text=";" UId="460" />
+  <NewLine Num="1" UId="461" />
+  <Blank Num="8" UId="462" />
+  <NewLine Num="1" UId="463" />
+  <Blank Num="8" UId="464" />
+  <NewLine Num="1" UId="465" />
+  <Blank Num="4" UId="466" />
+  <Token Text="END_IF" UId="467" />
+  <Token Text=";" UId="468" />
+  <NewLine Num="1" UId="469" />
+  <Blank Num="4" UId="470" />
+  <NewLine Num="1" UId="471" />
+  <Token Text="ELSE" UId="472" />
+  <NewLine Num="1" UId="473" />
+  <Blank Num="4" UId="474" />
+  <Access Scope="LocalVariable" UId="475">
+    <Symbol UId="476">
+      <Component Name="isSetSort" UId="477" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="478" />
+  <Token Text=":=" UId="479" />
+  <Blank Num="1" UId="480" />
+  <Access Scope="LiteralConstant" UId="481">
+    <Constant UId="482">
+      <ConstantValue UId="484">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="485" />
+  <NewLine Num="1" UId="486" />
+  <Blank Num="4" UId="487" />
+  <Access Scope="LocalVariable" UId="488">
+    <Symbol UId="489">
+      <Component Name="startToToSetSort" UId="490" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="491" />
+  <Token Text=":=" UId="492" />
+  <Blank Num="1" UId="493" />
+  <Access Scope="LiteralConstant" UId="494">
+    <Constant UId="495">
+      <ConstantValue UId="497">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="498" />
+  <NewLine Num="1" UId="499" />
+  <Blank Num="4" UId="500" />
+  <Access Scope="LocalVariable" UId="501">
+    <Symbol UId="502">
+      <Component Name="isReadyToSort" UId="503" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="504" />
+  <Token Text=":=" UId="505" />
+  <Blank Num="1" UId="506" />
+  <Access Scope="LiteralConstant" UId="507">
+    <Constant UId="508">
+      <ConstantValue UId="510">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="511" />
+  <NewLine Num="1" UId="512" />
+  <Blank Num="4" UId="513" />
+  <Access Scope="LocalVariable" UId="514">
+    <Symbol UId="515">
+      <Component Name="onVibroLot" UId="516" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="517" />
+  <Token Text=":=" UId="518" />
+  <Blank Num="1" UId="519" />
+  <Access Scope="LiteralConstant" UId="520">
+    <Constant UId="521">
+      <ConstantValue UId="523">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="524" />
+  <NewLine Num="1" UId="525" />
+  <Blank Num="4" UId="526" />
+  <Access Scope="LocalVariable" UId="527">
+    <Symbol UId="528">
+      <Component Name="openDoor" UId="529" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="530" />
+  <Token Text=":=" UId="531" />
+  <Blank Num="1" UId="532" />
+  <Access Scope="LiteralConstant" UId="533">
+    <Constant UId="534">
+      <ConstantValue UId="536">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="537" />
+  <NewLine Num="1" UId="538" />
+  <Blank Num="4" UId="539" />
+  <Access Scope="LocalVariable" UId="540">
+    <Symbol UId="541">
+      <Component Name="closeDoor" UId="542" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="543" />
+  <Token Text=":=" UId="544" />
+  <Blank Num="1" UId="545" />
+  <Access Scope="LiteralConstant" UId="546">
+    <Constant UId="547">
+      <ConstantValue UId="549">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="550" />
+  <NewLine Num="1" UId="551" />
+  <Token Text="END_IF" UId="552" />
+  <Token Text=";" UId="553" />
+  <NewLine Num="6" UId="554" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="555">
+    <Text UId="556">управление лопаткой</Text>
+  </LineComment>
+  <NewLine Num="1" UId="557" />
+  <Access Scope="Call" UId="558">
+    <CallInfo UId="559" BlockType="FB" Name="controlValve">
+      <Instance Scope="LocalVariable" UId="560">
+        <Component Name="controlDoor" UId="561" />
+      </Instance>
+      <Token Text="(" UId="562" />
+      <Parameter Name="time_open/close" UId="563">
+        <Blank Num="1" UId="564" />
+        <Token Text=":=" UId="565" />
+        <Blank Num="1" UId="566" />
+        <Access Scope="TypedConstant" UId="567">
+          <Constant UId="568">
+            <ConstantValue UId="569">T#250ms</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="570" />
+      <NewLine Num="1" UId="571" />
+      <Blank Num="13" UId="572" />
+      <Parameter Name="openQ" UId="573">
+        <Blank Num="1" UId="574" />
+        <Token Text="=&gt;" UId="575" />
+        <Blank Num="1" UId="576" />
+        <Access Scope="LocalVariable" UId="577">
+          <Symbol UId="578">
+            <Component Name="openDoor" UId="579" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="580" />
+      <NewLine Num="1" UId="581" />
+      <Blank Num="13" UId="582" />
+      <Parameter Name="closeQ" UId="583">
+        <Blank Num="1" UId="584" />
+        <Token Text="=&gt;" UId="585" />
+        <Blank Num="1" UId="586" />
+        <Access Scope="LocalVariable" UId="587">
+          <Symbol UId="588">
+            <Component Name="closeDoor" UId="589" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="590" />
+      <NewLine Num="1" UId="591" />
+      <Blank Num="13" UId="592" />
+      <Parameter Name="open" UId="593">
+        <Blank Num="1" UId="594" />
+        <Token Text=":=" UId="595" />
+        <Blank Num="1" UId="596" />
+        <Access Scope="LocalVariable" UId="597">
+          <Symbol UId="598">
+            <Component Name="tmpOpen" UId="599" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="600" />
+      <NewLine Num="1" UId="601" />
+      <Blank Num="13" UId="602" />
+      <Parameter Name="close" UId="603">
+        <Blank Num="1" UId="604" />
+        <Token Text=":=" UId="605" />
+        <Blank Num="1" UId="606" />
+        <Access Scope="LocalVariable" UId="607">
+          <Symbol UId="608">
+            <Component Name="tmpClose" UId="609" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="610" />
+      <NewLine Num="1" UId="611" />
+      <Blank Num="13" UId="612" />
+      <Parameter Name="stopAlarm" UId="613">
+        <Blank Num="1" UId="614" />
+        <Token Text=":=" UId="615" />
+        <Blank Num="1" UId="616" />
+        <Access Scope="LocalVariable" UId="617">
+          <Symbol UId="618">
+            <Component Name="alarmStop" UId="619" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="622" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="623" />
+  <NewLine Num="1" UId="624" />
+  <Blank Num="4" UId="625" />
+  <NewLine Num="2" UId="626" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>состояние обоих бункеров</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="8" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="9" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Управление линиями вибролотков и вибраций</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

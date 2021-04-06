@@ -1,0 +1,49 @@
+﻿FUNCTION "sndVibration" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      ADDR_DEVICE : UInt;   // адрес опрашиваемого устройства
+      ton_changeStep {InstructionName := 'TON_TIME'; LibVersion := '1.0'} : TON_TIME;   // таймер на переход следующего шага опроса
+   END_VAR
+
+   VAR_IN_OUT 
+      MB_MASTER {InstructionName := 'MB_MASTER'; LibVersion := '2.2'} : MB_MASTER;   // ФБ мастера модбаса
+      Ton_Start : Bool;   // сигнал на старт таймера
+      Buffer : Array[0..20] of Word;   // буффер данных у блока мастера модбаса
+      Step : SInt;   // текущий шаг
+   END_VAR
+
+   VAR_TEMP 
+      i : SInt;
+   END_VAR
+
+
+BEGIN
+	            #Ton_Start := TRUE;
+	            
+	            #MB_MASTER.MB_ADDR := #ADDR_DEVICE;
+	            #MB_MASTER.MODE := 1;
+	            #MB_MASTER.DATA_ADDR := 40001;
+	            #MB_MASTER.DATA_LEN := 8;
+	            #MB_MASTER.REQ := TRUE;
+	            
+	            #i := 0;
+	            FOR #i := 0 TO 7 DO
+	                #Buffer[#i] := INT_TO_WORD(REAL_TO_INT("IO".output.setVibration * 10.0));
+	            END_FOR;
+	            
+	            
+	            IF NOT (#MB_MASTER.BUSY) AND
+	                (#MB_MASTER.DONE OR
+	                #ton_changeStep.Q) THEN
+	                #MB_MASTER.REQ := FALSE;
+	                #Ton_Start := FALSE;
+	                #Step := #Step + 1;
+	                #Buffer[0] := 0;
+	            END_IF;
+	        
+	        
+	       
+	            
+END_FUNCTION
+

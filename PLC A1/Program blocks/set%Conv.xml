@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-04-06T19:52:13.4955737Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Unified SCADA Engineering System</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FC ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="inPercent" Datatype="Real" Accessibility="Public" />
+    <Member Name="normMin" Datatype="Real" Accessibility="Public" />
+    <Member Name="normMax" Datatype="Real" Accessibility="Public" />
+    <Member Name="scaleMin" Datatype="Real" Accessibility="Public" />
+    <Member Name="scaleMax" Datatype="Real" Accessibility="Public" />
+  </Section>
+  <Section Name="Output">
+    <Member Name="bitValue" Datatype="Int" Accessibility="Public" />
+  </Section>
+  <Section Name="InOut" />
+  <Section Name="Temp">
+    <Member Name="temp" Datatype="Real" />
+  </Section>
+  <Section Name="Constant" />
+  <Section Name="Return">
+    <Member Name="Ret_Val" Datatype="Void" Accessibility="Public" />
+  </Section>
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>set%Conv</Name>
+      <Number>4</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="normMin" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="inPercent" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="normMax" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="scaleMin" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="scaleMax" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="AlwaysFALSE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="scaleMax" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="bitValue" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="34">
+      <Symbol>
+        <Component Name="AlwaysFALSE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="scaleMax" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="scaleMax" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="bitValue" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="bitValue" />
+      </Symbol>
+    </Access>
+    <Part Name="Normalize" UId="41" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Scale_X" UId="42" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="43" />
+    <Part Name="Le" UId="44">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="45" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="46" />
+    <Part Name="Ge" UId="47">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="48" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Convert" UId="49" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Int</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="50">
+      <Powerrail />
+      <NameCon UId="41" Name="en" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="21" />
+      <NameCon UId="41" Name="min" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="22" />
+      <NameCon UId="41" Name="value" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="23" />
+      <NameCon UId="41" Name="max" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="41" Name="eno" />
+      <NameCon UId="42" Name="en" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="41" Name="out" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="25" />
+      <NameCon UId="42" Name="min" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="26" />
+      <NameCon UId="42" Name="value" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="27" />
+      <NameCon UId="42" Name="max" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="42" Name="eno" />
+      <NameCon UId="43" Name="in" />
+      <NameCon UId="46" Name="in" />
+      <NameCon UId="49" Name="en" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="42" Name="out" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="29" />
+      <NameCon UId="43" Name="operand" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="43" Name="out" />
+      <NameCon UId="44" Name="pre" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="30" />
+      <NameCon UId="44" Name="in1" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="31" />
+      <NameCon UId="44" Name="in2" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="44" Name="out" />
+      <NameCon UId="45" Name="en" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="32" />
+      <NameCon UId="45" Name="in" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="45" Name="out" />
+      <IdentCon UId="33" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="34" />
+      <NameCon UId="46" Name="operand" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="46" Name="out" />
+      <NameCon UId="47" Name="pre" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="35" />
+      <NameCon UId="47" Name="in1" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="36" />
+      <NameCon UId="47" Name="in2" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="47" Name="out" />
+      <NameCon UId="48" Name="en" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="37" />
+      <NameCon UId="48" Name="in" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="48" Name="out" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="75">
+      <IdentCon UId="39" />
+      <NameCon UId="49" Name="in" />
+    </Wire>
+    <Wire UId="76">
+      <NameCon UId="49" Name="out" />
+      <IdentCon UId="40" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="8" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="9" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FC>
+</Document>

@@ -1,0 +1,2454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-04-06T19:52:14.1190558Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Unified SCADA Engineering System</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="enableAutoMode" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">разрешение на переход в автоматический режим</MultiLanguageText></Comment></Member>
+    <Member Name="isFinishPreWork" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">сигнал об окончании подготовки к автоматическому режиму</MultiLanguageText></Comment></Member>
+    <Member Name="isStartAutoMode" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">сигнал что автоматический режим запущен</MultiLanguageText></Comment></Member>
+  </Section>
+  <Section Name="Static">
+    <Member Name="TaskSetWeight" Datatype="Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">целевой вес который ищем в сортировке</MultiLanguageText></Comment></Member>
+    <Member Name="SetWeightBunker" Datatype="Array[0..12] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">уставки весов в бункера</MultiLanguageText></Comment></Member>
+    <Member Name="currentWeightBunker" Datatype="Array[0..12] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="readyToSort" Datatype="Array[0..12] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">массив говорящий какие бункера готовы к сортировке</MultiLanguageText></Comment></Member>
+    <Member Name="readyToDrop" Datatype="Array[0..12] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">массив говорящий какие бункера надо сбросить</MultiLanguageText></Comment></Member>
+    <Member Name="readyToDropYP" Datatype="Array[0..2] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="isWorkWithBunker" Datatype="Array[0..12] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">массив разрешающий бункерам работать</MultiLanguageText></Comment></Member>
+    <Member Name="preWorkAutoMode" Datatype="Struct" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Member Name="isFinishPreWork" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="alarmStop" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member></Member>
+    <Member Name="preWork_AM_FB" Datatype="&quot;preWork_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enPreWorkStart" Datatype="Bool" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="alarmStop" Datatype="Bool" /><Member Name="leftBunker" Datatype="Array[0..12] of Bool" /><Member Name="rightBunker" Datatype="Array[0..12] of Bool" /><Member Name="isFinishPreWork" Datatype="Bool" /></Section><Section Name="Static"><Member Name="closeLeftBunker_FB" Datatype="Array[0..12] of &quot;controlValve&quot;"><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member><Member Name="closeRightBunker_FB" Datatype="Array[0..12] of &quot;controlValve&quot;"><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member><Member Name="tempButtonLeft" Datatype="Array[0..12] of Bool" /><Member Name="tempButtonRight" Datatype="Array[0..12] of Bool" /><Member Name="valueControlBit" Datatype="Bool" /><Member Name="watchQ" Datatype="Bool" /><Member Name="tmpControlValue" Datatype="Bool" /><Member Name="tempP_trig" Datatype="Array[0..1] of Bool" /></Section></Sections></Member>
+    <Member Name="workPackingMachine_AM_FB" Datatype="&quot;workPackingMachine_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enWork" Datatype="Bool" /><Member Name="YP_ReadyAccept" Datatype="Array[0..2] of Bool" /><Member Name="YP_StartDozing" Datatype="Array[0..2] of Bool" /><Member Name="weightPack" Datatype="Real" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="hmiYpDropWeight" Datatype="Array[0..2] of Real" /><Member Name="hmiYPDropErrorMeasure" Datatype="Array[0..2] of Real" /><Member Name="openLeftBunker" Datatype="Array[0..12] of Bool" /><Member Name="closeLeftBunker" Datatype="Array[0..12] of Bool" /><Member Name="openRightBunker" Datatype="Array[0..12] of Bool" /><Member Name="closeRightBunker" Datatype="Array[0..12] of Bool" /><Member Name="alarmStop" Datatype="Bool" /><Member Name="Yq_ReadyDoze" Datatype="Array[0..2] of Bool" /><Member Name="YP_ReadyToDrop" Datatype="Array[0..2] of Bool" /><Member Name="stableWeightBunker" Datatype="Array[0..12] of Real" /><Member Name="readyToSort" Datatype="Array[0..12] of Bool" /><Member Name="readyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="Conv_FRV" Datatype="Array[0..2] of Bool" /><Member Name="Conv_REV" Datatype="Array[0..2] of Bool" /></Section><Section Name="Static"><Member Name="dropLeftBunker" Datatype="Array[0..12] of Bool" /><Member Name="dropRightBunker" Datatype="Array[0..12] of Bool" /><Member Name="tmpPtrig" Datatype="Array[0..1] of Bool" /><Member Name="dropTon" Datatype="Array[0..2] of TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="startDropTon" Datatype="Array[0..2] of Bool" /><Member Name="dropWeight" Datatype="Real" /><Member Name="nextDropConveyer" Datatype="SInt" /><Member Name="tonReadyDozeTimer" Datatype="Array[0..2] of TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="leftBunker_FB" Datatype="Array[0..12] of &quot;controlValve&quot;"><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member><Member Name="rightBunker_FB" Datatype="Array[0..12] of &quot;controlValve&quot;"><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member><Member Name="full1" Datatype="Array[0..12] of Bool" /><Member Name="full0" Datatype="Array[0..12] of Bool" /><Member Name="valueDropBunker" Datatype="Bool" /><Member Name="watchDrop" Datatype="Array[0..12] of Bool" /></Section></Sections></Member>
+    <Member Name="workInConveyer_AM_FB" Datatype="&quot;workInConveyer_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enableWork" Datatype="Bool" /><Member Name="setSpeed%Int" Datatype="Int" /><Member Name="sensorOverflow" Datatype="Bool" /></Section><Section Name="Output"><Member Name="startinConveyor" Datatype="Bool" /><Member Name="setSpeed%Real" Datatype="Real" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="tonOverflowTable" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofOverflowTable" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="isOverFlowTable" Datatype="Bool" /></Section></Sections></Member>
+    <Member Name="controlFllipper_AM_FB" Datatype="&quot;controlValve&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="workVibroLot_AM_FB" Datatype="Array[0..12] of &quot;workVibroLot_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enableWork" Datatype="Bool" /><Member Name="setWeightBunker" Datatype="Real" /><Member Name="currentWeight" Datatype="Real" /><Member Name="stateDoor" Datatype="Bool" /><Member Name="stateBunkerLeft" Datatype="Bool" /><Member Name="stateBunkerRight" Datatype="Bool" /><Member Name="isWorkWithBunker" Datatype="Bool" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="onVibroLot" Datatype="Bool" /><Member Name="closeDoor" Datatype="Bool" /><Member Name="openDoor" Datatype="Bool" /><Member Name="alarmStop" Datatype="Bool" /><Member Name="isReadyToSort" Datatype="Bool" /><Member Name="isReadyToDrop" Datatype="Bool" /></Section><Section Name="Static"><Member Name="controlDoor" Datatype="&quot;controlValve&quot;"><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member><Member Name="enableWorkAfterCloseDoor" Datatype="Bool" /><Member Name="tonAfterCloseDoor" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="stateBothBunker" Datatype="Bool" /><Member Name="tonToSetSort" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="startToToSetSort" Datatype="Bool" /><Member Name="isSetSort" Datatype="Bool" /></Section></Sections></Member>
+    <Member Name="workVibroTable_AM_FB" Datatype="&quot;workVibroTable_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enableWork" Datatype="Bool" /><Member Name="alarmStop" Datatype="Bool" /><Member Name="arrayReadyWeightBunker" Datatype="Array[0..12] of Bool" /></Section><Section Name="Output"><Member Name="vibroTable" Datatype="Array[0..2] of Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="tmpValueReadyWeight" Datatype="Array[0..2] of Bool" /></Section></Sections></Member>
+    <Member Name="weightModule_AM_FB" Datatype="&quot;weightModule_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut"><Member Name="currentWeight" Datatype="Array[0..12] of Real" /><Member Name="stableWeight" Datatype="Array[0..12] of &quot;stableWeight&quot;"><Sections><Section Name="None" /></Sections></Member></Section><Section Name="Static"><Member Name="tonSetStableWeight" Datatype="Array[0..12] of TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="prevWeight" Datatype="Array[0..12] of Real" /><Member Name="runTaimerStableWeight" Datatype="Array[0..12] of Bool" /><Member Name="RS_TRIG_openBunker" Datatype="Array[0..12] of Bool" /></Section></Sections></Member>
+    <Member Name="Sorting_AM_FB" Datatype="&quot;Sorting_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enableToWork" Datatype="Bool" /><Member Name="setWeight" Datatype="Real" /><Member Name="errorMeasurement" Datatype="Real" /><Member Name="isWorkWithBunker" Datatype="Array[0..12] of Bool" /><Member Name="setWeightBunker" Datatype="Array[0..12] of Real" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="stableWeightBunker" Datatype="Array[0..12] of Real" /><Member Name="readyToSorting" Datatype="Array[0..12] of Bool" /><Member Name="readyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="blockSort" Datatype="Bool" /></Section><Section Name="Static"><Member Name="valueReadyToDrop" Datatype="Bool" /><Member Name="valueReadytoSortBunker" Datatype="SInt" /><Member Name="valueIsWorkWithBunker" Datatype="SInt" /><Member Name="tmpStableWeight" Datatype="Array[0..12] of Real" /><Member Name="bufferReadyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="Sort_Real_FB" Datatype="&quot;Sort_Real&quot;"><Sections><Section Name="Input"><Member Name="sortDirection" Datatype="Bool" /></Section><Section Name="Output"><Member Name="error" Datatype="Bool" /><Member Name="status" Datatype="Word" /></Section><Section Name="InOut"><Member Name="array" Datatype="Array[*] of Real" /></Section><Section Name="Static"><Member Name="tempArray" Datatype="Array[1..1000] of Real" /></Section></Sections></Member><Member Name="full1" Datatype="Array[0..12] of Bool" /><Member Name="full0" Datatype="Array[0..12] of Bool" /></Section></Sections></Member>
+    <Member Name="setWeightBunker_FB" Datatype="&quot;setWeightBunker_AM&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enableWork" Datatype="Bool" /><Member Name="weightPack" Datatype="Real" /><Member Name="measurementError" Datatype="Real" /><Member Name="maxWeightBunker" Datatype="Real" /><Member Name="mediumWeightProduct" Datatype="Real" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="taskWeightBunker" Datatype="Real" /><Member Name="setWeightBunker" Datatype="Array[0..12] of Real" /><Member Name="isWorkWithBunker" Datatype="Array[0..12] of Bool" /><Member Name="readyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="YP_ReadyToDrop" Datatype="Array[0..2] of Bool" /><Member Name="stableWeightBunker" Datatype="Array[0..12] of Real" /><Member Name="blockSort" Datatype="Bool" /></Section><Section Name="Static"><Member Name="measureErrorGramm" Datatype="Real" /><Member Name="dropWeight" Datatype="Real" /><Member Name="hmiDropWeight" Datatype="Real" /><Member Name="hmiMeasurementError" Datatype="Real" /><Member Name="indexLastDropYP" Datatype="SInt" /><Member Name="full1" Datatype="Array[0..12] of Bool" /><Member Name="full0" Datatype="Array[0..12] of Bool" /><Member Name="Sort_Real_FB" Datatype="&quot;Sort_Real&quot;"><Sections><Section Name="Input"><Member Name="sortDirection" Datatype="Bool" /></Section><Section Name="Output"><Member Name="error" Datatype="Bool" /><Member Name="status" Datatype="Word" /></Section><Section Name="InOut"><Member Name="array" Datatype="Array[*] of Real" /></Section><Section Name="Static"><Member Name="tempArray" Datatype="Array[1..1000] of Real" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="blockSorting" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">запрет на сортировку в блоке сортировке</MultiLanguageText></Comment></Member>
+    <Member Name="openFlipper" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="hmiYpDropWeight" Datatype="Array[0..2] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="hmiYpDropError" Datatype="Array[0..2] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="!!!!!" Datatype="Array[0..1] of Bool" />
+    <Member Name="i" Datatype="SInt" />
+    <Member Name="tmpStableWeightBunker" Datatype="Array[0..12] of Real" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsRetainMemResEnabled>false</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>AutoMode</Name>
+      <Number>20</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>//setWeight - уставка веса в упаковке => используется при подсчете уставок в бункера
+//speed_inConveyer - уставка скорости на питателе в %
+//speedVibro - уставка скорости вибрации в %
+//maxWeightBunker - максимальный вес в один бункер => используется при подсчете уставок в бункера
+//workPlavnik - использовать ли плавник во время работы 
+//measurementError - допустимая погрешность на итоговый вес => используется при поиске подходящих бункеров при сбросе
+//mediumWeightProduct - средний вес продукта => используется при подсчете уставок в бункера</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="IO" />
+        <Component Name="input" />
+        <Component Name="buttonAlarmStop" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO" />
+        <Component Name="input" />
+        <Component Name="buttonStop" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="preWorkAutoMode" />
+        <Component Name="alarmStop" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Part Name="Contact" UId="25" />
+    <Part Name="O" UId="26">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="27" />
+  </Parts>
+  <Wires>
+    <Wire UId="28">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="26" Name="in1" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="operand" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="25" Name="out" />
+      <NameCon UId="26" Name="in2" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="in" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="23" />
+      <NameCon UId="27" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>По нажатию кнопки Стоп и Аварийный стоп</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Аварийный останов</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Token Text="IF" UId="21" />
+  <Blank Num="1" UId="22" />
+  <Access Scope="LocalVariable" UId="23">
+    <Symbol UId="24">
+      <Component Name="enableAutoMode" UId="25" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="26" />
+  <Token Text="THEN" UId="27" />
+  <NewLine Num="1" UId="28" />
+  <Blank Num="4" UId="29" />
+  <Token Text="IF" UId="30" />
+  <Blank Num="1" UId="31" />
+  <Token Text="NOT" UId="32" />
+  <Blank Num="1" UId="33" />
+  <Token Text="(" UId="34" />
+  <Access Scope="LocalVariable" UId="35">
+    <Symbol UId="36">
+      <Component Name="isFinishPreWork" UId="37" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="38" />
+  <Blank Num="1" UId="39" />
+  <Token Text="THEN" UId="40" />
+  <NewLine Num="1" UId="41" />
+  <Blank Num="8" UId="42" />
+  <Access Scope="GlobalVariable" UId="43">
+    <Symbol UId="44">
+      <Component Name="hmi" UId="45" />
+      <Token Text="." UId="46" />
+      <Component Name="readySystem" UId="47" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="48" />
+  <Token Text=":=" UId="49" />
+  <Blank Num="1" UId="50" />
+  <Access Scope="LiteralConstant" UId="51">
+    <Constant UId="52">
+      <ConstantValue UId="54">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="55" />
+  <NewLine Num="1" UId="56" />
+  <Blank Num="4" UId="57" />
+  <Token Text="ELSE" UId="58" />
+  <NewLine Num="1" UId="59" />
+  <Blank Num="8" UId="60" />
+  <Token Text="IF" UId="61" />
+  <Blank Num="1" UId="62" />
+  <Token Text="NOT" UId="63" />
+  <Blank Num="1" UId="64" />
+  <Token Text="(" UId="65" />
+  <Access Scope="LocalVariable" UId="66">
+    <Symbol UId="67">
+      <Component Name="isStartAutoMode" UId="68" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="69" />
+  <Blank Num="1" UId="70" />
+  <Token Text="THEN" UId="71" />
+  <NewLine Num="1" UId="72" />
+  <Blank Num="12" UId="73" />
+  <Access Scope="GlobalVariable" UId="74">
+    <Symbol UId="75">
+      <Component Name="hmi" UId="76" />
+      <Token Text="." UId="77" />
+      <Component Name="readySystem" UId="78" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="79" />
+  <Token Text=":=" UId="80" />
+  <Blank Num="1" UId="81" />
+  <Access Scope="LiteralConstant" UId="82">
+    <Constant UId="83">
+      <ConstantValue UId="85">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="86" />
+  <NewLine Num="1" UId="87" />
+  <Blank Num="8" UId="88" />
+  <Token Text="ELSE" UId="89" />
+  <NewLine Num="1" UId="90" />
+  <Blank Num="12" UId="91" />
+  <Access Scope="GlobalVariable" UId="92">
+    <Symbol UId="93">
+      <Component Name="hmi" UId="94" />
+      <Token Text="." UId="95" />
+      <Component Name="readySystem" UId="96" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="97" />
+  <Token Text=":=" UId="98" />
+  <Blank Num="1" UId="99" />
+  <Access Scope="LiteralConstant" UId="100">
+    <Constant UId="101">
+      <ConstantValue UId="103">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="104" />
+  <NewLine Num="1" UId="105" />
+  <Blank Num="8" UId="106" />
+  <Token Text="END_IF" UId="107" />
+  <Token Text=";" UId="108" />
+  <NewLine Num="1" UId="109" />
+  <Blank Num="4" UId="110" />
+  <Token Text="END_IF" UId="111" />
+  <Token Text=";" UId="112" />
+  <NewLine Num="1" UId="113" />
+  <Token Text="END_IF" UId="114" />
+  <Token Text=";" UId="115" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>статусы автоматического режима</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="enableAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="preWorkAutoMode" />
+        <Component Name="alarmStop" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Bunker_leftClose" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Bunker_rightClose" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="isFinishPreWork" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="26" />
+    <Call UId="27">
+      <CallInfo Name="preWork_AM" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="28">
+          <Component Name="preWork_AM_FB" />
+        </Instance>
+        <Parameter Name="enPreWorkStart" Section="Input" Type="Bool" />
+        <Parameter Name="alarmStop" Section="InOut" Type="Bool" />
+        <Parameter Name="leftBunker" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="rightBunker" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="isFinishPreWork" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="27" Name="en" />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="26" Name="out" />
+      <NameCon UId="27" Name="enPreWorkStart" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="alarmStop" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="23" />
+      <NameCon UId="27" Name="leftBunker" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="27" Name="rightBunker" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="25" />
+      <NameCon UId="27" Name="isFinishPreWork" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Подготовка перед начало работы автоматического режима</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="currentWeight" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="stableWeight" />
+      </Symbol>
+    </Access>
+    <Call UId="23">
+      <CallInfo Name="weightModule_AM" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="24">
+          <Component Name="weightModule_AM_FB" />
+        </Instance>
+        <Parameter Name="currentWeight" Section="InOut" Type="Array[0..12] of Real" />
+        <Parameter Name="stableWeight" Section="InOut" Type="Array[0..12] of &quot;stableWeight&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="25">
+      <Powerrail />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="26">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="currentWeight" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="22" />
+      <NameCon UId="23" Name="stableWeight" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Формирует стабильный вес для сортировки. Блок также учитывает что были открыты лотки и принудительно системе формирует в открытом лотке 0гр </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Весы</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="i" UId="23" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="24" />
+  <Token Text=":=" UId="25" />
+  <Blank Num="1" UId="26" />
+  <Access Scope="LiteralConstant" UId="27">
+    <Constant UId="28">
+      <ConstantValue UId="30">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="31" />
+  <NewLine Num="1" UId="32" />
+  <Token Text="FOR" UId="33" />
+  <Blank Num="1" UId="34" />
+  <Access Scope="LocalVariable" UId="35">
+    <Symbol UId="36">
+      <Component Name="i" UId="37" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="38" />
+  <Token Text=":=" UId="39" />
+  <Blank Num="1" UId="40" />
+  <Access Scope="LiteralConstant" UId="41">
+    <Constant UId="42">
+      <ConstantValue UId="44">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="45" />
+  <Token Text="TO" UId="46" />
+  <Blank Num="1" UId="47" />
+  <Access Scope="LiteralConstant" UId="48">
+    <Constant UId="49">
+      <ConstantValue UId="51">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="52" />
+  <Token Text="DO" UId="53" />
+  <NewLine Num="1" UId="54" />
+  <Blank Num="4" UId="55" />
+  <Access Scope="LocalVariable" UId="56">
+    <Symbol UId="57">
+      <Component Name="tmpStableWeightBunker" UId="58">
+        <Token Text="[" UId="59" />
+        <Access Scope="LocalVariable" UId="60">
+          <Symbol UId="61">
+            <Component Name="i" UId="62" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="63" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="64" />
+  <Token Text=":=" UId="65" />
+  <Blank Num="1" UId="66" />
+  <Access Scope="GlobalVariable" UId="67">
+    <Symbol UId="68">
+      <Component Name="signalKVSStation" UId="69" />
+      <Token Text="." UId="70" />
+      <Component Name="stableWeight" UId="71">
+        <Token Text="[" UId="72" />
+        <Access Scope="LocalVariable" UId="73">
+          <Symbol UId="74">
+            <Component Name="i" UId="75" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="76" />
+      </Component>
+      <Token Text="." UId="77" />
+      <Component Name="weight" UId="78">
+        <Token Text="[" UId="79" />
+        <Access Scope="LiteralConstant" UId="80">
+          <Constant UId="81">
+            <ConstantValue UId="83">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="84" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="85" />
+  <NewLine Num="1" UId="86" />
+  <Blank Num="4" UId="87" />
+  <Access Scope="GlobalVariable" UId="88">
+    <Symbol UId="89">
+      <Component Name="hmi" UId="90" />
+      <Token Text="." UId="91" />
+      <Component Name="weightLine" UId="92">
+        <Token Text="[" UId="93" />
+        <Access Scope="LocalVariable" UId="94">
+          <Symbol UId="95">
+            <Component Name="i" UId="96" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="97" />
+      </Component>
+      <Token Text="." UId="98" />
+      <Component Name="currentWeightPocket" UId="99" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="100" />
+  <Token Text=":=" UId="101" />
+  <Blank Num="1" UId="102" />
+  <Access Scope="GlobalVariable" UId="103">
+    <Symbol UId="104">
+      <Component Name="signalKVSStation" UId="105" />
+      <Token Text="." UId="106" />
+      <Component Name="stableWeight" UId="107">
+        <Token Text="[" UId="108" />
+        <Access Scope="LocalVariable" UId="109">
+          <Symbol UId="110">
+            <Component Name="i" UId="111" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="112" />
+      </Component>
+      <Token Text="." UId="113" />
+      <Component Name="weight" UId="114">
+        <Token Text="[" UId="115" />
+        <Access Scope="LiteralConstant" UId="116">
+          <Constant UId="117">
+            <ConstantValue UId="119">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="120" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="121" />
+  <NewLine Num="1" UId="122" />
+  <Blank Num="4" UId="123" />
+  <Access Scope="GlobalVariable" UId="124">
+    <Symbol UId="125">
+      <Component Name="hmi" UId="126" />
+      <Token Text="." UId="127" />
+      <Component Name="weightLine" UId="128">
+        <Token Text="[" UId="129" />
+        <Access Scope="LocalVariable" UId="130">
+          <Symbol UId="131">
+            <Component Name="i" UId="132" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="133" />
+      </Component>
+      <Token Text="." UId="134" />
+      <Component Name="targetWeightPocket" UId="135" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="136" />
+  <Token Text=":=" UId="137" />
+  <Blank Num="1" UId="138" />
+  <Access Scope="LocalVariable" UId="139">
+    <Symbol UId="140">
+      <Component Name="SetWeightBunker" UId="141">
+        <Token Text="[" UId="142" />
+        <Access Scope="LocalVariable" UId="143">
+          <Symbol UId="144">
+            <Component Name="i" UId="145" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="146" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="147" />
+  <NewLine Num="1" UId="148" />
+  <Token Text="END_FOR" UId="149" />
+  <Token Text=";" UId="150" />
+  <NewLine Num="1" UId="151" />
+  <Access Scope="LocalVariable" UId="152">
+    <Symbol UId="153">
+      <Component Name="currentWeightBunker" UId="154" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="155" />
+  <Token Text=":=" UId="156" />
+  <Blank Num="1" UId="157" />
+  <Access Scope="GlobalVariable" UId="158">
+    <Symbol UId="159">
+      <Component Name="signalKVSStation" UId="160" />
+      <Token Text="." UId="161" />
+      <Component Name="currentWeight" UId="162" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="163" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="18" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="19" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1A" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>выделяем стабильные веса с которыми будем работать</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="TaskSetWeight" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="measurmentError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="isWorkWithBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="SetWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="tmpStableWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="readyToSort" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="readyToDrop" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="blockSorting" />
+      </Symbol>
+    </Access>
+    <Call UId="30">
+      <CallInfo Name="Sorting_AM" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="31">
+          <Component Name="Sorting_AM_FB" />
+        </Instance>
+        <Parameter Name="enableToWork" Section="Input" Type="Bool" />
+        <Parameter Name="setWeight" Section="Input" Type="Real" />
+        <Parameter Name="errorMeasurement" Section="Input" Type="Real" />
+        <Parameter Name="isWorkWithBunker" Section="Input" Type="Array[0..12] of Bool" />
+        <Parameter Name="setWeightBunker" Section="Input" Type="Array[0..12] of Real" />
+        <Parameter Name="stableWeightBunker" Section="InOut" Type="Array[0..12] of Real" />
+        <Parameter Name="readyToSorting" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="readyToDrop" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="blockSort" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <Powerrail />
+      <NameCon UId="30" Name="en" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="enableToWork" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="22" />
+      <NameCon UId="30" Name="setWeight" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="30" Name="errorMeasurement" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="30" Name="isWorkWithBunker" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="setWeightBunker" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="26" />
+      <NameCon UId="30" Name="stableWeightBunker" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="27" />
+      <NameCon UId="30" Name="readyToSorting" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="28" />
+      <NameCon UId="30" Name="readyToDrop" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="29" />
+      <NameCon UId="30" Name="blockSort" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>тут setWeight это вес который мы в итоге ищем. Но если необходимо несколько сбросов то этот вес не будет равен весу по рецепту.
+#readyToSort - по необходимости сбрасывает в этом блоке.</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>сортировка</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="21" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Access Scope="GlobalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="hmi" UId="23" />
+      <Token Text="." UId="24" />
+      <Component Name="permitOn1Bunk" UId="25" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="26" />
+  <Token Text=":=" UId="27" />
+  <Blank Num="1" UId="28" />
+  <Access Scope="GlobalVariable" UId="29">
+    <Symbol UId="30">
+      <Component Name="hmi" UId="31" />
+      <Token Text="." UId="32" />
+      <Component Name="permitOn2Bunk" UId="33" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="34" />
+  <Token Text=":=" UId="35" />
+  <Blank Num="1" UId="36" />
+  <Access Scope="LocalVariable" UId="37">
+    <Symbol UId="38">
+      <Component Name="readyToDrop" UId="39" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="40" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="22" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Перенос данных для панели</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="26" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="setWeight" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="measurmentError" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="maxWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="mediumWeightProduct" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="TaskSetWeight" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="SetWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="isWorkWithBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="readyToDrop" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="readyToDropYP" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="tmpStableWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="blockSorting" />
+      </Symbol>
+    </Access>
+    <Call UId="33">
+      <CallInfo Name="setWeightBunker_AM" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="34">
+          <Component Name="setWeightBunker_FB" />
+        </Instance>
+        <Parameter Name="enableWork" Section="Input" Type="Bool" />
+        <Parameter Name="weightPack" Section="Input" Type="Real" />
+        <Parameter Name="measurementError" Section="Input" Type="Real" />
+        <Parameter Name="maxWeightBunker" Section="Input" Type="Real" />
+        <Parameter Name="mediumWeightProduct" Section="Input" Type="Real" />
+        <Parameter Name="taskWeightBunker" Section="InOut" Type="Real" />
+        <Parameter Name="setWeightBunker" Section="InOut" Type="Array[0..12] of Real" />
+        <Parameter Name="isWorkWithBunker" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="readyToDrop" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="YP_ReadyToDrop" Section="InOut" Type="Array[0..2] of Bool" />
+        <Parameter Name="stableWeightBunker" Section="InOut" Type="Array[0..12] of Real" />
+        <Parameter Name="blockSort" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="33" Name="enableWork" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="weightPack" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="23" />
+      <NameCon UId="33" Name="measurementError" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="24" />
+      <NameCon UId="33" Name="maxWeightBunker" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="25" />
+      <NameCon UId="33" Name="mediumWeightProduct" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="taskWeightBunker" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="27" />
+      <NameCon UId="33" Name="setWeightBunker" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="28" />
+      <NameCon UId="33" Name="isWorkWithBunker" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="29" />
+      <NameCon UId="33" Name="readyToDrop" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="30" />
+      <NameCon UId="33" Name="YP_ReadyToDrop" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="31" />
+      <NameCon UId="33" Name="stableWeightBunker" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="32" />
+      <NameCon UId="33" Name="blockSort" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="27" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="28" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Здесь происходит расчет уставок на все бункера в зависимости от: веса уставки, максимального веса в один бункер, среднего веса продукта
+Также управление конвейерами, упаковочными машинами и бункерами</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="29" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Расчет уставок в бункере</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="i" UId="23" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="24" />
+  <Token Text=":=" UId="25" />
+  <Blank Num="1" UId="26" />
+  <Access Scope="LiteralConstant" UId="27">
+    <Constant UId="28">
+      <ConstantValue UId="30">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="31" />
+  <NewLine Num="1" UId="32" />
+  <Token Text="FOR" UId="33" />
+  <Blank Num="1" UId="34" />
+  <Access Scope="LocalVariable" UId="35">
+    <Symbol UId="36">
+      <Component Name="i" UId="37" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="38" />
+  <Token Text=":=" UId="39" />
+  <Blank Num="1" UId="40" />
+  <Access Scope="LiteralConstant" UId="41">
+    <Constant UId="42">
+      <ConstantValue UId="44">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="45" />
+  <Token Text="TO" UId="46" />
+  <Blank Num="1" UId="47" />
+  <Access Scope="LiteralConstant" UId="48">
+    <Constant UId="49">
+      <ConstantValue UId="51">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="52" />
+  <Token Text="DO" UId="53" />
+  <NewLine Num="1" UId="54" />
+  <Blank Num="4" UId="55" />
+  <Access Scope="GlobalVariable" UId="56">
+    <Symbol UId="57">
+      <Component Name="hmi" UId="58" />
+      <Token Text="." UId="59" />
+      <Component Name="weightLine" UId="60">
+        <Token Text="[" UId="61" />
+        <Access Scope="LocalVariable" UId="62">
+          <Symbol UId="63">
+            <Component Name="i" UId="64" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="65" />
+      </Component>
+      <Token Text="." UId="66" />
+      <Component Name="targetWeightPocket" UId="67" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="68" />
+  <Token Text=":=" UId="69" />
+  <Blank Num="1" UId="70" />
+  <Access Scope="LocalVariable" UId="71">
+    <Symbol UId="72">
+      <Component Name="SetWeightBunker" UId="73">
+        <Token Text="[" UId="74" />
+        <Access Scope="LocalVariable" UId="75">
+          <Symbol UId="76">
+            <Component Name="i" UId="77" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="78" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="79" />
+  <NewLine Num="1" UId="80" />
+  <Token Text="END_FOR" UId="81" />
+  <Token Text=";" UId="82" />
+  <NewLine Num="1" UId="83" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2E" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>передача уставок в панель</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="30" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="IO" />
+        <Component Name="input" />
+        <Component Name="YP_ReadyAccept" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO" />
+        <Component Name="input" />
+        <Component Name="YP_StartDozing" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="setWeight" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="hmiYpDropWeight" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="hmiYpDropError" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Bunker_leftOpen" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Bunker_leftClose" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Bunker_rightOpen" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Bunker_rightClose" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="preWorkAutoMode" />
+        <Component Name="alarmStop" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Yq_ReadyDoze" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="readyToDropYP" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="tmpStableWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="readyToSort" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="readyToDrop" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="37">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Conv_FRV" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="38">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="Conv_REV" />
+      </Symbol>
+    </Access>
+    <Call UId="39">
+      <CallInfo Name="workPackingMachine_AM" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="40">
+          <Component Name="workPackingMachine_AM_FB" />
+        </Instance>
+        <Parameter Name="enWork" Section="Input" Type="Bool" />
+        <Parameter Name="YP_ReadyAccept" Section="Input" Type="Array[0..2] of Bool" />
+        <Parameter Name="YP_StartDozing" Section="Input" Type="Array[0..2] of Bool" />
+        <Parameter Name="weightPack" Section="Input" Type="Real" />
+        <Parameter Name="hmiYpDropWeight" Section="InOut" Type="Array[0..2] of Real" />
+        <Parameter Name="hmiYPDropErrorMeasure" Section="InOut" Type="Array[0..2] of Real" />
+        <Parameter Name="openLeftBunker" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="closeLeftBunker" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="openRightBunker" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="closeRightBunker" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="alarmStop" Section="InOut" Type="Bool" />
+        <Parameter Name="Yq_ReadyDoze" Section="InOut" Type="Array[0..2] of Bool" />
+        <Parameter Name="YP_ReadyToDrop" Section="InOut" Type="Array[0..2] of Bool" />
+        <Parameter Name="stableWeightBunker" Section="InOut" Type="Array[0..12] of Real" />
+        <Parameter Name="readyToSort" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="readyToDrop" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="Conv_FRV" Section="InOut" Type="Array[0..2] of Bool" />
+        <Parameter Name="Conv_REV" Section="InOut" Type="Array[0..2] of Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="41">
+      <Powerrail />
+      <NameCon UId="39" Name="en" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="21" />
+      <NameCon UId="39" Name="enWork" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="22" />
+      <NameCon UId="39" Name="YP_ReadyAccept" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="23" />
+      <NameCon UId="39" Name="YP_StartDozing" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="24" />
+      <NameCon UId="39" Name="weightPack" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="25" />
+      <NameCon UId="39" Name="hmiYpDropWeight" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="26" />
+      <NameCon UId="39" Name="hmiYPDropErrorMeasure" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="27" />
+      <NameCon UId="39" Name="openLeftBunker" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="28" />
+      <NameCon UId="39" Name="closeLeftBunker" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="29" />
+      <NameCon UId="39" Name="openRightBunker" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="30" />
+      <NameCon UId="39" Name="closeRightBunker" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="31" />
+      <NameCon UId="39" Name="alarmStop" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="32" />
+      <NameCon UId="39" Name="Yq_ReadyDoze" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="33" />
+      <NameCon UId="39" Name="YP_ReadyToDrop" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="34" />
+      <NameCon UId="39" Name="stableWeightBunker" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="35" />
+      <NameCon UId="39" Name="readyToSort" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="36" />
+      <NameCon UId="39" Name="readyToDrop" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="37" />
+      <NameCon UId="39" Name="Conv_FRV" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="38" />
+      <NameCon UId="39" Name="Conv_REV" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="31" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="32" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>также здесь будем открывать/закрывать бункеры</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="33" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>обработка данных с упаковочных машин  и выдача сигналов доза, подсчет общей погрешности </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="35" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="i" UId="23" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="24" />
+  <Token Text=":=" UId="25" />
+  <Blank Num="1" UId="26" />
+  <Access Scope="LiteralConstant" UId="27">
+    <Constant UId="28">
+      <ConstantValue UId="30">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="31" />
+  <NewLine Num="1" UId="32" />
+  <Token Text="FOR" UId="33" />
+  <Blank Num="1" UId="34" />
+  <Access Scope="LocalVariable" UId="35">
+    <Symbol UId="36">
+      <Component Name="i" UId="37" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="38" />
+  <Token Text=":=" UId="39" />
+  <Blank Num="1" UId="40" />
+  <Access Scope="LiteralConstant" UId="41">
+    <Constant UId="42">
+      <ConstantValue UId="44">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="45" />
+  <Token Text="TO" UId="46" />
+  <Blank Num="1" UId="47" />
+  <Access Scope="LiteralConstant" UId="48">
+    <Constant UId="49">
+      <ConstantValue UId="51">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="52" />
+  <Token Text="DO" UId="53" />
+  <NewLine Num="1" UId="54" />
+  <Blank Num="4" UId="55" />
+  <Access Scope="GlobalVariable" UId="56">
+    <Symbol UId="57">
+      <Component Name="hmi" UId="58" />
+      <Token Text="." UId="59" />
+      <Component Name="outConvAndPack" UId="60">
+        <Token Text="[" UId="61" />
+        <Access Scope="LocalVariable" UId="62">
+          <Symbol UId="63">
+            <Component Name="i" UId="64" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="65" />
+      </Component>
+      <Token Text="." UId="66" />
+      <Component Name="currentWeightPack" UId="67" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="68" />
+  <Token Text=":=" UId="69" />
+  <Blank Num="1" UId="70" />
+  <Access Scope="LocalVariable" UId="71">
+    <Symbol UId="72">
+      <Component Name="hmiYpDropWeight" UId="73">
+        <Token Text="[" UId="74" />
+        <Access Scope="LocalVariable" UId="75">
+          <Symbol UId="76">
+            <Component Name="i" UId="77" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="78" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="79" />
+  <NewLine Num="1" UId="80" />
+  <Blank Num="4" UId="81" />
+  <Access Scope="GlobalVariable" UId="82">
+    <Symbol UId="83">
+      <Component Name="hmi" UId="84" />
+      <Token Text="." UId="85" />
+      <Component Name="outConvAndPack" UId="86">
+        <Token Text="[" UId="87" />
+        <Access Scope="LocalVariable" UId="88">
+          <Symbol UId="89">
+            <Component Name="i" UId="90" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="91" />
+      </Component>
+      <Token Text="." UId="92" />
+      <Component Name="currentErrorMeasure" UId="93" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="94" />
+  <Token Text=":=" UId="95" />
+  <Blank Num="1" UId="96" />
+  <Access Scope="LocalVariable" UId="97">
+    <Symbol UId="98">
+      <Component Name="hmiYpDropError" UId="99">
+        <Token Text="[" UId="100" />
+        <Access Scope="LocalVariable" UId="101">
+          <Symbol UId="102">
+            <Component Name="i" UId="103" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="104" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="105" />
+  <NewLine Num="1" UId="106" />
+  <Token Text="END_FOR" UId="107" />
+  <Token Text=";" UId="108" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="36" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="37" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="38" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="39" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3A" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="speed_InConveyer" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="IO" />
+        <Component Name="input" />
+        <Component Name="sensorOverflowReceiverTable" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="startInConv" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="setSpeedInConv" />
+      </Symbol>
+    </Access>
+    <Call UId="26">
+      <CallInfo Name="workInConveyer_AM" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="27">
+          <Component Name="workInConveyer_AM_FB" />
+        </Instance>
+        <Parameter Name="enableWork" Section="Input" Type="Bool" />
+        <Parameter Name="setSpeed%Int" Section="Input" Type="Int" />
+        <Parameter Name="sensorOverflow" Section="Input" Type="Bool" />
+        <Parameter Name="startinConveyor" Section="Output" Type="Bool" />
+        <Parameter Name="setSpeed%Real" Section="Output" Type="Real" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="28">
+      <Powerrail />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="enableWork" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="setSpeed%Int" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="sensorOverflow" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="26" Name="startinConveyor" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="33">
+      <NameCon UId="26" Name="setSpeed%Real" />
+      <IdentCon UId="25" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="3B" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="3C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>конвейер работает пока не сработал датчик пересыпа</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="3D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="3E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Работа конвейера</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="3F" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="workPlavnik" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="Clock_0.5Hz" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="flipper_Up" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="flipper_Down" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="openFlipper" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>true</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="TypedConstant" UId="28">
+      <Constant>
+        <ConstantValue>t#200ms</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="TypedConstant" UId="29">
+      <Constant>
+        <ConstantValue>t#1000ms</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="openFlipper" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="preWorkAutoMode" />
+        <Component Name="alarmStop" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="flipper_Up" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="flipper_Down" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="34" />
+    <Part Name="Contact" UId="35" />
+    <Part Name="Contact" UId="36" />
+    <Part Name="Contact" UId="37">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="38">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="SCoil" UId="39" />
+    <Call UId="40">
+      <CallInfo Name="controlValve" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="41">
+          <Component Name="controlFllipper_AM_FB" />
+        </Instance>
+        <Parameter Name="autoclose_M" Section="Input" Type="Bool" />
+        <Parameter Name="time_autoclose" Section="Input" Type="Time" />
+        <Parameter Name="time_open/close" Section="Input" Type="Time" />
+        <Parameter Name="openQ" Section="Output" Type="Bool" />
+        <Parameter Name="closeQ" Section="Output" Type="Bool" />
+        <Parameter Name="open" Section="InOut" Type="Bool" />
+        <Parameter Name="close" Section="InOut" Type="Bool" />
+        <Parameter Name="stopAlarm" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="43">
+      <Powerrail />
+      <NameCon UId="34" Name="in" />
+      <NameCon UId="40" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="21" />
+      <NameCon UId="34" Name="operand" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="34" Name="out" />
+      <NameCon UId="35" Name="in" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="22" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="23" />
+      <NameCon UId="36" Name="operand" />
+    </Wire>
+    <Wire UId="49">
+      <NameCon UId="36" Name="out" />
+      <NameCon UId="37" Name="in" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="24" />
+      <NameCon UId="37" Name="operand" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="25" />
+      <NameCon UId="38" Name="operand" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="38" Name="out" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="26" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="27" />
+      <NameCon UId="40" Name="autoclose_M" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="28" />
+      <NameCon UId="40" Name="time_autoclose" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="29" />
+      <NameCon UId="40" Name="time_open/close" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="30" />
+      <NameCon UId="40" Name="open" />
+    </Wire>
+    <Wire UId="59">
+      <OpenCon UId="42" />
+      <NameCon UId="40" Name="close" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="31" />
+      <NameCon UId="40" Name="stopAlarm" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="40" Name="openQ" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="40" Name="closeQ" />
+      <IdentCon UId="33" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="40" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="41" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>если разрешена работа автоматического режима, и плавника по рецепту, то плавник
+открывается раз в 1с, и автоматически закрывается</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="42" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="43" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Работа плавника</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="44" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="speedVibro" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="setVibration" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Part Name="Convert" UId="25" DisabledENO="true">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+      <TemplateValue Name="DestType" Type="Type">Real</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="26">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="27">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="28">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <NameCon UId="25" Name="out" />
+      <IdentCon UId="23" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="45" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="46" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="47" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="48" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Скорость Вибраторов</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="49" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="i" UId="23" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="24" />
+  <Token Text=":=" UId="25" />
+  <Blank Num="1" UId="26" />
+  <Access Scope="LiteralConstant" UId="27">
+    <Constant UId="28">
+      <ConstantValue UId="30">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="31" />
+  <NewLine Num="1" UId="32" />
+  <Token Text="FOR" UId="33" />
+  <Blank Num="1" UId="34" />
+  <Access Scope="LocalVariable" UId="35">
+    <Symbol UId="36">
+      <Component Name="i" UId="37" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="38" />
+  <Token Text=":=" UId="39" />
+  <Blank Num="1" UId="40" />
+  <Access Scope="LiteralConstant" UId="41">
+    <Constant UId="42">
+      <ConstantValue UId="44">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="45" />
+  <Token Text="TO" UId="46" />
+  <Blank Num="1" UId="47" />
+  <Access Scope="LiteralConstant" UId="48">
+    <Constant UId="49">
+      <ConstantValue UId="51">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="52" />
+  <Token Text="DO" UId="53" />
+  <NewLine Num="1" UId="54" />
+  <Blank Num="4" UId="55" />
+  <Access Scope="Call" UId="56">
+    <CallInfo UId="57" BlockType="FB" Name="workVibroLot_AM">
+      <Instance Scope="LocalVariable" UId="58">
+        <Component Name="workVibroLot_AM_FB" UId="59">
+          <Token Text="[" UId="60" />
+          <Access Scope="LocalVariable" UId="61">
+            <Symbol UId="62">
+              <Component Name="i" UId="63" />
+            </Symbol>
+          </Access>
+          <Token Text="]" UId="64" />
+        </Component>
+      </Instance>
+      <Token Text="(" UId="65" />
+      <Parameter Name="enableWork" UId="66">
+        <Blank Num="1" UId="67" />
+        <Token Text=":=" UId="68" />
+        <Blank Num="1" UId="69" />
+        <Access Scope="LocalVariable" UId="70">
+          <Symbol UId="71">
+            <Component Name="isStartAutoMode" UId="72" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="73" />
+      <NewLine Num="1" UId="74" />
+      <Blank Num="28" UId="75" />
+      <Parameter Name="setWeightBunker" UId="76">
+        <Blank Num="1" UId="77" />
+        <Token Text=":=" UId="78" />
+        <Blank Num="1" UId="79" />
+        <Access Scope="LocalVariable" UId="80">
+          <Symbol UId="81">
+            <Component Name="SetWeightBunker" UId="82">
+              <Token Text="[" UId="83" />
+              <Access Scope="LocalVariable" UId="84">
+                <Symbol UId="85">
+                  <Component Name="i" UId="86" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="87" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="88" />
+      <NewLine Num="1" UId="89" />
+      <Blank Num="28" UId="90" />
+      <Parameter Name="currentWeight" UId="91">
+        <Blank Num="1" UId="92" />
+        <Token Text=":=" UId="93" />
+        <Blank Num="1" UId="94" />
+        <Access Scope="LocalVariable" UId="95">
+          <Symbol UId="96">
+            <Component Name="currentWeightBunker" UId="97">
+              <Token Text="[" UId="98" />
+              <Access Scope="LocalVariable" UId="99">
+                <Symbol UId="100">
+                  <Component Name="i" UId="101" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="102" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="103" />
+      <LineComment Inserted="false" NoClosingBracket="false" UId="104">
+        <Text UId="105">"signalKVSStation".stableWeight[#i].weight[0],</Text>
+      </LineComment>
+      <NewLine Num="1" UId="106" />
+      <Blank Num="28" UId="107" />
+      <Parameter Name="stateDoor" UId="108">
+        <Blank Num="1" UId="109" />
+        <Token Text=":=" UId="110" />
+        <Blank Num="1" UId="111" />
+        <Access Scope="GlobalVariable" UId="112">
+          <Symbol UId="113">
+            <Component Name="hmi" UId="114" />
+            <Token Text="." UId="115" />
+            <Component Name="weightLine" UId="116">
+              <Token Text="[" UId="117" />
+              <Access Scope="LocalVariable" UId="118">
+                <Symbol UId="119">
+                  <Component Name="i" UId="120" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="121" />
+            </Component>
+            <Token Text="." UId="122" />
+            <Component Name="stateValveAfterVibroLot" UId="123" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="124" />
+      <NewLine Num="1" UId="125" />
+      <Blank Num="28" UId="126" />
+      <Parameter Name="stateBunkerLeft" UId="127">
+        <Token Text=":=" UId="128" />
+        <Access Scope="GlobalVariable" UId="129">
+          <Symbol UId="130">
+            <Component Name="hmi" UId="131" />
+            <Token Text="." UId="132" />
+            <Component Name="weightLine" UId="133">
+              <Token Text="[" UId="134" />
+              <Access Scope="LocalVariable" UId="135">
+                <Symbol UId="136">
+                  <Component Name="i" UId="137" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="138" />
+            </Component>
+            <Token Text="." UId="139" />
+            <Component Name="stateLeftValveWeightPocket" UId="140" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="141" />
+      <NewLine Num="1" UId="142" />
+      <Blank Num="28" UId="143" />
+      <Parameter Name="stateBunkerRight" UId="144">
+        <Token Text=":=" UId="145" />
+        <Access Scope="GlobalVariable" UId="146">
+          <Symbol UId="147">
+            <Component Name="hmi" UId="148" />
+            <Token Text="." UId="149" />
+            <Component Name="weightLine" UId="150">
+              <Token Text="[" UId="151" />
+              <Access Scope="LocalVariable" UId="152">
+                <Symbol UId="153">
+                  <Component Name="i" UId="154" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="155" />
+            </Component>
+            <Token Text="." UId="156" />
+            <Component Name="stateRightValveWeightPocket" UId="157" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="158" />
+      <NewLine Num="1" UId="159" />
+      <Blank Num="28" UId="160" />
+      <Parameter Name="alarmStop" UId="161">
+        <Blank Num="1" UId="162" />
+        <Token Text=":=" UId="163" />
+        <Blank Num="1" UId="164" />
+        <Access Scope="LocalVariable" UId="165">
+          <Symbol UId="166">
+            <Component Name="preWorkAutoMode" UId="167" />
+            <Token Text="." UId="168" />
+            <Component Name="alarmStop" UId="169" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="170" />
+      <NewLine Num="1" UId="171" />
+      <Blank Num="28" UId="172" />
+      <Parameter Name="isWorkWithBunker" UId="173">
+        <Blank Num="1" UId="174" />
+        <Token Text=":=" UId="175" />
+        <Blank Num="1" UId="176" />
+        <Access Scope="LocalVariable" UId="177">
+          <Symbol UId="178">
+            <Component Name="isWorkWithBunker" UId="179">
+              <Token Text="[" UId="180" />
+              <Access Scope="LocalVariable" UId="181">
+                <Symbol UId="182">
+                  <Component Name="i" UId="183" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="184" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="185" />
+      <NewLine Num="1" UId="186" />
+      <Blank Num="28" UId="187" />
+      <NewLine Num="1" UId="188" />
+      <Blank Num="28" UId="189" />
+      <Parameter Name="onVibroLot" UId="190">
+        <Token Text=":=" UId="191" />
+        <Blank Num="1" UId="192" />
+        <Access Scope="GlobalVariable" UId="193">
+          <Symbol UId="194">
+            <Component Name="signalKVSStation" UId="195" />
+            <Token Text="." UId="196" />
+            <Component Name="qAutoMode" UId="197" />
+            <Token Text="." UId="198" />
+            <Component Name="vibroLot" UId="199">
+              <Token Text="[" UId="200" />
+              <Access Scope="LocalVariable" UId="201">
+                <Symbol UId="202">
+                  <Component Name="i" UId="203" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="204" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="205" />
+      <NewLine Num="1" UId="206" />
+      <Blank Num="28" UId="207" />
+      <Parameter Name="openDoor" UId="208">
+        <Blank Num="1" UId="209" />
+        <Token Text=":=" UId="210" />
+        <Blank Num="1" UId="211" />
+        <Access Scope="GlobalVariable" UId="212">
+          <Symbol UId="213">
+            <Component Name="signalKVSStation" UId="214" />
+            <Token Text="." UId="215" />
+            <Component Name="qAutoMode" UId="216" />
+            <Token Text="." UId="217" />
+            <Component Name="Door_open" UId="218">
+              <Token Text="[" UId="219" />
+              <Access Scope="LocalVariable" UId="220">
+                <Symbol UId="221">
+                  <Component Name="i" UId="222" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="223" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="224" />
+      <NewLine Num="1" UId="225" />
+      <Blank Num="28" UId="226" />
+      <Parameter Name="closeDoor" UId="227">
+        <Blank Num="1" UId="228" />
+        <Token Text=":=" UId="229" />
+        <Blank Num="1" UId="230" />
+        <Access Scope="GlobalVariable" UId="231">
+          <Symbol UId="232">
+            <Component Name="signalKVSStation" UId="233" />
+            <Token Text="." UId="234" />
+            <Component Name="qAutoMode" UId="235" />
+            <Token Text="." UId="236" />
+            <Component Name="Door_close" UId="237">
+              <Token Text="[" UId="238" />
+              <Access Scope="LocalVariable" UId="239">
+                <Symbol UId="240">
+                  <Component Name="i" UId="241" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="242" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="243" />
+      <NewLine Num="1" UId="244" />
+      <Blank Num="28" UId="245" />
+      <NewLine Num="1" UId="246" />
+      <Blank Num="28" UId="247" />
+      <Parameter Name="isReadyToDrop" UId="248">
+        <Token Text=":=" UId="249" />
+        <Access Scope="LocalVariable" UId="250">
+          <Symbol UId="251">
+            <Component Name="readyToDrop" UId="252">
+              <Token Text="[" UId="253" />
+              <Access Scope="LocalVariable" UId="254">
+                <Symbol UId="255">
+                  <Component Name="i" UId="256" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="257" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="258" />
+      <NewLine Num="1" UId="259" />
+      <Blank Num="28" UId="260" />
+      <Parameter Name="isReadyToSort" UId="261">
+        <Blank Num="1" UId="262" />
+        <Token Text=":=" UId="263" />
+        <Blank Num="1" UId="264" />
+        <Access Scope="LocalVariable" UId="265">
+          <Symbol UId="266">
+            <Component Name="readyToSort" UId="267">
+              <Token Text="[" UId="268" />
+              <Access Scope="LocalVariable" UId="269">
+                <Symbol UId="270">
+                  <Component Name="i" UId="271" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="272" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="273" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="274" />
+  <NewLine Num="1" UId="275" />
+  <Blank Num="4" UId="276" />
+  <NewLine Num="1" UId="277" />
+  <Token Text="END_FOR" UId="278" />
+  <Token Text=";" UId="279" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="4B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="4C" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="4D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Вибролотки, лопатки</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="4E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="preWorkAutoMode" />
+        <Component Name="alarmStop" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="readyToSort" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="qAutoMode" />
+        <Component Name="vibroTable" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="workVibroTable_AM" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="26">
+          <Component Name="workVibroTable_AM_FB" />
+        </Instance>
+        <Parameter Name="enableWork" Section="Input" Type="Bool" />
+        <Parameter Name="alarmStop" Section="Input" Type="Bool" />
+        <Parameter Name="arrayReadyWeightBunker" Section="Input" Type="Array[0..12] of Bool" />
+        <Parameter Name="vibroTable" Section="Output" Type="Array[0..2] of Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <Powerrail />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="enableWork" />
+    </Wire>
+    <Wire UId="29">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="alarmStop" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="arrayReadyWeightBunker" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="25" Name="vibroTable" />
+      <IdentCon UId="24" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="50" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="51" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="52" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Вибростолы</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="53" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="54" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Автоматический режим</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

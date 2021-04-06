@@ -1,0 +1,59 @@
+﻿FUNCTION "sndCALIBR&Tara" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      ADDR_DEVICE : UInt;   // адрес опрашиваемого устройства
+      ton_changeStep {InstructionName := 'TON_TIME'; LibVersion := '1.0'} : TON_TIME;   // таймер на переход следующего шага опроса
+   END_VAR
+
+   VAR_IN_OUT 
+      MB_MASTER {InstructionName := 'MB_MASTER'; LibVersion := '2.2'} : MB_MASTER;   // ФБ мастера модбаса
+      Ton_Start : Bool;   // сигнал на старт таймера
+      Buffer : Array[0..20] of Word;   // буффер данных у блока мастера модбаса
+      Step : SInt;   // текущий шаг
+      Calibrate : Bool;   // сигнал на калибровку
+      Tara : Bool;   // сигнал на тарирование
+   END_VAR
+
+
+BEGIN
+	        IF #Calibrate OR//калибровка
+	            #Tara//тарирование
+	        THEN
+	            #Ton_Start := TRUE;
+	            
+	            #MB_MASTER.MB_ADDR := #ADDR_DEVICE;
+	            #MB_MASTER.MODE := 1;
+	            #MB_MASTER.DATA_ADDR := 40068;
+	            #MB_MASTER.DATA_LEN := 1;
+	            #MB_MASTER.REQ := TRUE;
+	            
+	            IF #Calibrate THEN
+	                #Buffer[0] := 16#C2FA;
+	            ELSIF #Tara THEN
+	                #Buffer[0] := 16#C1BA;
+	            END_IF;
+	            
+	            IF NOT (#MB_MASTER.BUSY) AND
+	                (#MB_MASTER.DONE OR
+	                #ton_changeStep.Q) THEN
+	                #MB_MASTER.REQ := FALSE;
+	                #Ton_Start := FALSE;
+	                #Step := #Step + 1;
+	                IF #Calibrate THEN
+	                    #Calibrate := FALSE;
+	                ELSIF #Tara THEN
+	                    #Tara := false;
+	                END_IF;
+	                    
+	                #Buffer[0] := 0;
+	            END_IF;
+	        ELSE
+	            #Step := #Step + 1;
+	            #MB_MASTER.REQ := FALSE;
+	        END_IF;
+	        
+	       
+	            
+END_FUNCTION
+

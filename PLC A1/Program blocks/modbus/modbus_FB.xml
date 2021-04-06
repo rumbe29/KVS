@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-04-06T19:52:15.0270381Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Unified SCADA Engineering System</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="currentWeight" Datatype="Array[0..12] of Real" Accessibility="Public" />
+  </Section>
+  <Section Name="Static">
+    <Member Name="MODBUS_ADDRESS" Datatype="Array[0..12] of UInt" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Subelement Path="1"><StartValue>10</StartValue></Subelement><Subelement Path="2"><StartValue>11</StartValue></Subelement><Subelement Path="3"><StartValue>12</StartValue></Subelement><Subelement Path="4"><StartValue>13</StartValue></Subelement><Subelement Path="5"><StartValue>14</StartValue></Subelement><Subelement Path="6"><StartValue>15</StartValue></Subelement><Subelement Path="7"><StartValue>20</StartValue></Subelement><Subelement Path="8"><StartValue>21</StartValue></Subelement><Subelement Path="9"><StartValue>22</StartValue></Subelement><Subelement Path="10"><StartValue>23</StartValue></Subelement><Subelement Path="11"><StartValue>24</StartValue></Subelement><Subelement Path="12"><StartValue>25</StartValue></Subelement></Member>
+    <Member Name="modbus_SenecaConnectPort1_FB" Datatype="&quot;modbus_SenecaConnectPort1&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="port" Datatype="PORT" /><Member Name="arrayAddressModbus" Datatype="Array[0..12] of UInt" /><Member Name="Offset_array_bits" Datatype="SInt" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="calibrateZero" Datatype="Array[0..12] of Bool" /><Member Name="taraZero" Datatype="Array[0..12] of Bool" /><Member Name="currentWeight" Datatype="Array[0..12] of Real" /></Section><Section Name="Static"><Member Name="MB_COMM_LOAD" Datatype="MB_COMM_LOAD" Version="2.1"><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="PORT" Datatype="PORT" /><Member Name="BAUD" Datatype="UDInt" /><Member Name="PARITY" Datatype="UInt" /><Member Name="FLOW_CTRL" Datatype="UInt" /><Member Name="RTS_ON_DLY" Datatype="UInt" /><Member Name="RTS_OFF_DLY" Datatype="UInt" /><Member Name="RESP_TO" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="MB_DB" Datatype="MB_BASE" Version="1.0"><Sections /></Member></Section><Section Name="Static"><Member Name="ICHAR_GAP" Datatype="UInt" /><Member Name="RETRIES" Datatype="UInt" /><Member Name="WRREC_STATUS" Datatype="Word" /><Member Name="RDREC_STATUS" Datatype="Word" /><Member Name="SFC_STATUS" Datatype="Word" /><Member Name="Port_CFG_SFB" Datatype="Array[0..25] of Byte" /><Member Name="Send_CFG_SFB" Datatype="Array[0..16] of Byte" /><Member Name="Rcv_CFG_SFB" Datatype="Array[0..60] of Byte" /><Member Name="STOP_BITS" Datatype="USInt" /></Section></Sections></Member><Member Name="MB_MASTER" Datatype="MB_MASTER" Version="2.2"><Sections><Section Name="Base"><Sections Datatype="MB_BASE" Version="1.0"><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="S_PORT" Datatype="UInt" /><Member Name="S_RESP_TO" Datatype="UInt" /><Member Name="S_ICHAR_GAP" Datatype="UInt" /><Member Name="S_RETRIES" Datatype="UInt" /></Section></Sections></Section><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="MB_ADDR" Datatype="UInt" /><Member Name="MODE" Datatype="USInt" /><Member Name="DATA_ADDR" Datatype="UDInt" /><Member Name="DATA_LEN" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="DATA_PTR" Datatype="Variant" /></Section><Section Name="Static"><Member Name="SEND_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_RST_SFB" Datatype="Array[0..9] of Byte" /><Member Name="PF_FREQUENCY" Datatype="Real" /><Member Name="BLOCKED_PROC_TIMEOUT" Datatype="Real" /><Member Name="CURRENT_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_SLAVE_ADDR" Datatype="Word" /><Member Name="SAVED_MODE" Datatype="Word" /><Member Name="SAVED_DATA_ADDR" Datatype="DWord" /><Member Name="SAVED_DATA_LEN" Datatype="UInt" /><Member Name="MB_STATE" Datatype="UInt" /><Member Name="COMM_SENT_COUNT" Datatype="UInt" /><Member Name="BYTE_COUNT" Datatype="USInt" /><Member Name="INIT_OK" Datatype="Bool" /><Member Name="ACTIVE" Datatype="Bool" /><Member Name="BROADCAST_FLAG" Datatype="Bool" /><Member Name="EXTENDED_ADDRESSING" Datatype="Bool" /><Member Name="SAVED_START_ADDR" Datatype="UInt" /><Member Name="TXBuf_Function_Offset" Datatype="UDInt" /><Member Name="TXBuf_Address_Offset" Datatype="UDInt" /><Member Name="TXBuf_Quantity_Offset" Datatype="UDInt" /></Section></Sections></Member><Member Name="Seneca" Datatype="Struct"><Member Name="TON_changeStep" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="TON_Start" Datatype="Bool" /><Member Name="Step" Datatype="SInt" /></Member><Member Name="tmpWeight" Datatype="Array[0..12] of DWord" /><Member Name="restartPort" Datatype="Bool" /></Section></Sections></Member>
+    <Member Name="modbus_SenecaConnectPort2_FB" Datatype="&quot;modbus_SenecaConnectPort2&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="port" Datatype="PORT" /><Member Name="arrayAddressModbus" Datatype="Array[0..12] of UInt" /><Member Name="Offset_array_bits" Datatype="SInt" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="calibrateZero" Datatype="Array[0..12] of Bool" /><Member Name="taraZero" Datatype="Array[0..12] of Bool" /><Member Name="currentWeight" Datatype="Array[0..12] of Real" /></Section><Section Name="Static"><Member Name="MB_COMM_LOAD" Datatype="MB_COMM_LOAD" Version="2.1"><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="PORT" Datatype="PORT" /><Member Name="BAUD" Datatype="UDInt" /><Member Name="PARITY" Datatype="UInt" /><Member Name="FLOW_CTRL" Datatype="UInt" /><Member Name="RTS_ON_DLY" Datatype="UInt" /><Member Name="RTS_OFF_DLY" Datatype="UInt" /><Member Name="RESP_TO" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="MB_DB" Datatype="MB_BASE" Version="1.0"><Sections /></Member></Section><Section Name="Static"><Member Name="ICHAR_GAP" Datatype="UInt" /><Member Name="RETRIES" Datatype="UInt" /><Member Name="WRREC_STATUS" Datatype="Word" /><Member Name="RDREC_STATUS" Datatype="Word" /><Member Name="SFC_STATUS" Datatype="Word" /><Member Name="Port_CFG_SFB" Datatype="Array[0..25] of Byte" /><Member Name="Send_CFG_SFB" Datatype="Array[0..16] of Byte" /><Member Name="Rcv_CFG_SFB" Datatype="Array[0..60] of Byte" /><Member Name="STOP_BITS" Datatype="USInt" /></Section></Sections></Member><Member Name="MB_MASTER" Datatype="MB_MASTER" Version="2.2"><Sections><Section Name="Base"><Sections Datatype="MB_BASE" Version="1.0"><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="S_PORT" Datatype="UInt" /><Member Name="S_RESP_TO" Datatype="UInt" /><Member Name="S_ICHAR_GAP" Datatype="UInt" /><Member Name="S_RETRIES" Datatype="UInt" /></Section></Sections></Section><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="MB_ADDR" Datatype="UInt" /><Member Name="MODE" Datatype="USInt" /><Member Name="DATA_ADDR" Datatype="UDInt" /><Member Name="DATA_LEN" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="DATA_PTR" Datatype="Variant" /></Section><Section Name="Static"><Member Name="SEND_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_RST_SFB" Datatype="Array[0..9] of Byte" /><Member Name="PF_FREQUENCY" Datatype="Real" /><Member Name="BLOCKED_PROC_TIMEOUT" Datatype="Real" /><Member Name="CURRENT_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_SLAVE_ADDR" Datatype="Word" /><Member Name="SAVED_MODE" Datatype="Word" /><Member Name="SAVED_DATA_ADDR" Datatype="DWord" /><Member Name="SAVED_DATA_LEN" Datatype="UInt" /><Member Name="MB_STATE" Datatype="UInt" /><Member Name="COMM_SENT_COUNT" Datatype="UInt" /><Member Name="BYTE_COUNT" Datatype="USInt" /><Member Name="INIT_OK" Datatype="Bool" /><Member Name="ACTIVE" Datatype="Bool" /><Member Name="BROADCAST_FLAG" Datatype="Bool" /><Member Name="EXTENDED_ADDRESSING" Datatype="Bool" /><Member Name="SAVED_START_ADDR" Datatype="UInt" /><Member Name="TXBuf_Function_Offset" Datatype="UDInt" /><Member Name="TXBuf_Address_Offset" Datatype="UDInt" /><Member Name="TXBuf_Quantity_Offset" Datatype="UDInt" /></Section></Sections></Member><Member Name="Seneca" Datatype="Struct"><Member Name="TON_changeStep" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="TON_Start" Datatype="Bool" /><Member Name="Step" Datatype="SInt" /></Member><Member Name="tmpWeight" Datatype="Array[0..12] of DWord" /><Member Name="restartPort" Datatype="Bool" /></Section></Sections></Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="i" Datatype="SInt" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsRetainMemResEnabled>false</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>modbus_FB</Name>
+      <Number>9</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalConstant" UId="21">
+      <Constant Name="Local~CM_1241_A2" />
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="MODBUS_ADDRESS" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="calibrWeightMode" />
+        <Component Name="calib" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="calibrWeightMode" />
+        <Component Name="tara" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="currentWeight" />
+      </Symbol>
+    </Access>
+    <Call UId="26">
+      <CallInfo Name="modbus_SenecaConnectPort1" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="27">
+          <Component Name="modbus_SenecaConnectPort1_FB" />
+        </Instance>
+        <Parameter Name="port" Section="Input" Type="PORT" />
+        <Parameter Name="arrayAddressModbus" Section="Input" Type="Array[0..12] of UInt" />
+        <Parameter Name="Offset_array_bits" Section="Input" Type="SInt" />
+        <Parameter Name="calibrateZero" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="taraZero" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="currentWeight" Section="InOut" Type="Array[0..12] of Real" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="port" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="arrayAddressModbus" />
+    </Wire>
+    <Wire UId="32">
+      <OpenCon UId="28" />
+      <NameCon UId="26" Name="Offset_array_bits" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="calibrateZero" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="24" />
+      <NameCon UId="26" Name="taraZero" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="25" />
+      <NameCon UId="26" Name="currentWeight" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>ОПРОС МОДУЛЕЙ ЧЕРЕРЗ 1 ПОРТ</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalConstant" UId="21">
+      <Constant Name="Local~CB_1241" />
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="MODBUS_ADDRESS" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>SInt</ConstantType>
+        <ConstantValue>6</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="calibrWeightMode" />
+        <Component Name="calib" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="calibrWeightMode" />
+        <Component Name="tara" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="currentWeight" />
+      </Symbol>
+    </Access>
+    <Call UId="27">
+      <CallInfo Name="modbus_SenecaConnectPort2" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="28">
+          <Component Name="modbus_SenecaConnectPort2_FB" />
+        </Instance>
+        <Parameter Name="port" Section="Input" Type="PORT" />
+        <Parameter Name="arrayAddressModbus" Section="Input" Type="Array[0..12] of UInt" />
+        <Parameter Name="Offset_array_bits" Section="Input" Type="SInt" />
+        <Parameter Name="calibrateZero" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="taraZero" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="currentWeight" Section="InOut" Type="Array[0..12] of Real" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="27" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="21" />
+      <NameCon UId="27" Name="port" />
+    </Wire>
+    <Wire UId="31">
+      <IdentCon UId="22" />
+      <NameCon UId="27" Name="arrayAddressModbus" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="23" />
+      <NameCon UId="27" Name="Offset_array_bits" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="24" />
+      <NameCon UId="27" Name="calibrateZero" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="25" />
+      <NameCon UId="27" Name="taraZero" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="26" />
+      <NameCon UId="27" Name="currentWeight" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="9" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>ОПРОС МОДУЛЕЙ ЧЕРЕЗ 2 ПОРТ</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="i" UId="23" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="24" />
+  <Token Text=":=" UId="25" />
+  <Blank Num="1" UId="26" />
+  <Access Scope="LiteralConstant" UId="27">
+    <Constant UId="28">
+      <ConstantValue UId="30">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="31" />
+  <NewLine Num="1" UId="32" />
+  <Token Text="FOR" UId="33" />
+  <Blank Num="1" UId="34" />
+  <Access Scope="LocalVariable" UId="35">
+    <Symbol UId="36">
+      <Component Name="i" UId="37" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="38" />
+  <Token Text=":=" UId="39" />
+  <Blank Num="1" UId="40" />
+  <Access Scope="LiteralConstant" UId="41">
+    <Constant UId="42">
+      <ConstantValue UId="44">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="45" />
+  <Token Text="TO" UId="46" />
+  <Blank Num="1" UId="47" />
+  <Access Scope="LiteralConstant" UId="48">
+    <Constant UId="49">
+      <ConstantValue UId="51">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="52" />
+  <Token Text="DO" UId="53" />
+  <NewLine Num="1" UId="54" />
+  <Blank Num="4" UId="55" />
+  <Access Scope="GlobalVariable" UId="56">
+    <Symbol UId="57">
+      <Component Name="hmi" UId="58" />
+      <Token Text="." UId="59" />
+      <Component Name="weightLine" UId="60">
+        <Token Text="[" UId="61" />
+        <Access Scope="LocalVariable" UId="62">
+          <Symbol UId="63">
+            <Component Name="i" UId="64" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="65" />
+      </Component>
+      <Token Text="." UId="66" />
+      <Component Name="currentWeightPocket" UId="67" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="68" />
+  <Token Text=":=" UId="69" />
+  <Blank Num="1" UId="70" />
+  <Access Scope="LocalVariable" UId="71">
+    <Symbol UId="72">
+      <Component Name="currentWeight" UId="73">
+        <Token Text="[" UId="74" />
+        <Access Scope="LocalVariable" UId="75">
+          <Symbol UId="76">
+            <Component Name="i" UId="77" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="78" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="79" />
+  <NewLine Num="1" UId="80" />
+  <Token Text="END_FOR" UId="81" />
+  <Token Text=";" UId="82" />
+  <NewLine Num="1" UId="83" />
+  <Blank Num="4" UId="84" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="E" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="10" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Передаем вес в панель</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Token Text="IF" UId="21" />
+  <Blank Num="1" UId="22" />
+  <Access Scope="GlobalVariable" UId="23">
+    <Symbol UId="24">
+      <Component Name="hmi" UId="25" />
+      <Token Text="." UId="26" />
+      <Component Name="calibrWeightMode" UId="27" />
+      <Token Text="." UId="28" />
+      <Component Name="tara" UId="29">
+        <Token Text="[" UId="30" />
+        <Access Scope="LiteralConstant" UId="31">
+          <Constant UId="32">
+            <ConstantValue UId="34">0</ConstantValue>
+          </Constant>
+        </Access>
+        <Token Text="]" UId="35" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="36" />
+  <Token Text="THEN" UId="37" />
+  <NewLine Num="1" UId="38" />
+  <Blank Num="4" UId="39" />
+  <Access Scope="LocalVariable" UId="40">
+    <Symbol UId="41">
+      <Component Name="i" UId="42" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="43" />
+  <Token Text=":=" UId="44" />
+  <Blank Num="1" UId="45" />
+  <Access Scope="LiteralConstant" UId="46">
+    <Constant UId="47">
+      <ConstantValue UId="49">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="50" />
+  <NewLine Num="1" UId="51" />
+  <Blank Num="4" UId="52" />
+  <Token Text="FOR" UId="53" />
+  <Blank Num="1" UId="54" />
+  <Access Scope="LocalVariable" UId="55">
+    <Symbol UId="56">
+      <Component Name="i" UId="57" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="58" />
+  <Token Text=":=" UId="59" />
+  <Blank Num="1" UId="60" />
+  <Access Scope="LiteralConstant" UId="61">
+    <Constant UId="62">
+      <ConstantValue UId="64">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="65" />
+  <Token Text="TO" UId="66" />
+  <Blank Num="1" UId="67" />
+  <Access Scope="LiteralConstant" UId="68">
+    <Constant UId="69">
+      <ConstantValue UId="71">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="72" />
+  <Token Text="DO" UId="73" />
+  <NewLine Num="1" UId="74" />
+  <Blank Num="8" UId="75" />
+  <Access Scope="GlobalVariable" UId="76">
+    <Symbol UId="77">
+      <Component Name="hmi" UId="78" />
+      <Token Text="." UId="79" />
+      <Component Name="calibrWeightMode" UId="80" />
+      <Token Text="." UId="81" />
+      <Component Name="tara" UId="82">
+        <Token Text="[" UId="83" />
+        <Access Scope="LocalVariable" UId="84">
+          <Symbol UId="85">
+            <Component Name="i" UId="86" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="87" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="88" />
+  <Token Text=":=" UId="89" />
+  <Blank Num="1" UId="90" />
+  <Access Scope="LiteralConstant" UId="91">
+    <Constant UId="92">
+      <ConstantValue UId="94">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="95" />
+  <NewLine Num="1" UId="96" />
+  <Blank Num="4" UId="97" />
+  <Token Text="END_FOR" UId="98" />
+  <Token Text=";" UId="99" />
+  <NewLine Num="1" UId="100" />
+  <Token Text="END_IF" UId="101" />
+  <Token Text=";" UId="102" />
+  <NewLine Num="1" UId="103" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="17" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="18" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

@@ -1,0 +1,1361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V16" />
+  <DocumentInfo>
+    <Created>2021-04-06T19:52:17.511393Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Unified SCADA Engineering System</DisplayName>
+        <DisplayVersion>V16</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>true</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v4">
+  <Section Name="Input">
+    <Member Name="enableToWork" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">разрешение на работу блока</MultiLanguageText></Comment></Member>
+    <Member Name="setWeight" Datatype="Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">итоговый разыскиваемый вес</MultiLanguageText></Comment></Member>
+    <Member Name="errorMeasurement" Datatype="Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">погрешность</MultiLanguageText></Comment></Member>
+    <Member Name="isWorkWithBunker" Datatype="Array[0..12] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">разрешение работать с конкретными бункерами</MultiLanguageText></Comment></Member>
+    <Member Name="setWeightBunker" Datatype="Array[0..12] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">уставки весов в бункерах</MultiLanguageText></Comment></Member>
+  </Section>
+  <Section Name="Output" />
+  <Section Name="InOut">
+    <Member Name="stableWeightBunker" Datatype="Array[0..12] of Real" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">стабильный вес в бункерах</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="readyToSorting" Datatype="Array[0..12] of Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">готовность бункеров к сортировке</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="readyToDrop" Datatype="Array[0..12] of Bool" Accessibility="Public">
+      <Comment>
+        <MultiLanguageText Lang="en-US">итоговый сигнал сортировки для сброса на конвейер</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="blockSort" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">блокировать сортировку чтобы просто скинуть все готовые</MultiLanguageText></Comment></Member>
+  </Section>
+  <Section Name="Static">
+    <Member Name="valueReadyToDrop" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">false</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="valueReadytoSortBunker" Datatype="SInt" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">количество бункеров готовых к сортировке</MultiLanguageText></Comment></Member>
+    <Member Name="valueIsWorkWithBunker" Datatype="SInt" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="tmpStableWeight" Datatype="Array[0..12] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">массив с весами которые будем сортировать</MultiLanguageText></Comment></Member>
+    <Member Name="bufferReadyToDrop" Datatype="Array[0..12] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">на случай того что если readyToDrop не был сброшен</MultiLanguageText></Comment></Member>
+    <Member Name="Sort_Real_FB" Datatype="&quot;Sort_Real&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="sortDirection" Datatype="Bool" /></Section><Section Name="Output"><Member Name="error" Datatype="Bool" /><Member Name="status" Datatype="Word" /></Section><Section Name="InOut"><Member Name="array" Datatype="Array[*] of Real" /></Section><Section Name="Static"><Member Name="tempArray" Datatype="Array[1..1000] of Real" /></Section></Sections></Member>
+    <Member Name="full1" Datatype="Array[0..12] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Subelement Path="1"><StartValue>true</StartValue></Subelement><Subelement Path="2"><StartValue>true</StartValue></Subelement><Subelement Path="3"><StartValue>true</StartValue></Subelement><Subelement Path="4"><StartValue>true</StartValue></Subelement><Subelement Path="5"><StartValue>true</StartValue></Subelement><Subelement Path="6"><StartValue>true</StartValue></Subelement><Subelement Path="7"><StartValue>true</StartValue></Subelement><Subelement Path="8"><StartValue>true</StartValue></Subelement><Subelement Path="9"><StartValue>true</StartValue></Subelement><Subelement Path="10"><StartValue>true</StartValue></Subelement><Subelement Path="11"><StartValue>true</StartValue></Subelement><Subelement Path="12"><StartValue>true</StartValue></Subelement></Member>
+    <Member Name="full0" Datatype="Array[0..12] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="i" Datatype="SInt" />
+    <Member Name="j" Datatype="SInt" />
+    <Member Name="k" Datatype="SInt" />
+    <Member Name="l" Datatype="SInt" />
+    <Member Name="m" Datatype="SInt" />
+    <Member Name="tmpReadyToDrop" Datatype="Array[0..12] of Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">временный массив готовности к сбросу</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="minWeight" Datatype="Real" />
+    <Member Name="tmpArrayBlock" Datatype="Array[0..12] of Bool">
+      <Comment>
+        <MultiLanguageText Lang="en-US">временный массив на проверку все ли бункера готовы при блокировке</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="tmpArrNotDrop" Datatype="Array[0..12] of Real" />
+    <Member Name="tmpSumFind" Datatype="Real" />
+    <Member Name="indexTmpSumFind" Datatype="SInt" />
+    <Member Name="noDrop" Datatype="SInt" />
+    <Member Name="stateFindIndex" Datatype="Bool" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <IsRetainMemResEnabled>false</IsRetainMemResEnabled>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <MemoryReserve>100</MemoryReserve>
+      <Name>Sorting_AM</Name>
+      <Number>13</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Из массива ReadyToSort считываем количество заполненых бункеров. Если их больше либо равно 6 то начинаем сортировку.
+После нахождения искомых бункеров формируем массив readyToDrop.
+После путем перемножения ReadyToSort *Not(readyToDrop) исключаем сбрасывемые бункера из сортировки</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="3" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Token Text="IF" UId="21" />
+  <Blank Num="1" UId="22" />
+  <Access Scope="LocalVariable" UId="23">
+    <Symbol UId="24">
+      <Component Name="enableToWork" UId="25" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="26" />
+  <Token Text="THEN" UId="27" />
+  <Blank Num="1" UId="28" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="29">
+    <Text UId="30">разрешение на работу блока </Text>
+  </LineComment>
+  <NewLine Num="1" UId="31" />
+  <Blank Num="4" UId="32" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="33">
+    <Text UId="34">необходимо проверить не подготовил ли блок сортировки уже значения для сброса</Text>
+  </LineComment>
+  <NewLine Num="1" UId="35" />
+  <Blank Num="4" UId="36" />
+  <Access Scope="LocalVariable" UId="37">
+    <Symbol UId="38">
+      <Component Name="valueReadyToDrop" UId="39" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="40" />
+  <Token Text=":=" UId="41" />
+  <Blank Num="1" UId="42" />
+  <Access Scope="LiteralConstant" UId="43">
+    <Constant UId="44">
+      <ConstantValue UId="46">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="47" />
+  <NewLine Num="1" UId="48" />
+  <Blank Num="4" UId="49" />
+  <Access Scope="LocalVariable" UId="50">
+    <Symbol UId="51">
+      <Component Name="i" UId="52" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="53" />
+  <Token Text=":=" UId="54" />
+  <Blank Num="1" UId="55" />
+  <Access Scope="LiteralConstant" UId="56">
+    <Constant UId="57">
+      <ConstantValue UId="59">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="60" />
+  <NewLine Num="1" UId="61" />
+  <Blank Num="4" UId="62" />
+  <Token Text="FOR" UId="63" />
+  <Blank Num="1" UId="64" />
+  <Access Scope="LocalVariable" UId="65">
+    <Symbol UId="66">
+      <Component Name="i" UId="67" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="68" />
+  <Token Text=":=" UId="69" />
+  <Blank Num="1" UId="70" />
+  <Access Scope="LiteralConstant" UId="71">
+    <Constant UId="72">
+      <ConstantValue UId="74">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="75" />
+  <Token Text="TO" UId="76" />
+  <Blank Num="1" UId="77" />
+  <Access Scope="LiteralConstant" UId="78">
+    <Constant UId="79">
+      <ConstantValue UId="81">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="82" />
+  <Token Text="DO" UId="83" />
+  <NewLine Num="1" UId="84" />
+  <Blank Num="8" UId="85" />
+  <Token Text="IF" UId="86" />
+  <Blank Num="1" UId="87" />
+  <Access Scope="LocalVariable" UId="88">
+    <Symbol UId="89">
+      <Component Name="readyToDrop" UId="90">
+        <Token Text="[" UId="91" />
+        <Access Scope="LocalVariable" UId="92">
+          <Symbol UId="93">
+            <Component Name="i" UId="94" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="95" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="96" />
+  <Token Text="THEN" UId="97" />
+  <NewLine Num="1" UId="98" />
+  <Blank Num="12" UId="99" />
+  <Access Scope="LocalVariable" UId="100">
+    <Symbol UId="101">
+      <Component Name="valueReadyToDrop" UId="102" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="103" />
+  <Token Text=":=" UId="104" />
+  <Blank Num="1" UId="105" />
+  <Access Scope="LiteralConstant" UId="106">
+    <Constant UId="107">
+      <ConstantValue UId="109">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="110" />
+  <NewLine Num="1" UId="111" />
+  <Blank Num="12" UId="112" />
+  <Token Text="EXIT" UId="113" />
+  <Token Text=";" UId="114" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="115">
+    <Text UId="116">выходим из FOR тк то что надо уже нашли</Text>
+  </LineComment>
+  <NewLine Num="1" UId="117" />
+  <Blank Num="8" UId="118" />
+  <Token Text="END_IF" UId="119" />
+  <Token Text=";" UId="120" />
+  <NewLine Num="1" UId="121" />
+  <Blank Num="4" UId="122" />
+  <Token Text="END_FOR" UId="123" />
+  <Token Text=";" UId="124" />
+  <NewLine Num="1" UId="125" />
+  <Blank Num="4" UId="126" />
+  <NewLine Num="1" UId="127" />
+  <Blank Num="4" UId="128" />
+  <Token Text="IF" UId="129" />
+  <Blank Num="1" UId="130" />
+  <Token Text="NOT" UId="131" />
+  <Blank Num="1" UId="132" />
+  <Token Text="(" UId="133" />
+  <Access Scope="LocalVariable" UId="134">
+    <Symbol UId="135">
+      <Component Name="valueReadyToDrop" UId="136" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="137" />
+  <Blank Num="1" UId="138" />
+  <Token Text="THEN" UId="139" />
+  <NewLine Num="1" UId="140" />
+  <Blank Num="8" UId="141" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="142">
+    <Text UId="143">если сортировку не производили</Text>
+  </LineComment>
+  <NewLine Num="1" UId="144" />
+  <Blank Num="8" UId="145" />
+  <Access Scope="LocalVariable" UId="146">
+    <Symbol UId="147">
+      <Component Name="i" UId="148" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="149" />
+  <Token Text=":=" UId="150" />
+  <Blank Num="1" UId="151" />
+  <Access Scope="LiteralConstant" UId="152">
+    <Constant UId="153">
+      <ConstantValue UId="155">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="156" />
+  <NewLine Num="1" UId="157" />
+  <Blank Num="8" UId="158" />
+  <Access Scope="LocalVariable" UId="159">
+    <Symbol UId="160">
+      <Component Name="valueIsWorkWithBunker" UId="161" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="162" />
+  <Token Text=":=" UId="163" />
+  <Blank Num="1" UId="164" />
+  <Access Scope="LiteralConstant" UId="165">
+    <Constant UId="166">
+      <ConstantValue UId="168">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="169" />
+  <NewLine Num="1" UId="170" />
+  <Blank Num="8" UId="171" />
+  <Access Scope="LocalVariable" UId="172">
+    <Symbol UId="173">
+      <Component Name="valueReadytoSortBunker" UId="174" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="175" />
+  <Token Text=":=" UId="176" />
+  <Blank Num="1" UId="177" />
+  <Access Scope="LiteralConstant" UId="178">
+    <Constant UId="179">
+      <ConstantValue UId="181">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="182" />
+  <NewLine Num="1" UId="183" />
+  <Blank Num="8" UId="184" />
+  <Token Text="FOR" UId="185" />
+  <Blank Num="1" UId="186" />
+  <Access Scope="LocalVariable" UId="187">
+    <Symbol UId="188">
+      <Component Name="i" UId="189" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="190" />
+  <Token Text=":=" UId="191" />
+  <Blank Num="1" UId="192" />
+  <Access Scope="LiteralConstant" UId="193">
+    <Constant UId="194">
+      <ConstantValue UId="196">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="197" />
+  <Token Text="TO" UId="198" />
+  <Blank Num="1" UId="199" />
+  <Access Scope="LiteralConstant" UId="200">
+    <Constant UId="201">
+      <ConstantValue UId="203">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="204" />
+  <Token Text="DO" UId="205" />
+  <NewLine Num="1" UId="206" />
+  <Blank Num="12" UId="207" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="208">
+    <Text UId="209">подсчитаем количесво бункеров с которыми можно работать</Text>
+  </LineComment>
+  <NewLine Num="1" UId="210" />
+  <Blank Num="12" UId="211" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="212">
+    <Text UId="213">и какие готовы к сортировке</Text>
+  </LineComment>
+  <NewLine Num="1" UId="214" />
+  <Blank Num="12" UId="215" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="216">
+    <Text UId="217" />
+  </LineComment>
+  <NewLine Num="1" UId="218" />
+  <Blank Num="12" UId="219" />
+  <Token Text="IF" UId="220" />
+  <Blank Num="1" UId="221" />
+  <Access Scope="LocalVariable" UId="222">
+    <Symbol UId="223">
+      <Component Name="isWorkWithBunker" UId="224">
+        <Token Text="[" UId="225" />
+        <Access Scope="LocalVariable" UId="226">
+          <Symbol UId="227">
+            <Component Name="i" UId="228" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="229" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="230" />
+  <Token Text="THEN" UId="231" />
+  <NewLine Num="1" UId="232" />
+  <Blank Num="16" UId="233" />
+  <Access Scope="LocalVariable" UId="234">
+    <Symbol UId="235">
+      <Component Name="valueIsWorkWithBunker" UId="236" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="237" />
+  <Token Text=":=" UId="238" />
+  <Blank Num="1" UId="239" />
+  <Access Scope="LocalVariable" UId="240">
+    <Symbol UId="241">
+      <Component Name="valueIsWorkWithBunker" UId="242" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="243" />
+  <Token Text="+" UId="244" />
+  <Blank Num="1" UId="245" />
+  <Access Scope="LiteralConstant" UId="246">
+    <Constant UId="247">
+      <ConstantValue UId="249">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="250" />
+  <NewLine Num="1" UId="251" />
+  <Blank Num="12" UId="252" />
+  <Token Text="END_IF" UId="253" />
+  <Token Text=";" UId="254" />
+  <NewLine Num="1" UId="255" />
+  <Blank Num="12" UId="256" />
+  <Token Text="IF" UId="257" />
+  <Blank Num="1" UId="258" />
+  <Access Scope="LocalVariable" UId="259">
+    <Symbol UId="260">
+      <Component Name="readyToSorting" UId="261">
+        <Token Text="[" UId="262" />
+        <Access Scope="LocalVariable" UId="263">
+          <Symbol UId="264">
+            <Component Name="i" UId="265" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="266" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="267" />
+  <Token Text="=" UId="268" />
+  <Blank Num="1" UId="269" />
+  <Access Scope="LocalVariable" UId="270">
+    <Symbol UId="271">
+      <Component Name="isWorkWithBunker" UId="272">
+        <Token Text="[" UId="273" />
+        <Access Scope="LocalVariable" UId="274">
+          <Symbol UId="275">
+            <Component Name="i" UId="276" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="277" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="278" />
+  <Token Text="THEN" UId="279" />
+  <NewLine Num="1" UId="280" />
+  <Blank Num="16" UId="281" />
+  <Access Scope="LocalVariable" UId="282">
+    <Symbol UId="283">
+      <Component Name="valueReadytoSortBunker" UId="284" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="285" />
+  <Token Text=":=" UId="286" />
+  <Blank Num="1" UId="287" />
+  <Access Scope="LocalVariable" UId="288">
+    <Symbol UId="289">
+      <Component Name="valueReadytoSortBunker" UId="290" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="291" />
+  <Token Text="+" UId="292" />
+  <Blank Num="1" UId="293" />
+  <Access Scope="LiteralConstant" UId="294">
+    <Constant UId="295">
+      <ConstantValue UId="297">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="298" />
+  <NewLine Num="1" UId="299" />
+  <Blank Num="12" UId="300" />
+  <Token Text="END_IF" UId="301" />
+  <Token Text=";" UId="302" />
+  <NewLine Num="1" UId="303" />
+  <Blank Num="8" UId="304" />
+  <Token Text="END_FOR" UId="305" />
+  <Token Text=";" UId="306" />
+  <NewLine Num="1" UId="307" />
+  <Blank Num="8" UId="308" />
+  <NewLine Num="1" UId="309" />
+  <Blank Num="8" UId="310" />
+  <Token Text="IF" UId="311" />
+  <Blank Num="1" UId="312" />
+  <Access Scope="LocalVariable" UId="313">
+    <Symbol UId="314">
+      <Component Name="blockSort" UId="315" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="316" />
+  <Token Text="THEN" UId="317" />
+  <NewLine Num="1" UId="318" />
+  <Blank Num="12" UId="319" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="320">
+    <Text UId="321">если включена блокировка то просто ждем готовности бункеров к сортировке</Text>
+  </LineComment>
+  <NewLine Num="1" UId="322" />
+  <Blank Num="12" UId="323" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="324">
+    <Text UId="325" />
+  </LineComment>
+  <NewLine Num="1" UId="326" />
+  <Blank Num="12" UId="327" />
+  <Token Text="IF" UId="328" />
+  <Blank Num="1" UId="329" />
+  <Access Scope="LocalVariable" UId="330">
+    <Symbol UId="331">
+      <Component Name="valueIsWorkWithBunker" UId="332" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="333" />
+  <Token Text="=" UId="334" />
+  <Blank Num="1" UId="335" />
+  <Access Scope="LocalVariable" UId="336">
+    <Symbol UId="337">
+      <Component Name="valueReadytoSortBunker" UId="338" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="339" />
+  <Token Text="THEN" UId="340" />
+  <NewLine Num="1" UId="341" />
+  <Blank Num="16" UId="342" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="343">
+    <Text UId="344">если число готовых к сортировке бункеров совпадает </Text>
+  </LineComment>
+  <NewLine Num="1" UId="345" />
+  <Blank Num="16" UId="346" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="347">
+    <Text UId="348">с числом разрешенных к работе в режиме блокировки то</Text>
+  </LineComment>
+  <NewLine Num="1" UId="349" />
+  <Blank Num="16" UId="350" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="351">
+    <Text UId="352">просто скидываем все</Text>
+  </LineComment>
+  <NewLine Num="1" UId="353" />
+  <Blank Num="16" UId="354" />
+  <Access Scope="LocalVariable" UId="355">
+    <Symbol UId="356">
+      <Component Name="tmpReadyToDrop" UId="357" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="358" />
+  <Token Text=":=" UId="359" />
+  <Blank Num="1" UId="360" />
+  <Access Scope="LocalVariable" UId="361">
+    <Symbol UId="362">
+      <Component Name="readyToSorting" UId="363" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="364" />
+  <NewLine Num="1" UId="365" />
+  <Blank Num="12" UId="366" />
+  <Token Text="END_IF" UId="367" />
+  <Token Text=";" UId="368" />
+  <NewLine Num="1" UId="369" />
+  <Blank Num="8" UId="370" />
+  <Token Text="ELSE" UId="371" />
+  <NewLine Num="1" UId="372" />
+  <Blank Num="12" UId="373" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="374">
+    <Text UId="375">если блокировки нет то сортируем по стандарту</Text>
+  </LineComment>
+  <NewLine Num="1" UId="376" />
+  <Blank Num="12" UId="377" />
+  <NewLine Num="1" UId="378" />
+  <Blank Num="12" UId="379" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="380">
+    <Text UId="381"> IF #valueIsWorkWithBunker = 1 THEN</Text>
+  </LineComment>
+  <NewLine Num="1" UId="382" />
+  <Blank Num="12" UId="383" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="384">
+    <Text UId="385">     //если бункеров разрешенных к работе один то </Text>
+  </LineComment>
+  <NewLine Num="1" UId="386" />
+  <Blank Num="12" UId="387" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="388">
+    <Text UId="389">     #i := 0;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="390" />
+  <Blank Num="12" UId="391" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="392">
+    <Text UId="393">     FOR #i := 1 TO 12 DO //заполняем временный массив готовности к сбросу</Text>
+  </LineComment>
+  <NewLine Num="1" UId="394" />
+  <Blank Num="12" UId="395" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="396">
+    <Text UId="397">         #tmpReadyToDrop[#i] := #readyToSorting[#i] AND #isWorkWithBunker[#i];</Text>
+  </LineComment>
+  <NewLine Num="1" UId="398" />
+  <Blank Num="12" UId="399" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="400">
+    <Text UId="401">     END_FOR;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="402" />
+  <Blank Num="12" UId="403" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="404">
+    <Text UId="405"> ELSE</Text>
+  </LineComment>
+  <NewLine Num="1" UId="406" />
+  <Blank Num="12" UId="407" />
+  <NewLine Num="1" UId="408" />
+  <Blank Num="12" UId="409" />
+  <Token Text="IF" UId="410" />
+  <Blank Num="1" UId="411" />
+  <Access Scope="LocalVariable" UId="412">
+    <Symbol UId="413">
+      <Component Name="valueReadytoSortBunker" UId="414" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="415" />
+  <Token Text="&gt;=" UId="416" />
+  <Blank Num="1" UId="417" />
+  <Access Scope="LiteralConstant" UId="418">
+    <Constant UId="419">
+      <ConstantValue UId="421">5</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="422" />
+  <Token Text="THEN" UId="423" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="424">
+    <Text UId="425">начинаем сортировку</Text>
+  </LineComment>
+  <NewLine Num="1" UId="426" />
+  <Blank Num="16" UId="427" />
+  <Access Scope="LocalVariable" UId="428">
+    <Symbol UId="429">
+      <Component Name="i" UId="430" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="431" />
+  <Token Text=":=" UId="432" />
+  <Blank Num="1" UId="433" />
+  <Access Scope="LiteralConstant" UId="434">
+    <Constant UId="435">
+      <ConstantValue UId="437">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="438" />
+  <NewLine Num="1" UId="439" />
+  <Blank Num="16" UId="440" />
+  <Token Text="FOR" UId="441" />
+  <Blank Num="1" UId="442" />
+  <Access Scope="LocalVariable" UId="443">
+    <Symbol UId="444">
+      <Component Name="i" UId="445" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="446" />
+  <Token Text=":=" UId="447" />
+  <Blank Num="1" UId="448" />
+  <Access Scope="LiteralConstant" UId="449">
+    <Constant UId="450">
+      <ConstantValue UId="452">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="453" />
+  <Token Text="TO" UId="454" />
+  <Blank Num="1" UId="455" />
+  <Access Scope="LiteralConstant" UId="456">
+    <Constant UId="457">
+      <ConstantValue UId="459">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="460" />
+  <Token Text="DO" UId="461" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="462">
+    <Text UId="463">определим массив чисел с которыми будем работать</Text>
+  </LineComment>
+  <NewLine Num="1" UId="464" />
+  <Blank Num="20" UId="465" />
+  <Access Scope="LocalVariable" UId="466">
+    <Symbol UId="467">
+      <Component Name="tmpStableWeight" UId="468">
+        <Token Text="[" UId="469" />
+        <Access Scope="LocalVariable" UId="470">
+          <Symbol UId="471">
+            <Component Name="i" UId="472" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="473" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="474" />
+  <Token Text=":=" UId="475" />
+  <Blank Num="1" UId="476" />
+  <Access Scope="LocalVariable" UId="477">
+    <Symbol UId="478">
+      <Component Name="stableWeightBunker" UId="479">
+        <Token Text="[" UId="480" />
+        <Access Scope="LocalVariable" UId="481">
+          <Symbol UId="482">
+            <Component Name="i" UId="483" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="484" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="485" />
+  <Token Text="*" UId="486" />
+  <Blank Num="1" UId="487" />
+  <Access Scope="Call" UId="488">
+    <Instruction Name="BOOL_TO_INT" UId="489">
+      <Token Text="(" UId="490" />
+      <NamelessParameter UId="491">
+        <Access Scope="LocalVariable" UId="492">
+          <Symbol UId="493">
+            <Component Name="readyToSorting" UId="494">
+              <Token Text="[" UId="495" />
+              <Access Scope="LocalVariable" UId="496">
+                <Symbol UId="497">
+                  <Component Name="i" UId="498" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="499" />
+            </Component>
+          </Symbol>
+        </Access>
+      </NamelessParameter>
+      <Token Text=")" UId="501" />
+    </Instruction>
+  </Access>
+  <Token Text=";" UId="502" />
+  <NewLine Num="1" UId="503" />
+  <Blank Num="16" UId="504" />
+  <Token Text="END_FOR" UId="505" />
+  <Token Text=";" UId="506" />
+  <NewLine Num="1" UId="507" />
+  <Blank Num="16" UId="508" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="509">
+    <Text UId="510">далее работаем только с весами из массива #tmpStableWeight</Text>
+  </LineComment>
+  <NewLine Num="1" UId="511" />
+  <Blank Num="16" UId="512" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="513">
+    <Text UId="514" />
+  </LineComment>
+  <NewLine Num="1" UId="515" />
+  <Blank Num="16" UId="516" />
+  <NewLine Num="1" UId="517" />
+  <Blank Num="16" UId="518" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="519">
+    <Text UId="520">*****************************</Text>
+  </LineComment>
+  <NewLine Num="1" UId="521" />
+  <Blank Num="16" UId="522" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="523">
+    <Text UId="524">временная заглушка - скидываем бункера которые тупа в сумме</Text>
+  </LineComment>
+  <NewLine Num="1" UId="525" />
+  <Blank Num="16" UId="526" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="527">
+    <Text UId="528">дают больше либо равно уставке</Text>
+  </LineComment>
+  <NewLine Num="1" UId="529" />
+  <Blank Num="16" UId="530" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="531">
+    <Text UId="532" />
+  </LineComment>
+  <NewLine Num="1" UId="533" />
+  <Blank Num="16" UId="534" />
+  <Access Scope="LocalVariable" UId="535">
+    <Symbol UId="536">
+      <Component Name="tmpArrNotDrop" UId="537" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="538" />
+  <Token Text=":=" UId="539" />
+  <Blank Num="1" UId="540" />
+  <Access Scope="LocalVariable" UId="541">
+    <Symbol UId="542">
+      <Component Name="tmpStableWeight" UId="543" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="544" />
+  <NewLine Num="1" UId="545" />
+  <Blank Num="16" UId="546" />
+  <NewLine Num="1" UId="547" />
+  <Blank Num="16" UId="548" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="549">
+    <Text UId="550">#Sort_Real_FB(array := #tmpArrNotDrop);</Text>
+  </LineComment>
+  <NewLine Num="1" UId="551" />
+  <Blank Num="16" UId="552" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="553">
+    <Text UId="554">теперь массив #tmpArrNotDrop отсортирован и числа которые </Text>
+  </LineComment>
+  <NewLine Num="1" UId="555" />
+  <Blank Num="16" UId="556" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="557">
+    <Text UId="558">мы можем использовать начинаются с индекса (12-noDrop+1)</Text>
+  </LineComment>
+  <NewLine Num="1" UId="559" />
+  <Blank Num="16" UId="560" />
+  <Access Scope="LocalVariable" UId="561">
+    <Symbol UId="562">
+      <Component Name="k" UId="563" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="564" />
+  <Token Text=":=" UId="565" />
+  <Blank Num="1" UId="566" />
+  <Access Scope="LiteralConstant" UId="567">
+    <Constant UId="568">
+      <ConstantValue UId="570">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="571" />
+  <NewLine Num="1" UId="572" />
+  <Blank Num="16" UId="573" />
+  <Access Scope="LocalVariable" UId="574">
+    <Symbol UId="575">
+      <Component Name="tmpSumFind" UId="576" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="577" />
+  <Token Text=":=" UId="578" />
+  <Blank Num="1" UId="579" />
+  <Access Scope="LiteralConstant" UId="580">
+    <Constant UId="581">
+      <ConstantValue UId="583">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="584" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="585">
+    <Text UId="586">где храним сумму</Text>
+  </LineComment>
+  <NewLine Num="1" UId="587" />
+  <Blank Num="16" UId="588" />
+  <Access Scope="LocalVariable" UId="589">
+    <Symbol UId="590">
+      <Component Name="stateFindIndex" UId="591" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="592" />
+  <Token Text=":=" UId="593" />
+  <Blank Num="1" UId="594" />
+  <Access Scope="LiteralConstant" UId="595">
+    <Constant UId="596">
+      <ConstantValue UId="598">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="599" />
+  <NewLine Num="1" UId="600" />
+  <Blank Num="16" UId="601" />
+  <Access Scope="LocalVariable" UId="602">
+    <Symbol UId="603">
+      <Component Name="indexTmpSumFind" UId="604" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="605" />
+  <Token Text=":=" UId="606" />
+  <Blank Num="1" UId="607" />
+  <Access Scope="LiteralConstant" UId="608">
+    <Constant UId="609">
+      <ConstantValue UId="611">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="612" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="613">
+    <Text UId="614">индекс элемента массива на котором надо остановиться</Text>
+  </LineComment>
+  <NewLine Num="1" UId="615" />
+  <Blank Num="16" UId="616" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="617">
+    <Text UId="618">#noDrop := #valueReadytoSortBunker;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="619" />
+  <Blank Num="16" UId="620" />
+  <Token Text="FOR" UId="621" />
+  <Blank Num="1" UId="622" />
+  <Access Scope="LocalVariable" UId="623">
+    <Symbol UId="624">
+      <Component Name="k" UId="625" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="626" />
+  <Token Text=":=" UId="627" />
+  <Blank Num="1" UId="628" />
+  <Access Scope="LiteralConstant" UId="629">
+    <Constant UId="630">
+      <ConstantValue UId="632">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="633" />
+  <Token Text="TO" UId="634" />
+  <Blank Num="1" UId="635" />
+  <Access Scope="LiteralConstant" UId="636">
+    <Constant UId="637">
+      <ConstantValue UId="639">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="640" />
+  <Token Text="DO" UId="641" />
+  <NewLine Num="1" UId="642" />
+  <Blank Num="20" UId="643" />
+  <Access Scope="LocalVariable" UId="644">
+    <Symbol UId="645">
+      <Component Name="tmpSumFind" UId="646" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="647" />
+  <Token Text=":=" UId="648" />
+  <Blank Num="1" UId="649" />
+  <Access Scope="LocalVariable" UId="650">
+    <Symbol UId="651">
+      <Component Name="tmpSumFind" UId="652" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="653" />
+  <Token Text="+" UId="654" />
+  <Blank Num="1" UId="655" />
+  <Access Scope="LocalVariable" UId="656">
+    <Symbol UId="657">
+      <Component Name="tmpArrNotDrop" UId="658">
+        <Token Text="[" UId="659" />
+        <Access Scope="LocalVariable" UId="660">
+          <Symbol UId="661">
+            <Component Name="k" UId="662" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="663" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="664" />
+  <NewLine Num="1" UId="665" />
+  <Blank Num="20" UId="666" />
+  <Token Text="IF" UId="667" />
+  <Blank Num="1" UId="668" />
+  <Access Scope="LocalVariable" UId="669">
+    <Symbol UId="670">
+      <Component Name="tmpSumFind" UId="671" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="672" />
+  <Token Text="&gt;=" UId="673" />
+  <Blank Num="1" UId="674" />
+  <Access Scope="LocalVariable" UId="675">
+    <Symbol UId="676">
+      <Component Name="setWeight" UId="677" />
+    </Symbol>
+  </Access>
+  <LineComment Inserted="false" NoClosingBracket="false" UId="678">
+    <Text UId="679">если попадаем </Text>
+  </LineComment>
+  <NewLine Num="1" UId="680" />
+  <Blank Num="20" UId="681" />
+  <Token Text="THEN" UId="682" />
+  <NewLine Num="1" UId="683" />
+  <Blank Num="24" UId="684" />
+  <Access Scope="LocalVariable" UId="685">
+    <Symbol UId="686">
+      <Component Name="stateFindIndex" UId="687" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="688" />
+  <Token Text=":=" UId="689" />
+  <Blank Num="1" UId="690" />
+  <Access Scope="LiteralConstant" UId="691">
+    <Constant UId="692">
+      <ConstantValue UId="694">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="695" />
+  <NewLine Num="1" UId="696" />
+  <Blank Num="24" UId="697" />
+  <Access Scope="LocalVariable" UId="698">
+    <Symbol UId="699">
+      <Component Name="indexTmpSumFind" UId="700" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="701" />
+  <Token Text=":=" UId="702" />
+  <Blank Num="1" UId="703" />
+  <Access Scope="LocalVariable" UId="704">
+    <Symbol UId="705">
+      <Component Name="k" UId="706" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="707" />
+  <NewLine Num="1" UId="708" />
+  <Blank Num="24" UId="709" />
+  <Token Text="EXIT" UId="710" />
+  <Token Text=";" UId="711" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="712">
+    <Text UId="713">выходим из FOR</Text>
+  </LineComment>
+  <NewLine Num="1" UId="714" />
+  <Blank Num="20" UId="715" />
+  <Token Text="END_IF" UId="716" />
+  <Token Text=";" UId="717" />
+  <NewLine Num="1" UId="718" />
+  <Blank Num="20" UId="719" />
+  <NewLine Num="1" UId="720" />
+  <Blank Num="16" UId="721" />
+  <Token Text="END_FOR" UId="722" />
+  <Token Text=";" UId="723" />
+  <NewLine Num="1" UId="724" />
+  <Blank Num="16" UId="725" />
+  <Token Text="IF" UId="726" />
+  <Blank Num="1" UId="727" />
+  <Token Text="NOT" UId="728" />
+  <Blank Num="1" UId="729" />
+  <Token Text="(" UId="730" />
+  <Access Scope="LocalVariable" UId="731">
+    <Symbol UId="732">
+      <Component Name="stateFindIndex" UId="733" />
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="734" />
+  <Blank Num="1" UId="735" />
+  <Token Text="THEN" UId="736" />
+  <Blank Num="1" UId="737" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="738">
+    <Text UId="739">ничего не нашли</Text>
+  </LineComment>
+  <NewLine Num="1" UId="740" />
+  <Blank Num="20" UId="741" />
+  <Access Scope="LocalVariable" UId="742">
+    <Symbol UId="743">
+      <Component Name="tmpReadyToDrop" UId="744" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="745" />
+  <Token Text=":=" UId="746" />
+  <Blank Num="1" UId="747" />
+  <Access Scope="LocalVariable" UId="748">
+    <Symbol UId="749">
+      <Component Name="full0" UId="750" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="751" />
+  <NewLine Num="1" UId="752" />
+  <Blank Num="16" UId="753" />
+  <Token Text="ELSE" UId="754" />
+  <NewLine Num="1" UId="755" />
+  <Blank Num="20" UId="756" />
+  <Access Scope="LocalVariable" UId="757">
+    <Symbol UId="758">
+      <Component Name="l" UId="759" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="760" />
+  <Token Text=":=" UId="761" />
+  <Blank Num="1" UId="762" />
+  <Access Scope="LiteralConstant" UId="763">
+    <Constant UId="764">
+      <ConstantValue UId="766">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="767" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="768">
+    <Text UId="769">заполняем массив на сброс</Text>
+  </LineComment>
+  <NewLine Num="1" UId="770" />
+  <Blank Num="20" UId="771" />
+  <Token Text="FOR" UId="772" />
+  <Blank Num="1" UId="773" />
+  <Access Scope="LocalVariable" UId="774">
+    <Symbol UId="775">
+      <Component Name="l" UId="776" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="777" />
+  <Token Text=":=" UId="778" />
+  <Blank Num="1" UId="779" />
+  <Access Scope="LiteralConstant" UId="780">
+    <Constant UId="781">
+      <ConstantValue UId="783">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="784" />
+  <Token Text="TO" UId="785" />
+  <Blank Num="1" UId="786" />
+  <Access Scope="LocalVariable" UId="787">
+    <Symbol UId="788">
+      <Component Name="indexTmpSumFind" UId="789" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="790" />
+  <Token Text="DO" UId="791" />
+  <NewLine Num="1" UId="792" />
+  <Blank Num="24" UId="793" />
+  <Token Text="IF" UId="794" />
+  <Blank Num="1" UId="795" />
+  <Access Scope="LocalVariable" UId="796">
+    <Symbol UId="797">
+      <Component Name="tmpArrNotDrop" UId="798">
+        <Token Text="[" UId="799" />
+        <Access Scope="LocalVariable" UId="800">
+          <Symbol UId="801">
+            <Component Name="l" UId="802" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="803" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="804" />
+  <Token Text="&gt;" UId="805" />
+  <Blank Num="1" UId="806" />
+  <Access Scope="LiteralConstant" UId="807">
+    <Constant UId="808">
+      <ConstantValue UId="810">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="811" />
+  <Token Text="THEN" UId="812" />
+  <NewLine Num="1" UId="813" />
+  <Blank Num="28" UId="814" />
+  <Access Scope="LocalVariable" UId="815">
+    <Symbol UId="816">
+      <Component Name="tmpReadyToDrop" UId="817">
+        <Token Text="[" UId="818" />
+        <Access Scope="LocalVariable" UId="819">
+          <Symbol UId="820">
+            <Component Name="l" UId="821" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="822" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="823" />
+  <Token Text=":=" UId="824" />
+  <Blank Num="1" UId="825" />
+  <Access Scope="LiteralConstant" UId="826">
+    <Constant UId="827">
+      <ConstantValue UId="829">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="830" />
+  <NewLine Num="1" UId="831" />
+  <Blank Num="24" UId="832" />
+  <Token Text="END_IF" UId="833" />
+  <Token Text=";" UId="834" />
+  <NewLine Num="1" UId="835" />
+  <Blank Num="20" UId="836" />
+  <Token Text="END_FOR" UId="837" />
+  <Token Text=";" UId="838" />
+  <NewLine Num="1" UId="839" />
+  <Blank Num="20" UId="840" />
+  <NewLine Num="1" UId="841" />
+  <Blank Num="16" UId="842" />
+  <Token Text="END_IF" UId="843" />
+  <Token Text=";" UId="844" />
+  <NewLine Num="1" UId="845" />
+  <Blank Num="16" UId="846" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="847">
+    <Text UId="848">*************************************</Text>
+  </LineComment>
+  <NewLine Num="1" UId="849" />
+  <Blank Num="16" UId="850" />
+  <NewLine Num="1" UId="851" />
+  <Blank Num="16" UId="852" />
+  <NewLine Num="1" UId="853" />
+  <Blank Num="16" UId="854" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="855">
+    <Text UId="856">корректируем массив readyToSorting</Text>
+  </LineComment>
+  <NewLine Num="1" UId="857" />
+  <Blank Num="16" UId="858" />
+  <Access Scope="LocalVariable" UId="859">
+    <Symbol UId="860">
+      <Component Name="i" UId="861" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="862" />
+  <Token Text=":=" UId="863" />
+  <Blank Num="1" UId="864" />
+  <Access Scope="LiteralConstant" UId="865">
+    <Constant UId="866">
+      <ConstantValue UId="868">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="869" />
+  <NewLine Num="1" UId="870" />
+  <Blank Num="16" UId="871" />
+  <Token Text="FOR" UId="872" />
+  <Blank Num="1" UId="873" />
+  <Access Scope="LocalVariable" UId="874">
+    <Symbol UId="875">
+      <Component Name="i" UId="876" />
+    </Symbol>
+  </Access>
+  <Token Text=":=" UId="877" />
+  <Blank Num="1" UId="878" />
+  <Access Scope="LiteralConstant" UId="879">
+    <Constant UId="880">
+      <ConstantValue UId="882">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="883" />
+  <Token Text="TO" UId="884" />
+  <Blank Num="1" UId="885" />
+  <Access Scope="LiteralConstant" UId="886">
+    <Constant UId="887">
+      <ConstantValue UId="889">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="890" />
+  <Token Text="DO" UId="891" />
+  <NewLine Num="1" UId="892" />
+  <Blank Num="20" UId="893" />
+  <Token Text="IF" UId="894" />
+  <Blank Num="1" UId="895" />
+  <Access Scope="LocalVariable" UId="896">
+    <Symbol UId="897">
+      <Component Name="tmpReadyToDrop" UId="898">
+        <Token Text="[" UId="899" />
+        <Access Scope="LocalVariable" UId="900">
+          <Symbol UId="901">
+            <Component Name="i" UId="902" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="903" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="904" />
+  <Token Text="THEN" UId="905" />
+  <NewLine Num="1" UId="906" />
+  <Blank Num="24" UId="907" />
+  <Access Scope="LocalVariable" UId="908">
+    <Symbol UId="909">
+      <Component Name="readyToSorting" UId="910">
+        <Token Text="[" UId="911" />
+        <Access Scope="LocalVariable" UId="912">
+          <Symbol UId="913">
+            <Component Name="i" UId="914" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="915" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="916" />
+  <Token Text=":=" UId="917" />
+  <Blank Num="1" UId="918" />
+  <Access Scope="LiteralConstant" UId="919">
+    <Constant UId="920">
+      <ConstantValue UId="922">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="923" />
+  <NewLine Num="1" UId="924" />
+  <Blank Num="20" UId="925" />
+  <Token Text="END_IF" UId="926" />
+  <Token Text=";" UId="927" />
+  <NewLine Num="1" UId="928" />
+  <Blank Num="16" UId="929" />
+  <Token Text="END_FOR" UId="930" />
+  <Token Text=";" UId="931" />
+  <NewLine Num="1" UId="932" />
+  <Blank Num="12" UId="933" />
+  <Token Text="END_IF" UId="934" />
+  <Token Text=";" UId="935" />
+  <NewLine Num="1" UId="936" />
+  <Blank Num="8" UId="937" />
+  <Token Text="END_IF" UId="938" />
+  <Token Text=";" UId="939" />
+  <NewLine Num="1" UId="940" />
+  <Blank Num="4" UId="941" />
+  <Token Text="ELSE" UId="942" />
+  <NewLine Num="1" UId="943" />
+  <Blank Num="8" UId="944" />
+  <Access Scope="LocalVariable" UId="945">
+    <Symbol UId="946">
+      <Component Name="tmpReadyToDrop" UId="947" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="948" />
+  <Token Text=":=" UId="949" />
+  <Blank Num="1" UId="950" />
+  <Access Scope="LocalVariable" UId="951">
+    <Symbol UId="952">
+      <Component Name="readyToDrop" UId="953" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="954" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="955">
+    <Text UId="956">если значения уже были</Text>
+  </LineComment>
+  <NewLine Num="1" UId="957" />
+  <Blank Num="8" UId="958" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="959">
+    <Text UId="960">и не сброшены то сортировку не производили</Text>
+  </LineComment>
+  <NewLine Num="1" UId="961" />
+  <Blank Num="4" UId="962" />
+  <Token Text="END_IF" UId="963" />
+  <Token Text=";" UId="964" />
+  <NewLine Num="2" UId="965" />
+  <Token Text="END_IF" UId="966" />
+  <Token Text=";" UId="967" />
+  <NewLine Num="4" UId="968" />
+  <Access Scope="LocalVariable" UId="969">
+    <Symbol UId="970">
+      <Component Name="readyToDrop" UId="971" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="972" />
+  <Token Text=":=" UId="973" />
+  <Blank Num="1" UId="974" />
+  <Access Scope="LocalVariable" UId="975">
+    <Symbol UId="976">
+      <Component Name="tmpReadyToDrop" UId="977" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="978" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="979">
+    <Text UId="980">переписываем из временного в блочный</Text>
+  </LineComment>
+  <NewLine Num="1" UId="981" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="4" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="5" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="6" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Определяем ValueToSortBunker</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="8" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="9" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Блок сортировки</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>
