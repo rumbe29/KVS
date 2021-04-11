@@ -3,11 +3,20 @@
 VERSION : 0.1
    VAR_INPUT 
       ADDR_DEVICE : UInt;   // адрес опрашиваемого устройства
-      ton_changeStep {InstructionName := 'TON_TIME'; LibVersion := '1.0'} : TON_TIME;   // таймер на переход следующего шага опроса
+      ton_changeStep : Bool;   // таймер на переход следующего шага опроса
    END_VAR
 
    VAR_IN_OUT 
-      MB_MASTER {InstructionName := 'MB_MASTER'; LibVersion := '2.2'} : MB_MASTER;   // ФБ мастера модбаса
+      MB_MASTER : Struct
+         REQ : Bool;
+         MB_ADDR : UInt;
+         MODE : USInt;
+         DATA_ADDR : UDInt;
+         DATA_LEN : UInt;
+         DONE : Bool;
+         BUSY : Bool;
+         ERROR : Bool;
+      END_STRUCT;
       Ton_Start : Bool;   // сигнал на старт таймера
       Buffer : Array[0..20] of Word;   // буффер данных у блока мастера модбаса
       Step : SInt;   // текущий шаг
@@ -31,11 +40,14 @@ BEGIN
 	            FOR #i := 0 TO 7 DO
 	                #Buffer[#i] := INT_TO_WORD(REAL_TO_INT("IO".output.setVibration * 10.0));
 	            END_FOR;
+	            IF "signalKVSStation".enableAutoMode THEN
+	                #Buffer[2] := INT_TO_WORD(1000);
+	            END_IF;
 	            
-	            
-	            IF NOT (#MB_MASTER.BUSY) AND
+	            IF NOT(#MB_MASTER.BUSY) AND
 	                (#MB_MASTER.DONE OR
-	                #ton_changeStep.Q) THEN
+	                #ton_changeStep OR
+	                #MB_MASTER.ERROR) THEN
 	                #MB_MASTER.REQ := FALSE;
 	                #Ton_Start := FALSE;
 	                #Step := #Step + 1;

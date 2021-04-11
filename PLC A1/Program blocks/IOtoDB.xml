@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-06T19:52:11.9169448Z</Created>
+    <Created>2021-04-11T09:51:25.2859961Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -410,9 +410,13 @@
       <Negated Name="operand" />
     </Part>
     <Part Name="Coil" UId="64" />
-    <Part Name="Contact" UId="65" />
+    <Part Name="Contact" UId="65">
+      <Negated Name="operand" />
+    </Part>
     <Part Name="Coil" UId="66" />
-    <Part Name="Contact" UId="67" />
+    <Part Name="Contact" UId="67">
+      <Negated Name="operand" />
+    </Part>
     <Part Name="Coil" UId="68" />
     <Part Name="Contact" UId="69" />
     <Part Name="Coil" UId="70" />

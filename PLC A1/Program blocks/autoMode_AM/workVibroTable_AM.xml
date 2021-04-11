@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-06T19:52:16.5127396Z</Created>
+    <Created>2021-04-11T09:51:23.4577834Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -52,7 +52,7 @@
     <Member Name="tmpValueReadyWeight" Datatype="Array[0..2] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
   </Section>
   <Section Name="Temp">
-    <Member Name="i" Datatype="SInt" />
+    <Member Name="i" Datatype="DInt" />
   </Section>
   <Section Name="Constant" />
 </Sections></Interface>
@@ -107,387 +107,184 @@
   <Token Text="THEN" UId="39" />
   <NewLine Num="1" UId="40" />
   <Blank Num="4" UId="41" />
-  <Access Scope="LocalVariable" UId="42">
-    <Symbol UId="43">
-      <Component Name="tmpValueReadyWeight" UId="44">
-        <Token Text="[" UId="45" />
-        <Access Scope="LiteralConstant" UId="46">
-          <Constant UId="47">
-            <ConstantValue UId="49">1</ConstantValue>
-          </Constant>
-        </Access>
-        <Token Text="]" UId="50" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="51" />
-  <Token Text=":=" UId="52" />
-  <Blank Num="1" UId="53" />
-  <Access Scope="LiteralConstant" UId="54">
-    <Constant UId="55">
-      <ConstantValue UId="57">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="58" />
-  <NewLine Num="1" UId="59" />
-  <Blank Num="4" UId="60" />
-  <Access Scope="LocalVariable" UId="61">
-    <Symbol UId="62">
-      <Component Name="tmpValueReadyWeight" UId="63">
-        <Token Text="[" UId="64" />
-        <Access Scope="LiteralConstant" UId="65">
-          <Constant UId="66">
-            <ConstantValue UId="68">2</ConstantValue>
-          </Constant>
-        </Access>
-        <Token Text="]" UId="69" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="70" />
-  <Token Text=":=" UId="71" />
-  <Blank Num="1" UId="72" />
-  <Access Scope="LiteralConstant" UId="73">
-    <Constant UId="74">
-      <ConstantValue UId="76">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="77" />
-  <NewLine Num="1" UId="78" />
-  <Blank Num="4" UId="79" />
-  <Access Scope="LocalVariable" UId="80">
-    <Symbol UId="81">
-      <Component Name="i" UId="82" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="83" />
-  <Token Text=":=" UId="84" />
-  <Blank Num="1" UId="85" />
-  <Access Scope="LiteralConstant" UId="86">
-    <Constant UId="87">
-      <ConstantValue UId="89">0</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="90" />
-  <NewLine Num="1" UId="91" />
-  <Blank Num="4" UId="92" />
-  <Token Text="FOR" UId="93" />
-  <Blank Num="1" UId="94" />
-  <Access Scope="LocalVariable" UId="95">
-    <Symbol UId="96">
-      <Component Name="i" UId="97" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="98" />
-  <Token Text=":=" UId="99" />
-  <Blank Num="1" UId="100" />
-  <Access Scope="LiteralConstant" UId="101">
-    <Constant UId="102">
-      <ConstantValue UId="104">1</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="105" />
-  <Token Text="TO" UId="106" />
-  <Blank Num="1" UId="107" />
-  <Access Scope="LiteralConstant" UId="108">
-    <Constant UId="109">
-      <ConstantValue UId="111">6</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="112" />
-  <Token Text="DO" UId="113" />
-  <NewLine Num="1" UId="114" />
-  <Blank Num="8" UId="115" />
-  <Access Scope="LocalVariable" UId="116">
-    <Symbol UId="117">
-      <Component Name="tmpValueReadyWeight" UId="118">
-        <Token Text="[" UId="119" />
-        <Access Scope="LiteralConstant" UId="120">
-          <Constant UId="121">
-            <ConstantValue UId="123">1</ConstantValue>
-          </Constant>
-        </Access>
-        <Token Text="]" UId="124" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="125" />
-  <Token Text=":=" UId="126" />
-  <Blank Num="1" UId="127" />
-  <Access Scope="LocalVariable" UId="128">
-    <Symbol UId="129">
-      <Component Name="tmpValueReadyWeight" UId="130">
-        <Token Text="[" UId="131" />
-        <Access Scope="LiteralConstant" UId="132">
-          <Constant UId="133">
-            <ConstantValue UId="135">1</ConstantValue>
-          </Constant>
-        </Access>
-        <Token Text="]" UId="136" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="137" />
-  <Token Text="AND" UId="138" />
-  <Blank Num="1" UId="139" />
-  <Access Scope="LocalVariable" UId="140">
-    <Symbol UId="141">
-      <Component Name="arrayReadyWeightBunker" UId="142">
-        <Token Text="[" UId="143" />
-        <Access Scope="LocalVariable" UId="144">
-          <Symbol UId="145">
-            <Component Name="i" UId="146" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="147" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Token Text=";" UId="148" />
-  <NewLine Num="1" UId="149" />
-  <Blank Num="8" UId="150" />
-  <Access Scope="LocalVariable" UId="151">
-    <Symbol UId="152">
-      <Component Name="tmpValueReadyWeight" UId="153">
-        <Token Text="[" UId="154" />
-        <Access Scope="LiteralConstant" UId="155">
-          <Constant UId="156">
-            <ConstantValue UId="158">2</ConstantValue>
-          </Constant>
-        </Access>
-        <Token Text="]" UId="159" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="160" />
-  <Token Text=":=" UId="161" />
-  <Blank Num="1" UId="162" />
-  <Access Scope="LocalVariable" UId="163">
-    <Symbol UId="164">
-      <Component Name="tmpValueReadyWeight" UId="165">
-        <Token Text="[" UId="166" />
-        <Access Scope="LiteralConstant" UId="167">
-          <Constant UId="168">
-            <ConstantValue UId="170">2</ConstantValue>
-          </Constant>
-        </Access>
-        <Token Text="]" UId="171" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="172" />
-  <Token Text="AND" UId="173" />
-  <Blank Num="1" UId="174" />
-  <Access Scope="LocalVariable" UId="175">
-    <Symbol UId="176">
-      <Component Name="arrayReadyWeightBunker" UId="177">
-        <Token Text="[" UId="178" />
-        <Access Scope="LocalVariable" UId="179">
-          <Symbol UId="180">
-            <Component Name="i" UId="181" />
-          </Symbol>
-        </Access>
-        <Blank Num="1" UId="182" />
-        <Token Text="+" UId="183" />
-        <Blank Num="1" UId="184" />
-        <Access Scope="LiteralConstant" UId="185">
-          <Constant UId="186">
-            <ConstantValue UId="188">6</ConstantValue>
-          </Constant>
-        </Access>
-        <Token Text="]" UId="189" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Token Text=";" UId="190" />
-  <NewLine Num="1" UId="191" />
-  <Blank Num="4" UId="192" />
-  <Token Text="END_FOR" UId="193" />
-  <Token Text=";" UId="194" />
-  <NewLine Num="1" UId="195" />
-  <Blank Num="4" UId="196" />
-  <Access Scope="LocalVariable" UId="197">
-    <Symbol UId="198">
-      <Component Name="i" UId="199" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="200" />
-  <Token Text=":=" UId="201" />
-  <Blank Num="1" UId="202" />
-  <Access Scope="LiteralConstant" UId="203">
-    <Constant UId="204">
-      <ConstantValue UId="206">0</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="207" />
-  <NewLine Num="1" UId="208" />
-  <Blank Num="4" UId="209" />
-  <Token Text="FOR" UId="210" />
-  <Blank Num="1" UId="211" />
-  <Access Scope="LocalVariable" UId="212">
-    <Symbol UId="213">
-      <Component Name="i" UId="214" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="215" />
-  <Token Text=":=" UId="216" />
-  <Blank Num="1" UId="217" />
-  <Access Scope="LiteralConstant" UId="218">
-    <Constant UId="219">
-      <ConstantValue UId="221">1</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="222" />
-  <Token Text="TO" UId="223" />
-  <Blank Num="1" UId="224" />
-  <Access Scope="LiteralConstant" UId="225">
-    <Constant UId="226">
-      <ConstantValue UId="228">2</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="229" />
-  <Token Text="DO" UId="230" />
-  <NewLine Num="1" UId="231" />
-  <Blank Num="8" UId="232" />
-  <Token Text="IF" UId="233" />
-  <Blank Num="1" UId="234" />
-  <Token Text="NOT" UId="235" />
-  <Blank Num="1" UId="236" />
-  <Token Text="(" UId="237" />
-  <Access Scope="LocalVariable" UId="238">
-    <Symbol UId="239">
-      <Component Name="tmpValueReadyWeight" UId="240">
-        <Token Text="[" UId="241" />
-        <Access Scope="LocalVariable" UId="242">
-          <Symbol UId="243">
-            <Component Name="i" UId="244" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="245" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Token Text=")" UId="246" />
-  <Blank Num="1" UId="247" />
-  <Token Text="THEN" UId="248" />
-  <Blank Num="1" UId="249" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="250">
-    <Text UId="251">#tmpValueReadyWeight=0 если хотябы один бункер не готов</Text>
+  <LineComment Inserted="false" NoClosingBracket="false" UId="42">
+    <Text UId="43"> #tmpValueReadyWeight[1] := true;</Text>
   </LineComment>
-  <NewLine Num="1" UId="252" />
-  <Blank Num="12" UId="253" />
-  <Access Scope="LocalVariable" UId="254">
-    <Symbol UId="255">
-      <Component Name="vibroTable" UId="256">
-        <Token Text="[" UId="257" />
-        <Access Scope="LocalVariable" UId="258">
-          <Symbol UId="259">
-            <Component Name="i" UId="260" />
+  <NewLine Num="1" UId="44" />
+  <Blank Num="4" UId="45" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="46">
+    <Text UId="47"> #tmpValueReadyWeight[2] := true;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="48" />
+  <Blank Num="4" UId="49" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="50">
+    <Text UId="51"> #i := 0;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="52" />
+  <Blank Num="4" UId="53" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="54">
+    <Text UId="55"> FOR #i := 1 TO 6 DO</Text>
+  </LineComment>
+  <NewLine Num="1" UId="56" />
+  <Blank Num="4" UId="57" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="58">
+    <Text UId="59">     #tmpValueReadyWeight[1] := #tmpValueReadyWeight[1] AND #arrayReadyWeightBunker[#i];</Text>
+  </LineComment>
+  <NewLine Num="1" UId="60" />
+  <Blank Num="4" UId="61" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="62">
+    <Text UId="63">     #tmpValueReadyWeight[2] := #tmpValueReadyWeight[2] AND #arrayReadyWeightBunker[#i + 6];</Text>
+  </LineComment>
+  <NewLine Num="1" UId="64" />
+  <Blank Num="4" UId="65" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="66">
+    <Text UId="67"> END_FOR;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="68" />
+  <Blank Num="4" UId="69" />
+  <Access Scope="LocalVariable" UId="70">
+    <Symbol UId="71">
+      <Component Name="i" UId="72" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="73" />
+  <Token Text=":=" UId="74" />
+  <Blank Num="1" UId="75" />
+  <Access Scope="LiteralConstant" UId="76">
+    <Constant UId="77">
+      <ConstantValue UId="79">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="80" />
+  <NewLine Num="1" UId="81" />
+  <Blank Num="4" UId="82" />
+  <Token Text="FOR" UId="83" />
+  <Blank Num="1" UId="84" />
+  <Access Scope="LocalVariable" UId="85">
+    <Symbol UId="86">
+      <Component Name="i" UId="87" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="88" />
+  <Token Text=":=" UId="89" />
+  <Blank Num="1" UId="90" />
+  <Access Scope="LiteralConstant" UId="91">
+    <Constant UId="92">
+      <ConstantValue UId="94">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="95" />
+  <Token Text="TO" UId="96" />
+  <Blank Num="1" UId="97" />
+  <Access Scope="LiteralConstant" UId="98">
+    <Constant UId="99">
+      <ConstantValue UId="101">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="102" />
+  <Token Text="DO" UId="103" />
+  <NewLine Num="1" UId="104" />
+  <Blank Num="8" UId="105" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="106">
+    <Text UId="107"> IF NOT (#tmpValueReadyWeight[#i]) THEN //#tmpValueReadyWeight=0 если хотябы один бункер не готов</Text>
+  </LineComment>
+  <NewLine Num="1" UId="108" />
+  <Blank Num="12" UId="109" />
+  <Access Scope="LocalVariable" UId="110">
+    <Symbol UId="111">
+      <Component Name="vibroTable" UId="112">
+        <Token Text="[" UId="113" />
+        <Access Scope="LocalVariable" UId="114">
+          <Symbol UId="115">
+            <Component Name="i" UId="116" />
           </Symbol>
         </Access>
-        <Token Text="]" UId="261" />
+        <Token Text="]" UId="117" />
       </Component>
     </Symbol>
   </Access>
-  <Blank Num="1" UId="262" />
-  <Token Text=":=" UId="263" />
-  <Blank Num="1" UId="264" />
-  <Access Scope="LiteralConstant" UId="265">
-    <Constant UId="266">
-      <ConstantValue UId="268">true</ConstantValue>
+  <Blank Num="1" UId="118" />
+  <Token Text=":=" UId="119" />
+  <Blank Num="1" UId="120" />
+  <Access Scope="LiteralConstant" UId="121">
+    <Constant UId="122">
+      <ConstantValue UId="124">true</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="269" />
-  <NewLine Num="1" UId="270" />
-  <Blank Num="8" UId="271" />
-  <Token Text="ELSE" UId="272" />
-  <NewLine Num="1" UId="273" />
-  <Blank Num="12" UId="274" />
-  <Access Scope="LocalVariable" UId="275">
-    <Symbol UId="276">
-      <Component Name="vibroTable" UId="277">
-        <Token Text="[" UId="278" />
-        <Access Scope="LocalVariable" UId="279">
-          <Symbol UId="280">
-            <Component Name="i" UId="281" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="282" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="283" />
-  <Token Text=":=" UId="284" />
-  <Blank Num="1" UId="285" />
-  <Access Scope="LiteralConstant" UId="286">
-    <Constant UId="287">
-      <ConstantValue UId="289">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="290" />
-  <NewLine Num="1" UId="291" />
-  <Blank Num="8" UId="292" />
-  <Token Text="END_IF" UId="293" />
-  <Token Text=";" UId="294" />
-  <NewLine Num="1" UId="295" />
-  <Blank Num="4" UId="296" />
-  <Token Text="END_FOR" UId="297" />
-  <Token Text=";" UId="298" />
-  <NewLine Num="1" UId="299" />
-  <Token Text="ELSE" UId="300" />
-  <NewLine Num="1" UId="301" />
-  <Blank Num="4" UId="302" />
-  <Access Scope="LocalVariable" UId="303">
-    <Symbol UId="304">
-      <Component Name="vibroTable" UId="305">
-        <Token Text="[" UId="306" />
-        <Access Scope="LiteralConstant" UId="307">
-          <Constant UId="308">
-            <ConstantValue UId="310">1</ConstantValue>
+  <Token Text=";" UId="125" />
+  <NewLine Num="1" UId="126" />
+  <Blank Num="8" UId="127" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="128">
+    <Text UId="129"> ELSE</Text>
+  </LineComment>
+  <NewLine Num="1" UId="130" />
+  <Blank Num="12" UId="131" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="132">
+    <Text UId="133"> #vibroTable[#i] := false;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="134" />
+  <Blank Num="8" UId="135" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="136">
+    <Text UId="137"> END_IF;</Text>
+  </LineComment>
+  <NewLine Num="1" UId="138" />
+  <Blank Num="4" UId="139" />
+  <Token Text="END_FOR" UId="140" />
+  <Token Text=";" UId="141" />
+  <NewLine Num="1" UId="142" />
+  <Token Text="ELSE" UId="143" />
+  <NewLine Num="1" UId="144" />
+  <Blank Num="4" UId="145" />
+  <Access Scope="LocalVariable" UId="146">
+    <Symbol UId="147">
+      <Component Name="vibroTable" UId="148">
+        <Token Text="[" UId="149" />
+        <Access Scope="LiteralConstant" UId="150">
+          <Constant UId="151">
+            <ConstantValue UId="153">1</ConstantValue>
           </Constant>
         </Access>
-        <Token Text="]" UId="311" />
+        <Token Text="]" UId="154" />
       </Component>
     </Symbol>
   </Access>
-  <Blank Num="1" UId="312" />
-  <Token Text=":=" UId="313" />
-  <Blank Num="1" UId="314" />
-  <Access Scope="LiteralConstant" UId="315">
-    <Constant UId="316">
-      <ConstantValue UId="318">false</ConstantValue>
+  <Blank Num="1" UId="155" />
+  <Token Text=":=" UId="156" />
+  <Blank Num="1" UId="157" />
+  <Access Scope="LiteralConstant" UId="158">
+    <Constant UId="159">
+      <ConstantValue UId="161">false</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="319" />
-  <NewLine Num="1" UId="320" />
-  <Blank Num="4" UId="321" />
-  <Access Scope="LocalVariable" UId="322">
-    <Symbol UId="323">
-      <Component Name="vibroTable" UId="324">
-        <Token Text="[" UId="325" />
-        <Access Scope="LiteralConstant" UId="326">
-          <Constant UId="327">
-            <ConstantValue UId="329">2</ConstantValue>
+  <Token Text=";" UId="162" />
+  <NewLine Num="1" UId="163" />
+  <Blank Num="4" UId="164" />
+  <Access Scope="LocalVariable" UId="165">
+    <Symbol UId="166">
+      <Component Name="vibroTable" UId="167">
+        <Token Text="[" UId="168" />
+        <Access Scope="LiteralConstant" UId="169">
+          <Constant UId="170">
+            <ConstantValue UId="172">2</ConstantValue>
           </Constant>
         </Access>
-        <Token Text="]" UId="330" />
+        <Token Text="]" UId="173" />
       </Component>
     </Symbol>
   </Access>
-  <Blank Num="1" UId="331" />
-  <Token Text=":=" UId="332" />
-  <Blank Num="1" UId="333" />
-  <Access Scope="LiteralConstant" UId="334">
-    <Constant UId="335">
-      <ConstantValue UId="337">false</ConstantValue>
+  <Blank Num="1" UId="174" />
+  <Token Text=":=" UId="175" />
+  <Blank Num="1" UId="176" />
+  <Access Scope="LiteralConstant" UId="177">
+    <Constant UId="178">
+      <ConstantValue UId="180">false</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="338" />
-  <NewLine Num="1" UId="339" />
-  <Token Text="END_IF" UId="340" />
-  <Token Text=";" UId="341" />
-  <NewLine Num="1" UId="342" />
-  <Blank Num="4" UId="343" />
+  <Token Text=";" UId="181" />
+  <NewLine Num="1" UId="182" />
+  <Token Text="END_IF" UId="183" />
+  <Token Text=";" UId="184" />
+  <NewLine Num="4" UId="185" />
 </StructuredText></NetworkSource>
           <ProgrammingLanguage>SCL</ProgrammingLanguage>
         </AttributeList>

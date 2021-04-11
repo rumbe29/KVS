@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-06T19:52:15.9628012Z</Created>
+    <Created>2021-04-11T09:51:23.2395567Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -51,15 +51,16 @@
     <Member Name="currentWeight" Datatype="Array[0..12] of Real" Accessibility="Public" />
   </Section>
   <Section Name="Static">
-    <Member Name="MB_COMM_LOAD" Datatype="MB_COMM_LOAD" Version="2.1" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="PORT" Datatype="PORT" /><Member Name="BAUD" Datatype="UDInt" /><Member Name="PARITY" Datatype="UInt" /><Member Name="FLOW_CTRL" Datatype="UInt" /><Member Name="RTS_ON_DLY" Datatype="UInt" /><Member Name="RTS_OFF_DLY" Datatype="UInt" /><Member Name="RESP_TO" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="MB_DB" Datatype="MB_BASE" Version="1.0"><Sections /></Member></Section><Section Name="Static"><Member Name="ICHAR_GAP" Datatype="UInt" /><Member Name="RETRIES" Datatype="UInt" /><Member Name="WRREC_STATUS" Datatype="Word" /><Member Name="RDREC_STATUS" Datatype="Word" /><Member Name="SFC_STATUS" Datatype="Word" /><Member Name="Port_CFG_SFB" Datatype="Array[0..25] of Byte" /><Member Name="Send_CFG_SFB" Datatype="Array[0..16] of Byte" /><Member Name="Rcv_CFG_SFB" Datatype="Array[0..60] of Byte" /><Member Name="STOP_BITS" Datatype="USInt" /></Section></Sections></Member>
-    <Member Name="MB_MASTER" Datatype="MB_MASTER" Version="2.2" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Base"><Sections Datatype="MB_BASE" Version="1.0"><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="S_PORT" Datatype="UInt" /><Member Name="S_RESP_TO" Datatype="UInt" /><Member Name="S_ICHAR_GAP" Datatype="UInt" /><Member Name="S_RETRIES" Datatype="UInt" /></Section></Sections></Section><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="MB_ADDR" Datatype="UInt" /><Member Name="MODE" Datatype="USInt" /><Member Name="DATA_ADDR" Datatype="UDInt" /><Member Name="DATA_LEN" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="DATA_PTR" Datatype="Variant" /></Section><Section Name="Static"><Member Name="SEND_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_RST_SFB" Datatype="Array[0..9] of Byte" /><Member Name="PF_FREQUENCY" Datatype="Real" /><Member Name="BLOCKED_PROC_TIMEOUT" Datatype="Real" /><Member Name="CURRENT_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_SLAVE_ADDR" Datatype="Word" /><Member Name="SAVED_MODE" Datatype="Word" /><Member Name="SAVED_DATA_ADDR" Datatype="DWord" /><Member Name="SAVED_DATA_LEN" Datatype="UInt" /><Member Name="MB_STATE" Datatype="UInt" /><Member Name="COMM_SENT_COUNT" Datatype="UInt" /><Member Name="BYTE_COUNT" Datatype="USInt" /><Member Name="INIT_OK" Datatype="Bool" /><Member Name="ACTIVE" Datatype="Bool" /><Member Name="BROADCAST_FLAG" Datatype="Bool" /><Member Name="EXTENDED_ADDRESSING" Datatype="Bool" /><Member Name="SAVED_START_ADDR" Datatype="UInt" /><Member Name="TXBuf_Function_Offset" Datatype="UDInt" /><Member Name="TXBuf_Address_Offset" Datatype="UDInt" /><Member Name="TXBuf_Quantity_Offset" Datatype="UDInt" /></Section></Sections></Member>
+    <Member Name="MB_COMM_LOAD" Datatype="MB_COMM_LOAD" Version="2.1" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="PORT" Datatype="PORT" /><Member Name="BAUD" Datatype="UDInt" /><Member Name="PARITY" Datatype="UInt" /><Member Name="FLOW_CTRL" Datatype="UInt" /><Member Name="RTS_ON_DLY" Datatype="UInt" /><Member Name="RTS_OFF_DLY" Datatype="UInt" /><Member Name="RESP_TO" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="MB_DB" Datatype="MB_BASE" Version="1.0"><Sections /></Member></Section><Section Name="Static"><Member Name="ICHAR_GAP" Datatype="UInt" /><Member Name="RETRIES" Datatype="UInt"><StartValue>1</StartValue></Member><Member Name="WRREC_STATUS" Datatype="Word" /><Member Name="RDREC_STATUS" Datatype="Word" /><Member Name="SFC_STATUS" Datatype="Word" /><Member Name="Port_CFG_SFB" Datatype="Array[0..25] of Byte" /><Member Name="Send_CFG_SFB" Datatype="Array[0..16] of Byte" /><Member Name="Rcv_CFG_SFB" Datatype="Array[0..60] of Byte" /><Member Name="STOP_BITS" Datatype="USInt" /></Section></Sections></Member>
+    <Member Name="MB_MASTER" Datatype="MB_MASTER" Version="2.2" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Base"><Sections Datatype="MB_BASE" Version="1.0"><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="S_PORT" Datatype="UInt" /><Member Name="S_RESP_TO" Datatype="UInt" /><Member Name="S_ICHAR_GAP" Datatype="UInt" /><Member Name="S_RETRIES" Datatype="UInt" /></Section></Sections></Section><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="MB_ADDR" Datatype="UInt" /><Member Name="MODE" Datatype="USInt" /><Member Name="DATA_ADDR" Datatype="UDInt" /><Member Name="DATA_LEN" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="DATA_PTR" Datatype="Variant" /></Section><Section Name="Static"><Member Name="SEND_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_PTP_SFB" Datatype="Array[0..11] of Byte" /><Member Name="RCV_RST_SFB" Datatype="Array[0..9] of Byte" /><Member Name="PF_FREQUENCY" Datatype="Real" /><Member Name="BLOCKED_PROC_TIMEOUT" Datatype="Real" /><Member Name="CURRENT_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_TIME_VALUE" Datatype="UDInt" /><Member Name="SAVED_SLAVE_ADDR" Datatype="Word" /><Member Name="SAVED_MODE" Datatype="Word" /><Member Name="SAVED_DATA_ADDR" Datatype="DWord" /><Member Name="SAVED_DATA_LEN" Datatype="UInt" /><Member Name="MB_STATE" Datatype="UInt" /><Member Name="COMM_SENT_COUNT" Datatype="UInt" /><Member Name="BYTE_COUNT" Datatype="USInt" /><Member Name="INIT_OK" Datatype="Bool" /><Member Name="ACTIVE" Datatype="Bool" /><Member Name="BROADCAST_FLAG" Datatype="Bool" /><Member Name="EXTENDED_ADDRESSING" Datatype="Bool" /><Member Name="SAVED_START_ADDR" Datatype="UInt" /><Member Name="TXBuf_Function_Offset" Datatype="UDInt" /><Member Name="TXBuf_Address_Offset" Datatype="UDInt" /><Member Name="TXBuf_Quantity_Offset" Datatype="UDInt" /></Section></Sections></Member>
+    <Member Name="Data_toMB_MASTER" Datatype="Struct" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Member Name="REQ" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="MB_ADDR" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="MODE" Datatype="USInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="DATA_ADDR" Datatype="UDInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="DATA_LEN" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="DONE" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="BUSY" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member><Member Name="ERROR" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member></Member>
     <Member Name="Seneca" Datatype="Struct" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Member Name="TON_changeStep" Datatype="TON_TIME" Version="1.0"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="TON_Start" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList></Member><Member Name="Step" Datatype="SInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member></Member>
     <Member Name="tmpWeight" Datatype="Array[0..12] of DWord" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
     <Member Name="restartPort" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">перезагрузка Modbus</MultiLanguageText></Comment></Member>
   </Section>
   <Section Name="Temp">
-    <Member Name="index" Datatype="SInt" />
-    <Member Name="tmpIndex" Datatype="SInt" />
+    <Member Name="index" Datatype="DInt" />
+    <Member Name="tmpIndex" Datatype="DInt" />
   </Section>
   <Section Name="Constant" />
 </Sections></Interface>
@@ -119,7 +120,7 @@
     <Access Scope="LiteralConstant" UId="26">
       <Constant>
         <ConstantType>UInt</ConstantType>
-        <ConstantValue>200</ConstantValue>
+        <ConstantValue>100</ConstantValue>
       </Constant>
     </Access>
     <Access Scope="LocalVariable" UId="27">
@@ -269,7 +270,7 @@
         <Blank Num="1" UId="43" />
         <Access Scope="TypedConstant" UId="44">
           <Constant UId="45">
-            <ConstantValue UId="46">t#15ms</ConstantValue>
+            <ConstantValue UId="46">t#50ms</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
@@ -404,533 +405,531 @@
             <Component Name="Seneca" UId="150" />
             <Token Text="." UId="151" />
             <Component Name="TON_changeStep" UId="152" />
+            <Token Text="." UId="153" />
+            <Component Name="Q" UId="154" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="153" />
-      <NewLine Num="1" UId="154" />
-      <Blank Num="24" UId="155" />
-      <Parameter Name="Ton_Start" UId="156">
-        <Token Text=":=" UId="157" />
-        <Access Scope="LocalVariable" UId="158">
-          <Symbol UId="159">
-            <Component Name="Seneca" UId="160" />
-            <Token Text="." UId="161" />
-            <Component Name="TON_Start" UId="162" />
+      <Token Text="," UId="155" />
+      <NewLine Num="1" UId="156" />
+      <Blank Num="24" UId="157" />
+      <Parameter Name="Ton_Start" UId="158">
+        <Token Text=":=" UId="159" />
+        <Access Scope="LocalVariable" UId="160">
+          <Symbol UId="161">
+            <Component Name="Seneca" UId="162" />
+            <Token Text="." UId="163" />
+            <Component Name="TON_Start" UId="164" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="163" />
-      <NewLine Num="1" UId="164" />
-      <Blank Num="24" UId="165" />
-      <Parameter Name="Step" UId="166">
-        <Token Text=":=" UId="167" />
-        <Access Scope="LocalVariable" UId="168">
-          <Symbol UId="169">
-            <Component Name="Seneca" UId="170" />
-            <Token Text="." UId="171" />
-            <Component Name="Step" UId="172" />
+      <Token Text="," UId="165" />
+      <NewLine Num="1" UId="166" />
+      <Blank Num="24" UId="167" />
+      <Parameter Name="Step" UId="168">
+        <Token Text=":=" UId="169" />
+        <Access Scope="LocalVariable" UId="170">
+          <Symbol UId="171">
+            <Component Name="Seneca" UId="172" />
+            <Token Text="." UId="173" />
+            <Component Name="Step" UId="174" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="173" />
-      <NewLine Num="1" UId="174" />
-      <Blank Num="24" UId="175" />
-      <Parameter Name="MB_MASTER" UId="176">
-        <Token Text=":=" UId="177" />
-        <Access Scope="LocalVariable" UId="178">
-          <Symbol UId="179">
-            <Component Name="MB_MASTER" UId="180" />
+      <Token Text="," UId="175" />
+      <NewLine Num="1" UId="176" />
+      <Blank Num="24" UId="177" />
+      <Parameter Name="MB_MASTER" UId="178">
+        <Token Text=":=" UId="179" />
+        <Access Scope="LocalVariable" UId="180">
+          <Symbol UId="181">
+            <Component Name="Data_toMB_MASTER" UId="182" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="181" />
+      <Token Text=")" UId="183" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="182" />
-  <NewLine Num="1" UId="183" />
-  <Blank Num="8" UId="184" />
+  <Token Text=";" UId="184" />
   <NewLine Num="1" UId="185" />
-  <Blank Num="4" UId="186" />
-  <Access Scope="LiteralConstant" UId="187">
-    <Constant UId="188">
-      <ConstantValue UId="190">3</ConstantValue>
+  <Blank Num="8" UId="186" />
+  <NewLine Num="1" UId="187" />
+  <Blank Num="4" UId="188" />
+  <Access Scope="LiteralConstant" UId="189">
+    <Constant UId="190">
+      <ConstantValue UId="192">3</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="191" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="192">
-    <Text UId="193">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА СО ВТОРОГО МОДУЛЯ</Text>
+  <Token Text=":" UId="193" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="194">
+    <Text UId="195">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА СО ВТОРОГО МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="194" />
-  <Blank Num="8" UId="195" />
-  <Access Scope="LocalVariable" UId="196">
-    <Symbol UId="197">
-      <Component Name="index" UId="198" />
+  <NewLine Num="1" UId="196" />
+  <Blank Num="8" UId="197" />
+  <Access Scope="LocalVariable" UId="198">
+    <Symbol UId="199">
+      <Component Name="index" UId="200" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="199" />
-  <Token Text=":=" UId="200" />
   <Blank Num="1" UId="201" />
-  <Access Scope="LiteralConstant" UId="202">
-    <Constant UId="203">
-      <ConstantValue UId="205">2</ConstantValue>
+  <Token Text=":=" UId="202" />
+  <Blank Num="1" UId="203" />
+  <Access Scope="LiteralConstant" UId="204">
+    <Constant UId="205">
+      <ConstantValue UId="207">2</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="206" />
-  <Access Scope="LocalVariable" UId="207">
-    <Symbol UId="208">
-      <Component Name="Offset_array_bits" UId="209" />
+  <Token Text="+" UId="208" />
+  <Access Scope="LocalVariable" UId="209">
+    <Symbol UId="210">
+      <Component Name="Offset_array_bits" UId="211" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="210" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="211">
-    <Text UId="212">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="212" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="213">
+    <Text UId="214">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="213" />
-  <Blank Num="8" UId="214" />
-  <Access Scope="Call" UId="215">
-    <CallInfo UId="216" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="218">
-        <Component Name="rcvDataWeight" UId="217" />
+  <NewLine Num="1" UId="215" />
+  <Blank Num="8" UId="216" />
+  <Access Scope="Call" UId="217">
+    <CallInfo UId="218" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="220">
+        <Component Name="rcvDataWeight" UId="219" />
       </Instance>
-      <Token Text="(" UId="219" />
-      <Parameter Name="ADDR_DEVICE" UId="220">
-        <Blank Num="1" UId="221" />
-        <Token Text=":=" UId="222" />
+      <Token Text="(" UId="221" />
+      <Parameter Name="ADDR_DEVICE" UId="222">
         <Blank Num="1" UId="223" />
-        <Access Scope="LocalVariable" UId="224">
-          <Symbol UId="225">
-            <Component Name="arrayAddressModbus" UId="226">
-              <Token Text="[" UId="227" />
-              <Access Scope="LocalVariable" UId="228">
-                <Symbol UId="229">
-                  <Component Name="index" UId="230" />
+        <Token Text=":=" UId="224" />
+        <Blank Num="1" UId="225" />
+        <Access Scope="LocalVariable" UId="226">
+          <Symbol UId="227">
+            <Component Name="arrayAddressModbus" UId="228">
+              <Token Text="[" UId="229" />
+              <Access Scope="LocalVariable" UId="230">
+                <Symbol UId="231">
+                  <Component Name="index" UId="232" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="231" />
+              <Token Text="]" UId="233" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="232" />
-      <NewLine Num="1" UId="233" />
-      <Blank Num="24" UId="234" />
-      <Parameter Name="Ton_changeStep" UId="235">
-        <Token Text=":=" UId="236" />
-        <Access Scope="LocalVariable" UId="237">
-          <Symbol UId="238">
-            <Component Name="Seneca" UId="239" />
-            <Token Text="." UId="240" />
-            <Component Name="TON_changeStep" UId="241" />
+      <Token Text="," UId="234" />
+      <NewLine Num="1" UId="235" />
+      <Blank Num="24" UId="236" />
+      <Parameter Name="Ton_changeStep" UId="237">
+        <Token Text=":=" UId="238" />
+        <Access Scope="LocalVariable" UId="239">
+          <Symbol UId="240">
+            <Component Name="Seneca" UId="241" />
+            <Token Text="." UId="242" />
+            <Component Name="TON_changeStep" UId="243" />
+            <Token Text="." UId="244" />
+            <Component Name="Q" UId="245" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="242" />
-      <NewLine Num="1" UId="243" />
-      <Blank Num="24" UId="244" />
-      <Parameter Name="Ton_Start" UId="245">
-        <Token Text=":=" UId="246" />
-        <Access Scope="LocalVariable" UId="247">
-          <Symbol UId="248">
-            <Component Name="Seneca" UId="249" />
-            <Token Text="." UId="250" />
-            <Component Name="TON_Start" UId="251" />
+      <Token Text="," UId="246" />
+      <NewLine Num="1" UId="247" />
+      <Blank Num="24" UId="248" />
+      <Parameter Name="Ton_Start" UId="249">
+        <Token Text=":=" UId="250" />
+        <Access Scope="LocalVariable" UId="251">
+          <Symbol UId="252">
+            <Component Name="Seneca" UId="253" />
+            <Token Text="." UId="254" />
+            <Component Name="TON_Start" UId="255" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="252" />
-      <NewLine Num="1" UId="253" />
-      <Blank Num="24" UId="254" />
-      <Parameter Name="Step" UId="255">
-        <Token Text=":=" UId="256" />
-        <Access Scope="LocalVariable" UId="257">
-          <Symbol UId="258">
-            <Component Name="Seneca" UId="259" />
-            <Token Text="." UId="260" />
-            <Component Name="Step" UId="261" />
+      <Token Text="," UId="256" />
+      <NewLine Num="1" UId="257" />
+      <Blank Num="24" UId="258" />
+      <Parameter Name="Step" UId="259">
+        <Token Text=":=" UId="260" />
+        <Access Scope="LocalVariable" UId="261">
+          <Symbol UId="262">
+            <Component Name="Seneca" UId="263" />
+            <Token Text="." UId="264" />
+            <Component Name="Step" UId="265" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="262" />
-      <NewLine Num="1" UId="263" />
-      <Blank Num="24" UId="264" />
-      <Parameter Name="MB_MASTER" UId="265">
-        <Token Text=":=" UId="266" />
-        <Access Scope="LocalVariable" UId="267">
-          <Symbol UId="268">
-            <Component Name="MB_MASTER" UId="269" />
+      <Token Text="," UId="266" />
+      <NewLine Num="1" UId="267" />
+      <Blank Num="24" UId="268" />
+      <Parameter Name="MB_MASTER" UId="269">
+        <Token Text=":=" UId="270" />
+        <Access Scope="LocalVariable" UId="271">
+          <Symbol UId="272">
+            <Component Name="Data_toMB_MASTER" UId="273" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="270" />
+      <Token Text=")" UId="274" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="271" />
-  <NewLine Num="1" UId="272" />
-  <Blank Num="8" UId="273" />
-  <NewLine Num="1" UId="274" />
-  <Blank Num="4" UId="275" />
-  <Access Scope="LiteralConstant" UId="276">
-    <Constant UId="277">
-      <ConstantValue UId="279">4</ConstantValue>
+  <Token Text=";" UId="275" />
+  <NewLine Num="1" UId="276" />
+  <Blank Num="8" UId="277" />
+  <NewLine Num="1" UId="278" />
+  <Blank Num="4" UId="279" />
+  <Access Scope="LiteralConstant" UId="280">
+    <Constant UId="281">
+      <ConstantValue UId="283">4</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="280" />
-  <Blank Num="1" UId="281" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="282">
-    <Text UId="283"> КАЛИБРОВКА 0 ДЛЯ ПЕРВОГО МОДУЛЯ и ТАРИРОВАНИЕ</Text>
+  <Token Text=":" UId="284" />
+  <Blank Num="1" UId="285" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="286">
+    <Text UId="287"> КАЛИБРОВКА 0 ДЛЯ ПЕРВОГО МОДУЛЯ и ТАРИРОВАНИЕ</Text>
   </LineComment>
-  <NewLine Num="1" UId="284" />
-  <Blank Num="8" UId="285" />
-  <Access Scope="LocalVariable" UId="286">
-    <Symbol UId="287">
-      <Component Name="index" UId="288" />
+  <NewLine Num="1" UId="288" />
+  <Blank Num="8" UId="289" />
+  <Access Scope="LocalVariable" UId="290">
+    <Symbol UId="291">
+      <Component Name="index" UId="292" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="289" />
-  <Token Text=":=" UId="290" />
-  <Blank Num="1" UId="291" />
-  <Access Scope="LiteralConstant" UId="292">
-    <Constant UId="293">
-      <ConstantValue UId="295">1</ConstantValue>
+  <Blank Num="1" UId="293" />
+  <Token Text=":=" UId="294" />
+  <Blank Num="1" UId="295" />
+  <Access Scope="LiteralConstant" UId="296">
+    <Constant UId="297">
+      <ConstantValue UId="299">1</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="296" />
-  <Access Scope="LocalVariable" UId="297">
-    <Symbol UId="298">
-      <Component Name="Offset_array_bits" UId="299" />
+  <Token Text="+" UId="300" />
+  <Access Scope="LocalVariable" UId="301">
+    <Symbol UId="302">
+      <Component Name="Offset_array_bits" UId="303" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="300" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="301">
-    <Text UId="302">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="304" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="305">
+    <Text UId="306">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="303" />
-  <Blank Num="8" UId="304" />
-  <Access Scope="Call" UId="305">
-    <CallInfo UId="306" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="308">
-        <Component Name="sndCALIBR&amp;Tara" UId="307" />
+  <NewLine Num="1" UId="307" />
+  <Blank Num="8" UId="308" />
+  <Access Scope="Call" UId="309">
+    <CallInfo UId="310" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="312">
+        <Component Name="sndCALIBR&amp;Tara" UId="311" />
       </Instance>
-      <Token Text="(" UId="309" />
-      <Parameter Name="ADDR_DEVICE" UId="310">
-        <Blank Num="1" UId="311" />
-        <Token Text=":=" UId="312" />
-        <Blank Num="1" UId="313" />
-        <Access Scope="LocalVariable" UId="314">
-          <Symbol UId="315">
-            <Component Name="arrayAddressModbus" UId="316">
-              <Token Text="[" UId="317" />
-              <Access Scope="LocalVariable" UId="318">
-                <Symbol UId="319">
-                  <Component Name="index" UId="320" />
+      <Token Text="(" UId="313" />
+      <Parameter Name="ADDR_DEVICE" UId="314">
+        <Blank Num="1" UId="315" />
+        <Token Text=":=" UId="316" />
+        <Blank Num="1" UId="317" />
+        <Access Scope="LocalVariable" UId="318">
+          <Symbol UId="319">
+            <Component Name="arrayAddressModbus" UId="320">
+              <Token Text="[" UId="321" />
+              <Access Scope="LocalVariable" UId="322">
+                <Symbol UId="323">
+                  <Component Name="index" UId="324" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="321" />
+              <Token Text="]" UId="325" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="322" />
-      <NewLine Num="1" UId="323" />
-      <Blank Num="21" UId="324" />
-      <Parameter Name="ton_changeStep" UId="325">
-        <Token Text=":=" UId="326" />
-        <Access Scope="LocalVariable" UId="327">
-          <Symbol UId="328">
-            <Component Name="Seneca" UId="329" />
-            <Token Text="." UId="330" />
-            <Component Name="TON_changeStep" UId="331" />
+      <Token Text="," UId="326" />
+      <NewLine Num="1" UId="327" />
+      <Blank Num="25" UId="328" />
+      <Parameter Name="ton_changeStep" UId="329">
+        <Token Text=":=" UId="330" />
+        <Access Scope="LocalVariable" UId="331">
+          <Symbol UId="332">
+            <Component Name="Seneca" UId="333" />
+            <Token Text="." UId="334" />
+            <Component Name="TON_changeStep" UId="335" />
+            <Token Text="." UId="336" />
+            <Component Name="Q" UId="337" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="332" />
-      <NewLine Num="1" UId="333" />
-      <Blank Num="21" UId="334" />
-      <Parameter Name="MB_MASTER" UId="335">
-        <Token Text=":=" UId="336" />
-        <Access Scope="LocalVariable" UId="337">
-          <Symbol UId="338">
-            <Component Name="MB_MASTER" UId="339" />
+      <Token Text="," UId="338" />
+      <NewLine Num="1" UId="339" />
+      <Blank Num="21" UId="340" />
+      <Parameter Name="MB_MASTER" UId="341">
+        <Token Text=":=" UId="342" />
+        <Access Scope="LocalVariable" UId="343">
+          <Symbol UId="344">
+            <Component Name="Data_toMB_MASTER" UId="345" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="340" />
-      <NewLine Num="1" UId="341" />
-      <Blank Num="21" UId="342" />
-      <Parameter Name="Ton_Start" UId="343">
-        <Token Text=":=" UId="344" />
-        <Access Scope="LocalVariable" UId="345">
-          <Symbol UId="346">
-            <Component Name="Seneca" UId="347" />
-            <Token Text="." UId="348" />
-            <Component Name="TON_Start" UId="349" />
+      <Token Text="," UId="346" />
+      <NewLine Num="1" UId="347" />
+      <Blank Num="21" UId="348" />
+      <Parameter Name="Ton_Start" UId="349">
+        <Token Text=":=" UId="350" />
+        <Access Scope="LocalVariable" UId="351">
+          <Symbol UId="352">
+            <Component Name="Seneca" UId="353" />
+            <Token Text="." UId="354" />
+            <Component Name="TON_Start" UId="355" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="350" />
-      <NewLine Num="1" UId="351" />
-      <Blank Num="21" UId="352" />
-      <Parameter Name="Calibrate" UId="353">
-        <Token Text=":=" UId="354" />
-        <Access Scope="LocalVariable" UId="355">
-          <Symbol UId="356">
-            <Component Name="calibrateZero" UId="357">
-              <Token Text="[" UId="358" />
-              <Access Scope="LocalVariable" UId="359">
-                <Symbol UId="360">
-                  <Component Name="index" UId="361" />
+      <Token Text="," UId="356" />
+      <NewLine Num="1" UId="357" />
+      <Blank Num="21" UId="358" />
+      <Parameter Name="Calibrate" UId="359">
+        <Token Text=":=" UId="360" />
+        <Access Scope="LocalVariable" UId="361">
+          <Symbol UId="362">
+            <Component Name="calibrateZero" UId="363">
+              <Token Text="[" UId="364" />
+              <Access Scope="LocalVariable" UId="365">
+                <Symbol UId="366">
+                  <Component Name="index" UId="367" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="362" />
+              <Token Text="]" UId="368" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="363" />
-      <NewLine Num="1" UId="364" />
-      <Blank Num="21" UId="365" />
-      <Parameter Name="Buffer" UId="366">
-        <Token Text=":=" UId="367" />
-        <Access Scope="GlobalVariable" UId="368">
-          <Symbol UId="369">
-            <Component Name="bufferModBus" UId="370" />
-            <Token Text="." UId="371" />
-            <Component Name="Buffer_DataModbusPort2" UId="372" />
+      <Token Text="," UId="369" />
+      <NewLine Num="1" UId="370" />
+      <Blank Num="21" UId="371" />
+      <Parameter Name="Buffer" UId="372">
+        <Token Text=":=" UId="373" />
+        <Access Scope="GlobalVariable" UId="374">
+          <Symbol UId="375">
+            <Component Name="bufferModBus" UId="376" />
+            <Token Text="." UId="377" />
+            <Component Name="Buffer_DataModbusPort2" UId="378" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="373" />
-      <NewLine Num="1" UId="374" />
-      <Blank Num="21" UId="375" />
-      <Parameter Name="Step" UId="376">
-        <Token Text=":=" UId="377" />
-        <Access Scope="LocalVariable" UId="378">
-          <Symbol UId="379">
-            <Component Name="Seneca" UId="380" />
-            <Token Text="." UId="381" />
-            <Component Name="Step" UId="382" />
+      <Token Text="," UId="379" />
+      <NewLine Num="1" UId="380" />
+      <Blank Num="21" UId="381" />
+      <Parameter Name="Step" UId="382">
+        <Token Text=":=" UId="383" />
+        <Access Scope="LocalVariable" UId="384">
+          <Symbol UId="385">
+            <Component Name="Seneca" UId="386" />
+            <Token Text="." UId="387" />
+            <Component Name="Step" UId="388" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="383" />
-      <NewLine Num="1" UId="384" />
-      <Blank Num="21" UId="385" />
-      <Parameter Name="Tara" UId="386">
-        <Token Text=":=" UId="387" />
-        <Access Scope="LocalVariable" UId="388">
-          <Symbol UId="389">
-            <Component Name="taraZero" UId="390">
-              <Token Text="[" UId="391" />
-              <Access Scope="LocalVariable" UId="392">
-                <Symbol UId="393">
-                  <Component Name="index" UId="394" />
+      <Token Text="," UId="389" />
+      <NewLine Num="1" UId="390" />
+      <Blank Num="21" UId="391" />
+      <Parameter Name="Tara" UId="392">
+        <Token Text=":=" UId="393" />
+        <Access Scope="LocalVariable" UId="394">
+          <Symbol UId="395">
+            <Component Name="taraZero" UId="396">
+              <Token Text="[" UId="397" />
+              <Access Scope="LocalVariable" UId="398">
+                <Symbol UId="399">
+                  <Component Name="index" UId="400" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="395" />
+              <Token Text="]" UId="401" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="396" />
+      <Token Text=")" UId="402" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="397" />
-  <NewLine Num="1" UId="398" />
-  <Blank Num="8" UId="399" />
-  <NewLine Num="1" UId="400" />
-  <Blank Num="4" UId="401" />
-  <Access Scope="LiteralConstant" UId="402">
-    <Constant UId="403">
-      <ConstantValue UId="405">5</ConstantValue>
+  <Token Text=";" UId="403" />
+  <NewLine Num="1" UId="404" />
+  <Blank Num="8" UId="405" />
+  <NewLine Num="1" UId="406" />
+  <Blank Num="4" UId="407" />
+  <Access Scope="LiteralConstant" UId="408">
+    <Constant UId="409">
+      <ConstantValue UId="411">5</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="406" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="407">
-    <Text UId="408"> КАЛИБРОВКА 0 ДЛЯ ВТОРОГО МОДУЛЯ и ТАРИРОВАНИЕ</Text>
+  <Token Text=":" UId="412" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="413">
+    <Text UId="414"> КАЛИБРОВКА 0 ДЛЯ ВТОРОГО МОДУЛЯ и ТАРИРОВАНИЕ</Text>
   </LineComment>
-  <NewLine Num="1" UId="409" />
-  <Blank Num="8" UId="410" />
-  <Access Scope="LocalVariable" UId="411">
-    <Symbol UId="412">
-      <Component Name="index" UId="413" />
+  <NewLine Num="1" UId="415" />
+  <Blank Num="8" UId="416" />
+  <Access Scope="LocalVariable" UId="417">
+    <Symbol UId="418">
+      <Component Name="index" UId="419" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="414" />
-  <Token Text=":=" UId="415" />
-  <Blank Num="1" UId="416" />
-  <Access Scope="LiteralConstant" UId="417">
-    <Constant UId="418">
-      <ConstantValue UId="420">2</ConstantValue>
+  <Blank Num="1" UId="420" />
+  <Token Text=":=" UId="421" />
+  <Blank Num="1" UId="422" />
+  <Access Scope="LiteralConstant" UId="423">
+    <Constant UId="424">
+      <ConstantValue UId="426">2</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="421" />
-  <Access Scope="LocalVariable" UId="422">
-    <Symbol UId="423">
-      <Component Name="Offset_array_bits" UId="424" />
+  <Token Text="+" UId="427" />
+  <Access Scope="LocalVariable" UId="428">
+    <Symbol UId="429">
+      <Component Name="Offset_array_bits" UId="430" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="425" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="426">
-    <Text UId="427">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="431" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="432">
+    <Text UId="433">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="428" />
-  <Blank Num="8" UId="429" />
-  <Access Scope="Call" UId="430">
-    <CallInfo UId="431" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="433">
-        <Component Name="sndCALIBR&amp;Tara" UId="432" />
+  <NewLine Num="1" UId="434" />
+  <Blank Num="8" UId="435" />
+  <Access Scope="Call" UId="436">
+    <CallInfo UId="437" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="439">
+        <Component Name="sndCALIBR&amp;Tara" UId="438" />
       </Instance>
-      <Token Text="(" UId="434" />
-      <Parameter Name="ADDR_DEVICE" UId="435">
-        <Blank Num="1" UId="436" />
-        <Token Text=":=" UId="437" />
-        <Blank Num="1" UId="438" />
-        <Access Scope="LocalVariable" UId="439">
-          <Symbol UId="440">
-            <Component Name="arrayAddressModbus" UId="441">
-              <Token Text="[" UId="442" />
-              <Access Scope="LocalVariable" UId="443">
-                <Symbol UId="444">
-                  <Component Name="index" UId="445" />
+      <Token Text="(" UId="440" />
+      <Parameter Name="ADDR_DEVICE" UId="441">
+        <Blank Num="1" UId="442" />
+        <Token Text=":=" UId="443" />
+        <Blank Num="1" UId="444" />
+        <Access Scope="LocalVariable" UId="445">
+          <Symbol UId="446">
+            <Component Name="arrayAddressModbus" UId="447">
+              <Token Text="[" UId="448" />
+              <Access Scope="LocalVariable" UId="449">
+                <Symbol UId="450">
+                  <Component Name="index" UId="451" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="446" />
+              <Token Text="]" UId="452" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="447" />
-      <NewLine Num="1" UId="448" />
-      <Blank Num="21" UId="449" />
-      <Parameter Name="ton_changeStep" UId="450">
-        <Blank Num="1" UId="451" />
-        <Token Text=":=" UId="452" />
-        <Blank Num="1" UId="453" />
-        <Access Scope="LocalVariable" UId="454">
-          <Symbol UId="455">
-            <Component Name="Seneca" UId="456" />
-            <Token Text="." UId="457" />
-            <Component Name="TON_changeStep" UId="458" />
+      <Token Text="," UId="453" />
+      <NewLine Num="1" UId="454" />
+      <Blank Num="25" UId="455" />
+      <Parameter Name="ton_changeStep" UId="456">
+        <Blank Num="1" UId="457" />
+        <Token Text=":=" UId="458" />
+        <Blank Num="1" UId="459" />
+        <Access Scope="LocalVariable" UId="460">
+          <Symbol UId="461">
+            <Component Name="Seneca" UId="462" />
+            <Token Text="." UId="463" />
+            <Component Name="TON_changeStep" UId="464" />
+            <Token Text="." UId="465" />
+            <Component Name="Q" UId="466" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="459" />
-      <NewLine Num="1" UId="460" />
-      <Blank Num="21" UId="461" />
-      <Parameter Name="MB_MASTER" UId="462">
-        <Blank Num="1" UId="463" />
-        <Token Text=":=" UId="464" />
-        <Blank Num="1" UId="465" />
-        <Access Scope="LocalVariable" UId="466">
-          <Symbol UId="467">
-            <Component Name="MB_MASTER" UId="468" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="469" />
-      <NewLine Num="1" UId="470" />
-      <Blank Num="21" UId="471" />
-      <Parameter Name="Ton_Start" UId="472">
+      <Token Text="," UId="467" />
+      <NewLine Num="1" UId="468" />
+      <Blank Num="21" UId="469" />
+      <Parameter Name="MB_MASTER" UId="470">
+        <Blank Num="1" UId="471" />
+        <Token Text=":=" UId="472" />
         <Blank Num="1" UId="473" />
-        <Token Text=":=" UId="474" />
-        <Blank Num="1" UId="475" />
-        <Access Scope="LocalVariable" UId="476">
-          <Symbol UId="477">
-            <Component Name="Seneca" UId="478" />
-            <Token Text="." UId="479" />
-            <Component Name="TON_Start" UId="480" />
+        <Access Scope="LocalVariable" UId="474">
+          <Symbol UId="475">
+            <Component Name="Data_toMB_MASTER" UId="476" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="481" />
-      <NewLine Num="1" UId="482" />
-      <Blank Num="21" UId="483" />
-      <Parameter Name="Calibrate" UId="484">
-        <Blank Num="1" UId="485" />
-        <Token Text=":=" UId="486" />
-        <Blank Num="1" UId="487" />
-        <Access Scope="LocalVariable" UId="488">
-          <Symbol UId="489">
-            <Component Name="calibrateZero" UId="490">
-              <Token Text="[" UId="491" />
-              <Access Scope="LocalVariable" UId="492">
-                <Symbol UId="493">
-                  <Component Name="index" UId="494" />
+      <Token Text="," UId="477" />
+      <NewLine Num="1" UId="478" />
+      <Blank Num="21" UId="479" />
+      <Parameter Name="Ton_Start" UId="480">
+        <Blank Num="1" UId="481" />
+        <Token Text=":=" UId="482" />
+        <Blank Num="1" UId="483" />
+        <Access Scope="LocalVariable" UId="484">
+          <Symbol UId="485">
+            <Component Name="Seneca" UId="486" />
+            <Token Text="." UId="487" />
+            <Component Name="TON_Start" UId="488" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="489" />
+      <NewLine Num="1" UId="490" />
+      <Blank Num="21" UId="491" />
+      <Parameter Name="Calibrate" UId="492">
+        <Blank Num="1" UId="493" />
+        <Token Text=":=" UId="494" />
+        <Blank Num="1" UId="495" />
+        <Access Scope="LocalVariable" UId="496">
+          <Symbol UId="497">
+            <Component Name="calibrateZero" UId="498">
+              <Token Text="[" UId="499" />
+              <Access Scope="LocalVariable" UId="500">
+                <Symbol UId="501">
+                  <Component Name="index" UId="502" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="495" />
+              <Token Text="]" UId="503" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="496" />
-      <NewLine Num="1" UId="497" />
-      <Blank Num="21" UId="498" />
-      <Parameter Name="Buffer" UId="499">
-        <Blank Num="1" UId="500" />
-        <Token Text=":=" UId="501" />
-        <Blank Num="1" UId="502" />
-        <Access Scope="GlobalVariable" UId="503">
-          <Symbol UId="504">
-            <Component Name="bufferModBus" UId="505" />
-            <Token Text="." UId="506" />
-            <Component Name="Buffer_DataModbusPort2" UId="507" />
+      <Token Text="," UId="504" />
+      <NewLine Num="1" UId="505" />
+      <Blank Num="21" UId="506" />
+      <Parameter Name="Buffer" UId="507">
+        <Blank Num="1" UId="508" />
+        <Token Text=":=" UId="509" />
+        <Blank Num="1" UId="510" />
+        <Access Scope="GlobalVariable" UId="511">
+          <Symbol UId="512">
+            <Component Name="bufferModBus" UId="513" />
+            <Token Text="." UId="514" />
+            <Component Name="Buffer_DataModbusPort2" UId="515" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="508" />
-      <NewLine Num="1" UId="509" />
-      <Blank Num="21" UId="510" />
-      <Parameter Name="Step" UId="511">
-        <Blank Num="1" UId="512" />
-        <Token Text=":=" UId="513" />
-        <Blank Num="1" UId="514" />
-        <Access Scope="LocalVariable" UId="515">
-          <Symbol UId="516">
-            <Component Name="Seneca" UId="517" />
-            <Token Text="." UId="518" />
-            <Component Name="Step" UId="519" />
+      <Token Text="," UId="516" />
+      <NewLine Num="1" UId="517" />
+      <Blank Num="21" UId="518" />
+      <Parameter Name="Step" UId="519">
+        <Blank Num="1" UId="520" />
+        <Token Text=":=" UId="521" />
+        <Blank Num="1" UId="522" />
+        <Access Scope="LocalVariable" UId="523">
+          <Symbol UId="524">
+            <Component Name="Seneca" UId="525" />
+            <Token Text="." UId="526" />
+            <Component Name="Step" UId="527" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="520" />
-      <NewLine Num="1" UId="521" />
-      <Blank Num="21" UId="522" />
-      <Parameter Name="Tara" UId="523">
-        <Blank Num="1" UId="524" />
-        <Token Text=":=" UId="525" />
-        <Blank Num="1" UId="526" />
-        <Access Scope="LocalVariable" UId="527">
-          <Symbol UId="528">
-            <Component Name="taraZero" UId="529">
-              <Token Text="[" UId="530" />
-              <Access Scope="LocalVariable" UId="531">
-                <Symbol UId="532">
-                  <Component Name="index" UId="533" />
+      <Token Text="," UId="528" />
+      <NewLine Num="1" UId="529" />
+      <Blank Num="21" UId="530" />
+      <Parameter Name="Tara" UId="531">
+        <Blank Num="1" UId="532" />
+        <Token Text=":=" UId="533" />
+        <Blank Num="1" UId="534" />
+        <Access Scope="LocalVariable" UId="535">
+          <Symbol UId="536">
+            <Component Name="taraZero" UId="537">
+              <Token Text="[" UId="538" />
+              <Access Scope="LocalVariable" UId="539">
+                <Symbol UId="540">
+                  <Component Name="index" UId="541" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="534" />
+              <Token Text="]" UId="542" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="535" />
+      <Token Text=")" UId="543" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="536" />
-  <NewLine Num="1" UId="537" />
-  <Blank Num="8" UId="538" />
-  <NewLine Num="1" UId="539" />
-  <Blank Num="8" UId="540" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="541">
-    <Text UId="542">////////////////////////////////////////////////////////////////////////////////</Text>
-  </LineComment>
-  <NewLine Num="1" UId="543" />
-  <Blank Num="8" UId="544" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="545">
-    <Text UId="546">////////////////////////////////////////////////////////////////////////////////</Text>
-  </LineComment>
+  <Token Text=";" UId="544" />
+  <NewLine Num="1" UId="545" />
+  <Blank Num="8" UId="546" />
   <NewLine Num="1" UId="547" />
   <Blank Num="8" UId="548" />
   <LineComment Inserted="false" NoClosingBracket="false" UId="549">
@@ -942,230 +941,229 @@
     <Text UId="554">////////////////////////////////////////////////////////////////////////////////</Text>
   </LineComment>
   <NewLine Num="1" UId="555" />
-  <Blank Num="4" UId="556" />
-  <Access Scope="LiteralConstant" UId="557">
-    <Constant UId="558">
-      <ConstantValue UId="560">6</ConstantValue>
+  <Blank Num="8" UId="556" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="557">
+    <Text UId="558">////////////////////////////////////////////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine Num="1" UId="559" />
+  <Blank Num="8" UId="560" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="561">
+    <Text UId="562">////////////////////////////////////////////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine Num="1" UId="563" />
+  <Blank Num="4" UId="564" />
+  <Access Scope="LiteralConstant" UId="565">
+    <Constant UId="566">
+      <ConstantValue UId="568">6</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="561" />
-  <Blank Num="1" UId="562" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="563">
-    <Text UId="564">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ТРЕТЬЕГО МОДУЛЯ</Text>
+  <Token Text=":" UId="569" />
+  <Blank Num="1" UId="570" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="571">
+    <Text UId="572">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ТРЕТЬЕГО МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="565" />
-  <Blank Num="8" UId="566" />
-  <NewLine Num="1" UId="567" />
-  <Blank Num="8" UId="568" />
-  <Access Scope="LocalVariable" UId="569">
-    <Symbol UId="570">
-      <Component Name="index" UId="571" />
+  <NewLine Num="1" UId="573" />
+  <Blank Num="8" UId="574" />
+  <NewLine Num="1" UId="575" />
+  <Blank Num="8" UId="576" />
+  <Access Scope="LocalVariable" UId="577">
+    <Symbol UId="578">
+      <Component Name="index" UId="579" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="572" />
-  <Token Text=":=" UId="573" />
-  <Blank Num="1" UId="574" />
-  <Access Scope="LiteralConstant" UId="575">
-    <Constant UId="576">
-      <ConstantValue UId="578">3</ConstantValue>
+  <Blank Num="1" UId="580" />
+  <Token Text=":=" UId="581" />
+  <Blank Num="1" UId="582" />
+  <Access Scope="LiteralConstant" UId="583">
+    <Constant UId="584">
+      <ConstantValue UId="586">3</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="579" />
-  <Access Scope="LocalVariable" UId="580">
-    <Symbol UId="581">
-      <Component Name="Offset_array_bits" UId="582" />
+  <Token Text="+" UId="587" />
+  <Access Scope="LocalVariable" UId="588">
+    <Symbol UId="589">
+      <Component Name="Offset_array_bits" UId="590" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="583" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="584">
-    <Text UId="585">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="591" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="592">
+    <Text UId="593">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="586" />
-  <Blank Num="8" UId="587" />
-  <Access Scope="Call" UId="588">
-    <CallInfo UId="589" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="591">
-        <Component Name="rcvDataWeight" UId="590" />
+  <NewLine Num="1" UId="594" />
+  <Blank Num="8" UId="595" />
+  <Access Scope="Call" UId="596">
+    <CallInfo UId="597" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="599">
+        <Component Name="rcvDataWeight" UId="598" />
       </Instance>
-      <Token Text="(" UId="592" />
-      <Parameter Name="ADDR_DEVICE" UId="593">
-        <Blank Num="1" UId="594" />
-        <Token Text=":=" UId="595" />
-        <Blank Num="1" UId="596" />
-        <Access Scope="LocalVariable" UId="597">
-          <Symbol UId="598">
-            <Component Name="arrayAddressModbus" UId="599">
-              <Token Text="[" UId="600" />
-              <Access Scope="LocalVariable" UId="601">
-                <Symbol UId="602">
-                  <Component Name="index" UId="603" />
+      <Token Text="(" UId="600" />
+      <Parameter Name="ADDR_DEVICE" UId="601">
+        <Blank Num="1" UId="602" />
+        <Token Text=":=" UId="603" />
+        <Blank Num="1" UId="604" />
+        <Access Scope="LocalVariable" UId="605">
+          <Symbol UId="606">
+            <Component Name="arrayAddressModbus" UId="607">
+              <Token Text="[" UId="608" />
+              <Access Scope="LocalVariable" UId="609">
+                <Symbol UId="610">
+                  <Component Name="index" UId="611" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="604" />
+              <Token Text="]" UId="612" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="605" />
-      <NewLine Num="1" UId="606" />
-      <Blank Num="24" UId="607" />
-      <Parameter Name="Ton_changeStep" UId="608">
-        <Blank Num="1" UId="609" />
-        <Token Text=":=" UId="610" />
-        <Blank Num="1" UId="611" />
-        <Access Scope="LocalVariable" UId="612">
-          <Symbol UId="613">
-            <Component Name="Seneca" UId="614" />
-            <Token Text="." UId="615" />
-            <Component Name="TON_changeStep" UId="616" />
+      <Token Text="," UId="613" />
+      <NewLine Num="1" UId="614" />
+      <Blank Num="24" UId="615" />
+      <Parameter Name="Ton_changeStep" UId="616">
+        <Blank Num="1" UId="617" />
+        <Token Text=":=" UId="618" />
+        <Blank Num="1" UId="619" />
+        <Access Scope="LocalVariable" UId="620">
+          <Symbol UId="621">
+            <Component Name="Seneca" UId="622" />
+            <Token Text="." UId="623" />
+            <Component Name="TON_changeStep" UId="624" />
+            <Token Text="." UId="625" />
+            <Component Name="Q" UId="626" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="617" />
-      <NewLine Num="1" UId="618" />
-      <Blank Num="24" UId="619" />
-      <Parameter Name="Ton_Start" UId="620">
-        <Blank Num="1" UId="621" />
-        <Token Text=":=" UId="622" />
-        <Blank Num="1" UId="623" />
-        <Access Scope="LocalVariable" UId="624">
-          <Symbol UId="625">
-            <Component Name="Seneca" UId="626" />
-            <Token Text="." UId="627" />
-            <Component Name="TON_Start" UId="628" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="629" />
-      <NewLine Num="1" UId="630" />
-      <Blank Num="24" UId="631" />
-      <Parameter Name="Step" UId="632">
+      <Token Text="," UId="627" />
+      <NewLine Num="1" UId="628" />
+      <Blank Num="24" UId="629" />
+      <Parameter Name="Ton_Start" UId="630">
+        <Blank Num="1" UId="631" />
+        <Token Text=":=" UId="632" />
         <Blank Num="1" UId="633" />
-        <Token Text=":=" UId="634" />
-        <Blank Num="1" UId="635" />
-        <Access Scope="LocalVariable" UId="636">
-          <Symbol UId="637">
-            <Component Name="Seneca" UId="638" />
-            <Token Text="." UId="639" />
-            <Component Name="Step" UId="640" />
+        <Access Scope="LocalVariable" UId="634">
+          <Symbol UId="635">
+            <Component Name="Seneca" UId="636" />
+            <Token Text="." UId="637" />
+            <Component Name="TON_Start" UId="638" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="641" />
-      <NewLine Num="1" UId="642" />
-      <Blank Num="24" UId="643" />
-      <Parameter Name="MB_MASTER" UId="644">
+      <Token Text="," UId="639" />
+      <NewLine Num="1" UId="640" />
+      <Blank Num="24" UId="641" />
+      <Parameter Name="Step" UId="642">
+        <Blank Num="1" UId="643" />
+        <Token Text=":=" UId="644" />
         <Blank Num="1" UId="645" />
-        <Token Text=":=" UId="646" />
-        <Blank Num="1" UId="647" />
-        <Access Scope="LocalVariable" UId="648">
-          <Symbol UId="649">
-            <Component Name="MB_MASTER" UId="650" />
+        <Access Scope="LocalVariable" UId="646">
+          <Symbol UId="647">
+            <Component Name="Seneca" UId="648" />
+            <Token Text="." UId="649" />
+            <Component Name="Step" UId="650" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="651" />
+      <Token Text="," UId="651" />
+      <NewLine Num="1" UId="652" />
+      <Blank Num="24" UId="653" />
+      <Parameter Name="MB_MASTER" UId="654">
+        <Blank Num="1" UId="655" />
+        <Token Text=":=" UId="656" />
+        <Blank Num="1" UId="657" />
+        <Access Scope="LocalVariable" UId="658">
+          <Symbol UId="659">
+            <Component Name="Data_toMB_MASTER" UId="660" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="661" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="652" />
-  <NewLine Num="1" UId="653" />
-  <Blank Num="8" UId="654" />
-  <NewLine Num="1" UId="655" />
-  <Blank Num="4" UId="656" />
-  <Access Scope="LiteralConstant" UId="657">
-    <Constant UId="658">
-      <ConstantValue UId="660">7</ConstantValue>
+  <Token Text=";" UId="662" />
+  <NewLine Num="1" UId="663" />
+  <Blank Num="8" UId="664" />
+  <NewLine Num="1" UId="665" />
+  <Blank Num="4" UId="666" />
+  <Access Scope="LiteralConstant" UId="667">
+    <Constant UId="668">
+      <ConstantValue UId="670">7</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="661" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="662">
-    <Text UId="663">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ЧЕТВЕРТОГО МОДУЛЯ</Text>
+  <Token Text=":" UId="671" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="672">
+    <Text UId="673">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ЧЕТВЕРТОГО МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="664" />
-  <Blank Num="8" UId="665" />
-  <Access Scope="LocalVariable" UId="666">
-    <Symbol UId="667">
-      <Component Name="index" UId="668" />
+  <NewLine Num="1" UId="674" />
+  <Blank Num="8" UId="675" />
+  <Access Scope="LocalVariable" UId="676">
+    <Symbol UId="677">
+      <Component Name="index" UId="678" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="669" />
-  <Token Text=":=" UId="670" />
-  <Blank Num="1" UId="671" />
-  <Access Scope="LiteralConstant" UId="672">
-    <Constant UId="673">
-      <ConstantValue UId="675">4</ConstantValue>
+  <Blank Num="1" UId="679" />
+  <Token Text=":=" UId="680" />
+  <Blank Num="1" UId="681" />
+  <Access Scope="LiteralConstant" UId="682">
+    <Constant UId="683">
+      <ConstantValue UId="685">4</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="676" />
-  <Access Scope="LocalVariable" UId="677">
-    <Symbol UId="678">
-      <Component Name="Offset_array_bits" UId="679" />
+  <Token Text="+" UId="686" />
+  <Access Scope="LocalVariable" UId="687">
+    <Symbol UId="688">
+      <Component Name="Offset_array_bits" UId="689" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="680" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="681">
-    <Text UId="682">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="690" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="691">
+    <Text UId="692">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="683" />
-  <Blank Num="8" UId="684" />
-  <Access Scope="Call" UId="685">
-    <CallInfo UId="686" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="688">
-        <Component Name="rcvDataWeight" UId="687" />
+  <NewLine Num="1" UId="693" />
+  <Blank Num="8" UId="694" />
+  <Access Scope="Call" UId="695">
+    <CallInfo UId="696" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="698">
+        <Component Name="rcvDataWeight" UId="697" />
       </Instance>
-      <Token Text="(" UId="689" />
-      <Parameter Name="ADDR_DEVICE" UId="690">
-        <Blank Num="1" UId="691" />
-        <Token Text=":=" UId="692" />
-        <Blank Num="1" UId="693" />
-        <Access Scope="LocalVariable" UId="694">
-          <Symbol UId="695">
-            <Component Name="arrayAddressModbus" UId="696">
-              <Token Text="[" UId="697" />
-              <Access Scope="LocalVariable" UId="698">
-                <Symbol UId="699">
-                  <Component Name="index" UId="700" />
+      <Token Text="(" UId="699" />
+      <Parameter Name="ADDR_DEVICE" UId="700">
+        <Blank Num="1" UId="701" />
+        <Token Text=":=" UId="702" />
+        <Blank Num="1" UId="703" />
+        <Access Scope="LocalVariable" UId="704">
+          <Symbol UId="705">
+            <Component Name="arrayAddressModbus" UId="706">
+              <Token Text="[" UId="707" />
+              <Access Scope="LocalVariable" UId="708">
+                <Symbol UId="709">
+                  <Component Name="index" UId="710" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="701" />
+              <Token Text="]" UId="711" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="702" />
-      <NewLine Num="1" UId="703" />
-      <Blank Num="24" UId="704" />
-      <Parameter Name="Ton_changeStep" UId="705">
-        <Blank Num="1" UId="706" />
-        <Token Text=":=" UId="707" />
-        <Blank Num="1" UId="708" />
-        <Access Scope="LocalVariable" UId="709">
-          <Symbol UId="710">
-            <Component Name="Seneca" UId="711" />
-            <Token Text="." UId="712" />
-            <Component Name="TON_changeStep" UId="713" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="714" />
-      <NewLine Num="1" UId="715" />
-      <Blank Num="24" UId="716" />
-      <Parameter Name="Ton_Start" UId="717">
+      <Token Text="," UId="712" />
+      <NewLine Num="1" UId="713" />
+      <Blank Num="24" UId="714" />
+      <Parameter Name="Ton_changeStep" UId="715">
+        <Blank Num="1" UId="716" />
+        <Token Text=":=" UId="717" />
         <Blank Num="1" UId="718" />
-        <Token Text=":=" UId="719" />
-        <Blank Num="1" UId="720" />
-        <Access Scope="LocalVariable" UId="721">
-          <Symbol UId="722">
-            <Component Name="Seneca" UId="723" />
+        <Access Scope="LocalVariable" UId="719">
+          <Symbol UId="720">
+            <Component Name="Seneca" UId="721" />
+            <Token Text="." UId="722" />
+            <Component Name="TON_changeStep" UId="723" />
             <Token Text="." UId="724" />
-            <Component Name="TON_Start" UId="725" />
+            <Component Name="Q" UId="725" />
           </Symbol>
         </Access>
       </Parameter>
       <Token Text="," UId="726" />
       <NewLine Num="1" UId="727" />
       <Blank Num="24" UId="728" />
-      <Parameter Name="Step" UId="729">
+      <Parameter Name="Ton_Start" UId="729">
         <Blank Num="1" UId="730" />
         <Token Text=":=" UId="731" />
         <Blank Num="1" UId="732" />
@@ -1173,951 +1171,948 @@
           <Symbol UId="734">
             <Component Name="Seneca" UId="735" />
             <Token Text="." UId="736" />
-            <Component Name="Step" UId="737" />
+            <Component Name="TON_Start" UId="737" />
           </Symbol>
         </Access>
       </Parameter>
       <Token Text="," UId="738" />
       <NewLine Num="1" UId="739" />
       <Blank Num="24" UId="740" />
-      <Parameter Name="MB_MASTER" UId="741">
+      <Parameter Name="Step" UId="741">
         <Blank Num="1" UId="742" />
         <Token Text=":=" UId="743" />
         <Blank Num="1" UId="744" />
         <Access Scope="LocalVariable" UId="745">
           <Symbol UId="746">
-            <Component Name="MB_MASTER" UId="747" />
+            <Component Name="Seneca" UId="747" />
+            <Token Text="." UId="748" />
+            <Component Name="Step" UId="749" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="748" />
+      <Token Text="," UId="750" />
+      <NewLine Num="1" UId="751" />
+      <Blank Num="24" UId="752" />
+      <Parameter Name="MB_MASTER" UId="753">
+        <Blank Num="1" UId="754" />
+        <Token Text=":=" UId="755" />
+        <Blank Num="1" UId="756" />
+        <Access Scope="LocalVariable" UId="757">
+          <Symbol UId="758">
+            <Component Name="Data_toMB_MASTER" UId="759" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="760" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="749" />
-  <NewLine Num="1" UId="750" />
-  <Blank Num="8" UId="751" />
-  <NewLine Num="1" UId="752" />
-  <Blank Num="4" UId="753" />
-  <Access Scope="LiteralConstant" UId="754">
-    <Constant UId="755">
-      <ConstantValue UId="757">8</ConstantValue>
+  <Token Text=";" UId="761" />
+  <NewLine Num="1" UId="762" />
+  <Blank Num="8" UId="763" />
+  <NewLine Num="1" UId="764" />
+  <Blank Num="4" UId="765" />
+  <Access Scope="LiteralConstant" UId="766">
+    <Constant UId="767">
+      <ConstantValue UId="769">8</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="758" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="759">
-    <Text UId="760"> КАЛИБРОВКА 0 ДЛЯ ТРЕТЬЕГО  МОДУЛЯ</Text>
+  <Token Text=":" UId="770" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="771">
+    <Text UId="772"> КАЛИБРОВКА 0 ДЛЯ ТРЕТЬЕГО  МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="761" />
-  <Blank Num="8" UId="762" />
-  <NewLine Num="1" UId="763" />
-  <Blank Num="8" UId="764" />
-  <Access Scope="LocalVariable" UId="765">
-    <Symbol UId="766">
-      <Component Name="index" UId="767" />
+  <NewLine Num="1" UId="773" />
+  <Blank Num="8" UId="774" />
+  <NewLine Num="1" UId="775" />
+  <Blank Num="8" UId="776" />
+  <Access Scope="LocalVariable" UId="777">
+    <Symbol UId="778">
+      <Component Name="index" UId="779" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="768" />
-  <Token Text=":=" UId="769" />
-  <Blank Num="1" UId="770" />
-  <Access Scope="LiteralConstant" UId="771">
-    <Constant UId="772">
-      <ConstantValue UId="774">3</ConstantValue>
+  <Blank Num="1" UId="780" />
+  <Token Text=":=" UId="781" />
+  <Blank Num="1" UId="782" />
+  <Access Scope="LiteralConstant" UId="783">
+    <Constant UId="784">
+      <ConstantValue UId="786">3</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="775" />
-  <Access Scope="LocalVariable" UId="776">
-    <Symbol UId="777">
-      <Component Name="Offset_array_bits" UId="778" />
+  <Token Text="+" UId="787" />
+  <Access Scope="LocalVariable" UId="788">
+    <Symbol UId="789">
+      <Component Name="Offset_array_bits" UId="790" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="779" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="780">
-    <Text UId="781">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="791" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="792">
+    <Text UId="793">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="782" />
-  <Blank Num="8" UId="783" />
-  <Access Scope="Call" UId="784">
-    <CallInfo UId="785" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="787">
-        <Component Name="sndCALIBR&amp;Tara" UId="786" />
+  <NewLine Num="1" UId="794" />
+  <Blank Num="8" UId="795" />
+  <Access Scope="Call" UId="796">
+    <CallInfo UId="797" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="799">
+        <Component Name="sndCALIBR&amp;Tara" UId="798" />
       </Instance>
-      <Token Text="(" UId="788" />
-      <Parameter Name="ADDR_DEVICE" UId="789">
-        <Blank Num="1" UId="790" />
-        <Token Text=":=" UId="791" />
-        <Blank Num="1" UId="792" />
-        <Access Scope="LocalVariable" UId="793">
-          <Symbol UId="794">
-            <Component Name="arrayAddressModbus" UId="795">
-              <Token Text="[" UId="796" />
-              <Access Scope="LocalVariable" UId="797">
-                <Symbol UId="798">
-                  <Component Name="index" UId="799" />
+      <Token Text="(" UId="800" />
+      <Parameter Name="ADDR_DEVICE" UId="801">
+        <Blank Num="1" UId="802" />
+        <Token Text=":=" UId="803" />
+        <Blank Num="1" UId="804" />
+        <Access Scope="LocalVariable" UId="805">
+          <Symbol UId="806">
+            <Component Name="arrayAddressModbus" UId="807">
+              <Token Text="[" UId="808" />
+              <Access Scope="LocalVariable" UId="809">
+                <Symbol UId="810">
+                  <Component Name="index" UId="811" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="800" />
+              <Token Text="]" UId="812" />
             </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="801" />
-      <NewLine Num="1" UId="802" />
-      <Blank Num="21" UId="803" />
-      <Parameter Name="ton_changeStep" UId="804">
-        <Blank Num="1" UId="805" />
-        <Token Text=":=" UId="806" />
-        <Blank Num="1" UId="807" />
-        <Access Scope="LocalVariable" UId="808">
-          <Symbol UId="809">
-            <Component Name="Seneca" UId="810" />
-            <Token Text="." UId="811" />
-            <Component Name="TON_changeStep" UId="812" />
           </Symbol>
         </Access>
       </Parameter>
       <Token Text="," UId="813" />
       <NewLine Num="1" UId="814" />
-      <Blank Num="21" UId="815" />
-      <Parameter Name="MB_MASTER" UId="816">
+      <Blank Num="25" UId="815" />
+      <Parameter Name="ton_changeStep" UId="816">
         <Blank Num="1" UId="817" />
         <Token Text=":=" UId="818" />
         <Blank Num="1" UId="819" />
         <Access Scope="LocalVariable" UId="820">
           <Symbol UId="821">
-            <Component Name="MB_MASTER" UId="822" />
+            <Component Name="Seneca" UId="822" />
+            <Token Text="." UId="823" />
+            <Component Name="TON_changeStep" UId="824" />
+            <Token Text="." UId="825" />
+            <Component Name="Q" UId="826" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="823" />
-      <NewLine Num="1" UId="824" />
-      <Blank Num="21" UId="825" />
-      <Parameter Name="Ton_Start" UId="826">
-        <Blank Num="1" UId="827" />
-        <Token Text=":=" UId="828" />
-        <Blank Num="1" UId="829" />
-        <Access Scope="LocalVariable" UId="830">
-          <Symbol UId="831">
-            <Component Name="Seneca" UId="832" />
-            <Token Text="." UId="833" />
-            <Component Name="TON_Start" UId="834" />
+      <Token Text="," UId="827" />
+      <NewLine Num="1" UId="828" />
+      <Blank Num="21" UId="829" />
+      <Parameter Name="MB_MASTER" UId="830">
+        <Blank Num="1" UId="831" />
+        <Token Text=":=" UId="832" />
+        <Blank Num="1" UId="833" />
+        <Access Scope="LocalVariable" UId="834">
+          <Symbol UId="835">
+            <Component Name="Data_toMB_MASTER" UId="836" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="835" />
-      <NewLine Num="1" UId="836" />
-      <Blank Num="21" UId="837" />
-      <Parameter Name="Calibrate" UId="838">
-        <Blank Num="1" UId="839" />
-        <Token Text=":=" UId="840" />
+      <Token Text="," UId="837" />
+      <NewLine Num="1" UId="838" />
+      <Blank Num="21" UId="839" />
+      <Parameter Name="Ton_Start" UId="840">
         <Blank Num="1" UId="841" />
-        <Access Scope="LocalVariable" UId="842">
-          <Symbol UId="843">
-            <Component Name="calibrateZero" UId="844">
-              <Token Text="[" UId="845" />
-              <Access Scope="LocalVariable" UId="846">
-                <Symbol UId="847">
-                  <Component Name="index" UId="848" />
+        <Token Text=":=" UId="842" />
+        <Blank Num="1" UId="843" />
+        <Access Scope="LocalVariable" UId="844">
+          <Symbol UId="845">
+            <Component Name="Seneca" UId="846" />
+            <Token Text="." UId="847" />
+            <Component Name="TON_Start" UId="848" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="849" />
+      <NewLine Num="1" UId="850" />
+      <Blank Num="21" UId="851" />
+      <Parameter Name="Calibrate" UId="852">
+        <Blank Num="1" UId="853" />
+        <Token Text=":=" UId="854" />
+        <Blank Num="1" UId="855" />
+        <Access Scope="LocalVariable" UId="856">
+          <Symbol UId="857">
+            <Component Name="calibrateZero" UId="858">
+              <Token Text="[" UId="859" />
+              <Access Scope="LocalVariable" UId="860">
+                <Symbol UId="861">
+                  <Component Name="index" UId="862" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="849" />
+              <Token Text="]" UId="863" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="850" />
-      <NewLine Num="1" UId="851" />
-      <Blank Num="21" UId="852" />
-      <Parameter Name="Buffer" UId="853">
-        <Blank Num="1" UId="854" />
-        <Token Text=":=" UId="855" />
-        <Blank Num="1" UId="856" />
-        <Access Scope="GlobalVariable" UId="857">
-          <Symbol UId="858">
-            <Component Name="bufferModBus" UId="859" />
-            <Token Text="." UId="860" />
-            <Component Name="Buffer_DataModbusPort2" UId="861" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="862" />
-      <NewLine Num="1" UId="863" />
-      <Blank Num="21" UId="864" />
-      <Parameter Name="Step" UId="865">
-        <Blank Num="1" UId="866" />
-        <Token Text=":=" UId="867" />
+      <Token Text="," UId="864" />
+      <NewLine Num="1" UId="865" />
+      <Blank Num="21" UId="866" />
+      <Parameter Name="Buffer" UId="867">
         <Blank Num="1" UId="868" />
-        <Access Scope="LocalVariable" UId="869">
-          <Symbol UId="870">
-            <Component Name="Seneca" UId="871" />
-            <Token Text="." UId="872" />
-            <Component Name="Step" UId="873" />
+        <Token Text=":=" UId="869" />
+        <Blank Num="1" UId="870" />
+        <Access Scope="GlobalVariable" UId="871">
+          <Symbol UId="872">
+            <Component Name="bufferModBus" UId="873" />
+            <Token Text="." UId="874" />
+            <Component Name="Buffer_DataModbusPort2" UId="875" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="874" />
-      <NewLine Num="1" UId="875" />
-      <Blank Num="21" UId="876" />
-      <Parameter Name="Tara" UId="877">
-        <Blank Num="1" UId="878" />
-        <Token Text=":=" UId="879" />
+      <Token Text="," UId="876" />
+      <NewLine Num="1" UId="877" />
+      <Blank Num="21" UId="878" />
+      <Parameter Name="Step" UId="879">
         <Blank Num="1" UId="880" />
-        <Access Scope="LocalVariable" UId="881">
-          <Symbol UId="882">
-            <Component Name="taraZero" UId="883">
-              <Token Text="[" UId="884" />
-              <Access Scope="LocalVariable" UId="885">
-                <Symbol UId="886">
-                  <Component Name="index" UId="887" />
+        <Token Text=":=" UId="881" />
+        <Blank Num="1" UId="882" />
+        <Access Scope="LocalVariable" UId="883">
+          <Symbol UId="884">
+            <Component Name="Seneca" UId="885" />
+            <Token Text="." UId="886" />
+            <Component Name="Step" UId="887" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="888" />
+      <NewLine Num="1" UId="889" />
+      <Blank Num="21" UId="890" />
+      <Parameter Name="Tara" UId="891">
+        <Blank Num="1" UId="892" />
+        <Token Text=":=" UId="893" />
+        <Blank Num="1" UId="894" />
+        <Access Scope="LocalVariable" UId="895">
+          <Symbol UId="896">
+            <Component Name="taraZero" UId="897">
+              <Token Text="[" UId="898" />
+              <Access Scope="LocalVariable" UId="899">
+                <Symbol UId="900">
+                  <Component Name="index" UId="901" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="888" />
+              <Token Text="]" UId="902" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="889" />
+      <Token Text=")" UId="903" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="890" />
-  <NewLine Num="1" UId="891" />
-  <Blank Num="8" UId="892" />
-  <NewLine Num="1" UId="893" />
-  <Blank Num="4" UId="894" />
-  <Access Scope="LiteralConstant" UId="895">
-    <Constant UId="896">
-      <ConstantValue UId="898">9</ConstantValue>
+  <Token Text=";" UId="904" />
+  <NewLine Num="1" UId="905" />
+  <Blank Num="8" UId="906" />
+  <NewLine Num="1" UId="907" />
+  <Blank Num="4" UId="908" />
+  <Access Scope="LiteralConstant" UId="909">
+    <Constant UId="910">
+      <ConstantValue UId="912">9</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="899" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="900">
-    <Text UId="901">КАЛИБРОВКА 0 ДЛЯ ЧЕТВЕРТОГО МОДУЛЯ</Text>
+  <Token Text=":" UId="913" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="914">
+    <Text UId="915">КАЛИБРОВКА 0 ДЛЯ ЧЕТВЕРТОГО МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="902" />
-  <Blank Num="8" UId="903" />
-  <NewLine Num="1" UId="904" />
-  <Blank Num="8" UId="905" />
-  <Access Scope="LocalVariable" UId="906">
-    <Symbol UId="907">
-      <Component Name="index" UId="908" />
+  <NewLine Num="1" UId="916" />
+  <Blank Num="8" UId="917" />
+  <NewLine Num="1" UId="918" />
+  <Blank Num="8" UId="919" />
+  <Access Scope="LocalVariable" UId="920">
+    <Symbol UId="921">
+      <Component Name="index" UId="922" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="909" />
-  <Token Text=":=" UId="910" />
-  <Blank Num="1" UId="911" />
-  <Access Scope="LiteralConstant" UId="912">
-    <Constant UId="913">
-      <ConstantValue UId="915">4</ConstantValue>
+  <Blank Num="1" UId="923" />
+  <Token Text=":=" UId="924" />
+  <Blank Num="1" UId="925" />
+  <Access Scope="LiteralConstant" UId="926">
+    <Constant UId="927">
+      <ConstantValue UId="929">4</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="916" />
-  <Access Scope="LocalVariable" UId="917">
-    <Symbol UId="918">
-      <Component Name="Offset_array_bits" UId="919" />
+  <Token Text="+" UId="930" />
+  <Access Scope="LocalVariable" UId="931">
+    <Symbol UId="932">
+      <Component Name="Offset_array_bits" UId="933" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="920" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="921">
-    <Text UId="922">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="934" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="935">
+    <Text UId="936">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="923" />
-  <Blank Num="8" UId="924" />
-  <Access Scope="Call" UId="925">
-    <CallInfo UId="926" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="928">
-        <Component Name="sndCALIBR&amp;Tara" UId="927" />
+  <NewLine Num="1" UId="937" />
+  <Blank Num="8" UId="938" />
+  <Access Scope="Call" UId="939">
+    <CallInfo UId="940" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="942">
+        <Component Name="sndCALIBR&amp;Tara" UId="941" />
       </Instance>
-      <Token Text="(" UId="929" />
-      <Parameter Name="ADDR_DEVICE" UId="930">
-        <Blank Num="1" UId="931" />
-        <Token Text=":=" UId="932" />
-        <Blank Num="1" UId="933" />
-        <Access Scope="LocalVariable" UId="934">
-          <Symbol UId="935">
-            <Component Name="arrayAddressModbus" UId="936">
-              <Token Text="[" UId="937" />
-              <Access Scope="LocalVariable" UId="938">
-                <Symbol UId="939">
-                  <Component Name="index" UId="940" />
+      <Token Text="(" UId="943" />
+      <Parameter Name="ADDR_DEVICE" UId="944">
+        <Blank Num="1" UId="945" />
+        <Token Text=":=" UId="946" />
+        <Blank Num="1" UId="947" />
+        <Access Scope="LocalVariable" UId="948">
+          <Symbol UId="949">
+            <Component Name="arrayAddressModbus" UId="950">
+              <Token Text="[" UId="951" />
+              <Access Scope="LocalVariable" UId="952">
+                <Symbol UId="953">
+                  <Component Name="index" UId="954" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="941" />
+              <Token Text="]" UId="955" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="942" />
-      <NewLine Num="1" UId="943" />
-      <Blank Num="21" UId="944" />
-      <Parameter Name="ton_changeStep" UId="945">
-        <Blank Num="1" UId="946" />
-        <Token Text=":=" UId="947" />
-        <Blank Num="1" UId="948" />
-        <Access Scope="LocalVariable" UId="949">
-          <Symbol UId="950">
-            <Component Name="Seneca" UId="951" />
-            <Token Text="." UId="952" />
-            <Component Name="TON_changeStep" UId="953" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="954" />
-      <NewLine Num="1" UId="955" />
-      <Blank Num="21" UId="956" />
-      <Parameter Name="MB_MASTER" UId="957">
-        <Blank Num="1" UId="958" />
-        <Token Text=":=" UId="959" />
+      <Token Text="," UId="956" />
+      <NewLine Num="1" UId="957" />
+      <Blank Num="25" UId="958" />
+      <Parameter Name="ton_changeStep" UId="959">
         <Blank Num="1" UId="960" />
-        <Access Scope="LocalVariable" UId="961">
-          <Symbol UId="962">
-            <Component Name="MB_MASTER" UId="963" />
+        <Token Text=":=" UId="961" />
+        <Blank Num="1" UId="962" />
+        <Access Scope="LocalVariable" UId="963">
+          <Symbol UId="964">
+            <Component Name="Seneca" UId="965" />
+            <Token Text="." UId="966" />
+            <Component Name="TON_changeStep" UId="967" />
+            <Token Text="." UId="968" />
+            <Component Name="Q" UId="969" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="964" />
-      <NewLine Num="1" UId="965" />
-      <Blank Num="21" UId="966" />
-      <Parameter Name="Ton_Start" UId="967">
-        <Blank Num="1" UId="968" />
-        <Token Text=":=" UId="969" />
-        <Blank Num="1" UId="970" />
-        <Access Scope="LocalVariable" UId="971">
-          <Symbol UId="972">
-            <Component Name="Seneca" UId="973" />
-            <Token Text="." UId="974" />
-            <Component Name="TON_Start" UId="975" />
+      <Token Text="," UId="970" />
+      <NewLine Num="1" UId="971" />
+      <Blank Num="21" UId="972" />
+      <Parameter Name="MB_MASTER" UId="973">
+        <Blank Num="1" UId="974" />
+        <Token Text=":=" UId="975" />
+        <Blank Num="1" UId="976" />
+        <Access Scope="LocalVariable" UId="977">
+          <Symbol UId="978">
+            <Component Name="Data_toMB_MASTER" UId="979" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="976" />
-      <NewLine Num="1" UId="977" />
-      <Blank Num="21" UId="978" />
-      <Parameter Name="Calibrate" UId="979">
-        <Blank Num="1" UId="980" />
-        <Token Text=":=" UId="981" />
-        <Blank Num="1" UId="982" />
-        <Access Scope="LocalVariable" UId="983">
-          <Symbol UId="984">
-            <Component Name="calibrateZero" UId="985">
-              <Token Text="[" UId="986" />
-              <Access Scope="LocalVariable" UId="987">
-                <Symbol UId="988">
-                  <Component Name="index" UId="989" />
+      <Token Text="," UId="980" />
+      <NewLine Num="1" UId="981" />
+      <Blank Num="21" UId="982" />
+      <Parameter Name="Ton_Start" UId="983">
+        <Blank Num="1" UId="984" />
+        <Token Text=":=" UId="985" />
+        <Blank Num="1" UId="986" />
+        <Access Scope="LocalVariable" UId="987">
+          <Symbol UId="988">
+            <Component Name="Seneca" UId="989" />
+            <Token Text="." UId="990" />
+            <Component Name="TON_Start" UId="991" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="992" />
+      <NewLine Num="1" UId="993" />
+      <Blank Num="21" UId="994" />
+      <Parameter Name="Calibrate" UId="995">
+        <Blank Num="1" UId="996" />
+        <Token Text=":=" UId="997" />
+        <Blank Num="1" UId="998" />
+        <Access Scope="LocalVariable" UId="999">
+          <Symbol UId="1000">
+            <Component Name="calibrateZero" UId="1001">
+              <Token Text="[" UId="1002" />
+              <Access Scope="LocalVariable" UId="1003">
+                <Symbol UId="1004">
+                  <Component Name="index" UId="1005" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="990" />
+              <Token Text="]" UId="1006" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="991" />
-      <NewLine Num="1" UId="992" />
-      <Blank Num="21" UId="993" />
-      <Parameter Name="Buffer" UId="994">
-        <Blank Num="1" UId="995" />
-        <Token Text=":=" UId="996" />
-        <Blank Num="1" UId="997" />
-        <Access Scope="GlobalVariable" UId="998">
-          <Symbol UId="999">
-            <Component Name="bufferModBus" UId="1000" />
-            <Token Text="." UId="1001" />
-            <Component Name="Buffer_DataModbusPort2" UId="1002" />
+      <Token Text="," UId="1007" />
+      <NewLine Num="1" UId="1008" />
+      <Blank Num="21" UId="1009" />
+      <Parameter Name="Buffer" UId="1010">
+        <Blank Num="1" UId="1011" />
+        <Token Text=":=" UId="1012" />
+        <Blank Num="1" UId="1013" />
+        <Access Scope="GlobalVariable" UId="1014">
+          <Symbol UId="1015">
+            <Component Name="bufferModBus" UId="1016" />
+            <Token Text="." UId="1017" />
+            <Component Name="Buffer_DataModbusPort2" UId="1018" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1003" />
-      <NewLine Num="1" UId="1004" />
-      <Blank Num="21" UId="1005" />
-      <Parameter Name="Step" UId="1006">
-        <Blank Num="1" UId="1007" />
-        <Token Text=":=" UId="1008" />
-        <Blank Num="1" UId="1009" />
-        <Access Scope="LocalVariable" UId="1010">
-          <Symbol UId="1011">
-            <Component Name="Seneca" UId="1012" />
-            <Token Text="." UId="1013" />
-            <Component Name="Step" UId="1014" />
+      <Token Text="," UId="1019" />
+      <NewLine Num="1" UId="1020" />
+      <Blank Num="21" UId="1021" />
+      <Parameter Name="Step" UId="1022">
+        <Blank Num="1" UId="1023" />
+        <Token Text=":=" UId="1024" />
+        <Blank Num="1" UId="1025" />
+        <Access Scope="LocalVariable" UId="1026">
+          <Symbol UId="1027">
+            <Component Name="Seneca" UId="1028" />
+            <Token Text="." UId="1029" />
+            <Component Name="Step" UId="1030" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1015" />
-      <NewLine Num="1" UId="1016" />
-      <Blank Num="21" UId="1017" />
-      <Parameter Name="Tara" UId="1018">
-        <Blank Num="1" UId="1019" />
-        <Token Text=":=" UId="1020" />
-        <Blank Num="1" UId="1021" />
-        <Access Scope="LocalVariable" UId="1022">
-          <Symbol UId="1023">
-            <Component Name="taraZero" UId="1024">
-              <Token Text="[" UId="1025" />
-              <Access Scope="LocalVariable" UId="1026">
-                <Symbol UId="1027">
-                  <Component Name="index" UId="1028" />
+      <Token Text="," UId="1031" />
+      <NewLine Num="1" UId="1032" />
+      <Blank Num="21" UId="1033" />
+      <Parameter Name="Tara" UId="1034">
+        <Blank Num="1" UId="1035" />
+        <Token Text=":=" UId="1036" />
+        <Blank Num="1" UId="1037" />
+        <Access Scope="LocalVariable" UId="1038">
+          <Symbol UId="1039">
+            <Component Name="taraZero" UId="1040">
+              <Token Text="[" UId="1041" />
+              <Access Scope="LocalVariable" UId="1042">
+                <Symbol UId="1043">
+                  <Component Name="index" UId="1044" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1029" />
+              <Token Text="]" UId="1045" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="1030" />
+      <Token Text=")" UId="1046" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="1031" />
-  <NewLine Num="1" UId="1032" />
-  <Blank Num="8" UId="1033" />
-  <NewLine Num="1" UId="1034" />
-  <Blank Num="8" UId="1035" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1036">
-    <Text UId="1037">///////////////////////////////////////////////////////////////////////////////</Text>
-  </LineComment>
-  <NewLine Num="1" UId="1038" />
-  <Blank Num="8" UId="1039" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1040">
-    <Text UId="1041">//////////////////////////////////////////////////////////////////////////////</Text>
-  </LineComment>
-  <NewLine Num="1" UId="1042" />
-  <Blank Num="8" UId="1043" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1044">
-    <Text UId="1045">//////////////////////////////////////////////////////////////////////////////</Text>
-  </LineComment>
-  <NewLine Num="1" UId="1046" />
-  <Blank Num="8" UId="1047" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1048">
-    <Text UId="1049">//////////////////////////////////////////////////////////////////////////////</Text>
-  </LineComment>
+  <Token Text=";" UId="1047" />
+  <NewLine Num="1" UId="1048" />
+  <Blank Num="8" UId="1049" />
   <NewLine Num="1" UId="1050" />
-  <Blank Num="4" UId="1051" />
-  <Access Scope="LiteralConstant" UId="1052">
-    <Constant UId="1053">
-      <ConstantValue UId="1055">10</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=":" UId="1056" />
-  <Blank Num="1" UId="1057" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1058">
-    <Text UId="1059">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ПЯТОГО МОДУЛЯ</Text>
+  <Blank Num="8" UId="1051" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1052">
+    <Text UId="1053">///////////////////////////////////////////////////////////////////////////////</Text>
   </LineComment>
-  <NewLine Num="1" UId="1060" />
-  <Blank Num="8" UId="1061" />
-  <Access Scope="LocalVariable" UId="1062">
-    <Symbol UId="1063">
-      <Component Name="index" UId="1064" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1065" />
-  <Token Text=":=" UId="1066" />
-  <Blank Num="1" UId="1067" />
+  <NewLine Num="1" UId="1054" />
+  <Blank Num="8" UId="1055" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1056">
+    <Text UId="1057">//////////////////////////////////////////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1058" />
+  <Blank Num="8" UId="1059" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1060">
+    <Text UId="1061">//////////////////////////////////////////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1062" />
+  <Blank Num="8" UId="1063" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1064">
+    <Text UId="1065">//////////////////////////////////////////////////////////////////////////////</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1066" />
+  <Blank Num="4" UId="1067" />
   <Access Scope="LiteralConstant" UId="1068">
     <Constant UId="1069">
-      <ConstantValue UId="1071">5</ConstantValue>
+      <ConstantValue UId="1071">10</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="1072" />
-  <Access Scope="LocalVariable" UId="1073">
-    <Symbol UId="1074">
-      <Component Name="Offset_array_bits" UId="1075" />
+  <Token Text=":" UId="1072" />
+  <Blank Num="1" UId="1073" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1074">
+    <Text UId="1075">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ПЯТОГО МОДУЛЯ</Text>
+  </LineComment>
+  <NewLine Num="1" UId="1076" />
+  <Blank Num="8" UId="1077" />
+  <Access Scope="LocalVariable" UId="1078">
+    <Symbol UId="1079">
+      <Component Name="index" UId="1080" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="1076" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1077">
-    <Text UId="1078">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Blank Num="1" UId="1081" />
+  <Token Text=":=" UId="1082" />
+  <Blank Num="1" UId="1083" />
+  <Access Scope="LiteralConstant" UId="1084">
+    <Constant UId="1085">
+      <ConstantValue UId="1087">5</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text="+" UId="1088" />
+  <Access Scope="LocalVariable" UId="1089">
+    <Symbol UId="1090">
+      <Component Name="Offset_array_bits" UId="1091" />
+    </Symbol>
+  </Access>
+  <Token Text=";" UId="1092" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1093">
+    <Text UId="1094">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="1079" />
-  <Blank Num="8" UId="1080" />
-  <Access Scope="Call" UId="1081">
-    <CallInfo UId="1082" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="1084">
-        <Component Name="rcvDataWeight" UId="1083" />
+  <NewLine Num="1" UId="1095" />
+  <Blank Num="8" UId="1096" />
+  <Access Scope="Call" UId="1097">
+    <CallInfo UId="1098" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1100">
+        <Component Name="rcvDataWeight" UId="1099" />
       </Instance>
-      <Token Text="(" UId="1085" />
-      <Parameter Name="ADDR_DEVICE" UId="1086">
-        <Blank Num="1" UId="1087" />
-        <Token Text=":=" UId="1088" />
-        <Blank Num="1" UId="1089" />
-        <Access Scope="LocalVariable" UId="1090">
-          <Symbol UId="1091">
-            <Component Name="arrayAddressModbus" UId="1092">
-              <Token Text="[" UId="1093" />
-              <Access Scope="LocalVariable" UId="1094">
-                <Symbol UId="1095">
-                  <Component Name="index" UId="1096" />
+      <Token Text="(" UId="1101" />
+      <Parameter Name="ADDR_DEVICE" UId="1102">
+        <Blank Num="1" UId="1103" />
+        <Token Text=":=" UId="1104" />
+        <Blank Num="1" UId="1105" />
+        <Access Scope="LocalVariable" UId="1106">
+          <Symbol UId="1107">
+            <Component Name="arrayAddressModbus" UId="1108">
+              <Token Text="[" UId="1109" />
+              <Access Scope="LocalVariable" UId="1110">
+                <Symbol UId="1111">
+                  <Component Name="index" UId="1112" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1097" />
+              <Token Text="]" UId="1113" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1098" />
-      <NewLine Num="1" UId="1099" />
-      <Blank Num="24" UId="1100" />
-      <Parameter Name="Ton_changeStep" UId="1101">
-        <Blank Num="1" UId="1102" />
-        <Token Text=":=" UId="1103" />
-        <Blank Num="1" UId="1104" />
-        <Access Scope="LocalVariable" UId="1105">
-          <Symbol UId="1106">
-            <Component Name="Seneca" UId="1107" />
-            <Token Text="." UId="1108" />
-            <Component Name="TON_changeStep" UId="1109" />
+      <Token Text="," UId="1114" />
+      <NewLine Num="1" UId="1115" />
+      <Blank Num="24" UId="1116" />
+      <Parameter Name="Ton_changeStep" UId="1117">
+        <Blank Num="1" UId="1118" />
+        <Token Text=":=" UId="1119" />
+        <Blank Num="1" UId="1120" />
+        <Access Scope="LocalVariable" UId="1121">
+          <Symbol UId="1122">
+            <Component Name="Seneca" UId="1123" />
+            <Token Text="." UId="1124" />
+            <Component Name="TON_changeStep" UId="1125" />
+            <Token Text="." UId="1126" />
+            <Component Name="Q" UId="1127" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1110" />
-      <NewLine Num="1" UId="1111" />
-      <Blank Num="24" UId="1112" />
-      <Parameter Name="Ton_Start" UId="1113">
-        <Blank Num="1" UId="1114" />
-        <Token Text=":=" UId="1115" />
-        <Blank Num="1" UId="1116" />
-        <Access Scope="LocalVariable" UId="1117">
-          <Symbol UId="1118">
-            <Component Name="Seneca" UId="1119" />
-            <Token Text="." UId="1120" />
-            <Component Name="TON_Start" UId="1121" />
+      <Token Text="," UId="1128" />
+      <NewLine Num="1" UId="1129" />
+      <Blank Num="24" UId="1130" />
+      <Parameter Name="Ton_Start" UId="1131">
+        <Blank Num="1" UId="1132" />
+        <Token Text=":=" UId="1133" />
+        <Blank Num="1" UId="1134" />
+        <Access Scope="LocalVariable" UId="1135">
+          <Symbol UId="1136">
+            <Component Name="Seneca" UId="1137" />
+            <Token Text="." UId="1138" />
+            <Component Name="TON_Start" UId="1139" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1122" />
-      <NewLine Num="1" UId="1123" />
-      <Blank Num="24" UId="1124" />
-      <Parameter Name="Step" UId="1125">
-        <Blank Num="1" UId="1126" />
-        <Token Text=":=" UId="1127" />
-        <Blank Num="1" UId="1128" />
-        <Access Scope="LocalVariable" UId="1129">
-          <Symbol UId="1130">
-            <Component Name="Seneca" UId="1131" />
-            <Token Text="." UId="1132" />
-            <Component Name="Step" UId="1133" />
+      <Token Text="," UId="1140" />
+      <NewLine Num="1" UId="1141" />
+      <Blank Num="24" UId="1142" />
+      <Parameter Name="Step" UId="1143">
+        <Blank Num="1" UId="1144" />
+        <Token Text=":=" UId="1145" />
+        <Blank Num="1" UId="1146" />
+        <Access Scope="LocalVariable" UId="1147">
+          <Symbol UId="1148">
+            <Component Name="Seneca" UId="1149" />
+            <Token Text="." UId="1150" />
+            <Component Name="Step" UId="1151" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1134" />
-      <NewLine Num="1" UId="1135" />
-      <Blank Num="24" UId="1136" />
-      <Parameter Name="MB_MASTER" UId="1137">
-        <Blank Num="1" UId="1138" />
-        <Token Text=":=" UId="1139" />
-        <Blank Num="1" UId="1140" />
-        <Access Scope="LocalVariable" UId="1141">
-          <Symbol UId="1142">
-            <Component Name="MB_MASTER" UId="1143" />
+      <Token Text="," UId="1152" />
+      <NewLine Num="1" UId="1153" />
+      <Blank Num="24" UId="1154" />
+      <Parameter Name="MB_MASTER" UId="1155">
+        <Blank Num="1" UId="1156" />
+        <Token Text=":=" UId="1157" />
+        <Blank Num="1" UId="1158" />
+        <Access Scope="LocalVariable" UId="1159">
+          <Symbol UId="1160">
+            <Component Name="Data_toMB_MASTER" UId="1161" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="1144" />
+      <Token Text=")" UId="1162" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="1145" />
-  <NewLine Num="1" UId="1146" />
-  <Blank Num="8" UId="1147" />
-  <NewLine Num="1" UId="1148" />
-  <Blank Num="4" UId="1149" />
-  <Access Scope="LiteralConstant" UId="1150">
-    <Constant UId="1151">
-      <ConstantValue UId="1153">11</ConstantValue>
+  <Token Text=";" UId="1163" />
+  <NewLine Num="1" UId="1164" />
+  <Blank Num="8" UId="1165" />
+  <NewLine Num="1" UId="1166" />
+  <Blank Num="4" UId="1167" />
+  <Access Scope="LiteralConstant" UId="1168">
+    <Constant UId="1169">
+      <ConstantValue UId="1171">11</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="1154" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1155">
-    <Text UId="1156">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ШЕСТОГО МОДУЛЯ</Text>
+  <Token Text=":" UId="1172" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1173">
+    <Text UId="1174">ЧИТАЕМ ЗНАЧЕНИЕ ВЕСА С ШЕСТОГО МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="1157" />
-  <Blank Num="8" UId="1158" />
-  <Access Scope="LocalVariable" UId="1159">
-    <Symbol UId="1160">
-      <Component Name="index" UId="1161" />
+  <NewLine Num="1" UId="1175" />
+  <Blank Num="8" UId="1176" />
+  <Access Scope="LocalVariable" UId="1177">
+    <Symbol UId="1178">
+      <Component Name="index" UId="1179" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="1162" />
-  <Token Text=":=" UId="1163" />
-  <Blank Num="1" UId="1164" />
-  <Access Scope="LiteralConstant" UId="1165">
-    <Constant UId="1166">
-      <ConstantValue UId="1168">6</ConstantValue>
+  <Blank Num="1" UId="1180" />
+  <Token Text=":=" UId="1181" />
+  <Blank Num="1" UId="1182" />
+  <Access Scope="LiteralConstant" UId="1183">
+    <Constant UId="1184">
+      <ConstantValue UId="1186">6</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="1169" />
-  <Access Scope="LocalVariable" UId="1170">
-    <Symbol UId="1171">
-      <Component Name="Offset_array_bits" UId="1172" />
+  <Token Text="+" UId="1187" />
+  <Access Scope="LocalVariable" UId="1188">
+    <Symbol UId="1189">
+      <Component Name="Offset_array_bits" UId="1190" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="1173" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1174">
-    <Text UId="1175">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="1191" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1192">
+    <Text UId="1193">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="1176" />
-  <Blank Num="8" UId="1177" />
-  <Access Scope="Call" UId="1178">
-    <CallInfo UId="1179" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="1181">
-        <Component Name="rcvDataWeight" UId="1180" />
+  <NewLine Num="1" UId="1194" />
+  <Blank Num="8" UId="1195" />
+  <Access Scope="Call" UId="1196">
+    <CallInfo UId="1197" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1199">
+        <Component Name="rcvDataWeight" UId="1198" />
       </Instance>
-      <Token Text="(" UId="1182" />
-      <Parameter Name="ADDR_DEVICE" UId="1183">
-        <Blank Num="1" UId="1184" />
-        <Token Text=":=" UId="1185" />
-        <Blank Num="1" UId="1186" />
-        <Access Scope="LocalVariable" UId="1187">
-          <Symbol UId="1188">
-            <Component Name="arrayAddressModbus" UId="1189">
-              <Token Text="[" UId="1190" />
-              <Access Scope="LocalVariable" UId="1191">
-                <Symbol UId="1192">
-                  <Component Name="index" UId="1193" />
+      <Token Text="(" UId="1200" />
+      <Parameter Name="ADDR_DEVICE" UId="1201">
+        <Blank Num="1" UId="1202" />
+        <Token Text=":=" UId="1203" />
+        <Blank Num="1" UId="1204" />
+        <Access Scope="LocalVariable" UId="1205">
+          <Symbol UId="1206">
+            <Component Name="arrayAddressModbus" UId="1207">
+              <Token Text="[" UId="1208" />
+              <Access Scope="LocalVariable" UId="1209">
+                <Symbol UId="1210">
+                  <Component Name="index" UId="1211" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1194" />
+              <Token Text="]" UId="1212" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1195" />
-      <NewLine Num="1" UId="1196" />
-      <Blank Num="24" UId="1197" />
-      <Parameter Name="Ton_changeStep" UId="1198">
-        <Blank Num="1" UId="1199" />
-        <Token Text=":=" UId="1200" />
-        <Blank Num="1" UId="1201" />
-        <Access Scope="LocalVariable" UId="1202">
-          <Symbol UId="1203">
-            <Component Name="Seneca" UId="1204" />
-            <Token Text="." UId="1205" />
-            <Component Name="TON_changeStep" UId="1206" />
+      <Token Text="," UId="1213" />
+      <NewLine Num="1" UId="1214" />
+      <Blank Num="24" UId="1215" />
+      <Parameter Name="Ton_changeStep" UId="1216">
+        <Blank Num="1" UId="1217" />
+        <Token Text=":=" UId="1218" />
+        <Blank Num="1" UId="1219" />
+        <Access Scope="LocalVariable" UId="1220">
+          <Symbol UId="1221">
+            <Component Name="Seneca" UId="1222" />
+            <Token Text="." UId="1223" />
+            <Component Name="TON_changeStep" UId="1224" />
+            <Token Text="." UId="1225" />
+            <Component Name="Q" UId="1226" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1207" />
-      <NewLine Num="1" UId="1208" />
-      <Blank Num="24" UId="1209" />
-      <Parameter Name="Ton_Start" UId="1210">
-        <Blank Num="1" UId="1211" />
-        <Token Text=":=" UId="1212" />
-        <Blank Num="1" UId="1213" />
-        <Access Scope="LocalVariable" UId="1214">
-          <Symbol UId="1215">
-            <Component Name="Seneca" UId="1216" />
-            <Token Text="." UId="1217" />
-            <Component Name="TON_Start" UId="1218" />
+      <Token Text="," UId="1227" />
+      <NewLine Num="1" UId="1228" />
+      <Blank Num="24" UId="1229" />
+      <Parameter Name="Ton_Start" UId="1230">
+        <Blank Num="1" UId="1231" />
+        <Token Text=":=" UId="1232" />
+        <Blank Num="1" UId="1233" />
+        <Access Scope="LocalVariable" UId="1234">
+          <Symbol UId="1235">
+            <Component Name="Seneca" UId="1236" />
+            <Token Text="." UId="1237" />
+            <Component Name="TON_Start" UId="1238" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1219" />
-      <NewLine Num="1" UId="1220" />
-      <Blank Num="24" UId="1221" />
-      <Parameter Name="Step" UId="1222">
-        <Blank Num="1" UId="1223" />
-        <Token Text=":=" UId="1224" />
-        <Blank Num="1" UId="1225" />
-        <Access Scope="LocalVariable" UId="1226">
-          <Symbol UId="1227">
-            <Component Name="Seneca" UId="1228" />
-            <Token Text="." UId="1229" />
-            <Component Name="Step" UId="1230" />
+      <Token Text="," UId="1239" />
+      <NewLine Num="1" UId="1240" />
+      <Blank Num="24" UId="1241" />
+      <Parameter Name="Step" UId="1242">
+        <Blank Num="1" UId="1243" />
+        <Token Text=":=" UId="1244" />
+        <Blank Num="1" UId="1245" />
+        <Access Scope="LocalVariable" UId="1246">
+          <Symbol UId="1247">
+            <Component Name="Seneca" UId="1248" />
+            <Token Text="." UId="1249" />
+            <Component Name="Step" UId="1250" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1231" />
-      <NewLine Num="1" UId="1232" />
-      <Blank Num="24" UId="1233" />
-      <Parameter Name="MB_MASTER" UId="1234">
-        <Blank Num="1" UId="1235" />
-        <Token Text=":=" UId="1236" />
-        <Blank Num="1" UId="1237" />
-        <Access Scope="LocalVariable" UId="1238">
-          <Symbol UId="1239">
-            <Component Name="MB_MASTER" UId="1240" />
+      <Token Text="," UId="1251" />
+      <NewLine Num="1" UId="1252" />
+      <Blank Num="24" UId="1253" />
+      <Parameter Name="MB_MASTER" UId="1254">
+        <Blank Num="1" UId="1255" />
+        <Token Text=":=" UId="1256" />
+        <Blank Num="1" UId="1257" />
+        <Access Scope="LocalVariable" UId="1258">
+          <Symbol UId="1259">
+            <Component Name="Data_toMB_MASTER" UId="1260" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="1241" />
+      <Token Text=")" UId="1261" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="1242" />
-  <NewLine Num="1" UId="1243" />
-  <Blank Num="8" UId="1244" />
-  <NewLine Num="1" UId="1245" />
-  <Blank Num="4" UId="1246" />
-  <Access Scope="LiteralConstant" UId="1247">
-    <Constant UId="1248">
-      <ConstantValue UId="1250">12</ConstantValue>
+  <Token Text=";" UId="1262" />
+  <NewLine Num="1" UId="1263" />
+  <Blank Num="8" UId="1264" />
+  <NewLine Num="1" UId="1265" />
+  <Blank Num="4" UId="1266" />
+  <Access Scope="LiteralConstant" UId="1267">
+    <Constant UId="1268">
+      <ConstantValue UId="1270">12</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="1251" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1252">
-    <Text UId="1253"> КАЛИБРОВКА 0 ДЛЯ ПЯТОГО  МОДУЛЯ</Text>
+  <Token Text=":" UId="1271" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1272">
+    <Text UId="1273"> КАЛИБРОВКА 0 ДЛЯ ПЯТОГО  МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="1254" />
-  <Blank Num="8" UId="1255" />
-  <NewLine Num="1" UId="1256" />
-  <Blank Num="8" UId="1257" />
-  <Access Scope="LocalVariable" UId="1258">
-    <Symbol UId="1259">
-      <Component Name="index" UId="1260" />
+  <NewLine Num="1" UId="1274" />
+  <Blank Num="8" UId="1275" />
+  <NewLine Num="1" UId="1276" />
+  <Blank Num="8" UId="1277" />
+  <Access Scope="LocalVariable" UId="1278">
+    <Symbol UId="1279">
+      <Component Name="index" UId="1280" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="1261" />
-  <Token Text=":=" UId="1262" />
-  <Blank Num="1" UId="1263" />
-  <Access Scope="LiteralConstant" UId="1264">
-    <Constant UId="1265">
-      <ConstantValue UId="1267">5</ConstantValue>
+  <Blank Num="1" UId="1281" />
+  <Token Text=":=" UId="1282" />
+  <Blank Num="1" UId="1283" />
+  <Access Scope="LiteralConstant" UId="1284">
+    <Constant UId="1285">
+      <ConstantValue UId="1287">5</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="1268" />
-  <Access Scope="LocalVariable" UId="1269">
-    <Symbol UId="1270">
-      <Component Name="Offset_array_bits" UId="1271" />
+  <Token Text="+" UId="1288" />
+  <Access Scope="LocalVariable" UId="1289">
+    <Symbol UId="1290">
+      <Component Name="Offset_array_bits" UId="1291" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="1272" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1273">
-    <Text UId="1274">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="1292" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1293">
+    <Text UId="1294">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="1275" />
-  <Blank Num="8" UId="1276" />
-  <Access Scope="Call" UId="1277">
-    <CallInfo UId="1278" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="1280">
-        <Component Name="sndCALIBR&amp;Tara" UId="1279" />
+  <NewLine Num="1" UId="1295" />
+  <Blank Num="8" UId="1296" />
+  <Access Scope="Call" UId="1297">
+    <CallInfo UId="1298" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1300">
+        <Component Name="sndCALIBR&amp;Tara" UId="1299" />
       </Instance>
-      <Token Text="(" UId="1281" />
-      <Parameter Name="ADDR_DEVICE" UId="1282">
-        <Blank Num="1" UId="1283" />
-        <Token Text=":=" UId="1284" />
-        <Blank Num="1" UId="1285" />
-        <Access Scope="LocalVariable" UId="1286">
-          <Symbol UId="1287">
-            <Component Name="arrayAddressModbus" UId="1288">
-              <Token Text="[" UId="1289" />
-              <Access Scope="LocalVariable" UId="1290">
-                <Symbol UId="1291">
-                  <Component Name="index" UId="1292" />
+      <Token Text="(" UId="1301" />
+      <Parameter Name="ADDR_DEVICE" UId="1302">
+        <Blank Num="1" UId="1303" />
+        <Token Text=":=" UId="1304" />
+        <Blank Num="1" UId="1305" />
+        <Access Scope="LocalVariable" UId="1306">
+          <Symbol UId="1307">
+            <Component Name="arrayAddressModbus" UId="1308">
+              <Token Text="[" UId="1309" />
+              <Access Scope="LocalVariable" UId="1310">
+                <Symbol UId="1311">
+                  <Component Name="index" UId="1312" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1293" />
+              <Token Text="]" UId="1313" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1294" />
-      <NewLine Num="1" UId="1295" />
-      <Blank Num="21" UId="1296" />
-      <Parameter Name="ton_changeStep" UId="1297">
-        <Blank Num="1" UId="1298" />
-        <Token Text=":=" UId="1299" />
-        <Blank Num="1" UId="1300" />
-        <Access Scope="LocalVariable" UId="1301">
-          <Symbol UId="1302">
-            <Component Name="Seneca" UId="1303" />
-            <Token Text="." UId="1304" />
-            <Component Name="TON_changeStep" UId="1305" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1306" />
-      <NewLine Num="1" UId="1307" />
-      <Blank Num="21" UId="1308" />
-      <Parameter Name="MB_MASTER" UId="1309">
-        <Blank Num="1" UId="1310" />
-        <Token Text=":=" UId="1311" />
-        <Blank Num="1" UId="1312" />
-        <Access Scope="LocalVariable" UId="1313">
-          <Symbol UId="1314">
-            <Component Name="MB_MASTER" UId="1315" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1316" />
-      <NewLine Num="1" UId="1317" />
-      <Blank Num="21" UId="1318" />
-      <Parameter Name="Ton_Start" UId="1319">
+      <Token Text="," UId="1314" />
+      <NewLine Num="1" UId="1315" />
+      <Blank Num="21" UId="1316" />
+      <Parameter Name="ton_changeStep" UId="1317">
+        <Blank Num="1" UId="1318" />
+        <Token Text=":=" UId="1319" />
         <Blank Num="1" UId="1320" />
-        <Token Text=":=" UId="1321" />
-        <Blank Num="1" UId="1322" />
-        <Access Scope="LocalVariable" UId="1323">
-          <Symbol UId="1324">
-            <Component Name="Seneca" UId="1325" />
+        <Access Scope="LocalVariable" UId="1321">
+          <Symbol UId="1322">
+            <Component Name="Seneca" UId="1323" />
+            <Token Text="." UId="1324" />
+            <Component Name="TON_changeStep" UId="1325" />
             <Token Text="." UId="1326" />
-            <Component Name="TON_Start" UId="1327" />
+            <Component Name="Q" UId="1327" />
           </Symbol>
         </Access>
       </Parameter>
       <Token Text="," UId="1328" />
       <NewLine Num="1" UId="1329" />
       <Blank Num="21" UId="1330" />
-      <Parameter Name="Calibrate" UId="1331">
+      <Parameter Name="MB_MASTER" UId="1331">
         <Blank Num="1" UId="1332" />
         <Token Text=":=" UId="1333" />
         <Blank Num="1" UId="1334" />
         <Access Scope="LocalVariable" UId="1335">
           <Symbol UId="1336">
-            <Component Name="calibrateZero" UId="1337">
-              <Token Text="[" UId="1338" />
-              <Access Scope="LocalVariable" UId="1339">
-                <Symbol UId="1340">
-                  <Component Name="index" UId="1341" />
+            <Component Name="Data_toMB_MASTER" UId="1337" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1338" />
+      <NewLine Num="1" UId="1339" />
+      <Blank Num="21" UId="1340" />
+      <Parameter Name="Ton_Start" UId="1341">
+        <Blank Num="1" UId="1342" />
+        <Token Text=":=" UId="1343" />
+        <Blank Num="1" UId="1344" />
+        <Access Scope="LocalVariable" UId="1345">
+          <Symbol UId="1346">
+            <Component Name="Seneca" UId="1347" />
+            <Token Text="." UId="1348" />
+            <Component Name="TON_Start" UId="1349" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1350" />
+      <NewLine Num="1" UId="1351" />
+      <Blank Num="21" UId="1352" />
+      <Parameter Name="Calibrate" UId="1353">
+        <Blank Num="1" UId="1354" />
+        <Token Text=":=" UId="1355" />
+        <Blank Num="1" UId="1356" />
+        <Access Scope="LocalVariable" UId="1357">
+          <Symbol UId="1358">
+            <Component Name="calibrateZero" UId="1359">
+              <Token Text="[" UId="1360" />
+              <Access Scope="LocalVariable" UId="1361">
+                <Symbol UId="1362">
+                  <Component Name="index" UId="1363" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1342" />
+              <Token Text="]" UId="1364" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1343" />
-      <NewLine Num="1" UId="1344" />
-      <Blank Num="21" UId="1345" />
-      <Parameter Name="Buffer" UId="1346">
-        <Blank Num="1" UId="1347" />
-        <Token Text=":=" UId="1348" />
-        <Blank Num="1" UId="1349" />
-        <Access Scope="GlobalVariable" UId="1350">
-          <Symbol UId="1351">
-            <Component Name="bufferModBus" UId="1352" />
-            <Token Text="." UId="1353" />
-            <Component Name="Buffer_DataModbusPort2" UId="1354" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1355" />
-      <NewLine Num="1" UId="1356" />
-      <Blank Num="21" UId="1357" />
-      <Parameter Name="Step" UId="1358">
-        <Blank Num="1" UId="1359" />
-        <Token Text=":=" UId="1360" />
-        <Blank Num="1" UId="1361" />
-        <Access Scope="LocalVariable" UId="1362">
-          <Symbol UId="1363">
-            <Component Name="Seneca" UId="1364" />
-            <Token Text="." UId="1365" />
-            <Component Name="Step" UId="1366" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1367" />
-      <NewLine Num="1" UId="1368" />
-      <Blank Num="21" UId="1369" />
-      <Parameter Name="Tara" UId="1370">
+      <Token Text="," UId="1365" />
+      <NewLine Num="1" UId="1366" />
+      <Blank Num="21" UId="1367" />
+      <Parameter Name="Buffer" UId="1368">
+        <Blank Num="1" UId="1369" />
+        <Token Text=":=" UId="1370" />
         <Blank Num="1" UId="1371" />
-        <Token Text=":=" UId="1372" />
-        <Blank Num="1" UId="1373" />
-        <Access Scope="LocalVariable" UId="1374">
-          <Symbol UId="1375">
-            <Component Name="taraZero" UId="1376">
-              <Token Text="[" UId="1377" />
-              <Access Scope="LocalVariable" UId="1378">
-                <Symbol UId="1379">
-                  <Component Name="index" UId="1380" />
+        <Access Scope="GlobalVariable" UId="1372">
+          <Symbol UId="1373">
+            <Component Name="bufferModBus" UId="1374" />
+            <Token Text="." UId="1375" />
+            <Component Name="Buffer_DataModbusPort2" UId="1376" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1377" />
+      <NewLine Num="1" UId="1378" />
+      <Blank Num="21" UId="1379" />
+      <Parameter Name="Step" UId="1380">
+        <Blank Num="1" UId="1381" />
+        <Token Text=":=" UId="1382" />
+        <Blank Num="1" UId="1383" />
+        <Access Scope="LocalVariable" UId="1384">
+          <Symbol UId="1385">
+            <Component Name="Seneca" UId="1386" />
+            <Token Text="." UId="1387" />
+            <Component Name="Step" UId="1388" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1389" />
+      <NewLine Num="1" UId="1390" />
+      <Blank Num="21" UId="1391" />
+      <Parameter Name="Tara" UId="1392">
+        <Blank Num="1" UId="1393" />
+        <Token Text=":=" UId="1394" />
+        <Blank Num="1" UId="1395" />
+        <Access Scope="LocalVariable" UId="1396">
+          <Symbol UId="1397">
+            <Component Name="taraZero" UId="1398">
+              <Token Text="[" UId="1399" />
+              <Access Scope="LocalVariable" UId="1400">
+                <Symbol UId="1401">
+                  <Component Name="index" UId="1402" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1381" />
+              <Token Text="]" UId="1403" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="1382" />
+      <Token Text=")" UId="1404" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="1383" />
-  <NewLine Num="1" UId="1384" />
-  <Blank Num="8" UId="1385" />
-  <NewLine Num="1" UId="1386" />
-  <Blank Num="4" UId="1387" />
-  <Access Scope="LiteralConstant" UId="1388">
-    <Constant UId="1389">
-      <ConstantValue UId="1391">13</ConstantValue>
+  <Token Text=";" UId="1405" />
+  <NewLine Num="1" UId="1406" />
+  <Blank Num="8" UId="1407" />
+  <NewLine Num="1" UId="1408" />
+  <Blank Num="4" UId="1409" />
+  <Access Scope="LiteralConstant" UId="1410">
+    <Constant UId="1411">
+      <ConstantValue UId="1413">13</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=":" UId="1392" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1393">
-    <Text UId="1394"> КАЛИБРОВКА 0 ДЛЯ ШЕСТОГО МОДУЛЯ</Text>
+  <Token Text=":" UId="1414" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1415">
+    <Text UId="1416"> КАЛИБРОВКА 0 ДЛЯ ШЕСТОГО МОДУЛЯ</Text>
   </LineComment>
-  <NewLine Num="1" UId="1395" />
-  <Blank Num="8" UId="1396" />
-  <Access Scope="LocalVariable" UId="1397">
-    <Symbol UId="1398">
-      <Component Name="index" UId="1399" />
+  <NewLine Num="1" UId="1417" />
+  <Blank Num="8" UId="1418" />
+  <Access Scope="LocalVariable" UId="1419">
+    <Symbol UId="1420">
+      <Component Name="index" UId="1421" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="1400" />
-  <Token Text=":=" UId="1401" />
-  <Blank Num="1" UId="1402" />
-  <Access Scope="LiteralConstant" UId="1403">
-    <Constant UId="1404">
-      <ConstantValue UId="1406">6</ConstantValue>
+  <Blank Num="1" UId="1422" />
+  <Token Text=":=" UId="1423" />
+  <Blank Num="1" UId="1424" />
+  <Access Scope="LiteralConstant" UId="1425">
+    <Constant UId="1426">
+      <ConstantValue UId="1428">6</ConstantValue>
     </Constant>
   </Access>
-  <Token Text="+" UId="1407" />
-  <Access Scope="LocalVariable" UId="1408">
-    <Symbol UId="1409">
-      <Component Name="Offset_array_bits" UId="1410" />
+  <Token Text="+" UId="1429" />
+  <Access Scope="LocalVariable" UId="1430">
+    <Symbol UId="1431">
+      <Component Name="Offset_array_bits" UId="1432" />
     </Symbol>
   </Access>
-  <Token Text=";" UId="1411" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="1412">
-    <Text UId="1413">заполнять функцию будем через индекс чтобы меньше писать</Text>
+  <Token Text=";" UId="1433" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="1434">
+    <Text UId="1435">заполнять функцию будем через индекс чтобы меньше писать</Text>
   </LineComment>
-  <NewLine Num="1" UId="1414" />
-  <Blank Num="8" UId="1415" />
-  <Access Scope="Call" UId="1416">
-    <CallInfo UId="1417" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="1419">
-        <Component Name="sndCALIBR&amp;Tara" UId="1418" />
+  <NewLine Num="1" UId="1436" />
+  <Blank Num="8" UId="1437" />
+  <Access Scope="Call" UId="1438">
+    <CallInfo UId="1439" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="1441">
+        <Component Name="sndCALIBR&amp;Tara" UId="1440" />
       </Instance>
-      <Token Text="(" UId="1420" />
-      <Parameter Name="ADDR_DEVICE" UId="1421">
-        <Blank Num="1" UId="1422" />
-        <Token Text=":=" UId="1423" />
-        <Blank Num="1" UId="1424" />
-        <Access Scope="LocalVariable" UId="1425">
-          <Symbol UId="1426">
-            <Component Name="arrayAddressModbus" UId="1427">
-              <Token Text="[" UId="1428" />
-              <Access Scope="LocalVariable" UId="1429">
-                <Symbol UId="1430">
-                  <Component Name="index" UId="1431" />
+      <Token Text="(" UId="1442" />
+      <Parameter Name="ADDR_DEVICE" UId="1443">
+        <Blank Num="1" UId="1444" />
+        <Token Text=":=" UId="1445" />
+        <Blank Num="1" UId="1446" />
+        <Access Scope="LocalVariable" UId="1447">
+          <Symbol UId="1448">
+            <Component Name="arrayAddressModbus" UId="1449">
+              <Token Text="[" UId="1450" />
+              <Access Scope="LocalVariable" UId="1451">
+                <Symbol UId="1452">
+                  <Component Name="index" UId="1453" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1432" />
+              <Token Text="]" UId="1454" />
             </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1433" />
-      <NewLine Num="1" UId="1434" />
-      <Blank Num="21" UId="1435" />
-      <Parameter Name="ton_changeStep" UId="1436">
-        <Blank Num="1" UId="1437" />
-        <Token Text=":=" UId="1438" />
-        <Blank Num="1" UId="1439" />
-        <Access Scope="LocalVariable" UId="1440">
-          <Symbol UId="1441">
-            <Component Name="Seneca" UId="1442" />
-            <Token Text="." UId="1443" />
-            <Component Name="TON_changeStep" UId="1444" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1445" />
-      <NewLine Num="1" UId="1446" />
-      <Blank Num="21" UId="1447" />
-      <Parameter Name="MB_MASTER" UId="1448">
-        <Blank Num="1" UId="1449" />
-        <Token Text=":=" UId="1450" />
-        <Blank Num="1" UId="1451" />
-        <Access Scope="LocalVariable" UId="1452">
-          <Symbol UId="1453">
-            <Component Name="MB_MASTER" UId="1454" />
           </Symbol>
         </Access>
       </Parameter>
       <Token Text="," UId="1455" />
       <NewLine Num="1" UId="1456" />
-      <Blank Num="21" UId="1457" />
-      <Parameter Name="Ton_Start" UId="1458">
+      <Blank Num="25" UId="1457" />
+      <Parameter Name="ton_changeStep" UId="1458">
         <Blank Num="1" UId="1459" />
         <Token Text=":=" UId="1460" />
         <Blank Num="1" UId="1461" />
@@ -2125,110 +2120,140 @@
           <Symbol UId="1463">
             <Component Name="Seneca" UId="1464" />
             <Token Text="." UId="1465" />
-            <Component Name="TON_Start" UId="1466" />
+            <Component Name="TON_changeStep" UId="1466" />
+            <Token Text="." UId="1467" />
+            <Component Name="Q" UId="1468" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="1467" />
-      <NewLine Num="1" UId="1468" />
-      <Blank Num="21" UId="1469" />
-      <Parameter Name="Calibrate" UId="1470">
-        <Blank Num="1" UId="1471" />
-        <Token Text=":=" UId="1472" />
+      <Token Text="," UId="1469" />
+      <NewLine Num="1" UId="1470" />
+      <Blank Num="21" UId="1471" />
+      <Parameter Name="MB_MASTER" UId="1472">
         <Blank Num="1" UId="1473" />
-        <Access Scope="LocalVariable" UId="1474">
-          <Symbol UId="1475">
-            <Component Name="calibrateZero" UId="1476">
-              <Token Text="[" UId="1477" />
-              <Access Scope="LocalVariable" UId="1478">
-                <Symbol UId="1479">
-                  <Component Name="index" UId="1480" />
+        <Token Text=":=" UId="1474" />
+        <Blank Num="1" UId="1475" />
+        <Access Scope="LocalVariable" UId="1476">
+          <Symbol UId="1477">
+            <Component Name="Data_toMB_MASTER" UId="1478" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1479" />
+      <NewLine Num="1" UId="1480" />
+      <Blank Num="21" UId="1481" />
+      <Parameter Name="Ton_Start" UId="1482">
+        <Blank Num="1" UId="1483" />
+        <Token Text=":=" UId="1484" />
+        <Blank Num="1" UId="1485" />
+        <Access Scope="LocalVariable" UId="1486">
+          <Symbol UId="1487">
+            <Component Name="Seneca" UId="1488" />
+            <Token Text="." UId="1489" />
+            <Component Name="TON_Start" UId="1490" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1491" />
+      <NewLine Num="1" UId="1492" />
+      <Blank Num="21" UId="1493" />
+      <Parameter Name="Calibrate" UId="1494">
+        <Blank Num="1" UId="1495" />
+        <Token Text=":=" UId="1496" />
+        <Blank Num="1" UId="1497" />
+        <Access Scope="LocalVariable" UId="1498">
+          <Symbol UId="1499">
+            <Component Name="calibrateZero" UId="1500">
+              <Token Text="[" UId="1501" />
+              <Access Scope="LocalVariable" UId="1502">
+                <Symbol UId="1503">
+                  <Component Name="index" UId="1504" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1481" />
+              <Token Text="]" UId="1505" />
             </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1482" />
-      <NewLine Num="1" UId="1483" />
-      <Blank Num="21" UId="1484" />
-      <Parameter Name="Buffer" UId="1485">
-        <Blank Num="1" UId="1486" />
-        <Token Text=":=" UId="1487" />
-        <Blank Num="1" UId="1488" />
-        <Access Scope="GlobalVariable" UId="1489">
-          <Symbol UId="1490">
-            <Component Name="bufferModBus" UId="1491" />
-            <Token Text="." UId="1492" />
-            <Component Name="Buffer_DataModbusPort2" UId="1493" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="1494" />
-      <NewLine Num="1" UId="1495" />
-      <Blank Num="21" UId="1496" />
-      <Parameter Name="Step" UId="1497">
-        <Blank Num="1" UId="1498" />
-        <Token Text=":=" UId="1499" />
-        <Blank Num="1" UId="1500" />
-        <Access Scope="LocalVariable" UId="1501">
-          <Symbol UId="1502">
-            <Component Name="Seneca" UId="1503" />
-            <Token Text="." UId="1504" />
-            <Component Name="Step" UId="1505" />
           </Symbol>
         </Access>
       </Parameter>
       <Token Text="," UId="1506" />
       <NewLine Num="1" UId="1507" />
       <Blank Num="21" UId="1508" />
-      <Parameter Name="Tara" UId="1509">
+      <Parameter Name="Buffer" UId="1509">
         <Blank Num="1" UId="1510" />
         <Token Text=":=" UId="1511" />
         <Blank Num="1" UId="1512" />
-        <Access Scope="LocalVariable" UId="1513">
+        <Access Scope="GlobalVariable" UId="1513">
           <Symbol UId="1514">
-            <Component Name="taraZero" UId="1515">
-              <Token Text="[" UId="1516" />
-              <Access Scope="LocalVariable" UId="1517">
-                <Symbol UId="1518">
-                  <Component Name="index" UId="1519" />
+            <Component Name="bufferModBus" UId="1515" />
+            <Token Text="." UId="1516" />
+            <Component Name="Buffer_DataModbusPort2" UId="1517" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1518" />
+      <NewLine Num="1" UId="1519" />
+      <Blank Num="21" UId="1520" />
+      <Parameter Name="Step" UId="1521">
+        <Blank Num="1" UId="1522" />
+        <Token Text=":=" UId="1523" />
+        <Blank Num="1" UId="1524" />
+        <Access Scope="LocalVariable" UId="1525">
+          <Symbol UId="1526">
+            <Component Name="Seneca" UId="1527" />
+            <Token Text="." UId="1528" />
+            <Component Name="Step" UId="1529" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="1530" />
+      <NewLine Num="1" UId="1531" />
+      <Blank Num="21" UId="1532" />
+      <Parameter Name="Tara" UId="1533">
+        <Blank Num="1" UId="1534" />
+        <Token Text=":=" UId="1535" />
+        <Blank Num="1" UId="1536" />
+        <Access Scope="LocalVariable" UId="1537">
+          <Symbol UId="1538">
+            <Component Name="taraZero" UId="1539">
+              <Token Text="[" UId="1540" />
+              <Access Scope="LocalVariable" UId="1541">
+                <Symbol UId="1542">
+                  <Component Name="index" UId="1543" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="1520" />
+              <Token Text="]" UId="1544" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="1521" />
+      <Token Text=")" UId="1545" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="1522" />
-  <NewLine Num="1" UId="1523" />
-  <Blank Num="4" UId="1524" />
-  <Token Text="ELSE" UId="1525" />
-  <NewLine Num="1" UId="1526" />
-  <Blank Num="8" UId="1527" />
-  <Access Scope="LocalVariable" UId="1528">
-    <Symbol UId="1529">
-      <Component Name="Seneca" UId="1530" />
-      <Token Text="." UId="1531" />
-      <Component Name="Step" UId="1532" />
+  <Token Text=";" UId="1546" />
+  <NewLine Num="1" UId="1547" />
+  <Blank Num="4" UId="1548" />
+  <Token Text="ELSE" UId="1549" />
+  <NewLine Num="1" UId="1550" />
+  <Blank Num="8" UId="1551" />
+  <Access Scope="LocalVariable" UId="1552">
+    <Symbol UId="1553">
+      <Component Name="Seneca" UId="1554" />
+      <Token Text="." UId="1555" />
+      <Component Name="Step" UId="1556" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="1533" />
-  <Token Text=":=" UId="1534" />
-  <Blank Num="1" UId="1535" />
-  <Access Scope="LiteralConstant" UId="1536">
-    <Constant UId="1537">
-      <ConstantValue UId="1539">1</ConstantValue>
+  <Blank Num="1" UId="1557" />
+  <Token Text=":=" UId="1558" />
+  <Blank Num="1" UId="1559" />
+  <Access Scope="LiteralConstant" UId="1560">
+    <Constant UId="1561">
+      <ConstantValue UId="1563">1</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="1540" />
-  <NewLine Num="1" UId="1541" />
-  <Token Text="END_CASE" UId="1542" />
-  <Token Text=";" UId="1543" />
+  <Token Text=";" UId="1564" />
+  <NewLine Num="1" UId="1565" />
+  <Token Text="END_CASE" UId="1566" />
+  <Token Text=";" UId="1567" />
 </StructuredText></NetworkSource>
           <ProgrammingLanguage>SCL</ProgrammingLanguage>
         </AttributeList>
@@ -2261,31 +2286,31 @@
   <Parts>
     <Access Scope="LocalVariable" UId="21">
       <Symbol>
-        <Component Name="MB_MASTER" />
+        <Component Name="Data_toMB_MASTER" />
         <Component Name="REQ" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
-        <Component Name="MB_MASTER" />
+        <Component Name="Data_toMB_MASTER" />
         <Component Name="MB_ADDR" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="23">
       <Symbol>
-        <Component Name="MB_MASTER" />
+        <Component Name="Data_toMB_MASTER" />
         <Component Name="MODE" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="24">
       <Symbol>
-        <Component Name="MB_MASTER" />
+        <Component Name="Data_toMB_MASTER" />
         <Component Name="DATA_ADDR" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="25">
       <Symbol>
-        <Component Name="MB_MASTER" />
+        <Component Name="Data_toMB_MASTER" />
         <Component Name="DATA_LEN" />
       </Symbol>
     </Access>
@@ -2295,8 +2320,26 @@
         <Component Name="Buffer_DataModbusPort2" />
       </Symbol>
     </Access>
-    <Part Name="MB_MASTER" Version="2.2" UId="27">
-      <Instance Scope="LocalVariable" UId="28">
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="Data_toMB_MASTER" />
+        <Component Name="DONE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Data_toMB_MASTER" />
+        <Component Name="BUSY" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="Data_toMB_MASTER" />
+        <Component Name="ERROR" />
+      </Symbol>
+    </Access>
+    <Part Name="MB_MASTER" Version="2.2" UId="30">
+      <Instance Scope="LocalVariable" UId="31">
         <Component Name="MB_MASTER" />
       </Instance>
     </Part>
@@ -2304,46 +2347,46 @@
   <Wires>
     <Wire UId="33">
       <Powerrail />
-      <NameCon UId="27" Name="en" />
+      <NameCon UId="30" Name="en" />
     </Wire>
     <Wire UId="34">
       <IdentCon UId="21" />
-      <NameCon UId="27" Name="REQ" />
+      <NameCon UId="30" Name="REQ" />
     </Wire>
     <Wire UId="35">
       <IdentCon UId="22" />
-      <NameCon UId="27" Name="MB_ADDR" />
+      <NameCon UId="30" Name="MB_ADDR" />
     </Wire>
     <Wire UId="36">
       <IdentCon UId="23" />
-      <NameCon UId="27" Name="MODE" />
+      <NameCon UId="30" Name="MODE" />
     </Wire>
     <Wire UId="37">
       <IdentCon UId="24" />
-      <NameCon UId="27" Name="DATA_ADDR" />
+      <NameCon UId="30" Name="DATA_ADDR" />
     </Wire>
     <Wire UId="38">
       <IdentCon UId="25" />
-      <NameCon UId="27" Name="DATA_LEN" />
+      <NameCon UId="30" Name="DATA_LEN" />
     </Wire>
     <Wire UId="39">
       <IdentCon UId="26" />
-      <NameCon UId="27" Name="DATA_PTR" />
+      <NameCon UId="30" Name="DATA_PTR" />
     </Wire>
     <Wire UId="40">
-      <NameCon UId="27" Name="DONE" />
-      <OpenCon UId="29" />
+      <NameCon UId="30" Name="DONE" />
+      <IdentCon UId="27" />
     </Wire>
     <Wire UId="41">
-      <NameCon UId="27" Name="BUSY" />
-      <OpenCon UId="30" />
+      <NameCon UId="30" Name="BUSY" />
+      <IdentCon UId="28" />
     </Wire>
     <Wire UId="42">
-      <NameCon UId="27" Name="ERROR" />
-      <OpenCon UId="31" />
+      <NameCon UId="30" Name="ERROR" />
+      <IdentCon UId="29" />
     </Wire>
     <Wire UId="43">
-      <NameCon UId="27" Name="STATUS" />
+      <NameCon UId="30" Name="STATUS" />
       <OpenCon UId="32" />
     </Wire>
   </Wires>
@@ -2376,6 +2419,330 @@
       <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <Access Scope="LocalVariable" UId="21">
+    <Symbol UId="22">
+      <Component Name="index" UId="23" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="24" />
+  <Token Text=":=" UId="25" />
+  <Blank Num="1" UId="26" />
+  <Access Scope="LiteralConstant" UId="27">
+    <Constant UId="28">
+      <ConstantValue UId="30">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="31" />
+  <NewLine Num="1" UId="32" />
+  <Token Text="CASE" UId="33" />
+  <Blank Num="1" UId="34" />
+  <Access Scope="LocalVariable" UId="35">
+    <Symbol UId="36">
+      <Component Name="Seneca" UId="37" />
+      <Token Text="." UId="38" />
+      <Component Name="Step" UId="39" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="40" />
+  <Token Text="OF" UId="41" />
+  <NewLine Num="1" UId="42" />
+  <Blank Num="4" UId="43" />
+  <Access Scope="LiteralConstant" UId="44">
+    <Constant UId="45">
+      <ConstantValue UId="47">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text="," UId="48" />
+  <Access Scope="LiteralConstant" UId="49">
+    <Constant UId="50">
+      <ConstantValue UId="52">4</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="53" />
+  <NewLine Num="1" UId="54" />
+  <Blank Num="8" UId="55" />
+  <Access Scope="LocalVariable" UId="56">
+    <Symbol UId="57">
+      <Component Name="index" UId="58" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="59" />
+  <Token Text=":=" UId="60" />
+  <Blank Num="1" UId="61" />
+  <Access Scope="LiteralConstant" UId="62">
+    <Constant UId="63">
+      <ConstantValue UId="65">7</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="66" />
+  <NewLine Num="1" UId="67" />
+  <Blank Num="4" UId="68" />
+  <Access Scope="LiteralConstant" UId="69">
+    <Constant UId="70">
+      <ConstantValue UId="72">3</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text="," UId="73" />
+  <Access Scope="LiteralConstant" UId="74">
+    <Constant UId="75">
+      <ConstantValue UId="77">5</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="78" />
+  <NewLine Num="1" UId="79" />
+  <Blank Num="8" UId="80" />
+  <Access Scope="LocalVariable" UId="81">
+    <Symbol UId="82">
+      <Component Name="index" UId="83" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="84" />
+  <Token Text=":=" UId="85" />
+  <Blank Num="1" UId="86" />
+  <Access Scope="LiteralConstant" UId="87">
+    <Constant UId="88">
+      <ConstantValue UId="90">8</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="91" />
+  <NewLine Num="1" UId="92" />
+  <Blank Num="4" UId="93" />
+  <Access Scope="LiteralConstant" UId="94">
+    <Constant UId="95">
+      <ConstantValue UId="97">6</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text="," UId="98" />
+  <Access Scope="LiteralConstant" UId="99">
+    <Constant UId="100">
+      <ConstantValue UId="102">8</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="103" />
+  <NewLine Num="1" UId="104" />
+  <Blank Num="8" UId="105" />
+  <Access Scope="LocalVariable" UId="106">
+    <Symbol UId="107">
+      <Component Name="index" UId="108" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="109" />
+  <Token Text=":=" UId="110" />
+  <Blank Num="1" UId="111" />
+  <Access Scope="LiteralConstant" UId="112">
+    <Constant UId="113">
+      <ConstantValue UId="115">9</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="116" />
+  <NewLine Num="1" UId="117" />
+  <Blank Num="4" UId="118" />
+  <Access Scope="LiteralConstant" UId="119">
+    <Constant UId="120">
+      <ConstantValue UId="122">7</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text="," UId="123" />
+  <Access Scope="LiteralConstant" UId="124">
+    <Constant UId="125">
+      <ConstantValue UId="127">9</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="128" />
+  <NewLine Num="1" UId="129" />
+  <Blank Num="8" UId="130" />
+  <Access Scope="LocalVariable" UId="131">
+    <Symbol UId="132">
+      <Component Name="index" UId="133" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="134" />
+  <Token Text=":=" UId="135" />
+  <Blank Num="1" UId="136" />
+  <Access Scope="LiteralConstant" UId="137">
+    <Constant UId="138">
+      <ConstantValue UId="140">10</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="141" />
+  <NewLine Num="1" UId="142" />
+  <Blank Num="4" UId="143" />
+  <Access Scope="LiteralConstant" UId="144">
+    <Constant UId="145">
+      <ConstantValue UId="147">10</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text="," UId="148" />
+  <Access Scope="LiteralConstant" UId="149">
+    <Constant UId="150">
+      <ConstantValue UId="152">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="153" />
+  <NewLine Num="1" UId="154" />
+  <Blank Num="8" UId="155" />
+  <Access Scope="LocalVariable" UId="156">
+    <Symbol UId="157">
+      <Component Name="index" UId="158" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="159" />
+  <Token Text=":=" UId="160" />
+  <Blank Num="1" UId="161" />
+  <Access Scope="LiteralConstant" UId="162">
+    <Constant UId="163">
+      <ConstantValue UId="165">11</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="166" />
+  <NewLine Num="1" UId="167" />
+  <Blank Num="4" UId="168" />
+  <Access Scope="LiteralConstant" UId="169">
+    <Constant UId="170">
+      <ConstantValue UId="172">11</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text="," UId="173" />
+  <Access Scope="LiteralConstant" UId="174">
+    <Constant UId="175">
+      <ConstantValue UId="177">13</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=":" UId="178" />
+  <NewLine Num="1" UId="179" />
+  <Blank Num="8" UId="180" />
+  <Access Scope="LocalVariable" UId="181">
+    <Symbol UId="182">
+      <Component Name="index" UId="183" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="184" />
+  <Token Text=":=" UId="185" />
+  <Blank Num="1" UId="186" />
+  <Access Scope="LiteralConstant" UId="187">
+    <Constant UId="188">
+      <ConstantValue UId="190">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="191" />
+  <NewLine Num="1" UId="192" />
+  <Blank Num="8" UId="193" />
+  <NewLine Num="1" UId="194" />
+  <Token Text="END_CASE" UId="195" />
+  <Token Text=";" UId="196" />
+  <NewLine Num="1" UId="197" />
+  <Token Text="IF" UId="198" />
+  <Blank Num="1" UId="199" />
+  <Access Scope="LocalVariable" UId="200">
+    <Symbol UId="201">
+      <Component Name="Data_toMB_MASTER" UId="202" />
+      <Token Text="." UId="203" />
+      <Component Name="ERROR" UId="204" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="205" />
+  <Token Text="THEN" UId="206" />
+  <NewLine Num="1" UId="207" />
+  <Blank Num="4" UId="208" />
+  <Access Scope="GlobalVariable" UId="209">
+    <Symbol UId="210">
+      <Component Name="hmi" UId="211" />
+      <Token Text="." UId="212" />
+      <Component Name="alarmTest" UId="213" />
+      <Token Text="." UId="214" />
+      <Component Name="bit" UId="215">
+        <Token Text="[" UId="216" />
+        <Access Scope="LocalVariable" UId="217">
+          <Symbol UId="218">
+            <Component Name="index" UId="219" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="220" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="221" />
+  <Token Text=":=" UId="222" />
+  <Blank Num="1" UId="223" />
+  <Access Scope="LiteralConstant" UId="224">
+    <Constant UId="225">
+      <ConstantValue UId="227">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="228" />
+  <NewLine Num="1" UId="229" />
+  <Token Text="ELSIF" UId="230" />
+  <Blank Num="1" UId="231" />
+  <Access Scope="LocalVariable" UId="232">
+    <Symbol UId="233">
+      <Component Name="Data_toMB_MASTER" UId="234" />
+      <Token Text="." UId="235" />
+      <Component Name="DONE" UId="236" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="237" />
+  <Token Text="THEN" UId="238" />
+  <NewLine Num="1" UId="239" />
+  <Blank Num="4" UId="240" />
+  <Access Scope="GlobalVariable" UId="241">
+    <Symbol UId="242">
+      <Component Name="hmi" UId="243" />
+      <Token Text="." UId="244" />
+      <Component Name="alarmTest" UId="245" />
+      <Token Text="." UId="246" />
+      <Component Name="bit" UId="247">
+        <Token Text="[" UId="248" />
+        <Access Scope="LocalVariable" UId="249">
+          <Symbol UId="250">
+            <Component Name="index" UId="251" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="252" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="253" />
+  <Token Text=":=" UId="254" />
+  <Blank Num="1" UId="255" />
+  <Access Scope="LiteralConstant" UId="256">
+    <Constant UId="257">
+      <ConstantValue UId="259">FALSE</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="260" />
+  <NewLine Num="1" UId="261" />
+  <Token Text="END_IF" UId="262" />
+  <Token Text=";" UId="263" />
+  <NewLine Num="1" UId="264" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Авария опроса модуля</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
   <Token Text="IF" UId="21" />
   <Blank Num="1" UId="22" />
   <Access Scope="LocalVariable" UId="23">
@@ -2398,7 +2765,7 @@
   <Blank Num="1" UId="37" />
   <Access Scope="LocalVariable" UId="38">
     <Symbol UId="39">
-      <Component Name="MB_MASTER" UId="40" />
+      <Component Name="Data_toMB_MASTER" UId="40" />
       <Token Text="." UId="41" />
       <Component Name="DONE" UId="42" />
     </Symbol>
@@ -2621,7 +2988,7 @@
   <Blank Num="1" UId="210" />
   <Access Scope="LocalVariable" UId="211">
     <Symbol UId="212">
-      <Component Name="MB_MASTER" UId="213" />
+      <Component Name="Data_toMB_MASTER" UId="213" />
       <Token Text="." UId="214" />
       <Component Name="DONE" UId="215" />
     </Symbol>
@@ -2842,7 +3209,7 @@
   <Blank Num="1" UId="381" />
   <Access Scope="LocalVariable" UId="382">
     <Symbol UId="383">
-      <Component Name="MB_MASTER" UId="384" />
+      <Component Name="Data_toMB_MASTER" UId="384" />
       <Token Text="." UId="385" />
       <Component Name="DONE" UId="386" />
     </Symbol>
@@ -3063,7 +3430,7 @@
   <Blank Num="1" UId="552" />
   <Access Scope="LocalVariable" UId="553">
     <Symbol UId="554">
-      <Component Name="MB_MASTER" UId="555" />
+      <Component Name="Data_toMB_MASTER" UId="555" />
       <Token Text="." UId="556" />
       <Component Name="DONE" UId="557" />
     </Symbol>
@@ -3284,7 +3651,7 @@
   <Blank Num="1" UId="723" />
   <Access Scope="LocalVariable" UId="724">
     <Symbol UId="725">
-      <Component Name="MB_MASTER" UId="726" />
+      <Component Name="Data_toMB_MASTER" UId="726" />
       <Token Text="." UId="727" />
       <Component Name="DONE" UId="728" />
     </Symbol>
@@ -3505,7 +3872,7 @@
   <Blank Num="1" UId="894" />
   <Access Scope="LocalVariable" UId="895">
     <Symbol UId="896">
-      <Component Name="MB_MASTER" UId="897" />
+      <Component Name="Data_toMB_MASTER" UId="897" />
       <Token Text="." UId="898" />
       <Component Name="DONE" UId="899" />
     </Symbol>
@@ -3707,34 +4074,6 @@
           <ProgrammingLanguage>SCL</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
-          <MultilingualText ID="13" CompositionName="Comment">
-            <ObjectList>
-              <MultilingualTextItem ID="14" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-          <MultilingualText ID="15" CompositionName="Title">
-            <ObjectList>
-              <MultilingualTextItem ID="16" CompositionName="Items">
-                <AttributeList>
-                  <Culture>en-US</Culture>
-                  <Text />
-                </AttributeList>
-              </MultilingualTextItem>
-            </ObjectList>
-          </MultilingualText>
-        </ObjectList>
-      </SW.Blocks.CompileUnit>
-      <SW.Blocks.CompileUnit ID="17" CompositionName="CompileUnits">
-        <AttributeList>
-          <NetworkSource />
-          <ProgrammingLanguage>LAD</ProgrammingLanguage>
-        </AttributeList>
-        <ObjectList>
           <MultilingualText ID="18" CompositionName="Comment">
             <ObjectList>
               <MultilingualTextItem ID="19" CompositionName="Items">
@@ -3757,9 +4096,37 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="1C" CompositionName="Title">
+      <SW.Blocks.CompileUnit ID="1C" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
         <ObjectList>
-          <MultilingualTextItem ID="1D" CompositionName="Items">
+          <MultilingualText ID="1D" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="20" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="21" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="22" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text />

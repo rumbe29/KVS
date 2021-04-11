@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-06T19:52:17.2922691Z</Created>
+    <Created>2021-04-11T09:51:24.5358486Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -68,7 +68,7 @@
     <Member Name="tempP_trig" Datatype="Array[0..1] of Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
   </Section>
   <Section Name="Temp">
-    <Member Name="i" Datatype="SInt" />
+    <Member Name="i" Datatype="DInt" />
   </Section>
   <Section Name="Constant" />
 </Sections></Interface>

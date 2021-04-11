@@ -3,13 +3,22 @@
 VERSION : 0.1
    VAR_INPUT 
       ADDR_DEVICE : UInt;
-      Ton_changeStep {InstructionName := 'TON_TIME'; LibVersion := '1.0'} : TON_TIME;
+      Ton_changeStep : Bool;
    END_VAR
 
    VAR_IN_OUT 
       Ton_Start : Bool;
       Step : SInt;
-      MB_MASTER {InstructionName := 'MB_MASTER'; LibVersion := '2.2'} : MB_MASTER;
+      MB_MASTER : Struct
+         REQ : Bool;
+         MB_ADDR : UInt;
+         MODE : USInt;
+         DATA_ADDR : UDInt;
+         DATA_LEN : UInt;
+         DONE : Bool;
+         BUSY : Bool;
+         ERROR : Bool;
+      END_STRUCT;
    END_VAR
 
 
@@ -24,7 +33,7 @@ BEGIN
 	        
 	        IF NOT (#MB_MASTER.BUSY) AND
 	            (#MB_MASTER.DONE OR
-	            #Ton_changeStep.Q) THEN
+	            #Ton_changeStep OR #MB_MASTER.ERROR) THEN
 	            #MB_MASTER.REQ  := FALSE;
 	            #Ton_Start := FALSE;
 	            #Step := #Step + 1;

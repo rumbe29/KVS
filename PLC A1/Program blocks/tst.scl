@@ -1,0 +1,38 @@
+﻿FUNCTION_BLOCK "tst"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR 
+      abcDec : DInt;
+      arrBin : Array[1..12] of Bool;
+      qwer : Array[0..12] of Real := [0.0, 5.0, 1.1, 2.2, 6.5, 3.3, 4.4, 5.5, 6.9, 7.7, 8.8, 9.9, 10.2];
+      Sort_Real_Instance : "Sort_Real";
+   END_VAR
+
+   VAR_TEMP 
+      i : SInt;
+   END_VAR
+
+
+BEGIN
+	REGION
+	    
+	        #arrBin[1] := #abcDec.%X0;
+	        #arrBin[2] := #abcDec.%X1;
+	        #arrBin[3] := #abcDec.%X2;
+	        #arrBin[4] := #abcDec.%X3;
+	        #arrBin[5] := #abcDec.%X4;
+	        #arrBin[6] := #abcDec.%X5;
+	        #arrBin[7] := #abcDec.%X6;
+	        #arrBin[8] := #abcDec.%X7;
+	        #arrBin[9] := #abcDec.%X8;
+	        #arrBin[10] := #abcDec.%X9;
+	        #arrBin[11] := #abcDec.%X10;
+	        #arrBin[12] := #abcDec.%X11;
+	        
+	    END_REGION ;
+	    #Sort_Real_Instance(sortDirection:=true,
+	                        array:=#qwer);
+	    
+	    
+END_FUNCTION_BLOCK
+
