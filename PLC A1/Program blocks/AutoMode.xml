@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-11T09:51:22.2395597Z</Created>
+    <Created>2021-04-12T08:07:25.9683963Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -68,6 +68,7 @@
     <Member Name="openFlipper" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
     <Member Name="hmiYpDropWeight" Datatype="Array[0..2] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
     <Member Name="hmiYpDropError" Datatype="Array[0..2] of Real" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
+    <Member Name="Sorting_AM_withBuffer_FB" Datatype="&quot;Sorting_AM_withBuffer&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="enableToWork" Datatype="Bool" /><Member Name="setWeight" Datatype="Real" /><Member Name="errorMeasurement" Datatype="Real" /><Member Name="isWorkWithBunker" Datatype="Array[0..12] of Bool" /><Member Name="setWeightBunker" Datatype="Array[0..12] of Real" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="stableWeightBunker" Datatype="Array[0..12] of Real" /><Member Name="readyToSorting" Datatype="Array[0..12] of Bool" /><Member Name="readyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="blockSort" Datatype="Bool" /></Section><Section Name="Static"><Member Name="valueReadyToDrop" Datatype="Bool" /><Member Name="valueReadytoSortBunker" Datatype="SInt" /><Member Name="valueIsWorkWithBunker" Datatype="SInt" /><Member Name="tmpStableWeight" Datatype="Array[0..12] of Real" /><Member Name="bufferReadyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="Sort_Real_FB" Datatype="&quot;Sort_Real&quot;"><Sections><Section Name="Input"><Member Name="sortDirection" Datatype="Bool" /></Section><Section Name="Output"><Member Name="error" Datatype="Bool" /><Member Name="status" Datatype="Word" /></Section><Section Name="InOut"><Member Name="array" Datatype="Array[*] of Real" /></Section><Section Name="Static"><Member Name="tempArray" Datatype="Array[1..20] of Real" /></Section></Sections></Member><Member Name="full1" Datatype="Array[0..12] of Bool" /><Member Name="full0" Datatype="Array[0..12] of Bool" /><Member Name="pow2_DB" Datatype="&quot;pow2&quot;"><Sections><Section Name="Input"><Member Name="basic" Datatype="SInt" /></Section><Section Name="Output" /><Section Name="InOut"><Member Name="pow" Datatype="Int" /></Section><Section Name="Static" /></Sections></Member><Member Name="minValue" Datatype="Real" /><Member Name="minValueArray" Datatype="Array[0..12] of Bool" /><Member Name="tmpArrNotDrop" Datatype="Array[0..12] of Real" /><Member Name="tmpSumFind" Datatype="Real" /><Member Name="valueMaxSortFor" Datatype="Int" /><Member Name="bitMaskSortFor" Datatype="Array[0..12] of Bool" /><Member Name="stateFindIndex" Datatype="Bool" /><Member Name="tmpReadyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="tabActiveSort" Datatype="Bool" /><Member Name="saveBitMaskSortFor" Datatype="Array[0..12] of Bool" /><Member Name="firstTmpToDrop" Datatype="Array[0..12] of Bool" /><Member Name="secondTmpToDrop" Datatype="Array[0..12] of Bool" /><Member Name="secondTmpReadyToDrop" Datatype="Array[0..12] of Bool" /><Member Name="isSecondTmpToDrop" Datatype="Bool" /><Member Name="nextItteration" Datatype="Bool" /></Section></Sections></Member>
   </Section>
   <Section Name="Temp">
     <Member Name="!!!!!" Datatype="Array[0..1] of Bool" />
@@ -723,57 +724,126 @@
         <AttributeList>
           <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
   <Parts>
-    <Access Scope="LocalVariable" UId="21">
+    <Access Scope="GlobalVariable" UId="21">
       <Symbol>
-        <Component Name="isStartAutoMode" />
+        <Component Name="AlwaysFALSE" />
       </Symbol>
     </Access>
     <Access Scope="LocalVariable" UId="22">
       <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
         <Component Name="TaskSetWeight" />
       </Symbol>
     </Access>
-    <Access Scope="GlobalVariable" UId="23">
+    <Access Scope="GlobalVariable" UId="24">
       <Symbol>
         <Component Name="hmi" />
         <Component Name="recipeVar" />
         <Component Name="measurmentError" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="24">
+    <Access Scope="LocalVariable" UId="25">
       <Symbol>
         <Component Name="isWorkWithBunker" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="25">
+    <Access Scope="LocalVariable" UId="26">
       <Symbol>
         <Component Name="SetWeightBunker" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="26">
+    <Access Scope="LocalVariable" UId="27">
       <Symbol>
         <Component Name="tmpStableWeightBunker" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="27">
+    <Access Scope="LocalVariable" UId="28">
       <Symbol>
         <Component Name="readyToSort" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="28">
+    <Access Scope="LocalVariable" UId="29">
       <Symbol>
         <Component Name="readyToDrop" />
       </Symbol>
     </Access>
-    <Access Scope="LocalVariable" UId="29">
+    <Access Scope="LocalVariable" UId="30">
       <Symbol>
         <Component Name="blockSorting" />
       </Symbol>
     </Access>
-    <Call UId="30">
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="isStartAutoMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="TaskSetWeight" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="hmi" />
+        <Component Name="recipeVar" />
+        <Component Name="measurmentError" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="isWorkWithBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="SetWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="tmpStableWeightBunker" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="readyToSort" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="readyToDrop" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="blockSorting" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="40" />
+    <Call UId="41">
       <CallInfo Name="Sorting_AM" BlockType="FB">
-        <Instance Scope="LocalVariable" UId="31">
+        <Instance Scope="LocalVariable" UId="42">
           <Component Name="Sorting_AM_FB" />
+        </Instance>
+        <Parameter Name="enableToWork" Section="Input" Type="Bool" />
+        <Parameter Name="setWeight" Section="Input" Type="Real" />
+        <Parameter Name="errorMeasurement" Section="Input" Type="Real" />
+        <Parameter Name="isWorkWithBunker" Section="Input" Type="Array[0..12] of Bool" />
+        <Parameter Name="setWeightBunker" Section="Input" Type="Array[0..12] of Real" />
+        <Parameter Name="stableWeightBunker" Section="InOut" Type="Array[0..12] of Real" />
+        <Parameter Name="readyToSorting" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="readyToDrop" Section="InOut" Type="Array[0..12] of Bool" />
+        <Parameter Name="blockSort" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="43">
+      <CallInfo Name="Sorting_AM_withBuffer" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="44">
+          <Component Name="Sorting_AM_withBuffer_FB" />
         </Instance>
         <Parameter Name="enableToWork" Section="Input" Type="Bool" />
         <Parameter Name="setWeight" Section="Input" Type="Real" />
@@ -788,45 +858,90 @@
     </Call>
   </Parts>
   <Wires>
-    <Wire UId="32">
+    <Wire UId="45">
       <Powerrail />
-      <NameCon UId="30" Name="en" />
+      <NameCon UId="40" Name="in" />
+      <NameCon UId="43" Name="en" />
     </Wire>
-    <Wire UId="33">
+    <Wire UId="46">
       <IdentCon UId="21" />
-      <NameCon UId="30" Name="enableToWork" />
+      <NameCon UId="40" Name="operand" />
     </Wire>
-    <Wire UId="34">
+    <Wire UId="47">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="en" />
+    </Wire>
+    <Wire UId="48">
       <IdentCon UId="22" />
-      <NameCon UId="30" Name="setWeight" />
+      <NameCon UId="41" Name="enableToWork" />
     </Wire>
-    <Wire UId="35">
+    <Wire UId="49">
       <IdentCon UId="23" />
-      <NameCon UId="30" Name="errorMeasurement" />
+      <NameCon UId="41" Name="setWeight" />
     </Wire>
-    <Wire UId="36">
+    <Wire UId="50">
       <IdentCon UId="24" />
-      <NameCon UId="30" Name="isWorkWithBunker" />
+      <NameCon UId="41" Name="errorMeasurement" />
     </Wire>
-    <Wire UId="37">
+    <Wire UId="51">
       <IdentCon UId="25" />
-      <NameCon UId="30" Name="setWeightBunker" />
+      <NameCon UId="41" Name="isWorkWithBunker" />
     </Wire>
-    <Wire UId="38">
+    <Wire UId="52">
       <IdentCon UId="26" />
-      <NameCon UId="30" Name="stableWeightBunker" />
+      <NameCon UId="41" Name="setWeightBunker" />
     </Wire>
-    <Wire UId="39">
+    <Wire UId="53">
       <IdentCon UId="27" />
-      <NameCon UId="30" Name="readyToSorting" />
+      <NameCon UId="41" Name="stableWeightBunker" />
     </Wire>
-    <Wire UId="40">
+    <Wire UId="54">
       <IdentCon UId="28" />
-      <NameCon UId="30" Name="readyToDrop" />
+      <NameCon UId="41" Name="readyToSorting" />
     </Wire>
-    <Wire UId="41">
+    <Wire UId="55">
       <IdentCon UId="29" />
-      <NameCon UId="30" Name="blockSort" />
+      <NameCon UId="41" Name="readyToDrop" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="blockSort" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="31" />
+      <NameCon UId="43" Name="enableToWork" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="32" />
+      <NameCon UId="43" Name="setWeight" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="33" />
+      <NameCon UId="43" Name="errorMeasurement" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="34" />
+      <NameCon UId="43" Name="isWorkWithBunker" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="35" />
+      <NameCon UId="43" Name="setWeightBunker" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="36" />
+      <NameCon UId="43" Name="stableWeightBunker" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="37" />
+      <NameCon UId="43" Name="readyToSorting" />
+    </Wire>
+    <Wire UId="64">
+      <IdentCon UId="38" />
+      <NameCon UId="43" Name="readyToDrop" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="39" />
+      <NameCon UId="43" Name="blockSort" />
     </Wire>
   </Wires>
 </FlgNet></NetworkSource>
