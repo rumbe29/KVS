@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-11T09:51:21.863916Z</Created>
+    <Created>2021-04-13T11:10:12.6692821Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -49,6 +49,8 @@
     <Member Name="flipper" Datatype="&quot;controlValve&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="autoclose_M" Datatype="Bool" /><Member Name="time_autoclose" Datatype="Time" /><Member Name="time_open/close" Datatype="Time" /></Section><Section Name="Output"><Member Name="openQ" Datatype="Bool" /><Member Name="closeQ" Datatype="Bool" /></Section><Section Name="InOut"><Member Name="open" Datatype="Bool" /><Member Name="close" Datatype="Bool" /><Member Name="stopAlarm" Datatype="Bool" /></Section><Section Name="Static"><Member Name="tofOpen" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="tofClose" Datatype="TOF_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Ptrig" Datatype="Array[0..1] of Bool" /><Member Name="Ntrig" Datatype="Array[0..1] of Bool" /><Member Name="tonAutoclose_M" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
     <Member Name="runAll" Datatype="Struct" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Member Name="vibroLot" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member></Member>
     <Member Name="stopAlarm" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Стоп для блоков управления задвижками</MultiLanguageText></Comment></Member>
+    <Member Name="N_trigOffManualMode" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">ловим что ручной выключился и нам больше не надо запускать огромный цикл</MultiLanguageText></Comment></Member>
+    <Member Name="manualIsOFF" Datatype="Bool" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member>
   </Section>
   <Section Name="Temp">
     <Member Name="i" Datatype="DInt" />
@@ -166,1905 +168,56 @@
       </SW.Blocks.CompileUnit>
       <SW.Blocks.CompileUnit ID="8" CompositionName="CompileUnits">
         <AttributeList>
-          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
-  <Access Scope="LocalVariable" UId="21">
-    <Symbol UId="22">
-      <Component Name="i" UId="23" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="24" />
-  <Token Text=":=" UId="25" />
-  <Blank Num="1" UId="26" />
-  <Access Scope="LiteralConstant" UId="27">
-    <Constant UId="28">
-      <ConstantValue UId="30">0</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="31" />
-  <NewLine Num="1" UId="32" />
-  <Token Text="FOR" UId="33" />
-  <Blank Num="1" UId="34" />
-  <Access Scope="LocalVariable" UId="35">
-    <Symbol UId="36">
-      <Component Name="i" UId="37" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="38" />
-  <Token Text=":=" UId="39" />
-  <Blank Num="1" UId="40" />
-  <Access Scope="LiteralConstant" UId="41">
-    <Constant UId="42">
-      <ConstantValue UId="44">1</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="45" />
-  <Token Text="TO" UId="46" />
-  <Blank Num="1" UId="47" />
-  <Access Scope="LiteralConstant" UId="48">
-    <Constant UId="49">
-      <ConstantValue UId="51">12</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="52" />
-  <Token Text="DO" UId="53" />
-  <NewLine Num="1" UId="54" />
-  <Blank Num="4" UId="55" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="56">
-    <Text UId="57">если имеется разрешение на включение механизмов в ручном режиме</Text>
-  </LineComment>
-  <NewLine Num="1" UId="58" />
-  <Blank Num="4" UId="59" />
-  <Token Text="IF" UId="60" />
-  <Blank Num="1" UId="61" />
-  <Access Scope="GlobalVariable" UId="62">
-    <Symbol UId="63">
-      <Component Name="signalKVSStation" UId="64" />
-      <Token Text="." UId="65" />
-      <Component Name="enableManualMode" UId="66" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="67" />
-  <Token Text="THEN" UId="68" />
-  <NewLine Num="1" UId="69" />
-  <Blank Num="8" UId="70" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="71">
-    <Text UId="72">Bunker_left</Text>
-  </LineComment>
-  <NewLine Num="1" UId="73" />
-  <Blank Num="8" UId="74" />
-  <Access Scope="Call" UId="75">
-    <CallInfo UId="76" BlockType="FB" Name="controlValve">
-      <Instance Scope="LocalVariable" UId="77">
-        <Component Name="Bunker_Left" UId="78">
-          <Token Text="[" UId="79" />
-          <Access Scope="LocalVariable" UId="80">
-            <Symbol UId="81">
-              <Component Name="i" UId="82" />
-            </Symbol>
-          </Access>
-          <Token Text="]" UId="83" />
-        </Component>
-      </Instance>
-      <Token Text="(" UId="84" />
-      <Parameter Name="openQ" UId="85">
-        <Blank Num="1" UId="86" />
-        <Token Text="=&gt;" UId="87" />
-        <Blank Num="1" UId="88" />
-        <Access Scope="GlobalVariable" UId="89">
-          <Symbol UId="90">
-            <Component Name="signalKVSStation" UId="91" />
-            <Token Text="." UId="92" />
-            <Component Name="qManualMode" UId="93" />
-            <Token Text="." UId="94" />
-            <Component Name="Bunker_leftOpen" UId="95">
-              <Token Text="[" UId="96" />
-              <Access Scope="LocalVariable" UId="97">
-                <Symbol UId="98">
-                  <Component Name="i" UId="99" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="100" />
-            </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="101" />
-      <NewLine Num="1" UId="102" />
-      <Blank Num="25" UId="103" />
-      <Parameter Name="closeQ" UId="104">
-        <Blank Num="1" UId="105" />
-        <Token Text="=&gt;" UId="106" />
-        <Blank Num="1" UId="107" />
-        <Access Scope="GlobalVariable" UId="108">
-          <Symbol UId="109">
-            <Component Name="signalKVSStation" UId="110" />
-            <Token Text="." UId="111" />
-            <Component Name="qManualMode" UId="112" />
-            <Token Text="." UId="113" />
-            <Component Name="Bunker_leftClose" UId="114">
-              <Token Text="[" UId="115" />
-              <Access Scope="LocalVariable" UId="116">
-                <Symbol UId="117">
-                  <Component Name="i" UId="118" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="119" />
-            </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="120" />
-      <NewLine Num="1" UId="121" />
-      <Blank Num="25" UId="122" />
-      <Parameter Name="open" UId="123">
-        <Blank Num="1" UId="124" />
-        <Token Text=":=" UId="125" />
-        <Blank Num="1" UId="126" />
-        <Access Scope="GlobalVariable" UId="127">
-          <Symbol UId="128">
-            <Component Name="hmi" UId="129" />
-            <Token Text="." UId="130" />
-            <Component Name="weightLine" UId="131">
-              <Token Text="[" UId="132" />
-              <Access Scope="LocalVariable" UId="133">
-                <Symbol UId="134">
-                  <Component Name="i" UId="135" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="136" />
-            </Component>
-            <Token Text="." UId="137" />
-            <Component Name="manOpenLeftValveWeightPocket" UId="138" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="139" />
-      <NewLine Num="1" UId="140" />
-      <Blank Num="25" UId="141" />
-      <Parameter Name="close" UId="142">
-        <Blank Num="1" UId="143" />
-        <Token Text=":=" UId="144" />
-        <Blank Num="1" UId="145" />
-        <Access Scope="GlobalVariable" UId="146">
-          <Symbol UId="147">
-            <Component Name="hmi" UId="148" />
-            <Token Text="." UId="149" />
-            <Component Name="weightLine" UId="150">
-              <Token Text="[" UId="151" />
-              <Access Scope="LocalVariable" UId="152">
-                <Symbol UId="153">
-                  <Component Name="i" UId="154" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="155" />
-            </Component>
-            <Token Text="." UId="156" />
-            <Component Name="manCloseLeftValveWeightPocket" UId="157" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="158" />
-      <NewLine Num="1" UId="159" />
-      <Blank Num="25" UId="160" />
-      <Parameter Name="time_open/close" UId="161">
-        <Blank Num="1" UId="162" />
-        <Token Text=":=" UId="163" />
-        <Blank Num="1" UId="164" />
-        <Access Scope="TypedConstant" UId="165">
-          <Constant UId="166">
-            <ConstantValue UId="167">t#250ms</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="168" />
-      <NewLine Num="1" UId="169" />
-      <Blank Num="25" UId="170" />
-      <Parameter Name="stopAlarm" UId="171">
-        <Blank Num="1" UId="172" />
-        <Token Text=":=" UId="173" />
-        <Blank Num="1" UId="174" />
-        <Access Scope="LocalVariable" UId="175">
-          <Symbol UId="176">
-            <Component Name="stopAlarm" UId="177" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="180" />
-    </CallInfo>
-  </Access>
-  <Token Text=";" UId="181" />
-  <NewLine Num="1" UId="182" />
-  <Blank Num="8" UId="183" />
-  <NewLine Num="1" UId="184" />
-  <Blank Num="8" UId="185" />
-  <NewLine Num="1" UId="186" />
-  <Blank Num="8" UId="187" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="188">
-    <Text UId="189">Bunker_right</Text>
-  </LineComment>
-  <NewLine Num="1" UId="190" />
-  <Blank Num="8" UId="191" />
-  <Access Scope="Call" UId="192">
-    <CallInfo UId="193" BlockType="FB" Name="controlValve">
-      <Instance Scope="LocalVariable" UId="194">
-        <Component Name="Bunker_Right" UId="195">
-          <Token Text="[" UId="196" />
-          <Access Scope="LocalVariable" UId="197">
-            <Symbol UId="198">
-              <Component Name="i" UId="199" />
-            </Symbol>
-          </Access>
-          <Token Text="]" UId="200" />
-        </Component>
-      </Instance>
-      <Token Text="(" UId="201" />
-      <Parameter Name="openQ" UId="202">
-        <Blank Num="1" UId="203" />
-        <Token Text="=&gt;" UId="204" />
-        <Blank Num="1" UId="205" />
-        <Access Scope="GlobalVariable" UId="206">
-          <Symbol UId="207">
-            <Component Name="signalKVSStation" UId="208" />
-            <Token Text="." UId="209" />
-            <Component Name="qManualMode" UId="210" />
-            <Token Text="." UId="211" />
-            <Component Name="Bunker_rightOpen" UId="212">
-              <Token Text="[" UId="213" />
-              <Access Scope="LocalVariable" UId="214">
-                <Symbol UId="215">
-                  <Component Name="i" UId="216" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="217" />
-            </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="218" />
-      <NewLine Num="1" UId="219" />
-      <Blank Num="26" UId="220" />
-      <Parameter Name="closeQ" UId="221">
-        <Blank Num="1" UId="222" />
-        <Token Text="=&gt;" UId="223" />
-        <Blank Num="1" UId="224" />
-        <Access Scope="GlobalVariable" UId="225">
-          <Symbol UId="226">
-            <Component Name="signalKVSStation" UId="227" />
-            <Token Text="." UId="228" />
-            <Component Name="qManualMode" UId="229" />
-            <Token Text="." UId="230" />
-            <Component Name="Bunker_rightClose" UId="231">
-              <Token Text="[" UId="232" />
-              <Access Scope="LocalVariable" UId="233">
-                <Symbol UId="234">
-                  <Component Name="i" UId="235" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="236" />
-            </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="237" />
-      <NewLine Num="1" UId="238" />
-      <Blank Num="26" UId="239" />
-      <Parameter Name="open" UId="240">
-        <Blank Num="1" UId="241" />
-        <Token Text=":=" UId="242" />
-        <Blank Num="1" UId="243" />
-        <Access Scope="GlobalVariable" UId="244">
-          <Symbol UId="245">
-            <Component Name="hmi" UId="246" />
-            <Token Text="." UId="247" />
-            <Component Name="weightLine" UId="248">
-              <Token Text="[" UId="249" />
-              <Access Scope="LocalVariable" UId="250">
-                <Symbol UId="251">
-                  <Component Name="i" UId="252" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="253" />
-            </Component>
-            <Token Text="." UId="254" />
-            <Component Name="manOpenRightValveWeightPocket" UId="255" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="256" />
-      <NewLine Num="1" UId="257" />
-      <Blank Num="26" UId="258" />
-      <Parameter Name="close" UId="259">
-        <Blank Num="1" UId="260" />
-        <Token Text=":=" UId="261" />
-        <Blank Num="1" UId="262" />
-        <Access Scope="GlobalVariable" UId="263">
-          <Symbol UId="264">
-            <Component Name="hmi" UId="265" />
-            <Token Text="." UId="266" />
-            <Component Name="weightLine" UId="267">
-              <Token Text="[" UId="268" />
-              <Access Scope="LocalVariable" UId="269">
-                <Symbol UId="270">
-                  <Component Name="i" UId="271" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="272" />
-            </Component>
-            <Token Text="." UId="273" />
-            <Component Name="manCloseRightValveWieghtPocket" UId="274" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="275" />
-      <NewLine Num="1" UId="276" />
-      <Blank Num="26" UId="277" />
-      <Parameter Name="time_open/close" UId="278">
-        <Blank Num="1" UId="279" />
-        <Token Text=":=" UId="280" />
-        <Blank Num="1" UId="281" />
-        <Access Scope="TypedConstant" UId="282">
-          <Constant UId="283">
-            <ConstantValue UId="284">t#250ms</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="285" />
-      <NewLine Num="1" UId="286" />
-      <Blank Num="26" UId="287" />
-      <Parameter Name="stopAlarm" UId="288">
-        <Blank Num="1" UId="289" />
-        <Token Text=":=" UId="290" />
-        <Blank Num="1" UId="291" />
-        <Access Scope="LocalVariable" UId="292">
-          <Symbol UId="293">
-            <Component Name="stopAlarm" UId="294" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="297" />
-    </CallInfo>
-  </Access>
-  <Token Text=";" UId="298" />
-  <NewLine Num="1" UId="299" />
-  <Blank Num="8" UId="300" />
-  <NewLine Num="1" UId="301" />
-  <Blank Num="8" UId="302" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="303">
-    <Text UId="304">Door</Text>
-  </LineComment>
-  <NewLine Num="1" UId="305" />
-  <Blank Num="8" UId="306" />
-  <Access Scope="Call" UId="307">
-    <CallInfo UId="308" BlockType="FB" Name="controlValve">
-      <Instance Scope="LocalVariable" UId="309">
-        <Component Name="Door" UId="310">
-          <Token Text="[" UId="311" />
-          <Access Scope="LocalVariable" UId="312">
-            <Symbol UId="313">
-              <Component Name="i" UId="314" />
-            </Symbol>
-          </Access>
-          <Token Text="]" UId="315" />
-        </Component>
-      </Instance>
-      <Token Text="(" UId="316" />
-      <Parameter Name="openQ" UId="317">
-        <Blank Num="1" UId="318" />
-        <Token Text="=&gt;" UId="319" />
-        <Blank Num="1" UId="320" />
-        <Access Scope="GlobalVariable" UId="321">
-          <Symbol UId="322">
-            <Component Name="signalKVSStation" UId="323" />
-            <Token Text="." UId="324" />
-            <Component Name="qManualMode" UId="325" />
-            <Token Text="." UId="326" />
-            <Component Name="Door_open" UId="327">
-              <Token Text="[" UId="328" />
-              <Access Scope="LocalVariable" UId="329">
-                <Symbol UId="330">
-                  <Component Name="i" UId="331" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="332" />
-            </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="333" />
-      <NewLine Num="1" UId="334" />
-      <Blank Num="18" UId="335" />
-      <Parameter Name="closeQ" UId="336">
-        <Blank Num="1" UId="337" />
-        <Token Text="=&gt;" UId="338" />
-        <Blank Num="1" UId="339" />
-        <Access Scope="GlobalVariable" UId="340">
-          <Symbol UId="341">
-            <Component Name="signalKVSStation" UId="342" />
-            <Token Text="." UId="343" />
-            <Component Name="qManualMode" UId="344" />
-            <Token Text="." UId="345" />
-            <Component Name="Door_close" UId="346">
-              <Token Text="[" UId="347" />
-              <Access Scope="LocalVariable" UId="348">
-                <Symbol UId="349">
-                  <Component Name="i" UId="350" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="351" />
-            </Component>
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="352" />
-      <NewLine Num="1" UId="353" />
-      <Blank Num="18" UId="354" />
-      <Parameter Name="open" UId="355">
-        <Blank Num="1" UId="356" />
-        <Token Text=":=" UId="357" />
-        <Blank Num="1" UId="358" />
-        <Access Scope="GlobalVariable" UId="359">
-          <Symbol UId="360">
-            <Component Name="hmi" UId="361" />
-            <Token Text="." UId="362" />
-            <Component Name="weightLine" UId="363">
-              <Token Text="[" UId="364" />
-              <Access Scope="LocalVariable" UId="365">
-                <Symbol UId="366">
-                  <Component Name="i" UId="367" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="368" />
-            </Component>
-            <Token Text="." UId="369" />
-            <Component Name="manOpenValveAfterVibroLot" UId="370" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="371" />
-      <NewLine Num="1" UId="372" />
-      <Blank Num="18" UId="373" />
-      <Parameter Name="close" UId="374">
-        <Blank Num="1" UId="375" />
-        <Token Text=":=" UId="376" />
-        <Blank Num="1" UId="377" />
-        <Access Scope="GlobalVariable" UId="378">
-          <Symbol UId="379">
-            <Component Name="hmi" UId="380" />
-            <Token Text="." UId="381" />
-            <Component Name="weightLine" UId="382">
-              <Token Text="[" UId="383" />
-              <Access Scope="LocalVariable" UId="384">
-                <Symbol UId="385">
-                  <Component Name="i" UId="386" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="387" />
-            </Component>
-            <Token Text="." UId="388" />
-            <Component Name="manCloseValveAfterVibroLot" UId="389" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="390" />
-      <NewLine Num="1" UId="391" />
-      <Blank Num="18" UId="392" />
-      <Parameter Name="time_open/close" UId="393">
-        <Blank Num="1" UId="394" />
-        <Token Text=":=" UId="395" />
-        <Blank Num="1" UId="396" />
-        <Access Scope="TypedConstant" UId="397">
-          <Constant UId="398">
-            <ConstantValue UId="399">t#250ms</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="400" />
-      <NewLine Num="1" UId="401" />
-      <Blank Num="18" UId="402" />
-      <Parameter Name="stopAlarm" UId="403">
-        <Blank Num="1" UId="404" />
-        <Token Text=":=" UId="405" />
-        <Blank Num="1" UId="406" />
-        <Access Scope="LocalVariable" UId="407">
-          <Symbol UId="408">
-            <Component Name="stopAlarm" UId="409" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="412" />
-    </CallInfo>
-  </Access>
-  <Token Text=";" UId="413" />
-  <NewLine Num="1" UId="414" />
-  <Blank Num="8" UId="415" />
-  <NewLine Num="1" UId="416" />
-  <Blank Num="8" UId="417" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="418">
-    <Text UId="419">vibroLot</Text>
-  </LineComment>
-  <NewLine Num="1" UId="420" />
-  <Blank Num="8" UId="421" />
-  <Token Text="IF" UId="422" />
-  <Blank Num="1" UId="423" />
-  <Access Scope="GlobalVariable" UId="424">
-    <Symbol UId="425">
-      <Component Name="hmi" UId="426" />
-      <Token Text="." UId="427" />
-      <Component Name="weightLine" UId="428">
-        <Token Text="[" UId="429" />
-        <Access Scope="LocalVariable" UId="430">
-          <Symbol UId="431">
-            <Component Name="i" UId="432" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="433" />
-      </Component>
-      <Token Text="." UId="434" />
-      <Component Name="manVibroLotStart" UId="435" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="436" />
-  <Token Text="THEN" UId="437" />
-  <NewLine Num="1" UId="438" />
-  <Blank Num="12" UId="439" />
-  <Access Scope="GlobalVariable" UId="440">
-    <Symbol UId="441">
-      <Component Name="signalKVSStation" UId="442" />
-      <Token Text="." UId="443" />
-      <Component Name="qManualMode" UId="444" />
-      <Token Text="." UId="445" />
-      <Component Name="vibroLot" UId="446">
-        <Token Text="[" UId="447" />
-        <Access Scope="LocalVariable" UId="448">
-          <Symbol UId="449">
-            <Component Name="i" UId="450" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="451" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="452" />
-  <Token Text=":=" UId="453" />
-  <Blank Num="1" UId="454" />
-  <Access Scope="LiteralConstant" UId="455">
-    <Constant UId="456">
-      <ConstantValue UId="458">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="459" />
-  <NewLine Num="1" UId="460" />
-  <Blank Num="8" UId="461" />
-  <Token Text="ELSE" UId="462" />
-  <NewLine Num="1" UId="463" />
-  <Blank Num="12" UId="464" />
-  <Access Scope="GlobalVariable" UId="465">
-    <Symbol UId="466">
-      <Component Name="signalKVSStation" UId="467" />
-      <Token Text="." UId="468" />
-      <Component Name="qManualMode" UId="469" />
-      <Token Text="." UId="470" />
-      <Component Name="vibroLot" UId="471">
-        <Token Text="[" UId="472" />
-        <Access Scope="LocalVariable" UId="473">
-          <Symbol UId="474">
-            <Component Name="i" UId="475" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="476" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="477" />
-  <Token Text=":=" UId="478" />
-  <Blank Num="1" UId="479" />
-  <Access Scope="LiteralConstant" UId="480">
-    <Constant UId="481">
-      <ConstantValue UId="483">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="484" />
-  <NewLine Num="1" UId="485" />
-  <Blank Num="8" UId="486" />
-  <Token Text="END_IF" UId="487" />
-  <Token Text=";" UId="488" />
-  <NewLine Num="1" UId="489" />
-  <Blank Num="8" UId="490" />
-  <NewLine Num="1" UId="491" />
-  <Blank Num="8" UId="492" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="493">
-    <Text UId="494">теперь все что на два цикла</Text>
-  </LineComment>
-  <NewLine Num="1" UId="495" />
-  <Blank Num="8" UId="496" />
-  <Token Text="IF" UId="497" />
-  <Blank Num="1" UId="498" />
-  <Access Scope="LocalVariable" UId="499">
-    <Symbol UId="500">
-      <Component Name="i" UId="501" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="502" />
-  <Token Text="=" UId="503" />
-  <Blank Num="1" UId="504" />
-  <Access Scope="LiteralConstant" UId="505">
-    <Constant UId="506">
-      <ConstantValue UId="508">1</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="509" />
-  <Token Text="OR" UId="510" />
-  <Blank Num="1" UId="511" />
-  <Access Scope="LocalVariable" UId="512">
-    <Symbol UId="513">
-      <Component Name="i" UId="514" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="515" />
-  <Token Text="=" UId="516" />
-  <Blank Num="1" UId="517" />
-  <Access Scope="LiteralConstant" UId="518">
-    <Constant UId="519">
-      <ConstantValue UId="521">2</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="522" />
-  <Token Text="THEN" UId="523" />
-  <NewLine Num="1" UId="524" />
-  <Blank Num="12" UId="525" />
-  <NewLine Num="1" UId="526" />
-  <Blank Num="12" UId="527" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="528">
-    <Text UId="529">Conv_FRV //Conv_REV</Text>
-  </LineComment>
-  <NewLine Num="1" UId="530" />
-  <Blank Num="12" UId="531" />
-  <Token Text="IF" UId="532" />
-  <Blank Num="1" UId="533" />
-  <Access Scope="GlobalVariable" UId="534">
-    <Symbol UId="535">
-      <Component Name="hmi" UId="536" />
-      <Token Text="." UId="537" />
-      <Component Name="outConvAndPack" UId="538">
-        <Token Text="[" UId="539" />
-        <Access Scope="LocalVariable" UId="540">
-          <Symbol UId="541">
-            <Component Name="i" UId="542" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="543" />
-      </Component>
-      <Token Text="." UId="544" />
-      <Component Name="manStartOutConv" UId="545" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="546" />
-  <Token Text="THEN" UId="547" />
-  <NewLine Num="1" UId="548" />
-  <Blank Num="16" UId="549" />
-  <Token Text="IF" UId="550" />
-  <Blank Num="1" UId="551" />
-  <Access Scope="GlobalVariable" UId="552">
-    <Symbol UId="553">
-      <Component Name="hmi" UId="554" />
-      <Token Text="." UId="555" />
-      <Component Name="outConvAndPack" UId="556">
-        <Token Text="[" UId="557" />
-        <Access Scope="LocalVariable" UId="558">
-          <Symbol UId="559">
-            <Component Name="i" UId="560" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="561" />
-      </Component>
-      <Token Text="." UId="562" />
-      <Component Name="manIsUpConv" UId="563" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="564" />
-  <Token Text="THEN" UId="565" />
-  <NewLine Num="1" UId="566" />
-  <Blank Num="20" UId="567" />
-  <Access Scope="GlobalVariable" UId="568">
-    <Symbol UId="569">
-      <Component Name="signalKVSStation" UId="570" />
-      <Token Text="." UId="571" />
-      <Component Name="qManualMode" UId="572" />
-      <Token Text="." UId="573" />
-      <Component Name="Conv_FRV" UId="574">
-        <Token Text="[" UId="575" />
-        <Access Scope="LocalVariable" UId="576">
-          <Symbol UId="577">
-            <Component Name="i" UId="578" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="579" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="580" />
-  <Token Text=":=" UId="581" />
-  <Blank Num="1" UId="582" />
-  <Access Scope="LiteralConstant" UId="583">
-    <Constant UId="584">
-      <ConstantValue UId="586">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="587" />
-  <NewLine Num="1" UId="588" />
-  <Blank Num="20" UId="589" />
-  <Access Scope="GlobalVariable" UId="590">
-    <Symbol UId="591">
-      <Component Name="signalKVSStation" UId="592" />
-      <Token Text="." UId="593" />
-      <Component Name="qManualMode" UId="594" />
-      <Token Text="." UId="595" />
-      <Component Name="Conv_REV" UId="596">
-        <Token Text="[" UId="597" />
-        <Access Scope="LocalVariable" UId="598">
-          <Symbol UId="599">
-            <Component Name="i" UId="600" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="601" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="602" />
-  <Token Text=":=" UId="603" />
-  <Blank Num="1" UId="604" />
-  <Access Scope="LiteralConstant" UId="605">
-    <Constant UId="606">
-      <ConstantValue UId="608">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="609" />
-  <NewLine Num="1" UId="610" />
-  <Blank Num="16" UId="611" />
-  <Token Text="ELSE" UId="612" />
-  <NewLine Num="1" UId="613" />
-  <Blank Num="20" UId="614" />
-  <Access Scope="GlobalVariable" UId="615">
-    <Symbol UId="616">
-      <Component Name="signalKVSStation" UId="617" />
-      <Token Text="." UId="618" />
-      <Component Name="qManualMode" UId="619" />
-      <Token Text="." UId="620" />
-      <Component Name="Conv_REV" UId="621">
-        <Token Text="[" UId="622" />
-        <Access Scope="LocalVariable" UId="623">
-          <Symbol UId="624">
-            <Component Name="i" UId="625" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="626" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="627" />
-  <Token Text=":=" UId="628" />
-  <Blank Num="1" UId="629" />
-  <Access Scope="LiteralConstant" UId="630">
-    <Constant UId="631">
-      <ConstantValue UId="633">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="634" />
-  <NewLine Num="1" UId="635" />
-  <Blank Num="20" UId="636" />
-  <Access Scope="GlobalVariable" UId="637">
-    <Symbol UId="638">
-      <Component Name="signalKVSStation" UId="639" />
-      <Token Text="." UId="640" />
-      <Component Name="qManualMode" UId="641" />
-      <Token Text="." UId="642" />
-      <Component Name="Conv_FRV" UId="643">
-        <Token Text="[" UId="644" />
-        <Access Scope="LocalVariable" UId="645">
-          <Symbol UId="646">
-            <Component Name="i" UId="647" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="648" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="649" />
-  <Token Text=":=" UId="650" />
-  <Blank Num="1" UId="651" />
-  <Access Scope="LiteralConstant" UId="652">
-    <Constant UId="653">
-      <ConstantValue UId="655">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="656" />
-  <NewLine Num="1" UId="657" />
-  <Blank Num="16" UId="658" />
-  <Token Text="END_IF" UId="659" />
-  <Token Text=";" UId="660" />
-  <NewLine Num="1" UId="661" />
-  <Blank Num="12" UId="662" />
-  <Token Text="ELSE" UId="663" />
-  <NewLine Num="1" UId="664" />
-  <Blank Num="16" UId="665" />
-  <Access Scope="GlobalVariable" UId="666">
-    <Symbol UId="667">
-      <Component Name="signalKVSStation" UId="668" />
-      <Token Text="." UId="669" />
-      <Component Name="qManualMode" UId="670" />
-      <Token Text="." UId="671" />
-      <Component Name="Conv_REV" UId="672">
-        <Token Text="[" UId="673" />
-        <Access Scope="LocalVariable" UId="674">
-          <Symbol UId="675">
-            <Component Name="i" UId="676" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="677" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="678" />
-  <Token Text=":=" UId="679" />
-  <Blank Num="1" UId="680" />
-  <Access Scope="LiteralConstant" UId="681">
-    <Constant UId="682">
-      <ConstantValue UId="684">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="685" />
-  <NewLine Num="1" UId="686" />
-  <Blank Num="16" UId="687" />
-  <Access Scope="GlobalVariable" UId="688">
-    <Symbol UId="689">
-      <Component Name="signalKVSStation" UId="690" />
-      <Token Text="." UId="691" />
-      <Component Name="qManualMode" UId="692" />
-      <Token Text="." UId="693" />
-      <Component Name="Conv_FRV" UId="694">
-        <Token Text="[" UId="695" />
-        <Access Scope="LocalVariable" UId="696">
-          <Symbol UId="697">
-            <Component Name="i" UId="698" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="699" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="700" />
-  <Token Text=":=" UId="701" />
-  <Blank Num="1" UId="702" />
-  <Access Scope="LiteralConstant" UId="703">
-    <Constant UId="704">
-      <ConstantValue UId="706">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="707" />
-  <NewLine Num="1" UId="708" />
-  <Blank Num="12" UId="709" />
-  <Token Text="END_IF" UId="710" />
-  <Token Text=";" UId="711" />
-  <NewLine Num="1" UId="712" />
-  <Blank Num="12" UId="713" />
-  <NewLine Num="1" UId="714" />
-  <Blank Num="12" UId="715" />
-  <NewLine Num="1" UId="716" />
-  <Blank Num="12" UId="717" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="718">
-    <Text UId="719">vibroTable</Text>
-  </LineComment>
-  <NewLine Num="1" UId="720" />
-  <Blank Num="12" UId="721" />
-  <Token Text="IF" UId="722" />
-  <Blank Num="1" UId="723" />
-  <Access Scope="GlobalVariable" UId="724">
-    <Symbol UId="725">
-      <Component Name="hmi" UId="726" />
-      <Token Text="." UId="727" />
-      <Component Name="addedVibro" UId="728" />
-      <Token Text="." UId="729" />
-      <Component Name="manStartVibroTable" UId="730">
-        <Token Text="[" UId="731" />
-        <Access Scope="LocalVariable" UId="732">
-          <Symbol UId="733">
-            <Component Name="i" UId="734" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="735" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="736" />
-  <Token Text="THEN" UId="737" />
-  <NewLine Num="1" UId="738" />
-  <Blank Num="16" UId="739" />
-  <Access Scope="GlobalVariable" UId="740">
-    <Symbol UId="741">
-      <Component Name="signalKVSStation" UId="742" />
-      <Token Text="." UId="743" />
-      <Component Name="qManualMode" UId="744" />
-      <Token Text="." UId="745" />
-      <Component Name="vibroTable" UId="746">
-        <Token Text="[" UId="747" />
-        <Access Scope="LocalVariable" UId="748">
-          <Symbol UId="749">
-            <Component Name="i" UId="750" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="751" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="752" />
-  <Token Text=":=" UId="753" />
-  <Blank Num="1" UId="754" />
-  <Access Scope="LiteralConstant" UId="755">
-    <Constant UId="756">
-      <ConstantValue UId="758">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="759" />
-  <NewLine Num="1" UId="760" />
-  <Blank Num="12" UId="761" />
-  <Token Text="ELSE" UId="762" />
-  <NewLine Num="1" UId="763" />
-  <Blank Num="16" UId="764" />
-  <Access Scope="GlobalVariable" UId="765">
-    <Symbol UId="766">
-      <Component Name="signalKVSStation" UId="767" />
-      <Token Text="." UId="768" />
-      <Component Name="qManualMode" UId="769" />
-      <Token Text="." UId="770" />
-      <Component Name="vibroTable" UId="771">
-        <Token Text="[" UId="772" />
-        <Access Scope="LocalVariable" UId="773">
-          <Symbol UId="774">
-            <Component Name="i" UId="775" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="776" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="777" />
-  <Token Text=":=" UId="778" />
-  <Blank Num="1" UId="779" />
-  <Access Scope="LiteralConstant" UId="780">
-    <Constant UId="781">
-      <ConstantValue UId="783">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="784" />
-  <NewLine Num="1" UId="785" />
-  <Blank Num="12" UId="786" />
-  <Token Text="END_IF" UId="787" />
-  <Token Text=";" UId="788" />
-  <NewLine Num="1" UId="789" />
-  <Blank Num="12" UId="790" />
-  <NewLine Num="1" UId="791" />
-  <Blank Num="12" UId="792" />
-  <NewLine Num="1" UId="793" />
-  <Blank Num="8" UId="794" />
-  <Token Text="END_IF" UId="795" />
-  <Token Text=";" UId="796" />
-  <NewLine Num="1" UId="797" />
-  <Blank Num="8" UId="798" />
-  <NewLine Num="1" UId="799" />
-  <Blank Num="8" UId="800" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="801">
-    <Text UId="802"> //flipper</Text>
-  </LineComment>
-  <NewLine Num="1" UId="803" />
-  <Blank Num="8" UId="804" />
-  <Access Scope="Call" UId="805">
-    <CallInfo UId="806" BlockType="FB" Name="controlValve">
-      <Instance Scope="LocalVariable" UId="807">
-        <Component Name="flipper" UId="808" />
-      </Instance>
-      <Token Text="(" UId="809" />
-      <Parameter Name="openQ" UId="810">
-        <Blank Num="1" UId="811" />
-        <Token Text="=&gt;" UId="812" />
-        <Blank Num="1" UId="813" />
-        <Access Scope="GlobalVariable" UId="814">
-          <Symbol UId="815">
-            <Component Name="signalKVSStation" UId="816" />
-            <Token Text="." UId="817" />
-            <Component Name="qManualMode" UId="818" />
-            <Token Text="." UId="819" />
-            <Component Name="flipper_Up" UId="820" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="821" />
-      <NewLine Num="1" UId="822" />
-      <Blank Num="17" UId="823" />
-      <Parameter Name="closeQ" UId="824">
-        <Blank Num="1" UId="825" />
-        <Token Text="=&gt;" UId="826" />
-        <Blank Num="1" UId="827" />
-        <Access Scope="GlobalVariable" UId="828">
-          <Symbol UId="829">
-            <Component Name="signalKVSStation" UId="830" />
-            <Token Text="." UId="831" />
-            <Component Name="qManualMode" UId="832" />
-            <Token Text="." UId="833" />
-            <Component Name="flipper_Down" UId="834" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="835" />
-      <NewLine Num="1" UId="836" />
-      <Blank Num="17" UId="837" />
-      <Parameter Name="open" UId="838">
-        <Blank Num="1" UId="839" />
-        <Token Text=":=" UId="840" />
-        <Blank Num="1" UId="841" />
-        <Access Scope="GlobalVariable" UId="842">
-          <Symbol UId="843">
-            <Component Name="hmi" UId="844" />
-            <Token Text="." UId="845" />
-            <Component Name="plavnik" UId="846" />
-            <Token Text="." UId="847" />
-            <Component Name="manOpenPlavnik" UId="848" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="849" />
-      <NewLine Num="1" UId="850" />
-      <Blank Num="17" UId="851" />
-      <Parameter Name="close" UId="852">
-        <Blank Num="1" UId="853" />
-        <Token Text=":=" UId="854" />
-        <Blank Num="1" UId="855" />
-        <Access Scope="GlobalVariable" UId="856">
-          <Symbol UId="857">
-            <Component Name="hmi" UId="858" />
-            <Token Text="." UId="859" />
-            <Component Name="plavnik" UId="860" />
-            <Token Text="." UId="861" />
-            <Component Name="manClosePlavnik" UId="862" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="863" />
-      <NewLine Num="1" UId="864" />
-      <Blank Num="17" UId="865" />
-      <Parameter Name="time_open/close" UId="866">
-        <Blank Num="1" UId="867" />
-        <Token Text=":=" UId="868" />
-        <Blank Num="1" UId="869" />
-        <Access Scope="TypedConstant" UId="870">
-          <Constant UId="871">
-            <ConstantValue UId="872">t#250ms</ConstantValue>
-          </Constant>
-        </Access>
-      </Parameter>
-      <Token Text="," UId="873" />
-      <NewLine Num="1" UId="874" />
-      <Blank Num="17" UId="875" />
-      <Parameter Name="stopAlarm" UId="876">
-        <Blank Num="1" UId="877" />
-        <Token Text=":=" UId="878" />
-        <Blank Num="1" UId="879" />
-        <Access Scope="LocalVariable" UId="880">
-          <Symbol UId="881">
-            <Component Name="stopAlarm" UId="882" />
-          </Symbol>
-        </Access>
-      </Parameter>
-      <Token Text=")" UId="885" />
-    </CallInfo>
-  </Access>
-  <Token Text=";" UId="886" />
-  <NewLine Num="1" UId="887" />
-  <Blank Num="8" UId="888" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="889">
-    <Text UId="890">питатель</Text>
-  </LineComment>
-  <NewLine Num="1" UId="891" />
-  <Blank Num="8" UId="892" />
-  <Token Text="IF" UId="893" />
-  <Blank Num="1" UId="894" />
-  <Access Scope="GlobalVariable" UId="895">
-    <Symbol UId="896">
-      <Component Name="hmi" UId="897" />
-      <Token Text="." UId="898" />
-      <Component Name="sourceConv" UId="899" />
-      <Token Text="." UId="900" />
-      <Component Name="manStartConv" UId="901" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="902" />
-  <Token Text="THEN" UId="903" />
-  <NewLine Num="1" UId="904" />
-  <Blank Num="12" UId="905" />
-  <Access Scope="GlobalVariable" UId="906">
-    <Symbol UId="907">
-      <Component Name="signalKVSStation" UId="908" />
-      <Token Text="." UId="909" />
-      <Component Name="qManualMode" UId="910" />
-      <Token Text="." UId="911" />
-      <Component Name="startInConv" UId="912" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="913" />
-  <Token Text=":=" UId="914" />
-  <Blank Num="1" UId="915" />
-  <Access Scope="LiteralConstant" UId="916">
-    <Constant UId="917">
-      <ConstantValue UId="919">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="920" />
-  <NewLine Num="1" UId="921" />
-  <Blank Num="8" UId="922" />
-  <Token Text="ELSE" UId="923" />
-  <NewLine Num="1" UId="924" />
-  <Blank Num="12" UId="925" />
-  <Access Scope="GlobalVariable" UId="926">
-    <Symbol UId="927">
-      <Component Name="signalKVSStation" UId="928" />
-      <Token Text="." UId="929" />
-      <Component Name="qManualMode" UId="930" />
-      <Token Text="." UId="931" />
-      <Component Name="startInConv" UId="932" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="933" />
-  <Token Text=":=" UId="934" />
-  <Blank Num="1" UId="935" />
-  <Access Scope="LiteralConstant" UId="936">
-    <Constant UId="937">
-      <ConstantValue UId="939">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="940" />
-  <NewLine Num="1" UId="941" />
-  <Blank Num="8" UId="942" />
-  <Token Text="END_IF" UId="943" />
-  <Token Text=";" UId="944" />
-  <NewLine Num="1" UId="945" />
-  <Blank Num="8" UId="946" />
-  <NewLine Num="1" UId="947" />
-  <Blank Num="4" UId="948" />
-  <Token Text="ELSE" UId="949" />
-  <NewLine Num="1" UId="950" />
-  <Blank Num="8" UId="951" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="952">
-    <Text UId="953">деактивируем сигналы на катушки ручного режима и</Text>
-  </LineComment>
-  <NewLine Num="1" UId="954" />
-  <Blank Num="8" UId="955" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="956">
-    <Text UId="957">сигналы управления в ручном режиме</Text>
-  </LineComment>
-  <NewLine Num="1" UId="958" />
-  <Blank Num="8" UId="959" />
-  <Access Scope="GlobalVariable" UId="960">
-    <Symbol UId="961">
-      <Component Name="hmi" UId="962" />
-      <Token Text="." UId="963" />
-      <Component Name="weightLine" UId="964">
-        <Token Text="[" UId="965" />
-        <Access Scope="LocalVariable" UId="966">
-          <Symbol UId="967">
-            <Component Name="i" UId="968" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="969" />
-      </Component>
-      <Token Text="." UId="970" />
-      <Component Name="manOpenLeftValveWeightPocket" UId="971" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="972" />
-  <Token Text=":=" UId="973" />
-  <Blank Num="1" UId="974" />
-  <Access Scope="LiteralConstant" UId="975">
-    <Constant UId="976">
-      <ConstantValue UId="978">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="979" />
-  <NewLine Num="1" UId="980" />
-  <Blank Num="8" UId="981" />
-  <Access Scope="GlobalVariable" UId="982">
-    <Symbol UId="983">
-      <Component Name="signalKVSStation" UId="984" />
-      <Token Text="." UId="985" />
-      <Component Name="qManualMode" UId="986" />
-      <Token Text="." UId="987" />
-      <Component Name="Bunker_leftOpen" UId="988">
-        <Token Text="[" UId="989" />
-        <Access Scope="LocalVariable" UId="990">
-          <Symbol UId="991">
-            <Component Name="i" UId="992" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="993" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="994" />
-  <Token Text=":=" UId="995" />
-  <Blank Num="1" UId="996" />
-  <Access Scope="LiteralConstant" UId="997">
-    <Constant UId="998">
-      <ConstantValue UId="1000">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1001" />
-  <NewLine Num="1" UId="1002" />
-  <Blank Num="8" UId="1003" />
-  <NewLine Num="1" UId="1004" />
-  <Blank Num="8" UId="1005" />
-  <Access Scope="GlobalVariable" UId="1006">
-    <Symbol UId="1007">
-      <Component Name="hmi" UId="1008" />
-      <Token Text="." UId="1009" />
-      <Component Name="weightLine" UId="1010">
-        <Token Text="[" UId="1011" />
-        <Access Scope="LocalVariable" UId="1012">
-          <Symbol UId="1013">
-            <Component Name="i" UId="1014" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1015" />
-      </Component>
-      <Token Text="." UId="1016" />
-      <Component Name="manCloseLeftValveWeightPocket" UId="1017" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1018" />
-  <Token Text=":=" UId="1019" />
-  <Blank Num="1" UId="1020" />
-  <Access Scope="LiteralConstant" UId="1021">
-    <Constant UId="1022">
-      <ConstantValue UId="1024">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1025" />
-  <NewLine Num="1" UId="1026" />
-  <Blank Num="8" UId="1027" />
-  <Access Scope="GlobalVariable" UId="1028">
-    <Symbol UId="1029">
-      <Component Name="signalKVSStation" UId="1030" />
-      <Token Text="." UId="1031" />
-      <Component Name="qManualMode" UId="1032" />
-      <Token Text="." UId="1033" />
-      <Component Name="Bunker_leftClose" UId="1034">
-        <Token Text="[" UId="1035" />
-        <Access Scope="LocalVariable" UId="1036">
-          <Symbol UId="1037">
-            <Component Name="i" UId="1038" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1039" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1040" />
-  <Token Text=":=" UId="1041" />
-  <Blank Num="1" UId="1042" />
-  <Access Scope="LiteralConstant" UId="1043">
-    <Constant UId="1044">
-      <ConstantValue UId="1046">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1047" />
-  <NewLine Num="1" UId="1048" />
-  <Blank Num="8" UId="1049" />
-  <NewLine Num="1" UId="1050" />
-  <Blank Num="8" UId="1051" />
-  <Access Scope="GlobalVariable" UId="1052">
-    <Symbol UId="1053">
-      <Component Name="hmi" UId="1054" />
-      <Token Text="." UId="1055" />
-      <Component Name="weightLine" UId="1056">
-        <Token Text="[" UId="1057" />
-        <Access Scope="LocalVariable" UId="1058">
-          <Symbol UId="1059">
-            <Component Name="i" UId="1060" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1061" />
-      </Component>
-      <Token Text="." UId="1062" />
-      <Component Name="manOpenRightValveWeightPocket" UId="1063" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1064" />
-  <Token Text=":=" UId="1065" />
-  <Blank Num="1" UId="1066" />
-  <Access Scope="LiteralConstant" UId="1067">
-    <Constant UId="1068">
-      <ConstantValue UId="1070">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1071" />
-  <NewLine Num="1" UId="1072" />
-  <Blank Num="8" UId="1073" />
-  <Access Scope="GlobalVariable" UId="1074">
-    <Symbol UId="1075">
-      <Component Name="signalKVSStation" UId="1076" />
-      <Token Text="." UId="1077" />
-      <Component Name="qManualMode" UId="1078" />
-      <Token Text="." UId="1079" />
-      <Component Name="Bunker_rightOpen" UId="1080">
-        <Token Text="[" UId="1081" />
-        <Access Scope="LocalVariable" UId="1082">
-          <Symbol UId="1083">
-            <Component Name="i" UId="1084" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1085" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1086" />
-  <Token Text=":=" UId="1087" />
-  <Blank Num="1" UId="1088" />
-  <Access Scope="LiteralConstant" UId="1089">
-    <Constant UId="1090">
-      <ConstantValue UId="1092">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1093" />
-  <NewLine Num="1" UId="1094" />
-  <Blank Num="8" UId="1095" />
-  <NewLine Num="1" UId="1096" />
-  <Blank Num="8" UId="1097" />
-  <Access Scope="GlobalVariable" UId="1098">
-    <Symbol UId="1099">
-      <Component Name="hmi" UId="1100" />
-      <Token Text="." UId="1101" />
-      <Component Name="weightLine" UId="1102">
-        <Token Text="[" UId="1103" />
-        <Access Scope="LocalVariable" UId="1104">
-          <Symbol UId="1105">
-            <Component Name="i" UId="1106" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1107" />
-      </Component>
-      <Token Text="." UId="1108" />
-      <Component Name="manCloseRightValveWieghtPocket" UId="1109" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1110" />
-  <Token Text=":=" UId="1111" />
-  <Blank Num="1" UId="1112" />
-  <Access Scope="LiteralConstant" UId="1113">
-    <Constant UId="1114">
-      <ConstantValue UId="1116">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1117" />
-  <NewLine Num="1" UId="1118" />
-  <Blank Num="8" UId="1119" />
-  <Access Scope="GlobalVariable" UId="1120">
-    <Symbol UId="1121">
-      <Component Name="signalKVSStation" UId="1122" />
-      <Token Text="." UId="1123" />
-      <Component Name="qManualMode" UId="1124" />
-      <Token Text="." UId="1125" />
-      <Component Name="Bunker_rightClose" UId="1126">
-        <Token Text="[" UId="1127" />
-        <Access Scope="LocalVariable" UId="1128">
-          <Symbol UId="1129">
-            <Component Name="i" UId="1130" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1131" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1132" />
-  <Token Text=":=" UId="1133" />
-  <Blank Num="1" UId="1134" />
-  <Access Scope="LiteralConstant" UId="1135">
-    <Constant UId="1136">
-      <ConstantValue UId="1138">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1139" />
-  <NewLine Num="1" UId="1140" />
-  <Blank Num="8" UId="1141" />
-  <NewLine Num="1" UId="1142" />
-  <Blank Num="8" UId="1143" />
-  <Access Scope="GlobalVariable" UId="1144">
-    <Symbol UId="1145">
-      <Component Name="hmi" UId="1146" />
-      <Token Text="." UId="1147" />
-      <Component Name="weightLine" UId="1148">
-        <Token Text="[" UId="1149" />
-        <Access Scope="LocalVariable" UId="1150">
-          <Symbol UId="1151">
-            <Component Name="i" UId="1152" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1153" />
-      </Component>
-      <Token Text="." UId="1154" />
-      <Component Name="manOpenRightValveWeightPocket" UId="1155" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1156" />
-  <Token Text=":=" UId="1157" />
-  <Blank Num="1" UId="1158" />
-  <Access Scope="LiteralConstant" UId="1159">
-    <Constant UId="1160">
-      <ConstantValue UId="1162">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1163" />
-  <NewLine Num="1" UId="1164" />
-  <Blank Num="8" UId="1165" />
-  <Access Scope="GlobalVariable" UId="1166">
-    <Symbol UId="1167">
-      <Component Name="signalKVSStation" UId="1168" />
-      <Token Text="." UId="1169" />
-      <Component Name="qManualMode" UId="1170" />
-      <Token Text="." UId="1171" />
-      <Component Name="Door_open" UId="1172">
-        <Token Text="[" UId="1173" />
-        <Access Scope="LocalVariable" UId="1174">
-          <Symbol UId="1175">
-            <Component Name="i" UId="1176" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1177" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1178" />
-  <Token Text=":=" UId="1179" />
-  <Blank Num="1" UId="1180" />
-  <Access Scope="LiteralConstant" UId="1181">
-    <Constant UId="1182">
-      <ConstantValue UId="1184">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1185" />
-  <NewLine Num="1" UId="1186" />
-  <Blank Num="8" UId="1187" />
-  <NewLine Num="1" UId="1188" />
-  <Blank Num="8" UId="1189" />
-  <Access Scope="GlobalVariable" UId="1190">
-    <Symbol UId="1191">
-      <Component Name="hmi" UId="1192" />
-      <Token Text="." UId="1193" />
-      <Component Name="weightLine" UId="1194">
-        <Token Text="[" UId="1195" />
-        <Access Scope="LocalVariable" UId="1196">
-          <Symbol UId="1197">
-            <Component Name="i" UId="1198" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1199" />
-      </Component>
-      <Token Text="." UId="1200" />
-      <Component Name="manCloseValveAfterVibroLot" UId="1201" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1202" />
-  <Token Text=":=" UId="1203" />
-  <Blank Num="1" UId="1204" />
-  <Access Scope="LiteralConstant" UId="1205">
-    <Constant UId="1206">
-      <ConstantValue UId="1208">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1209" />
-  <NewLine Num="1" UId="1210" />
-  <Blank Num="8" UId="1211" />
-  <Access Scope="GlobalVariable" UId="1212">
-    <Symbol UId="1213">
-      <Component Name="signalKVSStation" UId="1214" />
-      <Token Text="." UId="1215" />
-      <Component Name="qManualMode" UId="1216" />
-      <Token Text="." UId="1217" />
-      <Component Name="Door_close" UId="1218">
-        <Token Text="[" UId="1219" />
-        <Access Scope="LocalVariable" UId="1220">
-          <Symbol UId="1221">
-            <Component Name="i" UId="1222" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1223" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1224" />
-  <Token Text=":=" UId="1225" />
-  <Blank Num="1" UId="1226" />
-  <Access Scope="LiteralConstant" UId="1227">
-    <Constant UId="1228">
-      <ConstantValue UId="1230">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1231" />
-  <NewLine Num="1" UId="1232" />
-  <Blank Num="8" UId="1233" />
-  <NewLine Num="1" UId="1234" />
-  <Blank Num="8" UId="1235" />
-  <Access Scope="GlobalVariable" UId="1236">
-    <Symbol UId="1237">
-      <Component Name="hmi" UId="1238" />
-      <Token Text="." UId="1239" />
-      <Component Name="weightLine" UId="1240">
-        <Token Text="[" UId="1241" />
-        <Access Scope="LocalVariable" UId="1242">
-          <Symbol UId="1243">
-            <Component Name="i" UId="1244" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1245" />
-      </Component>
-      <Token Text="." UId="1246" />
-      <Component Name="manVibroLotStart" UId="1247" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1248" />
-  <Token Text=":=" UId="1249" />
-  <Blank Num="1" UId="1250" />
-  <Access Scope="LiteralConstant" UId="1251">
-    <Constant UId="1252">
-      <ConstantValue UId="1254">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1255" />
-  <NewLine Num="1" UId="1256" />
-  <Blank Num="8" UId="1257" />
-  <Access Scope="GlobalVariable" UId="1258">
-    <Symbol UId="1259">
-      <Component Name="signalKVSStation" UId="1260" />
-      <Token Text="." UId="1261" />
-      <Component Name="qManualMode" UId="1262" />
-      <Token Text="." UId="1263" />
-      <Component Name="vibroLot" UId="1264">
-        <Token Text="[" UId="1265" />
-        <Access Scope="LocalVariable" UId="1266">
-          <Symbol UId="1267">
-            <Component Name="i" UId="1268" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1269" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1270" />
-  <Token Text=":=" UId="1271" />
-  <Blank Num="1" UId="1272" />
-  <Access Scope="LiteralConstant" UId="1273">
-    <Constant UId="1274">
-      <ConstantValue UId="1276">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1277" />
-  <NewLine Num="1" UId="1278" />
-  <Blank Num="8" UId="1279" />
-  <Token Text="IF" UId="1280" />
-  <Blank Num="1" UId="1281" />
-  <Access Scope="LocalVariable" UId="1282">
-    <Symbol UId="1283">
-      <Component Name="i" UId="1284" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1285" />
-  <Token Text="=" UId="1286" />
-  <Blank Num="1" UId="1287" />
-  <Access Scope="LiteralConstant" UId="1288">
-    <Constant UId="1289">
-      <ConstantValue UId="1291">1</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="1292" />
-  <Token Text="OR" UId="1293" />
-  <Blank Num="1" UId="1294" />
-  <Access Scope="LocalVariable" UId="1295">
-    <Symbol UId="1296">
-      <Component Name="i" UId="1297" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1298" />
-  <Token Text="=" UId="1299" />
-  <Blank Num="1" UId="1300" />
-  <Access Scope="LiteralConstant" UId="1301">
-    <Constant UId="1302">
-      <ConstantValue UId="1304">2</ConstantValue>
-    </Constant>
-  </Access>
-  <Blank Num="1" UId="1305" />
-  <Token Text="THEN" UId="1306" />
-  <NewLine Num="1" UId="1307" />
-  <Blank Num="12" UId="1308" />
-  <Access Scope="GlobalVariable" UId="1309">
-    <Symbol UId="1310">
-      <Component Name="hmi" UId="1311" />
-      <Token Text="." UId="1312" />
-      <Component Name="outConvAndPack" UId="1313">
-        <Token Text="[" UId="1314" />
-        <Access Scope="LocalVariable" UId="1315">
-          <Symbol UId="1316">
-            <Component Name="i" UId="1317" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1318" />
-      </Component>
-      <Token Text="." UId="1319" />
-      <Component Name="manStartOutConv" UId="1320" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1321" />
-  <Token Text=":=" UId="1322" />
-  <Blank Num="1" UId="1323" />
-  <Access Scope="LiteralConstant" UId="1324">
-    <Constant UId="1325">
-      <ConstantValue UId="1327">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1328" />
-  <NewLine Num="1" UId="1329" />
-  <Blank Num="12" UId="1330" />
-  <Access Scope="GlobalVariable" UId="1331">
-    <Symbol UId="1332">
-      <Component Name="signalKVSStation" UId="1333" />
-      <Token Text="." UId="1334" />
-      <Component Name="qManualMode" UId="1335" />
-      <Token Text="." UId="1336" />
-      <Component Name="Conv_FRV" UId="1337">
-        <Token Text="[" UId="1338" />
-        <Access Scope="LocalVariable" UId="1339">
-          <Symbol UId="1340">
-            <Component Name="i" UId="1341" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1342" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1343" />
-  <Token Text=":=" UId="1344" />
-  <Blank Num="1" UId="1345" />
-  <Access Scope="LiteralConstant" UId="1346">
-    <Constant UId="1347">
-      <ConstantValue UId="1349">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1350" />
-  <NewLine Num="1" UId="1351" />
-  <Blank Num="12" UId="1352" />
-  <Access Scope="GlobalVariable" UId="1353">
-    <Symbol UId="1354">
-      <Component Name="signalKVSStation" UId="1355" />
-      <Token Text="." UId="1356" />
-      <Component Name="qManualMode" UId="1357" />
-      <Token Text="." UId="1358" />
-      <Component Name="Conv_REV" UId="1359">
-        <Token Text="[" UId="1360" />
-        <Access Scope="LocalVariable" UId="1361">
-          <Symbol UId="1362">
-            <Component Name="i" UId="1363" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1364" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1365" />
-  <Token Text=":=" UId="1366" />
-  <Blank Num="1" UId="1367" />
-  <Access Scope="LiteralConstant" UId="1368">
-    <Constant UId="1369">
-      <ConstantValue UId="1371">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1372" />
-  <NewLine Num="1" UId="1373" />
-  <Blank Num="12" UId="1374" />
-  <NewLine Num="1" UId="1375" />
-  <Blank Num="12" UId="1376" />
-  <Access Scope="GlobalVariable" UId="1377">
-    <Symbol UId="1378">
-      <Component Name="hmi" UId="1379" />
-      <Token Text="." UId="1380" />
-      <Component Name="addedVibro" UId="1381" />
-      <Token Text="." UId="1382" />
-      <Component Name="manStartVibroTable" UId="1383">
-        <Token Text="[" UId="1384" />
-        <Access Scope="LocalVariable" UId="1385">
-          <Symbol UId="1386">
-            <Component Name="i" UId="1387" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1388" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1389" />
-  <Token Text=":=" UId="1390" />
-  <Blank Num="1" UId="1391" />
-  <Access Scope="LiteralConstant" UId="1392">
-    <Constant UId="1393">
-      <ConstantValue UId="1395">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1396" />
-  <NewLine Num="1" UId="1397" />
-  <Blank Num="12" UId="1398" />
-  <Access Scope="GlobalVariable" UId="1399">
-    <Symbol UId="1400">
-      <Component Name="signalKVSStation" UId="1401" />
-      <Token Text="." UId="1402" />
-      <Component Name="qManualMode" UId="1403" />
-      <Token Text="." UId="1404" />
-      <Component Name="vibroTable" UId="1405">
-        <Token Text="[" UId="1406" />
-        <Access Scope="LocalVariable" UId="1407">
-          <Symbol UId="1408">
-            <Component Name="i" UId="1409" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="1410" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1411" />
-  <Token Text=":=" UId="1412" />
-  <Blank Num="1" UId="1413" />
-  <Access Scope="LiteralConstant" UId="1414">
-    <Constant UId="1415">
-      <ConstantValue UId="1417">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1418" />
-  <NewLine Num="1" UId="1419" />
-  <Blank Num="8" UId="1420" />
-  <Token Text="END_IF" UId="1421" />
-  <Token Text=";" UId="1422" />
-  <NewLine Num="1" UId="1423" />
-  <Blank Num="8" UId="1424" />
-  <Access Scope="GlobalVariable" UId="1425">
-    <Symbol UId="1426">
-      <Component Name="hmi" UId="1427" />
-      <Token Text="." UId="1428" />
-      <Component Name="plavnik" UId="1429" />
-      <Token Text="." UId="1430" />
-      <Component Name="manOpenPlavnik" UId="1431" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1432" />
-  <Token Text=":=" UId="1433" />
-  <Blank Num="1" UId="1434" />
-  <Access Scope="LiteralConstant" UId="1435">
-    <Constant UId="1436">
-      <ConstantValue UId="1438">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1439" />
-  <NewLine Num="1" UId="1440" />
-  <Blank Num="8" UId="1441" />
-  <Access Scope="GlobalVariable" UId="1442">
-    <Symbol UId="1443">
-      <Component Name="signalKVSStation" UId="1444" />
-      <Token Text="." UId="1445" />
-      <Component Name="qManualMode" UId="1446" />
-      <Token Text="." UId="1447" />
-      <Component Name="flipper_Up" UId="1448" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1449" />
-  <Token Text=":=" UId="1450" />
-  <Blank Num="1" UId="1451" />
-  <Access Scope="LiteralConstant" UId="1452">
-    <Constant UId="1453">
-      <ConstantValue UId="1455">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1456" />
-  <NewLine Num="1" UId="1457" />
-  <Blank Num="8" UId="1458" />
-  <NewLine Num="1" UId="1459" />
-  <Blank Num="8" UId="1460" />
-  <Access Scope="GlobalVariable" UId="1461">
-    <Symbol UId="1462">
-      <Component Name="hmi" UId="1463" />
-      <Token Text="." UId="1464" />
-      <Component Name="plavnik" UId="1465" />
-      <Token Text="." UId="1466" />
-      <Component Name="manClosePlavnik" UId="1467" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1468" />
-  <Token Text=":=" UId="1469" />
-  <Blank Num="1" UId="1470" />
-  <Access Scope="LiteralConstant" UId="1471">
-    <Constant UId="1472">
-      <ConstantValue UId="1474">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1475" />
-  <NewLine Num="1" UId="1476" />
-  <Blank Num="8" UId="1477" />
-  <Access Scope="GlobalVariable" UId="1478">
-    <Symbol UId="1479">
-      <Component Name="signalKVSStation" UId="1480" />
-      <Token Text="." UId="1481" />
-      <Component Name="qManualMode" UId="1482" />
-      <Token Text="." UId="1483" />
-      <Component Name="flipper_Down" UId="1484" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1485" />
-  <Token Text=":=" UId="1486" />
-  <Blank Num="1" UId="1487" />
-  <Access Scope="LiteralConstant" UId="1488">
-    <Constant UId="1489">
-      <ConstantValue UId="1491">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1492" />
-  <NewLine Num="1" UId="1493" />
-  <Blank Num="8" UId="1494" />
-  <NewLine Num="1" UId="1495" />
-  <Blank Num="8" UId="1496" />
-  <Access Scope="GlobalVariable" UId="1497">
-    <Symbol UId="1498">
-      <Component Name="hmi" UId="1499" />
-      <Token Text="." UId="1500" />
-      <Component Name="sourceConv" UId="1501" />
-      <Token Text="." UId="1502" />
-      <Component Name="manStartConv" UId="1503" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1504" />
-  <Token Text=":=" UId="1505" />
-  <Blank Num="1" UId="1506" />
-  <Access Scope="LiteralConstant" UId="1507">
-    <Constant UId="1508">
-      <ConstantValue UId="1510">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1511" />
-  <NewLine Num="1" UId="1512" />
-  <Blank Num="8" UId="1513" />
-  <Access Scope="GlobalVariable" UId="1514">
-    <Symbol UId="1515">
-      <Component Name="signalKVSStation" UId="1516" />
-      <Token Text="." UId="1517" />
-      <Component Name="qManualMode" UId="1518" />
-      <Token Text="." UId="1519" />
-      <Component Name="startInConv" UId="1520" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="1521" />
-  <Token Text=":=" UId="1522" />
-  <Blank Num="1" UId="1523" />
-  <Access Scope="LiteralConstant" UId="1524">
-    <Constant UId="1525">
-      <ConstantValue UId="1527">false</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="1528" />
-  <NewLine Num="1" UId="1529" />
-  <Blank Num="12" UId="1530" />
-  <NewLine Num="1" UId="1531" />
-  <Blank Num="8" UId="1532" />
-  <NewLine Num="1" UId="1533" />
-  <Blank Num="8" UId="1534" />
-  <NewLine Num="1" UId="1535" />
-  <Blank Num="4" UId="1536" />
-  <Token Text="END_IF" UId="1537" />
-  <Token Text=";" UId="1538" />
-  <NewLine Num="1" UId="1539" />
-  <Token Text="END_FOR" UId="1540" />
-  <Token Text=";" UId="1541" />
-  <NewLine Num="1" UId="1542" />
-</StructuredText></NetworkSource>
-          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="signalKVSStation" />
+        <Component Name="enableManualMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="N_trigOffManualMode" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="manualIsOFF" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="24" />
+    <Part Name="NBox" UId="25" />
+    <Part Name="Coil" UId="26" />
+  </Parts>
+  <Wires>
+    <Wire UId="27">
+      <Powerrail />
+      <NameCon UId="24" Name="in" />
+    </Wire>
+    <Wire UId="28">
+      <IdentCon UId="21" />
+      <NameCon UId="24" Name="operand" />
+    </Wire>
+    <Wire UId="29">
+      <NameCon UId="24" Name="out" />
+      <NameCon UId="25" Name="in" />
+    </Wire>
+    <Wire UId="30">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="bit" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="25" Name="out" />
+      <NameCon UId="26" Name="in" />
+    </Wire>
+    <Wire UId="32">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
         </AttributeList>
         <ObjectList>
           <MultilingualText ID="9" CompositionName="Comment">
@@ -2082,7 +235,7 @@
               <MultilingualTextItem ID="C" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
-                  <Text>ручное управление</Text>
+                  <Text />
                 </AttributeList>
               </MultilingualTextItem>
             </ObjectList>
@@ -2092,147 +245,1924 @@
       <SW.Blocks.CompileUnit ID="D" CompositionName="CompileUnits">
         <AttributeList>
           <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
-  <LineComment Inserted="false" NoClosingBracket="false" UId="21">
-    <Text UId="22">запустить и остановить все вибролотки</Text>
-  </LineComment>
-  <NewLine Num="1" UId="23" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="24">
-    <Text UId="25" />
-  </LineComment>
-  <NewLine Num="1" UId="26" />
-  <Access Scope="LocalVariable" UId="27">
-    <Symbol UId="28">
-      <Component Name="i" UId="29" />
+  <Token Text="IF" UId="21" />
+  <Blank Num="1" UId="22" />
+  <Access Scope="GlobalVariable" UId="23">
+    <Symbol UId="24">
+      <Component Name="signalKVSStation" UId="25" />
+      <Token Text="." UId="26" />
+      <Component Name="enableManualMode" UId="27" />
     </Symbol>
   </Access>
+  <Blank Num="1" UId="28" />
+  <Token Text="OR" UId="29" />
   <Blank Num="1" UId="30" />
-  <Token Text=":=" UId="31" />
-  <Blank Num="1" UId="32" />
-  <Access Scope="LiteralConstant" UId="33">
-    <Constant UId="34">
-      <ConstantValue UId="36">0</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="37" />
-  <NewLine Num="1" UId="38" />
-  <Token Text="FOR" UId="39" />
-  <Blank Num="1" UId="40" />
-  <Access Scope="LocalVariable" UId="41">
-    <Symbol UId="42">
-      <Component Name="i" UId="43" />
+  <Access Scope="LocalVariable" UId="31">
+    <Symbol UId="32">
+      <Component Name="manualIsOFF" UId="33" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="44" />
-  <Token Text=":=" UId="45" />
-  <Blank Num="1" UId="46" />
-  <Access Scope="LiteralConstant" UId="47">
-    <Constant UId="48">
-      <ConstantValue UId="50">1</ConstantValue>
+  <Blank Num="1" UId="34" />
+  <Token Text="THEN" UId="35" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="36">
+    <Text UId="37">даем всему остановиться если выключили ручной режим</Text>
+  </LineComment>
+  <NewLine Num="1" UId="38" />
+  <Blank Num="4" UId="39" />
+  <Access Scope="LocalVariable" UId="40">
+    <Symbol UId="41">
+      <Component Name="i" UId="42" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="43" />
+  <Token Text=":=" UId="44" />
+  <Blank Num="1" UId="45" />
+  <Access Scope="LiteralConstant" UId="46">
+    <Constant UId="47">
+      <ConstantValue UId="49">0</ConstantValue>
     </Constant>
   </Access>
-  <Blank Num="1" UId="51" />
-  <Token Text="TO" UId="52" />
-  <Blank Num="1" UId="53" />
-  <Access Scope="LiteralConstant" UId="54">
-    <Constant UId="55">
-      <ConstantValue UId="57">12</ConstantValue>
-    </Constant>
+  <Token Text=";" UId="50" />
+  <NewLine Num="1" UId="51" />
+  <Blank Num="4" UId="52" />
+  <Token Text="FOR" UId="53" />
+  <Blank Num="1" UId="54" />
+  <Access Scope="LocalVariable" UId="55">
+    <Symbol UId="56">
+      <Component Name="i" UId="57" />
+    </Symbol>
   </Access>
   <Blank Num="1" UId="58" />
-  <Token Text="DO" UId="59" />
-  <NewLine Num="1" UId="60" />
-  <Blank Num="4" UId="61" />
-  <Token Text="IF" UId="62" />
-  <Blank Num="1" UId="63" />
-  <Access Scope="GlobalVariable" UId="64">
-    <Symbol UId="65">
-      <Component Name="hmi" UId="66" />
-      <Token Text="." UId="67" />
-      <Component Name="manRunAllVibroLot" UId="68" />
+  <Token Text=":=" UId="59" />
+  <Blank Num="1" UId="60" />
+  <Access Scope="LiteralConstant" UId="61">
+    <Constant UId="62">
+      <ConstantValue UId="64">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="65" />
+  <Token Text="TO" UId="66" />
+  <Blank Num="1" UId="67" />
+  <Access Scope="LiteralConstant" UId="68">
+    <Constant UId="69">
+      <ConstantValue UId="71">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="72" />
+  <Token Text="DO" UId="73" />
+  <NewLine Num="1" UId="74" />
+  <Blank Num="8" UId="75" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="76">
+    <Text UId="77">если имеется разрешение на включение механизмов в ручном режиме</Text>
+  </LineComment>
+  <NewLine Num="1" UId="78" />
+  <Blank Num="8" UId="79" />
+  <Token Text="IF" UId="80" />
+  <Blank Num="1" UId="81" />
+  <Access Scope="GlobalVariable" UId="82">
+    <Symbol UId="83">
+      <Component Name="signalKVSStation" UId="84" />
+      <Token Text="." UId="85" />
+      <Component Name="enableManualMode" UId="86" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="69" />
-  <Token Text="THEN" UId="70" />
-  <NewLine Num="1" UId="71" />
-  <Blank Num="8" UId="72" />
-  <Access Scope="GlobalVariable" UId="73">
-    <Symbol UId="74">
-      <Component Name="hmi" UId="75" />
-      <Token Text="." UId="76" />
-      <Component Name="weightLine" UId="77">
-        <Token Text="[" UId="78" />
-        <Access Scope="LocalVariable" UId="79">
-          <Symbol UId="80">
-            <Component Name="i" UId="81" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="82" />
-      </Component>
-      <Token Text="." UId="83" />
-      <Component Name="manVibroLotStart" UId="84" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="85" />
-  <Token Text=":=" UId="86" />
   <Blank Num="1" UId="87" />
-  <Access Scope="LiteralConstant" UId="88">
-    <Constant UId="89">
-      <ConstantValue UId="91">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="92" />
+  <Token Text="THEN" UId="88" />
+  <NewLine Num="1" UId="89" />
+  <Blank Num="12" UId="90" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="91">
+    <Text UId="92">Bunker_left</Text>
+  </LineComment>
   <NewLine Num="1" UId="93" />
-  <Blank Num="4" UId="94" />
-  <Token Text="END_IF" UId="95" />
-  <Token Text=";" UId="96" />
-  <NewLine Num="1" UId="97" />
-  <Blank Num="4" UId="98" />
-  <Token Text="IF" UId="99" />
-  <Blank Num="1" UId="100" />
-  <Access Scope="GlobalVariable" UId="101">
-    <Symbol UId="102">
-      <Component Name="hmi" UId="103" />
-      <Token Text="." UId="104" />
-      <Component Name="manStopAllVibroLot" UId="105" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="106" />
-  <Token Text="THEN" UId="107" />
-  <NewLine Num="1" UId="108" />
-  <Blank Num="8" UId="109" />
-  <Access Scope="GlobalVariable" UId="110">
-    <Symbol UId="111">
-      <Component Name="hmi" UId="112" />
-      <Token Text="." UId="113" />
-      <Component Name="weightLine" UId="114">
-        <Token Text="[" UId="115" />
-        <Access Scope="LocalVariable" UId="116">
-          <Symbol UId="117">
-            <Component Name="i" UId="118" />
+  <Blank Num="12" UId="94" />
+  <Access Scope="Call" UId="95">
+    <CallInfo UId="96" BlockType="FB" Name="controlValve">
+      <Instance Scope="LocalVariable" UId="97">
+        <Component Name="Bunker_Left" UId="98">
+          <Token Text="[" UId="99" />
+          <Access Scope="LocalVariable" UId="100">
+            <Symbol UId="101">
+              <Component Name="i" UId="102" />
+            </Symbol>
+          </Access>
+          <Token Text="]" UId="103" />
+        </Component>
+      </Instance>
+      <Token Text="(" UId="104" />
+      <Parameter Name="openQ" UId="105">
+        <Blank Num="1" UId="106" />
+        <Token Text="=&gt;" UId="107" />
+        <Blank Num="1" UId="108" />
+        <Access Scope="GlobalVariable" UId="109">
+          <Symbol UId="110">
+            <Component Name="signalKVSStation" UId="111" />
+            <Token Text="." UId="112" />
+            <Component Name="qManualMode" UId="113" />
+            <Token Text="." UId="114" />
+            <Component Name="Bunker_leftOpen" UId="115">
+              <Token Text="[" UId="116" />
+              <Access Scope="LocalVariable" UId="117">
+                <Symbol UId="118">
+                  <Component Name="i" UId="119" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="120" />
+            </Component>
           </Symbol>
         </Access>
-        <Token Text="]" UId="119" />
+      </Parameter>
+      <Token Text="," UId="121" />
+      <NewLine Num="1" UId="122" />
+      <Blank Num="29" UId="123" />
+      <Parameter Name="closeQ" UId="124">
+        <Blank Num="1" UId="125" />
+        <Token Text="=&gt;" UId="126" />
+        <Blank Num="1" UId="127" />
+        <Access Scope="GlobalVariable" UId="128">
+          <Symbol UId="129">
+            <Component Name="signalKVSStation" UId="130" />
+            <Token Text="." UId="131" />
+            <Component Name="qManualMode" UId="132" />
+            <Token Text="." UId="133" />
+            <Component Name="Bunker_leftClose" UId="134">
+              <Token Text="[" UId="135" />
+              <Access Scope="LocalVariable" UId="136">
+                <Symbol UId="137">
+                  <Component Name="i" UId="138" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="139" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="140" />
+      <NewLine Num="1" UId="141" />
+      <Blank Num="29" UId="142" />
+      <Parameter Name="open" UId="143">
+        <Blank Num="1" UId="144" />
+        <Token Text=":=" UId="145" />
+        <Blank Num="1" UId="146" />
+        <Access Scope="GlobalVariable" UId="147">
+          <Symbol UId="148">
+            <Component Name="hmi" UId="149" />
+            <Token Text="." UId="150" />
+            <Component Name="weightLine" UId="151">
+              <Token Text="[" UId="152" />
+              <Access Scope="LocalVariable" UId="153">
+                <Symbol UId="154">
+                  <Component Name="i" UId="155" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="156" />
+            </Component>
+            <Token Text="." UId="157" />
+            <Component Name="manOpenLeftValveWeightPocket" UId="158" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="159" />
+      <NewLine Num="1" UId="160" />
+      <Blank Num="29" UId="161" />
+      <Parameter Name="close" UId="162">
+        <Blank Num="1" UId="163" />
+        <Token Text=":=" UId="164" />
+        <Blank Num="1" UId="165" />
+        <Access Scope="GlobalVariable" UId="166">
+          <Symbol UId="167">
+            <Component Name="hmi" UId="168" />
+            <Token Text="." UId="169" />
+            <Component Name="weightLine" UId="170">
+              <Token Text="[" UId="171" />
+              <Access Scope="LocalVariable" UId="172">
+                <Symbol UId="173">
+                  <Component Name="i" UId="174" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="175" />
+            </Component>
+            <Token Text="." UId="176" />
+            <Component Name="manCloseLeftValveWeightPocket" UId="177" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="178" />
+      <NewLine Num="1" UId="179" />
+      <Blank Num="29" UId="180" />
+      <Parameter Name="time_open/close" UId="181">
+        <Blank Num="1" UId="182" />
+        <Token Text=":=" UId="183" />
+        <Blank Num="1" UId="184" />
+        <Access Scope="TypedConstant" UId="185">
+          <Constant UId="186">
+            <ConstantValue UId="187">t#250ms</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="188" />
+      <NewLine Num="1" UId="189" />
+      <Blank Num="29" UId="190" />
+      <Parameter Name="stopAlarm" UId="191">
+        <Blank Num="1" UId="192" />
+        <Token Text=":=" UId="193" />
+        <Blank Num="1" UId="194" />
+        <Access Scope="LocalVariable" UId="195">
+          <Symbol UId="196">
+            <Component Name="stopAlarm" UId="197" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="200" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="201" />
+  <NewLine Num="1" UId="202" />
+  <Blank Num="12" UId="203" />
+  <NewLine Num="1" UId="204" />
+  <Blank Num="12" UId="205" />
+  <NewLine Num="1" UId="206" />
+  <Blank Num="12" UId="207" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="208">
+    <Text UId="209">Bunker_right</Text>
+  </LineComment>
+  <NewLine Num="1" UId="210" />
+  <Blank Num="12" UId="211" />
+  <Access Scope="Call" UId="212">
+    <CallInfo UId="213" BlockType="FB" Name="controlValve">
+      <Instance Scope="LocalVariable" UId="214">
+        <Component Name="Bunker_Right" UId="215">
+          <Token Text="[" UId="216" />
+          <Access Scope="LocalVariable" UId="217">
+            <Symbol UId="218">
+              <Component Name="i" UId="219" />
+            </Symbol>
+          </Access>
+          <Token Text="]" UId="220" />
+        </Component>
+      </Instance>
+      <Token Text="(" UId="221" />
+      <Parameter Name="openQ" UId="222">
+        <Blank Num="1" UId="223" />
+        <Token Text="=&gt;" UId="224" />
+        <Blank Num="1" UId="225" />
+        <Access Scope="GlobalVariable" UId="226">
+          <Symbol UId="227">
+            <Component Name="signalKVSStation" UId="228" />
+            <Token Text="." UId="229" />
+            <Component Name="qManualMode" UId="230" />
+            <Token Text="." UId="231" />
+            <Component Name="Bunker_rightOpen" UId="232">
+              <Token Text="[" UId="233" />
+              <Access Scope="LocalVariable" UId="234">
+                <Symbol UId="235">
+                  <Component Name="i" UId="236" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="237" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="238" />
+      <NewLine Num="1" UId="239" />
+      <Blank Num="30" UId="240" />
+      <Parameter Name="closeQ" UId="241">
+        <Blank Num="1" UId="242" />
+        <Token Text="=&gt;" UId="243" />
+        <Blank Num="1" UId="244" />
+        <Access Scope="GlobalVariable" UId="245">
+          <Symbol UId="246">
+            <Component Name="signalKVSStation" UId="247" />
+            <Token Text="." UId="248" />
+            <Component Name="qManualMode" UId="249" />
+            <Token Text="." UId="250" />
+            <Component Name="Bunker_rightClose" UId="251">
+              <Token Text="[" UId="252" />
+              <Access Scope="LocalVariable" UId="253">
+                <Symbol UId="254">
+                  <Component Name="i" UId="255" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="256" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="257" />
+      <NewLine Num="1" UId="258" />
+      <Blank Num="30" UId="259" />
+      <Parameter Name="open" UId="260">
+        <Blank Num="1" UId="261" />
+        <Token Text=":=" UId="262" />
+        <Blank Num="1" UId="263" />
+        <Access Scope="GlobalVariable" UId="264">
+          <Symbol UId="265">
+            <Component Name="hmi" UId="266" />
+            <Token Text="." UId="267" />
+            <Component Name="weightLine" UId="268">
+              <Token Text="[" UId="269" />
+              <Access Scope="LocalVariable" UId="270">
+                <Symbol UId="271">
+                  <Component Name="i" UId="272" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="273" />
+            </Component>
+            <Token Text="." UId="274" />
+            <Component Name="manOpenRightValveWeightPocket" UId="275" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="276" />
+      <NewLine Num="1" UId="277" />
+      <Blank Num="30" UId="278" />
+      <Parameter Name="close" UId="279">
+        <Blank Num="1" UId="280" />
+        <Token Text=":=" UId="281" />
+        <Blank Num="1" UId="282" />
+        <Access Scope="GlobalVariable" UId="283">
+          <Symbol UId="284">
+            <Component Name="hmi" UId="285" />
+            <Token Text="." UId="286" />
+            <Component Name="weightLine" UId="287">
+              <Token Text="[" UId="288" />
+              <Access Scope="LocalVariable" UId="289">
+                <Symbol UId="290">
+                  <Component Name="i" UId="291" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="292" />
+            </Component>
+            <Token Text="." UId="293" />
+            <Component Name="manCloseRightValveWieghtPocket" UId="294" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="295" />
+      <NewLine Num="1" UId="296" />
+      <Blank Num="30" UId="297" />
+      <Parameter Name="time_open/close" UId="298">
+        <Blank Num="1" UId="299" />
+        <Token Text=":=" UId="300" />
+        <Blank Num="1" UId="301" />
+        <Access Scope="TypedConstant" UId="302">
+          <Constant UId="303">
+            <ConstantValue UId="304">t#250ms</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="305" />
+      <NewLine Num="1" UId="306" />
+      <Blank Num="30" UId="307" />
+      <Parameter Name="stopAlarm" UId="308">
+        <Blank Num="1" UId="309" />
+        <Token Text=":=" UId="310" />
+        <Blank Num="1" UId="311" />
+        <Access Scope="LocalVariable" UId="312">
+          <Symbol UId="313">
+            <Component Name="stopAlarm" UId="314" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="317" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="318" />
+  <NewLine Num="1" UId="319" />
+  <Blank Num="12" UId="320" />
+  <NewLine Num="1" UId="321" />
+  <Blank Num="12" UId="322" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="323">
+    <Text UId="324">Door</Text>
+  </LineComment>
+  <NewLine Num="1" UId="325" />
+  <Blank Num="12" UId="326" />
+  <Access Scope="Call" UId="327">
+    <CallInfo UId="328" BlockType="FB" Name="controlValve">
+      <Instance Scope="LocalVariable" UId="329">
+        <Component Name="Door" UId="330">
+          <Token Text="[" UId="331" />
+          <Access Scope="LocalVariable" UId="332">
+            <Symbol UId="333">
+              <Component Name="i" UId="334" />
+            </Symbol>
+          </Access>
+          <Token Text="]" UId="335" />
+        </Component>
+      </Instance>
+      <Token Text="(" UId="336" />
+      <Parameter Name="openQ" UId="337">
+        <Blank Num="1" UId="338" />
+        <Token Text="=&gt;" UId="339" />
+        <Blank Num="1" UId="340" />
+        <Access Scope="GlobalVariable" UId="341">
+          <Symbol UId="342">
+            <Component Name="signalKVSStation" UId="343" />
+            <Token Text="." UId="344" />
+            <Component Name="qManualMode" UId="345" />
+            <Token Text="." UId="346" />
+            <Component Name="Door_open" UId="347">
+              <Token Text="[" UId="348" />
+              <Access Scope="LocalVariable" UId="349">
+                <Symbol UId="350">
+                  <Component Name="i" UId="351" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="352" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="353" />
+      <NewLine Num="1" UId="354" />
+      <Blank Num="22" UId="355" />
+      <Parameter Name="closeQ" UId="356">
+        <Blank Num="1" UId="357" />
+        <Token Text="=&gt;" UId="358" />
+        <Blank Num="1" UId="359" />
+        <Access Scope="GlobalVariable" UId="360">
+          <Symbol UId="361">
+            <Component Name="signalKVSStation" UId="362" />
+            <Token Text="." UId="363" />
+            <Component Name="qManualMode" UId="364" />
+            <Token Text="." UId="365" />
+            <Component Name="Door_close" UId="366">
+              <Token Text="[" UId="367" />
+              <Access Scope="LocalVariable" UId="368">
+                <Symbol UId="369">
+                  <Component Name="i" UId="370" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="371" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="372" />
+      <NewLine Num="1" UId="373" />
+      <Blank Num="22" UId="374" />
+      <Parameter Name="open" UId="375">
+        <Blank Num="1" UId="376" />
+        <Token Text=":=" UId="377" />
+        <Blank Num="1" UId="378" />
+        <Access Scope="GlobalVariable" UId="379">
+          <Symbol UId="380">
+            <Component Name="hmi" UId="381" />
+            <Token Text="." UId="382" />
+            <Component Name="weightLine" UId="383">
+              <Token Text="[" UId="384" />
+              <Access Scope="LocalVariable" UId="385">
+                <Symbol UId="386">
+                  <Component Name="i" UId="387" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="388" />
+            </Component>
+            <Token Text="." UId="389" />
+            <Component Name="manOpenValveAfterVibroLot" UId="390" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="391" />
+      <NewLine Num="1" UId="392" />
+      <Blank Num="22" UId="393" />
+      <Parameter Name="close" UId="394">
+        <Blank Num="1" UId="395" />
+        <Token Text=":=" UId="396" />
+        <Blank Num="1" UId="397" />
+        <Access Scope="GlobalVariable" UId="398">
+          <Symbol UId="399">
+            <Component Name="hmi" UId="400" />
+            <Token Text="." UId="401" />
+            <Component Name="weightLine" UId="402">
+              <Token Text="[" UId="403" />
+              <Access Scope="LocalVariable" UId="404">
+                <Symbol UId="405">
+                  <Component Name="i" UId="406" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="407" />
+            </Component>
+            <Token Text="." UId="408" />
+            <Component Name="manCloseValveAfterVibroLot" UId="409" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="410" />
+      <NewLine Num="1" UId="411" />
+      <Blank Num="22" UId="412" />
+      <Parameter Name="time_open/close" UId="413">
+        <Blank Num="1" UId="414" />
+        <Token Text=":=" UId="415" />
+        <Blank Num="1" UId="416" />
+        <Access Scope="TypedConstant" UId="417">
+          <Constant UId="418">
+            <ConstantValue UId="419">t#250ms</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="420" />
+      <NewLine Num="1" UId="421" />
+      <Blank Num="22" UId="422" />
+      <Parameter Name="stopAlarm" UId="423">
+        <Blank Num="1" UId="424" />
+        <Token Text=":=" UId="425" />
+        <Blank Num="1" UId="426" />
+        <Access Scope="LocalVariable" UId="427">
+          <Symbol UId="428">
+            <Component Name="stopAlarm" UId="429" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="432" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="433" />
+  <NewLine Num="1" UId="434" />
+  <Blank Num="12" UId="435" />
+  <NewLine Num="1" UId="436" />
+  <Blank Num="12" UId="437" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="438">
+    <Text UId="439">vibroLot</Text>
+  </LineComment>
+  <NewLine Num="1" UId="440" />
+  <Blank Num="12" UId="441" />
+  <Token Text="IF" UId="442" />
+  <Blank Num="1" UId="443" />
+  <Access Scope="GlobalVariable" UId="444">
+    <Symbol UId="445">
+      <Component Name="hmi" UId="446" />
+      <Token Text="." UId="447" />
+      <Component Name="weightLine" UId="448">
+        <Token Text="[" UId="449" />
+        <Access Scope="LocalVariable" UId="450">
+          <Symbol UId="451">
+            <Component Name="i" UId="452" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="453" />
       </Component>
-      <Token Text="." UId="120" />
-      <Component Name="manVibroLotStart" UId="121" />
+      <Token Text="." UId="454" />
+      <Component Name="manVibroLotStart" UId="455" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="122" />
-  <Token Text=":=" UId="123" />
-  <Blank Num="1" UId="124" />
-  <Access Scope="LiteralConstant" UId="125">
-    <Constant UId="126">
-      <ConstantValue UId="128">false</ConstantValue>
+  <Blank Num="1" UId="456" />
+  <Token Text="THEN" UId="457" />
+  <NewLine Num="1" UId="458" />
+  <Blank Num="16" UId="459" />
+  <Access Scope="GlobalVariable" UId="460">
+    <Symbol UId="461">
+      <Component Name="signalKVSStation" UId="462" />
+      <Token Text="." UId="463" />
+      <Component Name="qManualMode" UId="464" />
+      <Token Text="." UId="465" />
+      <Component Name="vibroLot" UId="466">
+        <Token Text="[" UId="467" />
+        <Access Scope="LocalVariable" UId="468">
+          <Symbol UId="469">
+            <Component Name="i" UId="470" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="471" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="472" />
+  <Token Text=":=" UId="473" />
+  <Blank Num="1" UId="474" />
+  <Access Scope="LiteralConstant" UId="475">
+    <Constant UId="476">
+      <ConstantValue UId="478">true</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="129" />
-  <NewLine Num="1" UId="130" />
-  <Blank Num="4" UId="131" />
-  <Token Text="END_IF" UId="132" />
-  <Token Text=";" UId="133" />
-  <NewLine Num="1" UId="134" />
-  <Token Text="END_FOR" UId="135" />
-  <Token Text=";" UId="136" />
+  <Token Text=";" UId="479" />
+  <NewLine Num="1" UId="480" />
+  <Blank Num="12" UId="481" />
+  <Token Text="ELSE" UId="482" />
+  <NewLine Num="1" UId="483" />
+  <Blank Num="16" UId="484" />
+  <Access Scope="GlobalVariable" UId="485">
+    <Symbol UId="486">
+      <Component Name="signalKVSStation" UId="487" />
+      <Token Text="." UId="488" />
+      <Component Name="qManualMode" UId="489" />
+      <Token Text="." UId="490" />
+      <Component Name="vibroLot" UId="491">
+        <Token Text="[" UId="492" />
+        <Access Scope="LocalVariable" UId="493">
+          <Symbol UId="494">
+            <Component Name="i" UId="495" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="496" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="497" />
+  <Token Text=":=" UId="498" />
+  <Blank Num="1" UId="499" />
+  <Access Scope="LiteralConstant" UId="500">
+    <Constant UId="501">
+      <ConstantValue UId="503">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="504" />
+  <NewLine Num="1" UId="505" />
+  <Blank Num="12" UId="506" />
+  <Token Text="END_IF" UId="507" />
+  <Token Text=";" UId="508" />
+  <NewLine Num="1" UId="509" />
+  <Blank Num="12" UId="510" />
+  <NewLine Num="1" UId="511" />
+  <Blank Num="12" UId="512" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="513">
+    <Text UId="514">теперь все что на два цикла</Text>
+  </LineComment>
+  <NewLine Num="1" UId="515" />
+  <Blank Num="12" UId="516" />
+  <Token Text="IF" UId="517" />
+  <Blank Num="1" UId="518" />
+  <Access Scope="LocalVariable" UId="519">
+    <Symbol UId="520">
+      <Component Name="i" UId="521" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="522" />
+  <Token Text="=" UId="523" />
+  <Blank Num="1" UId="524" />
+  <Access Scope="LiteralConstant" UId="525">
+    <Constant UId="526">
+      <ConstantValue UId="528">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="529" />
+  <Token Text="OR" UId="530" />
+  <Blank Num="1" UId="531" />
+  <Access Scope="LocalVariable" UId="532">
+    <Symbol UId="533">
+      <Component Name="i" UId="534" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="535" />
+  <Token Text="=" UId="536" />
+  <Blank Num="1" UId="537" />
+  <Access Scope="LiteralConstant" UId="538">
+    <Constant UId="539">
+      <ConstantValue UId="541">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="542" />
+  <Token Text="THEN" UId="543" />
+  <NewLine Num="1" UId="544" />
+  <Blank Num="16" UId="545" />
+  <NewLine Num="1" UId="546" />
+  <Blank Num="16" UId="547" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="548">
+    <Text UId="549">Conv_FRV //Conv_REV</Text>
+  </LineComment>
+  <NewLine Num="1" UId="550" />
+  <Blank Num="16" UId="551" />
+  <Token Text="IF" UId="552" />
+  <Blank Num="1" UId="553" />
+  <Access Scope="GlobalVariable" UId="554">
+    <Symbol UId="555">
+      <Component Name="hmi" UId="556" />
+      <Token Text="." UId="557" />
+      <Component Name="outConvAndPack" UId="558">
+        <Token Text="[" UId="559" />
+        <Access Scope="LocalVariable" UId="560">
+          <Symbol UId="561">
+            <Component Name="i" UId="562" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="563" />
+      </Component>
+      <Token Text="." UId="564" />
+      <Component Name="manStartOutConv" UId="565" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="566" />
+  <Token Text="THEN" UId="567" />
+  <NewLine Num="1" UId="568" />
+  <Blank Num="20" UId="569" />
+  <Token Text="IF" UId="570" />
+  <Blank Num="1" UId="571" />
+  <Access Scope="GlobalVariable" UId="572">
+    <Symbol UId="573">
+      <Component Name="hmi" UId="574" />
+      <Token Text="." UId="575" />
+      <Component Name="outConvAndPack" UId="576">
+        <Token Text="[" UId="577" />
+        <Access Scope="LocalVariable" UId="578">
+          <Symbol UId="579">
+            <Component Name="i" UId="580" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="581" />
+      </Component>
+      <Token Text="." UId="582" />
+      <Component Name="manIsUpConv" UId="583" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="584" />
+  <Token Text="THEN" UId="585" />
+  <NewLine Num="1" UId="586" />
+  <Blank Num="24" UId="587" />
+  <Access Scope="GlobalVariable" UId="588">
+    <Symbol UId="589">
+      <Component Name="signalKVSStation" UId="590" />
+      <Token Text="." UId="591" />
+      <Component Name="qManualMode" UId="592" />
+      <Token Text="." UId="593" />
+      <Component Name="Conv_FRV" UId="594">
+        <Token Text="[" UId="595" />
+        <Access Scope="LocalVariable" UId="596">
+          <Symbol UId="597">
+            <Component Name="i" UId="598" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="599" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="600" />
+  <Token Text=":=" UId="601" />
+  <Blank Num="1" UId="602" />
+  <Access Scope="LiteralConstant" UId="603">
+    <Constant UId="604">
+      <ConstantValue UId="606">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="607" />
+  <NewLine Num="1" UId="608" />
+  <Blank Num="24" UId="609" />
+  <Access Scope="GlobalVariable" UId="610">
+    <Symbol UId="611">
+      <Component Name="signalKVSStation" UId="612" />
+      <Token Text="." UId="613" />
+      <Component Name="qManualMode" UId="614" />
+      <Token Text="." UId="615" />
+      <Component Name="Conv_REV" UId="616">
+        <Token Text="[" UId="617" />
+        <Access Scope="LocalVariable" UId="618">
+          <Symbol UId="619">
+            <Component Name="i" UId="620" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="621" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="622" />
+  <Token Text=":=" UId="623" />
+  <Blank Num="1" UId="624" />
+  <Access Scope="LiteralConstant" UId="625">
+    <Constant UId="626">
+      <ConstantValue UId="628">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="629" />
+  <NewLine Num="1" UId="630" />
+  <Blank Num="20" UId="631" />
+  <Token Text="ELSE" UId="632" />
+  <NewLine Num="1" UId="633" />
+  <Blank Num="24" UId="634" />
+  <Access Scope="GlobalVariable" UId="635">
+    <Symbol UId="636">
+      <Component Name="signalKVSStation" UId="637" />
+      <Token Text="." UId="638" />
+      <Component Name="qManualMode" UId="639" />
+      <Token Text="." UId="640" />
+      <Component Name="Conv_REV" UId="641">
+        <Token Text="[" UId="642" />
+        <Access Scope="LocalVariable" UId="643">
+          <Symbol UId="644">
+            <Component Name="i" UId="645" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="646" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="647" />
+  <Token Text=":=" UId="648" />
+  <Blank Num="1" UId="649" />
+  <Access Scope="LiteralConstant" UId="650">
+    <Constant UId="651">
+      <ConstantValue UId="653">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="654" />
+  <NewLine Num="1" UId="655" />
+  <Blank Num="24" UId="656" />
+  <Access Scope="GlobalVariable" UId="657">
+    <Symbol UId="658">
+      <Component Name="signalKVSStation" UId="659" />
+      <Token Text="." UId="660" />
+      <Component Name="qManualMode" UId="661" />
+      <Token Text="." UId="662" />
+      <Component Name="Conv_FRV" UId="663">
+        <Token Text="[" UId="664" />
+        <Access Scope="LocalVariable" UId="665">
+          <Symbol UId="666">
+            <Component Name="i" UId="667" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="668" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="669" />
+  <Token Text=":=" UId="670" />
+  <Blank Num="1" UId="671" />
+  <Access Scope="LiteralConstant" UId="672">
+    <Constant UId="673">
+      <ConstantValue UId="675">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="676" />
+  <NewLine Num="1" UId="677" />
+  <Blank Num="20" UId="678" />
+  <Token Text="END_IF" UId="679" />
+  <Token Text=";" UId="680" />
+  <NewLine Num="1" UId="681" />
+  <Blank Num="16" UId="682" />
+  <Token Text="ELSE" UId="683" />
+  <NewLine Num="1" UId="684" />
+  <Blank Num="20" UId="685" />
+  <Access Scope="GlobalVariable" UId="686">
+    <Symbol UId="687">
+      <Component Name="signalKVSStation" UId="688" />
+      <Token Text="." UId="689" />
+      <Component Name="qManualMode" UId="690" />
+      <Token Text="." UId="691" />
+      <Component Name="Conv_REV" UId="692">
+        <Token Text="[" UId="693" />
+        <Access Scope="LocalVariable" UId="694">
+          <Symbol UId="695">
+            <Component Name="i" UId="696" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="697" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="698" />
+  <Token Text=":=" UId="699" />
+  <Blank Num="1" UId="700" />
+  <Access Scope="LiteralConstant" UId="701">
+    <Constant UId="702">
+      <ConstantValue UId="704">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="705" />
+  <NewLine Num="1" UId="706" />
+  <Blank Num="20" UId="707" />
+  <Access Scope="GlobalVariable" UId="708">
+    <Symbol UId="709">
+      <Component Name="signalKVSStation" UId="710" />
+      <Token Text="." UId="711" />
+      <Component Name="qManualMode" UId="712" />
+      <Token Text="." UId="713" />
+      <Component Name="Conv_FRV" UId="714">
+        <Token Text="[" UId="715" />
+        <Access Scope="LocalVariable" UId="716">
+          <Symbol UId="717">
+            <Component Name="i" UId="718" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="719" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="720" />
+  <Token Text=":=" UId="721" />
+  <Blank Num="1" UId="722" />
+  <Access Scope="LiteralConstant" UId="723">
+    <Constant UId="724">
+      <ConstantValue UId="726">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="727" />
+  <NewLine Num="1" UId="728" />
+  <Blank Num="16" UId="729" />
+  <Token Text="END_IF" UId="730" />
+  <Token Text=";" UId="731" />
+  <NewLine Num="1" UId="732" />
+  <Blank Num="16" UId="733" />
+  <NewLine Num="1" UId="734" />
+  <Blank Num="16" UId="735" />
+  <NewLine Num="1" UId="736" />
+  <Blank Num="16" UId="737" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="738">
+    <Text UId="739">vibroTable</Text>
+  </LineComment>
+  <NewLine Num="1" UId="740" />
+  <Blank Num="16" UId="741" />
+  <Token Text="IF" UId="742" />
+  <Blank Num="1" UId="743" />
+  <Access Scope="GlobalVariable" UId="744">
+    <Symbol UId="745">
+      <Component Name="hmi" UId="746" />
+      <Token Text="." UId="747" />
+      <Component Name="addedVibro" UId="748" />
+      <Token Text="." UId="749" />
+      <Component Name="manStartVibroTable" UId="750">
+        <Token Text="[" UId="751" />
+        <Access Scope="LocalVariable" UId="752">
+          <Symbol UId="753">
+            <Component Name="i" UId="754" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="755" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="756" />
+  <Token Text="THEN" UId="757" />
+  <NewLine Num="1" UId="758" />
+  <Blank Num="20" UId="759" />
+  <Access Scope="GlobalVariable" UId="760">
+    <Symbol UId="761">
+      <Component Name="signalKVSStation" UId="762" />
+      <Token Text="." UId="763" />
+      <Component Name="qManualMode" UId="764" />
+      <Token Text="." UId="765" />
+      <Component Name="vibroTable" UId="766">
+        <Token Text="[" UId="767" />
+        <Access Scope="LocalVariable" UId="768">
+          <Symbol UId="769">
+            <Component Name="i" UId="770" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="771" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="772" />
+  <Token Text=":=" UId="773" />
+  <Blank Num="1" UId="774" />
+  <Access Scope="LiteralConstant" UId="775">
+    <Constant UId="776">
+      <ConstantValue UId="778">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="779" />
+  <NewLine Num="1" UId="780" />
+  <Blank Num="16" UId="781" />
+  <Token Text="ELSE" UId="782" />
+  <NewLine Num="1" UId="783" />
+  <Blank Num="20" UId="784" />
+  <Access Scope="GlobalVariable" UId="785">
+    <Symbol UId="786">
+      <Component Name="signalKVSStation" UId="787" />
+      <Token Text="." UId="788" />
+      <Component Name="qManualMode" UId="789" />
+      <Token Text="." UId="790" />
+      <Component Name="vibroTable" UId="791">
+        <Token Text="[" UId="792" />
+        <Access Scope="LocalVariable" UId="793">
+          <Symbol UId="794">
+            <Component Name="i" UId="795" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="796" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="797" />
+  <Token Text=":=" UId="798" />
+  <Blank Num="1" UId="799" />
+  <Access Scope="LiteralConstant" UId="800">
+    <Constant UId="801">
+      <ConstantValue UId="803">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="804" />
+  <NewLine Num="1" UId="805" />
+  <Blank Num="16" UId="806" />
+  <Token Text="END_IF" UId="807" />
+  <Token Text=";" UId="808" />
+  <NewLine Num="1" UId="809" />
+  <Blank Num="16" UId="810" />
+  <NewLine Num="1" UId="811" />
+  <Blank Num="16" UId="812" />
+  <NewLine Num="1" UId="813" />
+  <Blank Num="12" UId="814" />
+  <Token Text="END_IF" UId="815" />
+  <Token Text=";" UId="816" />
+  <NewLine Num="1" UId="817" />
+  <Blank Num="12" UId="818" />
+  <NewLine Num="1" UId="819" />
+  <Blank Num="12" UId="820" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="821">
+    <Text UId="822"> //flipper</Text>
+  </LineComment>
+  <NewLine Num="1" UId="823" />
+  <Blank Num="12" UId="824" />
+  <Access Scope="Call" UId="825">
+    <CallInfo UId="826" BlockType="FB" Name="controlValve">
+      <Instance Scope="LocalVariable" UId="827">
+        <Component Name="flipper" UId="828" />
+      </Instance>
+      <Token Text="(" UId="829" />
+      <Parameter Name="openQ" UId="830">
+        <Blank Num="1" UId="831" />
+        <Token Text="=&gt;" UId="832" />
+        <Blank Num="1" UId="833" />
+        <Access Scope="GlobalVariable" UId="834">
+          <Symbol UId="835">
+            <Component Name="signalKVSStation" UId="836" />
+            <Token Text="." UId="837" />
+            <Component Name="qManualMode" UId="838" />
+            <Token Text="." UId="839" />
+            <Component Name="flipper_Up" UId="840" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="841" />
+      <NewLine Num="1" UId="842" />
+      <Blank Num="21" UId="843" />
+      <Parameter Name="closeQ" UId="844">
+        <Blank Num="1" UId="845" />
+        <Token Text="=&gt;" UId="846" />
+        <Blank Num="1" UId="847" />
+        <Access Scope="GlobalVariable" UId="848">
+          <Symbol UId="849">
+            <Component Name="signalKVSStation" UId="850" />
+            <Token Text="." UId="851" />
+            <Component Name="qManualMode" UId="852" />
+            <Token Text="." UId="853" />
+            <Component Name="flipper_Down" UId="854" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="855" />
+      <NewLine Num="1" UId="856" />
+      <Blank Num="21" UId="857" />
+      <Parameter Name="open" UId="858">
+        <Blank Num="1" UId="859" />
+        <Token Text=":=" UId="860" />
+        <Blank Num="1" UId="861" />
+        <Access Scope="GlobalVariable" UId="862">
+          <Symbol UId="863">
+            <Component Name="hmi" UId="864" />
+            <Token Text="." UId="865" />
+            <Component Name="plavnik" UId="866" />
+            <Token Text="." UId="867" />
+            <Component Name="manOpenPlavnik" UId="868" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="869" />
+      <NewLine Num="1" UId="870" />
+      <Blank Num="21" UId="871" />
+      <Parameter Name="close" UId="872">
+        <Blank Num="1" UId="873" />
+        <Token Text=":=" UId="874" />
+        <Blank Num="1" UId="875" />
+        <Access Scope="GlobalVariable" UId="876">
+          <Symbol UId="877">
+            <Component Name="hmi" UId="878" />
+            <Token Text="." UId="879" />
+            <Component Name="plavnik" UId="880" />
+            <Token Text="." UId="881" />
+            <Component Name="manClosePlavnik" UId="882" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="883" />
+      <NewLine Num="1" UId="884" />
+      <Blank Num="21" UId="885" />
+      <Parameter Name="time_open/close" UId="886">
+        <Blank Num="1" UId="887" />
+        <Token Text=":=" UId="888" />
+        <Blank Num="1" UId="889" />
+        <Access Scope="TypedConstant" UId="890">
+          <Constant UId="891">
+            <ConstantValue UId="892">t#250ms</ConstantValue>
+          </Constant>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="893" />
+      <NewLine Num="1" UId="894" />
+      <Blank Num="21" UId="895" />
+      <Parameter Name="stopAlarm" UId="896">
+        <Blank Num="1" UId="897" />
+        <Token Text=":=" UId="898" />
+        <Blank Num="1" UId="899" />
+        <Access Scope="LocalVariable" UId="900">
+          <Symbol UId="901">
+            <Component Name="stopAlarm" UId="902" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="905" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="906" />
+  <NewLine Num="1" UId="907" />
+  <Blank Num="12" UId="908" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="909">
+    <Text UId="910">питатель</Text>
+  </LineComment>
+  <NewLine Num="1" UId="911" />
+  <Blank Num="12" UId="912" />
+  <Token Text="IF" UId="913" />
+  <Blank Num="1" UId="914" />
+  <Access Scope="GlobalVariable" UId="915">
+    <Symbol UId="916">
+      <Component Name="hmi" UId="917" />
+      <Token Text="." UId="918" />
+      <Component Name="sourceConv" UId="919" />
+      <Token Text="." UId="920" />
+      <Component Name="manStartConv" UId="921" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="922" />
+  <Token Text="THEN" UId="923" />
+  <NewLine Num="1" UId="924" />
+  <Blank Num="16" UId="925" />
+  <Access Scope="GlobalVariable" UId="926">
+    <Symbol UId="927">
+      <Component Name="signalKVSStation" UId="928" />
+      <Token Text="." UId="929" />
+      <Component Name="qManualMode" UId="930" />
+      <Token Text="." UId="931" />
+      <Component Name="startInConv" UId="932" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="933" />
+  <Token Text=":=" UId="934" />
+  <Blank Num="1" UId="935" />
+  <Access Scope="LiteralConstant" UId="936">
+    <Constant UId="937">
+      <ConstantValue UId="939">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="940" />
+  <NewLine Num="1" UId="941" />
+  <Blank Num="12" UId="942" />
+  <Token Text="ELSE" UId="943" />
+  <NewLine Num="1" UId="944" />
+  <Blank Num="16" UId="945" />
+  <Access Scope="GlobalVariable" UId="946">
+    <Symbol UId="947">
+      <Component Name="signalKVSStation" UId="948" />
+      <Token Text="." UId="949" />
+      <Component Name="qManualMode" UId="950" />
+      <Token Text="." UId="951" />
+      <Component Name="startInConv" UId="952" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="953" />
+  <Token Text=":=" UId="954" />
+  <Blank Num="1" UId="955" />
+  <Access Scope="LiteralConstant" UId="956">
+    <Constant UId="957">
+      <ConstantValue UId="959">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="960" />
+  <NewLine Num="1" UId="961" />
+  <Blank Num="12" UId="962" />
+  <Token Text="END_IF" UId="963" />
+  <Token Text=";" UId="964" />
+  <NewLine Num="1" UId="965" />
+  <Blank Num="12" UId="966" />
+  <NewLine Num="1" UId="967" />
+  <Blank Num="8" UId="968" />
+  <Token Text="ELSE" UId="969" />
+  <NewLine Num="1" UId="970" />
+  <Blank Num="12" UId="971" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="972">
+    <Text UId="973">деактивируем сигналы на катушки ручного режима и</Text>
+  </LineComment>
+  <NewLine Num="1" UId="974" />
+  <Blank Num="12" UId="975" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="976">
+    <Text UId="977">сигналы управления в ручном режиме</Text>
+  </LineComment>
+  <NewLine Num="1" UId="978" />
+  <Blank Num="12" UId="979" />
+  <Access Scope="GlobalVariable" UId="980">
+    <Symbol UId="981">
+      <Component Name="hmi" UId="982" />
+      <Token Text="." UId="983" />
+      <Component Name="weightLine" UId="984">
+        <Token Text="[" UId="985" />
+        <Access Scope="LocalVariable" UId="986">
+          <Symbol UId="987">
+            <Component Name="i" UId="988" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="989" />
+      </Component>
+      <Token Text="." UId="990" />
+      <Component Name="manOpenLeftValveWeightPocket" UId="991" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="992" />
+  <Token Text=":=" UId="993" />
+  <Blank Num="1" UId="994" />
+  <Access Scope="LiteralConstant" UId="995">
+    <Constant UId="996">
+      <ConstantValue UId="998">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="999" />
+  <NewLine Num="1" UId="1000" />
+  <Blank Num="12" UId="1001" />
+  <Access Scope="GlobalVariable" UId="1002">
+    <Symbol UId="1003">
+      <Component Name="signalKVSStation" UId="1004" />
+      <Token Text="." UId="1005" />
+      <Component Name="qManualMode" UId="1006" />
+      <Token Text="." UId="1007" />
+      <Component Name="Bunker_leftOpen" UId="1008">
+        <Token Text="[" UId="1009" />
+        <Access Scope="LocalVariable" UId="1010">
+          <Symbol UId="1011">
+            <Component Name="i" UId="1012" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1013" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1014" />
+  <Token Text=":=" UId="1015" />
+  <Blank Num="1" UId="1016" />
+  <Access Scope="LiteralConstant" UId="1017">
+    <Constant UId="1018">
+      <ConstantValue UId="1020">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1021" />
+  <NewLine Num="1" UId="1022" />
+  <Blank Num="12" UId="1023" />
+  <NewLine Num="1" UId="1024" />
+  <Blank Num="12" UId="1025" />
+  <Access Scope="GlobalVariable" UId="1026">
+    <Symbol UId="1027">
+      <Component Name="hmi" UId="1028" />
+      <Token Text="." UId="1029" />
+      <Component Name="weightLine" UId="1030">
+        <Token Text="[" UId="1031" />
+        <Access Scope="LocalVariable" UId="1032">
+          <Symbol UId="1033">
+            <Component Name="i" UId="1034" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1035" />
+      </Component>
+      <Token Text="." UId="1036" />
+      <Component Name="manCloseLeftValveWeightPocket" UId="1037" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1038" />
+  <Token Text=":=" UId="1039" />
+  <Blank Num="1" UId="1040" />
+  <Access Scope="LiteralConstant" UId="1041">
+    <Constant UId="1042">
+      <ConstantValue UId="1044">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1045" />
+  <NewLine Num="1" UId="1046" />
+  <Blank Num="12" UId="1047" />
+  <Access Scope="GlobalVariable" UId="1048">
+    <Symbol UId="1049">
+      <Component Name="signalKVSStation" UId="1050" />
+      <Token Text="." UId="1051" />
+      <Component Name="qManualMode" UId="1052" />
+      <Token Text="." UId="1053" />
+      <Component Name="Bunker_leftClose" UId="1054">
+        <Token Text="[" UId="1055" />
+        <Access Scope="LocalVariable" UId="1056">
+          <Symbol UId="1057">
+            <Component Name="i" UId="1058" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1059" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1060" />
+  <Token Text=":=" UId="1061" />
+  <Blank Num="1" UId="1062" />
+  <Access Scope="LiteralConstant" UId="1063">
+    <Constant UId="1064">
+      <ConstantValue UId="1066">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1067" />
+  <NewLine Num="1" UId="1068" />
+  <Blank Num="12" UId="1069" />
+  <NewLine Num="1" UId="1070" />
+  <Blank Num="12" UId="1071" />
+  <Access Scope="GlobalVariable" UId="1072">
+    <Symbol UId="1073">
+      <Component Name="hmi" UId="1074" />
+      <Token Text="." UId="1075" />
+      <Component Name="weightLine" UId="1076">
+        <Token Text="[" UId="1077" />
+        <Access Scope="LocalVariable" UId="1078">
+          <Symbol UId="1079">
+            <Component Name="i" UId="1080" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1081" />
+      </Component>
+      <Token Text="." UId="1082" />
+      <Component Name="manOpenRightValveWeightPocket" UId="1083" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1084" />
+  <Token Text=":=" UId="1085" />
+  <Blank Num="1" UId="1086" />
+  <Access Scope="LiteralConstant" UId="1087">
+    <Constant UId="1088">
+      <ConstantValue UId="1090">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1091" />
+  <NewLine Num="1" UId="1092" />
+  <Blank Num="12" UId="1093" />
+  <Access Scope="GlobalVariable" UId="1094">
+    <Symbol UId="1095">
+      <Component Name="signalKVSStation" UId="1096" />
+      <Token Text="." UId="1097" />
+      <Component Name="qManualMode" UId="1098" />
+      <Token Text="." UId="1099" />
+      <Component Name="Bunker_rightOpen" UId="1100">
+        <Token Text="[" UId="1101" />
+        <Access Scope="LocalVariable" UId="1102">
+          <Symbol UId="1103">
+            <Component Name="i" UId="1104" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1105" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1106" />
+  <Token Text=":=" UId="1107" />
+  <Blank Num="1" UId="1108" />
+  <Access Scope="LiteralConstant" UId="1109">
+    <Constant UId="1110">
+      <ConstantValue UId="1112">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1113" />
+  <NewLine Num="1" UId="1114" />
+  <Blank Num="12" UId="1115" />
+  <NewLine Num="1" UId="1116" />
+  <Blank Num="12" UId="1117" />
+  <Access Scope="GlobalVariable" UId="1118">
+    <Symbol UId="1119">
+      <Component Name="hmi" UId="1120" />
+      <Token Text="." UId="1121" />
+      <Component Name="weightLine" UId="1122">
+        <Token Text="[" UId="1123" />
+        <Access Scope="LocalVariable" UId="1124">
+          <Symbol UId="1125">
+            <Component Name="i" UId="1126" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1127" />
+      </Component>
+      <Token Text="." UId="1128" />
+      <Component Name="manCloseRightValveWieghtPocket" UId="1129" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1130" />
+  <Token Text=":=" UId="1131" />
+  <Blank Num="1" UId="1132" />
+  <Access Scope="LiteralConstant" UId="1133">
+    <Constant UId="1134">
+      <ConstantValue UId="1136">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1137" />
+  <NewLine Num="1" UId="1138" />
+  <Blank Num="12" UId="1139" />
+  <Access Scope="GlobalVariable" UId="1140">
+    <Symbol UId="1141">
+      <Component Name="signalKVSStation" UId="1142" />
+      <Token Text="." UId="1143" />
+      <Component Name="qManualMode" UId="1144" />
+      <Token Text="." UId="1145" />
+      <Component Name="Bunker_rightClose" UId="1146">
+        <Token Text="[" UId="1147" />
+        <Access Scope="LocalVariable" UId="1148">
+          <Symbol UId="1149">
+            <Component Name="i" UId="1150" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1151" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1152" />
+  <Token Text=":=" UId="1153" />
+  <Blank Num="1" UId="1154" />
+  <Access Scope="LiteralConstant" UId="1155">
+    <Constant UId="1156">
+      <ConstantValue UId="1158">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1159" />
+  <NewLine Num="1" UId="1160" />
+  <Blank Num="12" UId="1161" />
+  <NewLine Num="1" UId="1162" />
+  <Blank Num="12" UId="1163" />
+  <Access Scope="GlobalVariable" UId="1164">
+    <Symbol UId="1165">
+      <Component Name="hmi" UId="1166" />
+      <Token Text="." UId="1167" />
+      <Component Name="weightLine" UId="1168">
+        <Token Text="[" UId="1169" />
+        <Access Scope="LocalVariable" UId="1170">
+          <Symbol UId="1171">
+            <Component Name="i" UId="1172" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1173" />
+      </Component>
+      <Token Text="." UId="1174" />
+      <Component Name="manOpenRightValveWeightPocket" UId="1175" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1176" />
+  <Token Text=":=" UId="1177" />
+  <Blank Num="1" UId="1178" />
+  <Access Scope="LiteralConstant" UId="1179">
+    <Constant UId="1180">
+      <ConstantValue UId="1182">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1183" />
+  <NewLine Num="1" UId="1184" />
+  <Blank Num="12" UId="1185" />
+  <Access Scope="GlobalVariable" UId="1186">
+    <Symbol UId="1187">
+      <Component Name="signalKVSStation" UId="1188" />
+      <Token Text="." UId="1189" />
+      <Component Name="qManualMode" UId="1190" />
+      <Token Text="." UId="1191" />
+      <Component Name="Door_open" UId="1192">
+        <Token Text="[" UId="1193" />
+        <Access Scope="LocalVariable" UId="1194">
+          <Symbol UId="1195">
+            <Component Name="i" UId="1196" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1197" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1198" />
+  <Token Text=":=" UId="1199" />
+  <Blank Num="1" UId="1200" />
+  <Access Scope="LiteralConstant" UId="1201">
+    <Constant UId="1202">
+      <ConstantValue UId="1204">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1205" />
+  <NewLine Num="1" UId="1206" />
+  <Blank Num="12" UId="1207" />
+  <NewLine Num="1" UId="1208" />
+  <Blank Num="12" UId="1209" />
+  <Access Scope="GlobalVariable" UId="1210">
+    <Symbol UId="1211">
+      <Component Name="hmi" UId="1212" />
+      <Token Text="." UId="1213" />
+      <Component Name="weightLine" UId="1214">
+        <Token Text="[" UId="1215" />
+        <Access Scope="LocalVariable" UId="1216">
+          <Symbol UId="1217">
+            <Component Name="i" UId="1218" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1219" />
+      </Component>
+      <Token Text="." UId="1220" />
+      <Component Name="manCloseValveAfterVibroLot" UId="1221" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1222" />
+  <Token Text=":=" UId="1223" />
+  <Blank Num="1" UId="1224" />
+  <Access Scope="LiteralConstant" UId="1225">
+    <Constant UId="1226">
+      <ConstantValue UId="1228">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1229" />
+  <NewLine Num="1" UId="1230" />
+  <Blank Num="12" UId="1231" />
+  <Access Scope="GlobalVariable" UId="1232">
+    <Symbol UId="1233">
+      <Component Name="signalKVSStation" UId="1234" />
+      <Token Text="." UId="1235" />
+      <Component Name="qManualMode" UId="1236" />
+      <Token Text="." UId="1237" />
+      <Component Name="Door_close" UId="1238">
+        <Token Text="[" UId="1239" />
+        <Access Scope="LocalVariable" UId="1240">
+          <Symbol UId="1241">
+            <Component Name="i" UId="1242" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1243" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1244" />
+  <Token Text=":=" UId="1245" />
+  <Blank Num="1" UId="1246" />
+  <Access Scope="LiteralConstant" UId="1247">
+    <Constant UId="1248">
+      <ConstantValue UId="1250">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1251" />
+  <NewLine Num="1" UId="1252" />
+  <Blank Num="12" UId="1253" />
+  <NewLine Num="1" UId="1254" />
+  <Blank Num="12" UId="1255" />
+  <Access Scope="GlobalVariable" UId="1256">
+    <Symbol UId="1257">
+      <Component Name="hmi" UId="1258" />
+      <Token Text="." UId="1259" />
+      <Component Name="weightLine" UId="1260">
+        <Token Text="[" UId="1261" />
+        <Access Scope="LocalVariable" UId="1262">
+          <Symbol UId="1263">
+            <Component Name="i" UId="1264" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1265" />
+      </Component>
+      <Token Text="." UId="1266" />
+      <Component Name="manVibroLotStart" UId="1267" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1268" />
+  <Token Text=":=" UId="1269" />
+  <Blank Num="1" UId="1270" />
+  <Access Scope="LiteralConstant" UId="1271">
+    <Constant UId="1272">
+      <ConstantValue UId="1274">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1275" />
+  <NewLine Num="1" UId="1276" />
+  <Blank Num="12" UId="1277" />
+  <Access Scope="GlobalVariable" UId="1278">
+    <Symbol UId="1279">
+      <Component Name="signalKVSStation" UId="1280" />
+      <Token Text="." UId="1281" />
+      <Component Name="qManualMode" UId="1282" />
+      <Token Text="." UId="1283" />
+      <Component Name="vibroLot" UId="1284">
+        <Token Text="[" UId="1285" />
+        <Access Scope="LocalVariable" UId="1286">
+          <Symbol UId="1287">
+            <Component Name="i" UId="1288" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1289" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1290" />
+  <Token Text=":=" UId="1291" />
+  <Blank Num="1" UId="1292" />
+  <Access Scope="LiteralConstant" UId="1293">
+    <Constant UId="1294">
+      <ConstantValue UId="1296">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1297" />
+  <NewLine Num="1" UId="1298" />
+  <Blank Num="12" UId="1299" />
+  <Token Text="IF" UId="1300" />
+  <Blank Num="1" UId="1301" />
+  <Access Scope="LocalVariable" UId="1302">
+    <Symbol UId="1303">
+      <Component Name="i" UId="1304" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1305" />
+  <Token Text="=" UId="1306" />
+  <Blank Num="1" UId="1307" />
+  <Access Scope="LiteralConstant" UId="1308">
+    <Constant UId="1309">
+      <ConstantValue UId="1311">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="1312" />
+  <Token Text="OR" UId="1313" />
+  <Blank Num="1" UId="1314" />
+  <Access Scope="LocalVariable" UId="1315">
+    <Symbol UId="1316">
+      <Component Name="i" UId="1317" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1318" />
+  <Token Text="=" UId="1319" />
+  <Blank Num="1" UId="1320" />
+  <Access Scope="LiteralConstant" UId="1321">
+    <Constant UId="1322">
+      <ConstantValue UId="1324">2</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="1325" />
+  <Token Text="THEN" UId="1326" />
+  <NewLine Num="1" UId="1327" />
+  <Blank Num="16" UId="1328" />
+  <Access Scope="GlobalVariable" UId="1329">
+    <Symbol UId="1330">
+      <Component Name="hmi" UId="1331" />
+      <Token Text="." UId="1332" />
+      <Component Name="outConvAndPack" UId="1333">
+        <Token Text="[" UId="1334" />
+        <Access Scope="LocalVariable" UId="1335">
+          <Symbol UId="1336">
+            <Component Name="i" UId="1337" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1338" />
+      </Component>
+      <Token Text="." UId="1339" />
+      <Component Name="manStartOutConv" UId="1340" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1341" />
+  <Token Text=":=" UId="1342" />
+  <Blank Num="1" UId="1343" />
+  <Access Scope="LiteralConstant" UId="1344">
+    <Constant UId="1345">
+      <ConstantValue UId="1347">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1348" />
+  <NewLine Num="1" UId="1349" />
+  <Blank Num="16" UId="1350" />
+  <Access Scope="GlobalVariable" UId="1351">
+    <Symbol UId="1352">
+      <Component Name="signalKVSStation" UId="1353" />
+      <Token Text="." UId="1354" />
+      <Component Name="qManualMode" UId="1355" />
+      <Token Text="." UId="1356" />
+      <Component Name="Conv_FRV" UId="1357">
+        <Token Text="[" UId="1358" />
+        <Access Scope="LocalVariable" UId="1359">
+          <Symbol UId="1360">
+            <Component Name="i" UId="1361" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1362" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1363" />
+  <Token Text=":=" UId="1364" />
+  <Blank Num="1" UId="1365" />
+  <Access Scope="LiteralConstant" UId="1366">
+    <Constant UId="1367">
+      <ConstantValue UId="1369">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1370" />
+  <NewLine Num="1" UId="1371" />
+  <Blank Num="16" UId="1372" />
+  <Access Scope="GlobalVariable" UId="1373">
+    <Symbol UId="1374">
+      <Component Name="signalKVSStation" UId="1375" />
+      <Token Text="." UId="1376" />
+      <Component Name="qManualMode" UId="1377" />
+      <Token Text="." UId="1378" />
+      <Component Name="Conv_REV" UId="1379">
+        <Token Text="[" UId="1380" />
+        <Access Scope="LocalVariable" UId="1381">
+          <Symbol UId="1382">
+            <Component Name="i" UId="1383" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1384" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1385" />
+  <Token Text=":=" UId="1386" />
+  <Blank Num="1" UId="1387" />
+  <Access Scope="LiteralConstant" UId="1388">
+    <Constant UId="1389">
+      <ConstantValue UId="1391">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1392" />
+  <NewLine Num="1" UId="1393" />
+  <Blank Num="16" UId="1394" />
+  <NewLine Num="1" UId="1395" />
+  <Blank Num="16" UId="1396" />
+  <Access Scope="GlobalVariable" UId="1397">
+    <Symbol UId="1398">
+      <Component Name="hmi" UId="1399" />
+      <Token Text="." UId="1400" />
+      <Component Name="addedVibro" UId="1401" />
+      <Token Text="." UId="1402" />
+      <Component Name="manStartVibroTable" UId="1403">
+        <Token Text="[" UId="1404" />
+        <Access Scope="LocalVariable" UId="1405">
+          <Symbol UId="1406">
+            <Component Name="i" UId="1407" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1408" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1409" />
+  <Token Text=":=" UId="1410" />
+  <Blank Num="1" UId="1411" />
+  <Access Scope="LiteralConstant" UId="1412">
+    <Constant UId="1413">
+      <ConstantValue UId="1415">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1416" />
+  <NewLine Num="1" UId="1417" />
+  <Blank Num="16" UId="1418" />
+  <Access Scope="GlobalVariable" UId="1419">
+    <Symbol UId="1420">
+      <Component Name="signalKVSStation" UId="1421" />
+      <Token Text="." UId="1422" />
+      <Component Name="qManualMode" UId="1423" />
+      <Token Text="." UId="1424" />
+      <Component Name="vibroTable" UId="1425">
+        <Token Text="[" UId="1426" />
+        <Access Scope="LocalVariable" UId="1427">
+          <Symbol UId="1428">
+            <Component Name="i" UId="1429" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="1430" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1431" />
+  <Token Text=":=" UId="1432" />
+  <Blank Num="1" UId="1433" />
+  <Access Scope="LiteralConstant" UId="1434">
+    <Constant UId="1435">
+      <ConstantValue UId="1437">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1438" />
+  <NewLine Num="1" UId="1439" />
+  <Blank Num="12" UId="1440" />
+  <Token Text="END_IF" UId="1441" />
+  <Token Text=";" UId="1442" />
+  <NewLine Num="1" UId="1443" />
+  <Blank Num="12" UId="1444" />
+  <Access Scope="GlobalVariable" UId="1445">
+    <Symbol UId="1446">
+      <Component Name="hmi" UId="1447" />
+      <Token Text="." UId="1448" />
+      <Component Name="plavnik" UId="1449" />
+      <Token Text="." UId="1450" />
+      <Component Name="manOpenPlavnik" UId="1451" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1452" />
+  <Token Text=":=" UId="1453" />
+  <Blank Num="1" UId="1454" />
+  <Access Scope="LiteralConstant" UId="1455">
+    <Constant UId="1456">
+      <ConstantValue UId="1458">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1459" />
+  <NewLine Num="1" UId="1460" />
+  <Blank Num="12" UId="1461" />
+  <Access Scope="GlobalVariable" UId="1462">
+    <Symbol UId="1463">
+      <Component Name="signalKVSStation" UId="1464" />
+      <Token Text="." UId="1465" />
+      <Component Name="qManualMode" UId="1466" />
+      <Token Text="." UId="1467" />
+      <Component Name="flipper_Up" UId="1468" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1469" />
+  <Token Text=":=" UId="1470" />
+  <Blank Num="1" UId="1471" />
+  <Access Scope="LiteralConstant" UId="1472">
+    <Constant UId="1473">
+      <ConstantValue UId="1475">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1476" />
+  <NewLine Num="1" UId="1477" />
+  <Blank Num="12" UId="1478" />
+  <NewLine Num="1" UId="1479" />
+  <Blank Num="12" UId="1480" />
+  <Access Scope="GlobalVariable" UId="1481">
+    <Symbol UId="1482">
+      <Component Name="hmi" UId="1483" />
+      <Token Text="." UId="1484" />
+      <Component Name="plavnik" UId="1485" />
+      <Token Text="." UId="1486" />
+      <Component Name="manClosePlavnik" UId="1487" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1488" />
+  <Token Text=":=" UId="1489" />
+  <Blank Num="1" UId="1490" />
+  <Access Scope="LiteralConstant" UId="1491">
+    <Constant UId="1492">
+      <ConstantValue UId="1494">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1495" />
+  <NewLine Num="1" UId="1496" />
+  <Blank Num="12" UId="1497" />
+  <Access Scope="GlobalVariable" UId="1498">
+    <Symbol UId="1499">
+      <Component Name="signalKVSStation" UId="1500" />
+      <Token Text="." UId="1501" />
+      <Component Name="qManualMode" UId="1502" />
+      <Token Text="." UId="1503" />
+      <Component Name="flipper_Down" UId="1504" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1505" />
+  <Token Text=":=" UId="1506" />
+  <Blank Num="1" UId="1507" />
+  <Access Scope="LiteralConstant" UId="1508">
+    <Constant UId="1509">
+      <ConstantValue UId="1511">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1512" />
+  <NewLine Num="1" UId="1513" />
+  <Blank Num="12" UId="1514" />
+  <NewLine Num="1" UId="1515" />
+  <Blank Num="12" UId="1516" />
+  <Access Scope="GlobalVariable" UId="1517">
+    <Symbol UId="1518">
+      <Component Name="hmi" UId="1519" />
+      <Token Text="." UId="1520" />
+      <Component Name="sourceConv" UId="1521" />
+      <Token Text="." UId="1522" />
+      <Component Name="manStartConv" UId="1523" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1524" />
+  <Token Text=":=" UId="1525" />
+  <Blank Num="1" UId="1526" />
+  <Access Scope="LiteralConstant" UId="1527">
+    <Constant UId="1528">
+      <ConstantValue UId="1530">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1531" />
+  <NewLine Num="1" UId="1532" />
+  <Blank Num="12" UId="1533" />
+  <Access Scope="GlobalVariable" UId="1534">
+    <Symbol UId="1535">
+      <Component Name="signalKVSStation" UId="1536" />
+      <Token Text="." UId="1537" />
+      <Component Name="qManualMode" UId="1538" />
+      <Token Text="." UId="1539" />
+      <Component Name="startInConv" UId="1540" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="1541" />
+  <Token Text=":=" UId="1542" />
+  <Blank Num="1" UId="1543" />
+  <Access Scope="LiteralConstant" UId="1544">
+    <Constant UId="1545">
+      <ConstantValue UId="1547">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="1548" />
+  <NewLine Num="1" UId="1549" />
+  <Blank Num="8" UId="1550" />
+  <Token Text="END_IF" UId="1551" />
+  <Token Text=";" UId="1552" />
+  <NewLine Num="1" UId="1553" />
+  <Blank Num="4" UId="1554" />
+  <Token Text="END_FOR" UId="1555" />
+  <Token Text=";" UId="1556" />
+  <NewLine Num="1" UId="1557" />
+  <Token Text="END_IF" UId="1558" />
+  <Token Text=";" UId="1559" />
 </StructuredText></NetworkSource>
           <ProgrammingLanguage>SCL</ProgrammingLanguage>
         </AttributeList>
@@ -2252,6 +2182,194 @@
               <MultilingualTextItem ID="11" CompositionName="Items">
                 <AttributeList>
                   <Culture>en-US</Culture>
+                  <Text>ручное управление</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><StructuredText xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/StructuredText/v3">
+  <LineComment Inserted="false" NoClosingBracket="false" UId="21">
+    <Text UId="22">запустить и остановить все вибролотки</Text>
+  </LineComment>
+  <NewLine Num="1" UId="23" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="24">
+    <Text UId="25" />
+  </LineComment>
+  <NewLine Num="1" UId="26" />
+  <Token Text="IF" UId="27" />
+  <Blank Num="1" UId="28" />
+  <Access Scope="GlobalVariable" UId="29">
+    <Symbol UId="30">
+      <Component Name="signalKVSStation" UId="31" />
+      <Token Text="." UId="32" />
+      <Component Name="enableManualMode" UId="33" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="34" />
+  <Token Text="THEN" UId="35" />
+  <NewLine Num="1" UId="36" />
+  <Blank Num="4" UId="37" />
+  <Access Scope="LocalVariable" UId="38">
+    <Symbol UId="39">
+      <Component Name="i" UId="40" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="41" />
+  <Token Text=":=" UId="42" />
+  <Blank Num="1" UId="43" />
+  <Access Scope="LiteralConstant" UId="44">
+    <Constant UId="45">
+      <ConstantValue UId="47">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="48" />
+  <NewLine Num="1" UId="49" />
+  <Blank Num="4" UId="50" />
+  <Token Text="FOR" UId="51" />
+  <Blank Num="1" UId="52" />
+  <Access Scope="LocalVariable" UId="53">
+    <Symbol UId="54">
+      <Component Name="i" UId="55" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="56" />
+  <Token Text=":=" UId="57" />
+  <Blank Num="1" UId="58" />
+  <Access Scope="LiteralConstant" UId="59">
+    <Constant UId="60">
+      <ConstantValue UId="62">1</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="63" />
+  <Token Text="TO" UId="64" />
+  <Blank Num="1" UId="65" />
+  <Access Scope="LiteralConstant" UId="66">
+    <Constant UId="67">
+      <ConstantValue UId="69">12</ConstantValue>
+    </Constant>
+  </Access>
+  <Blank Num="1" UId="70" />
+  <Token Text="DO" UId="71" />
+  <NewLine Num="1" UId="72" />
+  <Blank Num="8" UId="73" />
+  <Token Text="IF" UId="74" />
+  <Blank Num="1" UId="75" />
+  <Access Scope="GlobalVariable" UId="76">
+    <Symbol UId="77">
+      <Component Name="hmi" UId="78" />
+      <Token Text="." UId="79" />
+      <Component Name="manRunAllVibroLot" UId="80" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="81" />
+  <Token Text="THEN" UId="82" />
+  <NewLine Num="1" UId="83" />
+  <Blank Num="12" UId="84" />
+  <Access Scope="GlobalVariable" UId="85">
+    <Symbol UId="86">
+      <Component Name="hmi" UId="87" />
+      <Token Text="." UId="88" />
+      <Component Name="weightLine" UId="89">
+        <Token Text="[" UId="90" />
+        <Access Scope="LocalVariable" UId="91">
+          <Symbol UId="92">
+            <Component Name="i" UId="93" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="94" />
+      </Component>
+      <Token Text="." UId="95" />
+      <Component Name="manVibroLotStart" UId="96" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="97" />
+  <Token Text=":=" UId="98" />
+  <Blank Num="1" UId="99" />
+  <Access Scope="LiteralConstant" UId="100">
+    <Constant UId="101">
+      <ConstantValue UId="103">true</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="104" />
+  <NewLine Num="1" UId="105" />
+  <Blank Num="8" UId="106" />
+  <Token Text="END_IF" UId="107" />
+  <Token Text=";" UId="108" />
+  <NewLine Num="1" UId="109" />
+  <Blank Num="8" UId="110" />
+  <Token Text="IF" UId="111" />
+  <Blank Num="1" UId="112" />
+  <Access Scope="GlobalVariable" UId="113">
+    <Symbol UId="114">
+      <Component Name="hmi" UId="115" />
+      <Token Text="." UId="116" />
+      <Component Name="manStopAllVibroLot" UId="117" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="118" />
+  <Token Text="THEN" UId="119" />
+  <NewLine Num="1" UId="120" />
+  <Blank Num="12" UId="121" />
+  <Access Scope="GlobalVariable" UId="122">
+    <Symbol UId="123">
+      <Component Name="hmi" UId="124" />
+      <Token Text="." UId="125" />
+      <Component Name="weightLine" UId="126">
+        <Token Text="[" UId="127" />
+        <Access Scope="LocalVariable" UId="128">
+          <Symbol UId="129">
+            <Component Name="i" UId="130" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="131" />
+      </Component>
+      <Token Text="." UId="132" />
+      <Component Name="manVibroLotStart" UId="133" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="134" />
+  <Token Text=":=" UId="135" />
+  <Blank Num="1" UId="136" />
+  <Access Scope="LiteralConstant" UId="137">
+    <Constant UId="138">
+      <ConstantValue UId="140">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="141" />
+  <NewLine Num="1" UId="142" />
+  <Blank Num="8" UId="143" />
+  <Token Text="END_IF" UId="144" />
+  <Token Text=";" UId="145" />
+  <NewLine Num="1" UId="146" />
+  <Blank Num="4" UId="147" />
+  <Token Text="END_FOR" UId="148" />
+  <Token Text=";" UId="149" />
+  <NewLine Num="1" UId="150" />
+  <Token Text="END_IF" UId="151" />
+  <Token Text=";" UId="152" />
+</StructuredText></NetworkSource>
+          <ProgrammingLanguage>SCL</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="15" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="16" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
                   <Text>Части программы которые запускают сразу все однотипные узлы</Text>
                 </AttributeList>
               </MultilingualTextItem>
@@ -2259,9 +2377,9 @@
           </MultilingualText>
         </ObjectList>
       </SW.Blocks.CompileUnit>
-      <MultilingualText ID="12" CompositionName="Title">
+      <MultilingualText ID="17" CompositionName="Title">
         <ObjectList>
-          <MultilingualTextItem ID="13" CompositionName="Items">
+          <MultilingualTextItem ID="18" CompositionName="Items">
             <AttributeList>
               <Culture>en-US</Culture>
               <Text />
