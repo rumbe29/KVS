@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-13T11:10:15.3878321Z</Created>
+    <Created>2021-04-14T06:37:19.2039746Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -57,6 +57,8 @@
         </Section>
       </Sections>
     </Member>
+    <Member Name="readyToSort" Datatype="Array[0..12] of Bool" Accessibility="Public" />
+    <Member Name="readyToDrop" Datatype="Array[0..12] of Bool" Accessibility="Public" />
   </Section>
   <Section Name="Static">
     <Member Name="tonSetStableWeight" Datatype="Array[0..12] of TON_TIME" Version="1.0" Remanence="NonRetain" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">выдержка для переноса текущего веса в разряд стабильных</MultiLanguageText></Comment><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member>
@@ -493,292 +495,359 @@
   <Token Text=";" UId="327" />
   <NewLine Num="1" UId="328" />
   <Blank Num="8" UId="329" />
-  <Access Scope="LocalVariable" UId="330">
-    <Symbol UId="331">
-      <Component Name="tonSetStableWeight" UId="332">
-        <Token Text="[" UId="333" />
-        <Access Scope="LocalVariable" UId="334">
-          <Symbol UId="335">
-            <Component Name="i" UId="336" />
+  <NewLine Num="1" UId="330" />
+  <Blank Num="4" UId="331" />
+  <Token Text="ELSE" UId="332" />
+  <NewLine Num="1" UId="333" />
+  <Blank Num="8" UId="334" />
+  <Access Scope="LocalVariable" UId="335">
+    <Symbol UId="336">
+      <Component Name="runTaimerStableWeight" UId="337">
+        <Token Text="[" UId="338" />
+        <Access Scope="LocalVariable" UId="339">
+          <Symbol UId="340">
+            <Component Name="i" UId="341" />
           </Symbol>
         </Access>
-        <Token Text="]" UId="337" />
+        <Token Text="]" UId="342" />
       </Component>
     </Symbol>
   </Access>
-  <Access Scope="Call" UId="338">
-    <Instruction UId="339">
-      <Token Text="(" UId="340" />
-      <Parameter Name="IN" UId="341">
-        <Blank Num="1" UId="342" />
-        <Token Text=":=" UId="343" />
-        <Blank Num="1" UId="344" />
-        <Access Scope="LocalVariable" UId="345">
-          <Symbol UId="346">
-            <Component Name="runTaimerStableWeight" UId="347">
-              <Token Text="[" UId="348" />
-              <Access Scope="LocalVariable" UId="349">
-                <Symbol UId="350">
-                  <Component Name="i" UId="351" />
+  <Blank Num="1" UId="343" />
+  <Token Text=":=" UId="344" />
+  <Blank Num="1" UId="345" />
+  <Access Scope="LiteralConstant" UId="346">
+    <Constant UId="347">
+      <ConstantValue UId="349">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="350" />
+  <NewLine Num="1" UId="351" />
+  <Blank Num="8" UId="352" />
+  <Access Scope="LocalVariable" UId="353">
+    <Symbol UId="354">
+      <Component Name="currentWeight" UId="355">
+        <Token Text="[" UId="356" />
+        <Access Scope="LocalVariable" UId="357">
+          <Symbol UId="358">
+            <Component Name="i" UId="359" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="360" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="361" />
+  <Token Text=":=" UId="362" />
+  <Blank Num="1" UId="363" />
+  <Access Scope="LiteralConstant" UId="364">
+    <Constant UId="365">
+      <ConstantValue UId="367">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="368" />
+  <NewLine Num="1" UId="369" />
+  <Blank Num="8" UId="370" />
+  <Access Scope="LocalVariable" UId="371">
+    <Symbol UId="372">
+      <Component Name="prevWeight" UId="373">
+        <Token Text="[" UId="374" />
+        <Access Scope="LocalVariable" UId="375">
+          <Symbol UId="376">
+            <Component Name="i" UId="377" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="378" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="379" />
+  <Token Text=":=" UId="380" />
+  <Blank Num="1" UId="381" />
+  <Access Scope="LiteralConstant" UId="382">
+    <Constant UId="383">
+      <ConstantValue UId="385">0</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="386" />
+  <NewLine Num="1" UId="387" />
+  <Blank Num="4" UId="388" />
+  <Token Text="END_IF" UId="389" />
+  <Token Text=";" UId="390" />
+  <NewLine Num="1" UId="391" />
+  <Blank Num="4" UId="392" />
+  <NewLine Num="1" UId="393" />
+  <Blank Num="4" UId="394" />
+  <Access Scope="LocalVariable" UId="395">
+    <Symbol UId="396">
+      <Component Name="tonSetStableWeight" UId="397">
+        <Token Text="[" UId="398" />
+        <Access Scope="LocalVariable" UId="399">
+          <Symbol UId="400">
+            <Component Name="i" UId="401" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="402" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Access Scope="Call" UId="403">
+    <Instruction UId="404">
+      <Token Text="(" UId="405" />
+      <Parameter Name="IN" UId="406">
+        <Blank Num="1" UId="407" />
+        <Token Text=":=" UId="408" />
+        <Blank Num="1" UId="409" />
+        <Access Scope="LocalVariable" UId="410">
+          <Symbol UId="411">
+            <Component Name="runTaimerStableWeight" UId="412">
+              <Token Text="[" UId="413" />
+              <Access Scope="LocalVariable" UId="414">
+                <Symbol UId="415">
+                  <Component Name="i" UId="416" />
                 </Symbol>
               </Access>
-              <Token Text="]" UId="352" />
+              <Token Text="]" UId="417" />
             </Component>
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="353" />
-      <NewLine Num="1" UId="354" />
-      <Blank Num="32" UId="355" />
-      <Parameter Name="PT" UId="356">
-        <Blank Num="1" UId="357" />
-        <Token Text=":=" UId="358" />
-        <Blank Num="1" UId="359" />
-        <Access Scope="TypedConstant" UId="360">
-          <Constant UId="361">
-            <ConstantValue UId="362">t#20ms</ConstantValue>
+      <Token Text="," UId="418" />
+      <NewLine Num="1" UId="419" />
+      <Blank Num="28" UId="420" />
+      <Parameter Name="PT" UId="421">
+        <Blank Num="1" UId="422" />
+        <Token Text=":=" UId="423" />
+        <Blank Num="1" UId="424" />
+        <Access Scope="TypedConstant" UId="425">
+          <Constant UId="426">
+            <ConstantValue UId="427">t#200ms</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text=")" UId="363" />
+      <Token Text=")" UId="428" />
     </Instruction>
   </Access>
-  <Token Text=";" UId="364" />
-  <NewLine Num="1" UId="365" />
-  <Blank Num="8" UId="366" />
-  <NewLine Num="1" UId="367" />
-  <Blank Num="4" UId="368" />
-  <Token Text="ELSE" UId="369" />
-  <NewLine Num="1" UId="370" />
-  <Blank Num="8" UId="371" />
-  <Access Scope="LocalVariable" UId="372">
-    <Symbol UId="373">
-      <Component Name="currentWeight" UId="374">
-        <Token Text="[" UId="375" />
-        <Access Scope="LocalVariable" UId="376">
-          <Symbol UId="377">
-            <Component Name="i" UId="378" />
+  <Token Text=";" UId="429" />
+  <NewLine Num="1" UId="430" />
+  <Blank Num="4" UId="431" />
+  <NewLine Num="1" UId="432" />
+  <Blank Num="4" UId="433" />
+  <Token Text="IF" UId="434" />
+  <Blank Num="1" UId="435" />
+  <Access Scope="LocalVariable" UId="436">
+    <Symbol UId="437">
+      <Component Name="tonSetStableWeight" UId="438">
+        <Token Text="[" UId="439" />
+        <Access Scope="LocalVariable" UId="440">
+          <Symbol UId="441">
+            <Component Name="i" UId="442" />
           </Symbol>
         </Access>
-        <Token Text="]" UId="379" />
+        <Token Text="]" UId="443" />
+      </Component>
+      <Token Text="." UId="444" />
+      <Component Name="Q" UId="445" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="446" />
+  <Token Text="OR" UId="447" />
+  <Blank Num="1" UId="448" />
+  <Access Scope="LocalVariable" UId="449">
+    <Symbol UId="450">
+      <Component Name="RS_TRIG_openBunker" UId="451">
+        <Token Text="[" UId="452" />
+        <Access Scope="LocalVariable" UId="453">
+          <Symbol UId="454">
+            <Component Name="i" UId="455" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="456" />
       </Component>
     </Symbol>
   </Access>
-  <Blank Num="1" UId="380" />
-  <Token Text=":=" UId="381" />
-  <Blank Num="1" UId="382" />
-  <Access Scope="LiteralConstant" UId="383">
-    <Constant UId="384">
-      <ConstantValue UId="386">0</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="387" />
-  <NewLine Num="1" UId="388" />
-  <Blank Num="8" UId="389" />
-  <Access Scope="LocalVariable" UId="390">
-    <Symbol UId="391">
-      <Component Name="prevWeight" UId="392">
-        <Token Text="[" UId="393" />
-        <Access Scope="LocalVariable" UId="394">
-          <Symbol UId="395">
-            <Component Name="i" UId="396" />
+  <Blank Num="1" UId="457" />
+  <Token Text="THEN" UId="458" />
+  <NewLine Num="1" UId="459" />
+  <Blank Num="8" UId="460" />
+  <Token Text="IF" UId="461" />
+  <Blank Num="1" UId="462" />
+  <Access Scope="LocalVariable" UId="463">
+    <Symbol UId="464">
+      <Component Name="currentWeight" UId="465">
+        <Token Text="[" UId="466" />
+        <Access Scope="LocalVariable" UId="467">
+          <Symbol UId="468">
+            <Component Name="i" UId="469" />
           </Symbol>
-        </Access>
-        <Token Text="]" UId="397" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Token Text=":=" UId="398" />
-  <Blank Num="1" UId="399" />
-  <Access Scope="LiteralConstant" UId="400">
-    <Constant UId="401">
-      <ConstantValue UId="403">0</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="404" />
-  <NewLine Num="1" UId="405" />
-  <Blank Num="4" UId="406" />
-  <Token Text="END_IF" UId="407" />
-  <Token Text=";" UId="408" />
-  <NewLine Num="1" UId="409" />
-  <Blank Num="4" UId="410" />
-  <NewLine Num="1" UId="411" />
-  <Blank Num="4" UId="412" />
-  <Token Text="IF" UId="413" />
-  <Blank Num="1" UId="414" />
-  <Access Scope="LocalVariable" UId="415">
-    <Symbol UId="416">
-      <Component Name="tonSetStableWeight" UId="417">
-        <Token Text="[" UId="418" />
-        <Access Scope="LocalVariable" UId="419">
-          <Symbol UId="420">
-            <Component Name="i" UId="421" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="422" />
-      </Component>
-      <Token Text="." UId="423" />
-      <Component Name="Q" UId="424" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="425" />
-  <Token Text="OR" UId="426" />
-  <Blank Num="1" UId="427" />
-  <Access Scope="LocalVariable" UId="428">
-    <Symbol UId="429">
-      <Component Name="RS_TRIG_openBunker" UId="430">
-        <Token Text="[" UId="431" />
-        <Access Scope="LocalVariable" UId="432">
-          <Symbol UId="433">
-            <Component Name="i" UId="434" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="435" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="436" />
-  <Token Text="THEN" UId="437" />
-  <NewLine Num="1" UId="438" />
-  <Blank Num="8" UId="439" />
-  <Token Text="IF" UId="440" />
-  <Blank Num="1" UId="441" />
-  <Access Scope="LocalVariable" UId="442">
-    <Symbol UId="443">
-      <Component Name="currentWeight" UId="444">
-        <Token Text="[" UId="445" />
-        <Access Scope="LocalVariable" UId="446">
-          <Symbol UId="447">
-            <Component Name="i" UId="448" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="449" />
-      </Component>
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="450" />
-  <Token Text="&lt;&gt;" UId="451" />
-  <Blank Num="1" UId="452" />
-  <Access Scope="GlobalVariable" UId="453">
-    <Symbol UId="454">
-      <Component Name="signalKVSStation" UId="455" />
-      <Token Text="." UId="456" />
-      <Component Name="stableWeight" UId="457">
-        <Token Text="[" UId="458" />
-        <Access Scope="LocalVariable" UId="459">
-          <Symbol UId="460">
-            <Component Name="i" UId="461" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="462" />
-      </Component>
-      <Token Text="." UId="463" />
-      <Component Name="weight" UId="464">
-        <Token Text="[" UId="465" />
-        <Access Scope="LiteralConstant" UId="466">
-          <Constant UId="467">
-            <ConstantValue UId="469">0</ConstantValue>
-          </Constant>
         </Access>
         <Token Text="]" UId="470" />
       </Component>
     </Symbol>
   </Access>
   <Blank Num="1" UId="471" />
-  <Token Text="THEN" UId="472" />
-  <NewLine Num="1" UId="473" />
-  <Blank Num="12" UId="474" />
-  <Access Scope="Call" UId="475">
-    <CallInfo UId="476" BlockType="FC">
-      <Instance Scope="GlobalVariable" UId="478">
-        <Component Name="pushToArray" UId="477" />
-      </Instance>
-      <Token Text="(" UId="479" />
-      <Parameter Name="addValue" UId="480">
-        <Blank Num="1" UId="481" />
-        <Token Text=":=" UId="482" />
-        <Blank Num="1" UId="483" />
-        <Access Scope="LocalVariable" UId="484">
-          <Symbol UId="485">
-            <Component Name="currentWeight" UId="486">
-              <Token Text="[" UId="487" />
-              <Access Scope="LocalVariable" UId="488">
-                <Symbol UId="489">
-                  <Component Name="i" UId="490" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="491" />
-            </Component>
+  <Token Text="&lt;&gt;" UId="472" />
+  <Blank Num="1" UId="473" />
+  <Access Scope="GlobalVariable" UId="474">
+    <Symbol UId="475">
+      <Component Name="signalKVSStation" UId="476" />
+      <Token Text="." UId="477" />
+      <Component Name="stableWeight" UId="478">
+        <Token Text="[" UId="479" />
+        <Access Scope="LocalVariable" UId="480">
+          <Symbol UId="481">
+            <Component Name="i" UId="482" />
           </Symbol>
         </Access>
-      </Parameter>
-      <Token Text="," UId="492" />
-      <NewLine Num="1" UId="493" />
-      <Blank Num="26" UId="494" />
-      <Parameter Name="array" UId="495">
-        <Blank Num="1" UId="496" />
-        <Token Text=":=" UId="497" />
-        <Blank Num="1" UId="498" />
-        <Access Scope="LocalVariable" UId="499">
-          <Symbol UId="500">
-            <Component Name="stableWeight" UId="501">
-              <Token Text="[" UId="502" />
-              <Access Scope="LocalVariable" UId="503">
-                <Symbol UId="504">
-                  <Component Name="i" UId="505" />
-                </Symbol>
-              </Access>
-              <Token Text="]" UId="506" />
-            </Component>
-            <Token Text="." UId="507" />
-            <Component Name="weight" UId="508" />
-          </Symbol>
+        <Token Text="]" UId="483" />
+      </Component>
+      <Token Text="." UId="484" />
+      <Component Name="weight" UId="485">
+        <Token Text="[" UId="486" />
+        <Access Scope="LiteralConstant" UId="487">
+          <Constant UId="488">
+            <ConstantValue UId="490">0</ConstantValue>
+          </Constant>
         </Access>
-      </Parameter>
-      <Token Text=")" UId="509" />
-    </CallInfo>
-  </Access>
-  <Token Text=";" UId="510" />
-  <NewLine Num="1" UId="511" />
-  <Blank Num="8" UId="512" />
-  <Token Text="END_IF" UId="513" />
-  <Token Text=";" UId="514" />
-  <NewLine Num="1" UId="515" />
-  <Blank Num="8" UId="516" />
-  <Access Scope="LocalVariable" UId="517">
-    <Symbol UId="518">
-      <Component Name="runTaimerStableWeight" UId="519">
-        <Token Text="[" UId="520" />
-        <Access Scope="LocalVariable" UId="521">
-          <Symbol UId="522">
-            <Component Name="i" UId="523" />
-          </Symbol>
-        </Access>
-        <Token Text="]" UId="524" />
+        <Token Text="]" UId="491" />
       </Component>
     </Symbol>
   </Access>
-  <Blank Num="1" UId="525" />
-  <Token Text=":=" UId="526" />
-  <Blank Num="1" UId="527" />
-  <Access Scope="LiteralConstant" UId="528">
-    <Constant UId="529">
-      <ConstantValue UId="531">false</ConstantValue>
+  <Blank Num="1" UId="492" />
+  <Token Text="AND" UId="493" />
+  <Blank Num="1" UId="494" />
+  <Token Text="NOT" UId="495" />
+  <Token Text="(" UId="496" />
+  <Access Scope="LocalVariable" UId="497">
+    <Symbol UId="498">
+      <Component Name="readyToDrop" UId="499">
+        <Token Text="[" UId="500" />
+        <Access Scope="LocalVariable" UId="501">
+          <Symbol UId="502">
+            <Component Name="i" UId="503" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="504" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="505" />
+  <NewLine Num="1" UId="506" />
+  <Blank Num="12" UId="507" />
+  <Token Text="AND" UId="508" />
+  <Blank Num="1" UId="509" />
+  <Token Text="NOT" UId="510" />
+  <Token Text="(" UId="511" />
+  <Access Scope="LocalVariable" UId="512">
+    <Symbol UId="513">
+      <Component Name="readyToDrop" UId="514">
+        <Token Text="[" UId="515" />
+        <Access Scope="LocalVariable" UId="516">
+          <Symbol UId="517">
+            <Component Name="i" UId="518" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="519" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Token Text=")" UId="520" />
+  <NewLine Num="1" UId="521" />
+  <Blank Num="8" UId="522" />
+  <Token Text="THEN" UId="523" />
+  <NewLine Num="1" UId="524" />
+  <Blank Num="12" UId="525" />
+  <Access Scope="Call" UId="526">
+    <CallInfo UId="527" BlockType="FC">
+      <Instance Scope="GlobalVariable" UId="529">
+        <Component Name="pushToArray" UId="528" />
+      </Instance>
+      <Token Text="(" UId="530" />
+      <Parameter Name="addValue" UId="531">
+        <Blank Num="1" UId="532" />
+        <Token Text=":=" UId="533" />
+        <Blank Num="1" UId="534" />
+        <Access Scope="LocalVariable" UId="535">
+          <Symbol UId="536">
+            <Component Name="currentWeight" UId="537">
+              <Token Text="[" UId="538" />
+              <Access Scope="LocalVariable" UId="539">
+                <Symbol UId="540">
+                  <Component Name="i" UId="541" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="542" />
+            </Component>
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text="," UId="543" />
+      <NewLine Num="1" UId="544" />
+      <Blank Num="26" UId="545" />
+      <Parameter Name="array" UId="546">
+        <Blank Num="1" UId="547" />
+        <Token Text=":=" UId="548" />
+        <Blank Num="1" UId="549" />
+        <Access Scope="LocalVariable" UId="550">
+          <Symbol UId="551">
+            <Component Name="stableWeight" UId="552">
+              <Token Text="[" UId="553" />
+              <Access Scope="LocalVariable" UId="554">
+                <Symbol UId="555">
+                  <Component Name="i" UId="556" />
+                </Symbol>
+              </Access>
+              <Token Text="]" UId="557" />
+            </Component>
+            <Token Text="." UId="558" />
+            <Component Name="weight" UId="559" />
+          </Symbol>
+        </Access>
+      </Parameter>
+      <Token Text=")" UId="560" />
+    </CallInfo>
+  </Access>
+  <Token Text=";" UId="561" />
+  <NewLine Num="1" UId="562" />
+  <Blank Num="8" UId="563" />
+  <Token Text="END_IF" UId="564" />
+  <Token Text=";" UId="565" />
+  <NewLine Num="1" UId="566" />
+  <Blank Num="8" UId="567" />
+  <Access Scope="LocalVariable" UId="568">
+    <Symbol UId="569">
+      <Component Name="runTaimerStableWeight" UId="570">
+        <Token Text="[" UId="571" />
+        <Access Scope="LocalVariable" UId="572">
+          <Symbol UId="573">
+            <Component Name="i" UId="574" />
+          </Symbol>
+        </Access>
+        <Token Text="]" UId="575" />
+      </Component>
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="576" />
+  <Token Text=":=" UId="577" />
+  <Blank Num="1" UId="578" />
+  <Access Scope="LiteralConstant" UId="579">
+    <Constant UId="580">
+      <ConstantValue UId="582">false</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="532" />
-  <NewLine Num="1" UId="533" />
-  <Blank Num="4" UId="534" />
-  <Token Text="END_IF" UId="535" />
-  <Token Text=";" UId="536" />
-  <NewLine Num="1" UId="537" />
-  <Blank Num="4" UId="538" />
-  <NewLine Num="1" UId="539" />
-  <Blank Num="4" UId="540" />
-  <NewLine Num="1" UId="541" />
-  <Token Text="END_FOR" UId="542" />
-  <Token Text=";" UId="543" />
-  <NewLine Num="3" UId="544" />
+  <Token Text=";" UId="583" />
+  <NewLine Num="1" UId="584" />
+  <Blank Num="4" UId="585" />
+  <Token Text="END_IF" UId="586" />
+  <Token Text=";" UId="587" />
+  <NewLine Num="1" UId="588" />
+  <Blank Num="4" UId="589" />
+  <NewLine Num="1" UId="590" />
+  <Blank Num="4" UId="591" />
+  <NewLine Num="1" UId="592" />
+  <Token Text="END_FOR" UId="593" />
+  <Token Text=";" UId="594" />
+  <NewLine Num="3" UId="595" />
 </StructuredText></NetworkSource>
           <ProgrammingLanguage>SCL</ProgrammingLanguage>
         </AttributeList>

@@ -2,7 +2,7 @@
 <Document>
   <Engineering version="V16" />
   <DocumentInfo>
-    <Created>2021-04-13T11:10:14.6219142Z</Created>
+    <Created>2021-04-14T06:37:18.7814768Z</Created>
     <ExportSetting>WithDefaults</ExportSetting>
     <InstalledProducts>
       <Product>
@@ -318,635 +318,644 @@
     </Symbol>
   </Access>
   <Blank Num="1" UId="189" />
-  <Token Text="THEN" UId="190" />
-  <NewLine Num="1" UId="191" />
-  <Blank Num="8" UId="192" />
-  <Access Scope="LocalVariable" UId="193">
-    <Symbol UId="194">
-      <Component Name="isReadyToSort" UId="195" />
+  <Token Text="AND" UId="190" />
+  <Blank Num="1" UId="191" />
+  <Access Scope="LocalVariable" UId="192">
+    <Symbol UId="193">
+      <Component Name="isWorkWithBunker" UId="194" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="196" />
-  <Token Text=":=" UId="197" />
-  <Blank Num="1" UId="198" />
-  <Access Scope="LiteralConstant" UId="199">
-    <Constant UId="200">
-      <ConstantValue UId="202">false</ConstantValue>
+  <Blank Num="1" UId="195" />
+  <Token Text="THEN" UId="196" />
+  <NewLine Num="1" UId="197" />
+  <Blank Num="8" UId="198" />
+  <Access Scope="LocalVariable" UId="199">
+    <Symbol UId="200">
+      <Component Name="isReadyToSort" UId="201" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="202" />
+  <Token Text=":=" UId="203" />
+  <Blank Num="1" UId="204" />
+  <Access Scope="LiteralConstant" UId="205">
+    <Constant UId="206">
+      <ConstantValue UId="208">false</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="203" />
-  <NewLine Num="1" UId="204" />
-  <Blank Num="4" UId="205" />
-  <Token Text="END_IF" UId="206" />
-  <Token Text=";" UId="207" />
-  <NewLine Num="1" UId="208" />
-  <Blank Num="4" UId="209" />
-  <Token Text="IF" UId="210" />
-  <Blank Num="2" UId="211" />
-  <Access Scope="LocalVariable" UId="212">
-    <Symbol UId="213">
-      <Component Name="currentWeight" UId="214" />
+  <Token Text=";" UId="209" />
+  <NewLine Num="1" UId="210" />
+  <Blank Num="4" UId="211" />
+  <Token Text="END_IF" UId="212" />
+  <Token Text=";" UId="213" />
+  <NewLine Num="1" UId="214" />
+  <Blank Num="4" UId="215" />
+  <Token Text="IF" UId="216" />
+  <Blank Num="2" UId="217" />
+  <Access Scope="LocalVariable" UId="218">
+    <Symbol UId="219">
+      <Component Name="currentWeight" UId="220" />
     </Symbol>
   </Access>
-  <Token Text="&lt;" UId="215" />
-  <Access Scope="LocalVariable" UId="216">
-    <Symbol UId="217">
-      <Component Name="setWeightBunker" UId="218" />
+  <Token Text="&lt;" UId="221" />
+  <Access Scope="LocalVariable" UId="222">
+    <Symbol UId="223">
+      <Component Name="setWeightBunker" UId="224" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="219" />
-  <Token Text="AND" UId="220" />
-  <Blank Num="1" UId="221" />
-  <Token Text="NOT" UId="222" />
-  <Token Text="(" UId="223" />
-  <Access Scope="LocalVariable" UId="224">
-    <Symbol UId="225">
-      <Component Name="isReadyToSort" UId="226" />
+  <Blank Num="1" UId="225" />
+  <Token Text="AND" UId="226" />
+  <Blank Num="1" UId="227" />
+  <Token Text="NOT" UId="228" />
+  <Token Text="(" UId="229" />
+  <Access Scope="LocalVariable" UId="230">
+    <Symbol UId="231">
+      <Component Name="isReadyToSort" UId="232" />
     </Symbol>
   </Access>
-  <Token Text=")" UId="227" />
-  <NewLine Num="1" UId="228" />
-  <Blank Num="8" UId="229" />
-  <Token Text="AND" UId="230" />
-  <Blank Num="1" UId="231" />
-  <Token Text="NOT" UId="232" />
-  <Token Text="(" UId="233" />
-  <Access Scope="LocalVariable" UId="234">
-    <Symbol UId="235">
-      <Component Name="isReadyToDrop" UId="236" />
+  <Token Text=")" UId="233" />
+  <NewLine Num="1" UId="234" />
+  <Blank Num="8" UId="235" />
+  <Token Text="AND" UId="236" />
+  <Blank Num="1" UId="237" />
+  <Token Text="NOT" UId="238" />
+  <Token Text="(" UId="239" />
+  <Access Scope="LocalVariable" UId="240">
+    <Symbol UId="241">
+      <Component Name="isReadyToDrop" UId="242" />
     </Symbol>
   </Access>
-  <Token Text=")" UId="237" />
-  <Blank Num="1" UId="238" />
-  <Token Text="AND" UId="239" />
-  <Blank Num="1" UId="240" />
-  <Access Scope="LocalVariable" UId="241">
-    <Symbol UId="242">
-      <Component Name="isWorkWithBunker" UId="243" />
+  <Token Text=")" UId="243" />
+  <Blank Num="1" UId="244" />
+  <Token Text="AND" UId="245" />
+  <Blank Num="1" UId="246" />
+  <Access Scope="LocalVariable" UId="247">
+    <Symbol UId="248">
+      <Component Name="isWorkWithBunker" UId="249" />
     </Symbol>
   </Access>
-  <NewLine Num="1" UId="244" />
-  <Blank Num="8" UId="245" />
-  <Token Text="AND" UId="246" />
-  <Blank Num="1" UId="247" />
-  <Access Scope="LocalVariable" UId="248">
-    <Symbol UId="249">
-      <Component Name="enableWorkAfterCloseDoor" UId="250" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="251" />
+  <NewLine Num="1" UId="250" />
+  <Blank Num="8" UId="251" />
   <Token Text="AND" UId="252" />
   <Blank Num="1" UId="253" />
-  <Token Text="(" UId="254" />
-  <Access Scope="GlobalVariable" UId="255">
-    <Symbol UId="256">
-      <Component Name="IO" UId="257" />
-      <Token Text="." UId="258" />
-      <Component Name="input" UId="259" />
-      <Token Text="." UId="260" />
-      <Component Name="YP_StartDozing" UId="261">
-        <Token Text="[" UId="262" />
-        <Access Scope="LiteralConstant" UId="263">
-          <Constant UId="264">
-            <ConstantValue UId="266">1</ConstantValue>
+  <Access Scope="LocalVariable" UId="254">
+    <Symbol UId="255">
+      <Component Name="enableWorkAfterCloseDoor" UId="256" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="257" />
+  <Token Text="AND" UId="258" />
+  <Blank Num="1" UId="259" />
+  <Token Text="(" UId="260" />
+  <Access Scope="GlobalVariable" UId="261">
+    <Symbol UId="262">
+      <Component Name="IO" UId="263" />
+      <Token Text="." UId="264" />
+      <Component Name="input" UId="265" />
+      <Token Text="." UId="266" />
+      <Component Name="YP_StartDozing" UId="267">
+        <Token Text="[" UId="268" />
+        <Access Scope="LiteralConstant" UId="269">
+          <Constant UId="270">
+            <ConstantValue UId="272">1</ConstantValue>
           </Constant>
         </Access>
-        <Token Text="]" UId="267" />
+        <Token Text="]" UId="273" />
       </Component>
     </Symbol>
   </Access>
-  <Blank Num="1" UId="268" />
-  <Token Text="OR" UId="269" />
-  <Blank Num="1" UId="270" />
-  <Access Scope="GlobalVariable" UId="271">
-    <Symbol UId="272">
-      <Component Name="IO" UId="273" />
-      <Token Text="." UId="274" />
-      <Component Name="input" UId="275" />
-      <Token Text="." UId="276" />
-      <Component Name="YP_StartDozing" UId="277">
-        <Token Text="[" UId="278" />
-        <Access Scope="LiteralConstant" UId="279">
-          <Constant UId="280">
-            <ConstantValue UId="282">2</ConstantValue>
+  <Blank Num="1" UId="274" />
+  <Token Text="OR" UId="275" />
+  <Blank Num="1" UId="276" />
+  <Access Scope="GlobalVariable" UId="277">
+    <Symbol UId="278">
+      <Component Name="IO" UId="279" />
+      <Token Text="." UId="280" />
+      <Component Name="input" UId="281" />
+      <Token Text="." UId="282" />
+      <Component Name="YP_StartDozing" UId="283">
+        <Token Text="[" UId="284" />
+        <Access Scope="LiteralConstant" UId="285">
+          <Constant UId="286">
+            <ConstantValue UId="288">2</ConstantValue>
           </Constant>
         </Access>
-        <Token Text="]" UId="283" />
+        <Token Text="]" UId="289" />
       </Component>
     </Symbol>
   </Access>
-  <Token Text=")" UId="284" />
-  <NewLine Num="1" UId="285" />
-  <Blank Num="4" UId="286" />
-  <Token Text="THEN" UId="287" />
-  <NewLine Num="1" UId="288" />
-  <Blank Num="8" UId="289" />
-  <Access Scope="LocalVariable" UId="290">
-    <Symbol UId="291">
-      <Component Name="startToToSetSort" UId="292" />
+  <Token Text=")" UId="290" />
+  <NewLine Num="1" UId="291" />
+  <Blank Num="4" UId="292" />
+  <Token Text="THEN" UId="293" />
+  <NewLine Num="1" UId="294" />
+  <Blank Num="8" UId="295" />
+  <Access Scope="LocalVariable" UId="296">
+    <Symbol UId="297">
+      <Component Name="startToToSetSort" UId="298" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="293" />
-  <Token Text=":=" UId="294" />
-  <Blank Num="1" UId="295" />
-  <Access Scope="LiteralConstant" UId="296">
-    <Constant UId="297">
-      <ConstantValue UId="299">FALSE</ConstantValue>
+  <Blank Num="1" UId="299" />
+  <Token Text=":=" UId="300" />
+  <Blank Num="1" UId="301" />
+  <Access Scope="LiteralConstant" UId="302">
+    <Constant UId="303">
+      <ConstantValue UId="305">FALSE</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="300" />
-  <NewLine Num="1" UId="301" />
-  <Blank Num="8" UId="302" />
-  <Access Scope="LocalVariable" UId="303">
-    <Symbol UId="304">
-      <Component Name="onVibroLot" UId="305" />
+  <Token Text=";" UId="306" />
+  <NewLine Num="1" UId="307" />
+  <Blank Num="8" UId="308" />
+  <Access Scope="LocalVariable" UId="309">
+    <Symbol UId="310">
+      <Component Name="onVibroLot" UId="311" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="306" />
-  <Token Text=":=" UId="307" />
-  <Blank Num="1" UId="308" />
-  <Access Scope="LiteralConstant" UId="309">
-    <Constant UId="310">
-      <ConstantValue UId="312">true</ConstantValue>
+  <Blank Num="1" UId="312" />
+  <Token Text=":=" UId="313" />
+  <Blank Num="1" UId="314" />
+  <Access Scope="LiteralConstant" UId="315">
+    <Constant UId="316">
+      <ConstantValue UId="318">true</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="313" />
-  <NewLine Num="1" UId="314" />
-  <Blank Num="8" UId="315" />
-  <Token Text="IF" UId="316" />
-  <Blank Num="1" UId="317" />
-  <Token Text="NOT" UId="318" />
-  <Blank Num="1" UId="319" />
-  <Token Text="(" UId="320" />
-  <Access Scope="LocalVariable" UId="321">
-    <Symbol UId="322">
-      <Component Name="stateDoor" UId="323" />
-    </Symbol>
-  </Access>
-  <Token Text=")" UId="324" />
+  <Token Text=";" UId="319" />
+  <NewLine Num="1" UId="320" />
+  <Blank Num="8" UId="321" />
+  <Token Text="IF" UId="322" />
+  <Blank Num="1" UId="323" />
+  <Token Text="NOT" UId="324" />
   <Blank Num="1" UId="325" />
-  <Token Text="THEN" UId="326" />
-  <NewLine Num="1" UId="327" />
-  <Blank Num="12" UId="328" />
-  <Access Scope="LocalVariable" UId="329">
-    <Symbol UId="330">
-      <Component Name="tmpOpen" UId="331" />
+  <Token Text="(" UId="326" />
+  <Access Scope="LocalVariable" UId="327">
+    <Symbol UId="328">
+      <Component Name="stateDoor" UId="329" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="332" />
-  <Token Text=":=" UId="333" />
-  <Blank Num="1" UId="334" />
-  <Access Scope="LiteralConstant" UId="335">
-    <Constant UId="336">
-      <ConstantValue UId="338">true</ConstantValue>
+  <Token Text=")" UId="330" />
+  <Blank Num="1" UId="331" />
+  <Token Text="THEN" UId="332" />
+  <NewLine Num="1" UId="333" />
+  <Blank Num="12" UId="334" />
+  <Access Scope="LocalVariable" UId="335">
+    <Symbol UId="336">
+      <Component Name="tmpOpen" UId="337" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="338" />
+  <Token Text=":=" UId="339" />
+  <Blank Num="1" UId="340" />
+  <Access Scope="LiteralConstant" UId="341">
+    <Constant UId="342">
+      <ConstantValue UId="344">true</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="339" />
-  <NewLine Num="1" UId="340" />
-  <Blank Num="8" UId="341" />
-  <Token Text="END_IF" UId="342" />
-  <Token Text=";" UId="343" />
-  <NewLine Num="1" UId="344" />
-  <Blank Num="8" UId="345" />
+  <Token Text=";" UId="345" />
   <NewLine Num="1" UId="346" />
-  <Blank Num="4" UId="347" />
-  <Token Text="ELSE" UId="348" />
-  <NewLine Num="1" UId="349" />
-  <Blank Num="8" UId="350" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="351">
-    <Text UId="352">если мы зашли сюда потому что набрали вес, то заупускаем таймер</Text>
+  <Blank Num="8" UId="347" />
+  <Token Text="END_IF" UId="348" />
+  <Token Text=";" UId="349" />
+  <NewLine Num="1" UId="350" />
+  <Blank Num="8" UId="351" />
+  <NewLine Num="1" UId="352" />
+  <Blank Num="4" UId="353" />
+  <Token Text="ELSE" UId="354" />
+  <NewLine Num="1" UId="355" />
+  <Blank Num="8" UId="356" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="357">
+    <Text UId="358">если мы зашли сюда потому что набрали вес, то заупускаем таймер</Text>
   </LineComment>
-  <NewLine Num="1" UId="353" />
-  <Blank Num="8" UId="354" />
-  <Token Text="IF" UId="355" />
-  <Blank Num="1" UId="356" />
-  <Access Scope="LocalVariable" UId="357">
-    <Symbol UId="358">
-      <Component Name="currentWeight" UId="359" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="360" />
-  <Token Text="&gt;=" UId="361" />
+  <NewLine Num="1" UId="359" />
+  <Blank Num="8" UId="360" />
+  <Token Text="IF" UId="361" />
   <Blank Num="1" UId="362" />
   <Access Scope="LocalVariable" UId="363">
     <Symbol UId="364">
-      <Component Name="setWeightBunker" UId="365" />
+      <Component Name="currentWeight" UId="365" />
     </Symbol>
   </Access>
   <Blank Num="1" UId="366" />
-  <Token Text="AND" UId="367" />
+  <Token Text="&gt;=" UId="367" />
   <Blank Num="1" UId="368" />
-  <Token Text="NOT" UId="369" />
-  <Token Text="(" UId="370" />
-  <Access Scope="LocalVariable" UId="371">
-    <Symbol UId="372">
-      <Component Name="isReadyToDrop" UId="373" />
+  <Access Scope="LocalVariable" UId="369">
+    <Symbol UId="370">
+      <Component Name="setWeightBunker" UId="371" />
     </Symbol>
   </Access>
-  <Token Text=")" UId="374" />
-  <NewLine Num="1" UId="375" />
-  <Blank Num="12" UId="376" />
-  <Token Text="AND" UId="377" />
-  <Blank Num="1" UId="378" />
-  <Token Text="NOT" UId="379" />
-  <Token Text="(" UId="380" />
-  <Access Scope="LocalVariable" UId="381">
-    <Symbol UId="382">
-      <Component Name="isReadyToSort" UId="383" />
+  <Blank Num="1" UId="372" />
+  <Token Text="AND" UId="373" />
+  <Blank Num="1" UId="374" />
+  <Token Text="NOT" UId="375" />
+  <Token Text="(" UId="376" />
+  <Access Scope="LocalVariable" UId="377">
+    <Symbol UId="378">
+      <Component Name="isReadyToDrop" UId="379" />
     </Symbol>
   </Access>
-  <Token Text=")" UId="384" />
-  <Blank Num="1" UId="385" />
-  <Token Text="AND" UId="386" />
-  <Blank Num="1" UId="387" />
-  <Access Scope="LocalVariable" UId="388">
-    <Symbol UId="389">
-      <Component Name="enableWorkAfterCloseDoor" UId="390" />
+  <Token Text=")" UId="380" />
+  <NewLine Num="1" UId="381" />
+  <Blank Num="12" UId="382" />
+  <Token Text="AND" UId="383" />
+  <Blank Num="1" UId="384" />
+  <Token Text="NOT" UId="385" />
+  <Token Text="(" UId="386" />
+  <Access Scope="LocalVariable" UId="387">
+    <Symbol UId="388">
+      <Component Name="isReadyToSort" UId="389" />
     </Symbol>
   </Access>
+  <Token Text=")" UId="390" />
   <Blank Num="1" UId="391" />
-  <Token Text="THEN" UId="392" />
-  <NewLine Num="1" UId="393" />
-  <Blank Num="12" UId="394" />
-  <Access Scope="LocalVariable" UId="395">
-    <Symbol UId="396">
-      <Component Name="startToToSetSort" UId="397" />
+  <Token Text="AND" UId="392" />
+  <Blank Num="1" UId="393" />
+  <Access Scope="LocalVariable" UId="394">
+    <Symbol UId="395">
+      <Component Name="enableWorkAfterCloseDoor" UId="396" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="398" />
-  <Token Text=":=" UId="399" />
-  <Blank Num="1" UId="400" />
-  <Access Scope="LiteralConstant" UId="401">
-    <Constant UId="402">
-      <ConstantValue UId="404">true</ConstantValue>
+  <Blank Num="1" UId="397" />
+  <Token Text="THEN" UId="398" />
+  <NewLine Num="1" UId="399" />
+  <Blank Num="12" UId="400" />
+  <Access Scope="LocalVariable" UId="401">
+    <Symbol UId="402">
+      <Component Name="startToToSetSort" UId="403" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="404" />
+  <Token Text=":=" UId="405" />
+  <Blank Num="1" UId="406" />
+  <Access Scope="LiteralConstant" UId="407">
+    <Constant UId="408">
+      <ConstantValue UId="410">true</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="405" />
-  <NewLine Num="1" UId="406" />
-  <Blank Num="12" UId="407" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="408">
-    <Text UId="409"> #isSetSort := true;</Text>
+  <Token Text=";" UId="411" />
+  <NewLine Num="1" UId="412" />
+  <Blank Num="12" UId="413" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="414">
+    <Text UId="415"> #isSetSort := true;</Text>
   </LineComment>
-  <NewLine Num="1" UId="410" />
-  <Blank Num="8" UId="411" />
-  <Token Text="END_IF" UId="412" />
-  <Token Text=";" UId="413" />
-  <NewLine Num="1" UId="414" />
-  <Blank Num="8" UId="415" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="416">
-    <Text UId="417">если зашли сюда потому что уже таймер вышел либо, готовы к сбросу,</Text>
+  <NewLine Num="1" UId="416" />
+  <Blank Num="8" UId="417" />
+  <Token Text="END_IF" UId="418" />
+  <Token Text=";" UId="419" />
+  <NewLine Num="1" UId="420" />
+  <Blank Num="8" UId="421" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="422">
+    <Text UId="423">если зашли сюда потому что уже таймер вышел либо, готовы к сбросу,</Text>
   </LineComment>
-  <NewLine Num="1" UId="418" />
-  <Blank Num="8" UId="419" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="420">
-    <Text UId="421">либо нет разрешений то просто держим лоток выключенным и закрытым</Text>
+  <NewLine Num="1" UId="424" />
+  <Blank Num="8" UId="425" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="426">
+    <Text UId="427">либо нет разрешений то просто держим лоток выключенным и закрытым</Text>
   </LineComment>
-  <NewLine Num="1" UId="422" />
-  <Blank Num="8" UId="423" />
-  <Token Text="IF" UId="424" />
-  <Blank Num="1" UId="425" />
-  <Access Scope="LocalVariable" UId="426">
-    <Symbol UId="427">
-      <Component Name="isReadyToDrop" UId="428" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="429" />
-  <Token Text="OR" UId="430" />
+  <NewLine Num="1" UId="428" />
+  <Blank Num="8" UId="429" />
+  <Token Text="IF" UId="430" />
   <Blank Num="1" UId="431" />
   <Access Scope="LocalVariable" UId="432">
     <Symbol UId="433">
-      <Component Name="isReadyToSort" UId="434" />
+      <Component Name="isReadyToDrop" UId="434" />
     </Symbol>
   </Access>
   <Blank Num="1" UId="435" />
   <Token Text="OR" UId="436" />
-  <NewLine Num="1" UId="437" />
-  <Blank Num="12" UId="438" />
-  <Token Text="(" UId="439" />
-  <Token Text="NOT" UId="440" />
-  <Token Text="(" UId="441" />
-  <Access Scope="GlobalVariable" UId="442">
-    <Symbol UId="443">
-      <Component Name="IO" UId="444" />
-      <Token Text="." UId="445" />
-      <Component Name="input" UId="446" />
-      <Token Text="." UId="447" />
-      <Component Name="YP_StartDozing" UId="448">
-        <Token Text="[" UId="449" />
-        <Access Scope="LiteralConstant" UId="450">
-          <Constant UId="451">
-            <ConstantValue UId="453">1</ConstantValue>
+  <Blank Num="1" UId="437" />
+  <Access Scope="LocalVariable" UId="438">
+    <Symbol UId="439">
+      <Component Name="isReadyToSort" UId="440" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="441" />
+  <Token Text="OR" UId="442" />
+  <NewLine Num="1" UId="443" />
+  <Blank Num="12" UId="444" />
+  <Token Text="(" UId="445" />
+  <Token Text="NOT" UId="446" />
+  <Token Text="(" UId="447" />
+  <Access Scope="GlobalVariable" UId="448">
+    <Symbol UId="449">
+      <Component Name="IO" UId="450" />
+      <Token Text="." UId="451" />
+      <Component Name="input" UId="452" />
+      <Token Text="." UId="453" />
+      <Component Name="YP_StartDozing" UId="454">
+        <Token Text="[" UId="455" />
+        <Access Scope="LiteralConstant" UId="456">
+          <Constant UId="457">
+            <ConstantValue UId="459">1</ConstantValue>
           </Constant>
         </Access>
-        <Token Text="]" UId="454" />
+        <Token Text="]" UId="460" />
       </Component>
     </Symbol>
   </Access>
-  <Token Text=")" UId="455" />
-  <Blank Num="1" UId="456" />
-  <Token Text="AND" UId="457" />
-  <Blank Num="1" UId="458" />
-  <Token Text="NOT" UId="459" />
-  <Token Text="(" UId="460" />
-  <Access Scope="GlobalVariable" UId="461">
-    <Symbol UId="462">
-      <Component Name="IO" UId="463" />
-      <Token Text="." UId="464" />
-      <Component Name="input" UId="465" />
-      <Token Text="." UId="466" />
-      <Component Name="YP_StartDozing" UId="467">
-        <Token Text="[" UId="468" />
-        <Access Scope="LiteralConstant" UId="469">
-          <Constant UId="470">
-            <ConstantValue UId="472">2</ConstantValue>
+  <Token Text=")" UId="461" />
+  <Blank Num="1" UId="462" />
+  <Token Text="AND" UId="463" />
+  <Blank Num="1" UId="464" />
+  <Token Text="NOT" UId="465" />
+  <Token Text="(" UId="466" />
+  <Access Scope="GlobalVariable" UId="467">
+    <Symbol UId="468">
+      <Component Name="IO" UId="469" />
+      <Token Text="." UId="470" />
+      <Component Name="input" UId="471" />
+      <Token Text="." UId="472" />
+      <Component Name="YP_StartDozing" UId="473">
+        <Token Text="[" UId="474" />
+        <Access Scope="LiteralConstant" UId="475">
+          <Constant UId="476">
+            <ConstantValue UId="478">2</ConstantValue>
           </Constant>
         </Access>
-        <Token Text="]" UId="473" />
+        <Token Text="]" UId="479" />
       </Component>
     </Symbol>
   </Access>
-  <Token Text=")" UId="474" />
-  <Token Text=")" UId="475" />
-  <Blank Num="12" UId="476" />
-  <Token Text="OR" UId="477" />
-  <Blank Num="1" UId="478" />
-  <Token Text="NOT" UId="479" />
-  <Token Text="(" UId="480" />
-  <Access Scope="LocalVariable" UId="481">
-    <Symbol UId="482">
-      <Component Name="enableWorkAfterCloseDoor" UId="483" />
-    </Symbol>
-  </Access>
-  <Token Text=")" UId="484" />
+  <Token Text=")" UId="480" />
+  <Token Text=")" UId="481" />
+  <NewLine Num="1" UId="482" />
+  <Blank Num="12" UId="483" />
+  <Token Text="OR" UId="484" />
   <Blank Num="1" UId="485" />
-  <Token Text="OR" UId="486" />
-  <Blank Num="1" UId="487" />
-  <Token Text="NOT" UId="488" />
-  <Token Text="(" UId="489" />
-  <Access Scope="LocalVariable" UId="490">
-    <Symbol UId="491">
-      <Component Name="isWorkWithBunker" UId="492" />
+  <Token Text="NOT" UId="486" />
+  <Token Text="(" UId="487" />
+  <Access Scope="LocalVariable" UId="488">
+    <Symbol UId="489">
+      <Component Name="enableWorkAfterCloseDoor" UId="490" />
     </Symbol>
   </Access>
-  <Token Text=")" UId="493" />
-  <NewLine Num="1" UId="494" />
-  <Blank Num="8" UId="495" />
-  <Token Text="THEN" UId="496" />
-  <NewLine Num="1" UId="497" />
-  <Blank Num="12" UId="498" />
-  <Access Scope="LocalVariable" UId="499">
-    <Symbol UId="500">
-      <Component Name="onVibroLot" UId="501" />
+  <Token Text=")" UId="491" />
+  <Blank Num="1" UId="492" />
+  <Token Text="OR" UId="493" />
+  <Blank Num="1" UId="494" />
+  <Token Text="NOT" UId="495" />
+  <Token Text="(" UId="496" />
+  <Access Scope="LocalVariable" UId="497">
+    <Symbol UId="498">
+      <Component Name="isWorkWithBunker" UId="499" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="502" />
-  <Token Text=":=" UId="503" />
-  <Blank Num="1" UId="504" />
-  <Access Scope="LiteralConstant" UId="505">
-    <Constant UId="506">
-      <ConstantValue UId="508">false</ConstantValue>
+  <Token Text=")" UId="500" />
+  <NewLine Num="1" UId="501" />
+  <Blank Num="8" UId="502" />
+  <Token Text="THEN" UId="503" />
+  <NewLine Num="1" UId="504" />
+  <Blank Num="12" UId="505" />
+  <Access Scope="LocalVariable" UId="506">
+    <Symbol UId="507">
+      <Component Name="onVibroLot" UId="508" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="509" />
+  <Token Text=":=" UId="510" />
+  <Blank Num="1" UId="511" />
+  <Access Scope="LiteralConstant" UId="512">
+    <Constant UId="513">
+      <ConstantValue UId="515">false</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="509" />
-  <NewLine Num="1" UId="510" />
-  <Blank Num="12" UId="511" />
-  <Token Text="IF" UId="512" />
-  <Blank Num="1" UId="513" />
-  <Access Scope="LocalVariable" UId="514">
-    <Symbol UId="515">
-      <Component Name="stateDoor" UId="516" />
-    </Symbol>
-  </Access>
-  <Blank Num="1" UId="517" />
-  <Token Text="THEN" UId="518" />
-  <NewLine Num="1" UId="519" />
-  <Blank Num="16" UId="520" />
+  <Token Text=";" UId="516" />
+  <NewLine Num="1" UId="517" />
+  <Blank Num="12" UId="518" />
+  <Token Text="IF" UId="519" />
+  <Blank Num="1" UId="520" />
   <Access Scope="LocalVariable" UId="521">
     <Symbol UId="522">
-      <Component Name="tmpClose" UId="523" />
+      <Component Name="stateDoor" UId="523" />
     </Symbol>
   </Access>
   <Blank Num="1" UId="524" />
-  <Token Text=":=" UId="525" />
-  <Blank Num="1" UId="526" />
-  <Access Scope="LiteralConstant" UId="527">
-    <Constant UId="528">
-      <ConstantValue UId="530">true</ConstantValue>
-    </Constant>
-  </Access>
-  <Token Text=";" UId="531" />
-  <NewLine Num="1" UId="532" />
-  <Blank Num="12" UId="533" />
-  <Token Text="END_IF" UId="534" />
-  <Token Text=";" UId="535" />
-  <NewLine Num="1" UId="536" />
-  <Blank Num="8" UId="537" />
-  <Token Text="END_IF" UId="538" />
-  <Token Text=";" UId="539" />
-  <NewLine Num="1" UId="540" />
-  <Blank Num="8" UId="541" />
-  <NewLine Num="1" UId="542" />
-  <Blank Num="8" UId="543" />
-  <NewLine Num="1" UId="544" />
-  <Blank Num="4" UId="545" />
-  <Token Text="END_IF" UId="546" />
-  <Token Text=";" UId="547" />
-  <NewLine Num="1" UId="548" />
-  <Blank Num="4" UId="549" />
-  <NewLine Num="1" UId="550" />
-  <Token Text="ELSE" UId="551" />
-  <NewLine Num="1" UId="552" />
-  <Blank Num="4" UId="553" />
-  <Access Scope="LocalVariable" UId="554">
-    <Symbol UId="555">
-      <Component Name="isSetSort" UId="556" />
+  <Token Text="THEN" UId="525" />
+  <NewLine Num="1" UId="526" />
+  <Blank Num="16" UId="527" />
+  <Access Scope="LocalVariable" UId="528">
+    <Symbol UId="529">
+      <Component Name="tmpClose" UId="530" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="557" />
-  <Token Text=":=" UId="558" />
-  <Blank Num="1" UId="559" />
-  <Access Scope="LiteralConstant" UId="560">
-    <Constant UId="561">
-      <ConstantValue UId="563">false</ConstantValue>
+  <Blank Num="1" UId="531" />
+  <Token Text=":=" UId="532" />
+  <Blank Num="1" UId="533" />
+  <Access Scope="LiteralConstant" UId="534">
+    <Constant UId="535">
+      <ConstantValue UId="537">true</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="564" />
-  <NewLine Num="1" UId="565" />
-  <Blank Num="4" UId="566" />
-  <Access Scope="LocalVariable" UId="567">
-    <Symbol UId="568">
-      <Component Name="startToToSetSort" UId="569" />
+  <Token Text=";" UId="538" />
+  <NewLine Num="1" UId="539" />
+  <Blank Num="12" UId="540" />
+  <Token Text="END_IF" UId="541" />
+  <Token Text=";" UId="542" />
+  <NewLine Num="1" UId="543" />
+  <Blank Num="8" UId="544" />
+  <Token Text="END_IF" UId="545" />
+  <Token Text=";" UId="546" />
+  <NewLine Num="1" UId="547" />
+  <Blank Num="8" UId="548" />
+  <NewLine Num="1" UId="549" />
+  <Blank Num="8" UId="550" />
+  <NewLine Num="1" UId="551" />
+  <Blank Num="4" UId="552" />
+  <Token Text="END_IF" UId="553" />
+  <Token Text=";" UId="554" />
+  <NewLine Num="1" UId="555" />
+  <Blank Num="4" UId="556" />
+  <NewLine Num="1" UId="557" />
+  <Token Text="ELSE" UId="558" />
+  <NewLine Num="1" UId="559" />
+  <Blank Num="4" UId="560" />
+  <Access Scope="LocalVariable" UId="561">
+    <Symbol UId="562">
+      <Component Name="isSetSort" UId="563" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="570" />
-  <Token Text=":=" UId="571" />
-  <Blank Num="1" UId="572" />
-  <Access Scope="LiteralConstant" UId="573">
-    <Constant UId="574">
-      <ConstantValue UId="576">false</ConstantValue>
+  <Blank Num="1" UId="564" />
+  <Token Text=":=" UId="565" />
+  <Blank Num="1" UId="566" />
+  <Access Scope="LiteralConstant" UId="567">
+    <Constant UId="568">
+      <ConstantValue UId="570">false</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="577" />
-  <NewLine Num="1" UId="578" />
-  <Blank Num="4" UId="579" />
-  <Access Scope="LocalVariable" UId="580">
-    <Symbol UId="581">
-      <Component Name="isReadyToSort" UId="582" />
+  <Token Text=";" UId="571" />
+  <NewLine Num="1" UId="572" />
+  <Blank Num="4" UId="573" />
+  <Access Scope="LocalVariable" UId="574">
+    <Symbol UId="575">
+      <Component Name="startToToSetSort" UId="576" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="583" />
-  <Token Text=":=" UId="584" />
-  <Blank Num="1" UId="585" />
-  <Access Scope="LiteralConstant" UId="586">
-    <Constant UId="587">
-      <ConstantValue UId="589">FALSE</ConstantValue>
+  <Blank Num="1" UId="577" />
+  <Token Text=":=" UId="578" />
+  <Blank Num="1" UId="579" />
+  <Access Scope="LiteralConstant" UId="580">
+    <Constant UId="581">
+      <ConstantValue UId="583">false</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="590" />
-  <NewLine Num="1" UId="591" />
-  <Blank Num="4" UId="592" />
-  <Access Scope="LocalVariable" UId="593">
-    <Symbol UId="594">
-      <Component Name="onVibroLot" UId="595" />
+  <Token Text=";" UId="584" />
+  <NewLine Num="1" UId="585" />
+  <Blank Num="4" UId="586" />
+  <Access Scope="LocalVariable" UId="587">
+    <Symbol UId="588">
+      <Component Name="isReadyToSort" UId="589" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="596" />
-  <Token Text=":=" UId="597" />
-  <Blank Num="1" UId="598" />
-  <Access Scope="LiteralConstant" UId="599">
-    <Constant UId="600">
-      <ConstantValue UId="602">FALSE</ConstantValue>
+  <Blank Num="1" UId="590" />
+  <Token Text=":=" UId="591" />
+  <Blank Num="1" UId="592" />
+  <Access Scope="LiteralConstant" UId="593">
+    <Constant UId="594">
+      <ConstantValue UId="596">FALSE</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="603" />
-  <NewLine Num="1" UId="604" />
-  <Blank Num="4" UId="605" />
-  <Access Scope="LocalVariable" UId="606">
-    <Symbol UId="607">
-      <Component Name="openDoor" UId="608" />
+  <Token Text=";" UId="597" />
+  <NewLine Num="1" UId="598" />
+  <Blank Num="4" UId="599" />
+  <Access Scope="LocalVariable" UId="600">
+    <Symbol UId="601">
+      <Component Name="onVibroLot" UId="602" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="609" />
-  <Token Text=":=" UId="610" />
-  <Blank Num="1" UId="611" />
-  <Access Scope="LiteralConstant" UId="612">
-    <Constant UId="613">
-      <ConstantValue UId="615">FALSE</ConstantValue>
+  <Blank Num="1" UId="603" />
+  <Token Text=":=" UId="604" />
+  <Blank Num="1" UId="605" />
+  <Access Scope="LiteralConstant" UId="606">
+    <Constant UId="607">
+      <ConstantValue UId="609">FALSE</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="616" />
-  <NewLine Num="1" UId="617" />
-  <Blank Num="4" UId="618" />
-  <Access Scope="LocalVariable" UId="619">
-    <Symbol UId="620">
-      <Component Name="closeDoor" UId="621" />
+  <Token Text=";" UId="610" />
+  <NewLine Num="1" UId="611" />
+  <Blank Num="4" UId="612" />
+  <Access Scope="LocalVariable" UId="613">
+    <Symbol UId="614">
+      <Component Name="openDoor" UId="615" />
     </Symbol>
   </Access>
-  <Blank Num="1" UId="622" />
-  <Token Text=":=" UId="623" />
-  <Blank Num="1" UId="624" />
-  <Access Scope="LiteralConstant" UId="625">
-    <Constant UId="626">
-      <ConstantValue UId="628">false</ConstantValue>
+  <Blank Num="1" UId="616" />
+  <Token Text=":=" UId="617" />
+  <Blank Num="1" UId="618" />
+  <Access Scope="LiteralConstant" UId="619">
+    <Constant UId="620">
+      <ConstantValue UId="622">FALSE</ConstantValue>
     </Constant>
   </Access>
-  <Token Text=";" UId="629" />
-  <NewLine Num="1" UId="630" />
-  <Token Text="END_IF" UId="631" />
-  <Token Text=";" UId="632" />
-  <NewLine Num="6" UId="633" />
-  <LineComment Inserted="false" NoClosingBracket="false" UId="634">
-    <Text UId="635">управление лопаткой</Text>
+  <Token Text=";" UId="623" />
+  <NewLine Num="1" UId="624" />
+  <Blank Num="4" UId="625" />
+  <Access Scope="LocalVariable" UId="626">
+    <Symbol UId="627">
+      <Component Name="closeDoor" UId="628" />
+    </Symbol>
+  </Access>
+  <Blank Num="1" UId="629" />
+  <Token Text=":=" UId="630" />
+  <Blank Num="1" UId="631" />
+  <Access Scope="LiteralConstant" UId="632">
+    <Constant UId="633">
+      <ConstantValue UId="635">false</ConstantValue>
+    </Constant>
+  </Access>
+  <Token Text=";" UId="636" />
+  <NewLine Num="1" UId="637" />
+  <Token Text="END_IF" UId="638" />
+  <Token Text=";" UId="639" />
+  <NewLine Num="6" UId="640" />
+  <LineComment Inserted="false" NoClosingBracket="false" UId="641">
+    <Text UId="642">управление лопаткой</Text>
   </LineComment>
-  <NewLine Num="1" UId="636" />
-  <Access Scope="Call" UId="637">
-    <CallInfo UId="638" BlockType="FB" Name="controlValve">
-      <Instance Scope="LocalVariable" UId="639">
-        <Component Name="controlDoor" UId="640" />
+  <NewLine Num="1" UId="643" />
+  <Access Scope="Call" UId="644">
+    <CallInfo UId="645" BlockType="FB" Name="controlValve">
+      <Instance Scope="LocalVariable" UId="646">
+        <Component Name="controlDoor" UId="647" />
       </Instance>
-      <Token Text="(" UId="641" />
-      <Parameter Name="time_open/close" UId="642">
-        <Blank Num="1" UId="643" />
-        <Token Text=":=" UId="644" />
-        <Blank Num="1" UId="645" />
-        <Access Scope="TypedConstant" UId="646">
-          <Constant UId="647">
-            <ConstantValue UId="648">T#250ms</ConstantValue>
+      <Token Text="(" UId="648" />
+      <Parameter Name="time_open/close" UId="649">
+        <Blank Num="1" UId="650" />
+        <Token Text=":=" UId="651" />
+        <Blank Num="1" UId="652" />
+        <Access Scope="TypedConstant" UId="653">
+          <Constant UId="654">
+            <ConstantValue UId="655">T#250ms</ConstantValue>
           </Constant>
         </Access>
       </Parameter>
-      <Token Text="," UId="649" />
-      <NewLine Num="1" UId="650" />
-      <Blank Num="13" UId="651" />
-      <Parameter Name="openQ" UId="652">
-        <Blank Num="1" UId="653" />
-        <Token Text="=&gt;" UId="654" />
-        <Blank Num="1" UId="655" />
-        <Access Scope="LocalVariable" UId="656">
-          <Symbol UId="657">
-            <Component Name="openDoor" UId="658" />
+      <Token Text="," UId="656" />
+      <NewLine Num="1" UId="657" />
+      <Blank Num="13" UId="658" />
+      <Parameter Name="openQ" UId="659">
+        <Blank Num="1" UId="660" />
+        <Token Text="=&gt;" UId="661" />
+        <Blank Num="1" UId="662" />
+        <Access Scope="LocalVariable" UId="663">
+          <Symbol UId="664">
+            <Component Name="openDoor" UId="665" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="659" />
-      <NewLine Num="1" UId="660" />
-      <Blank Num="13" UId="661" />
-      <Parameter Name="closeQ" UId="662">
-        <Blank Num="1" UId="663" />
-        <Token Text="=&gt;" UId="664" />
-        <Blank Num="1" UId="665" />
-        <Access Scope="LocalVariable" UId="666">
-          <Symbol UId="667">
-            <Component Name="closeDoor" UId="668" />
+      <Token Text="," UId="666" />
+      <NewLine Num="1" UId="667" />
+      <Blank Num="13" UId="668" />
+      <Parameter Name="closeQ" UId="669">
+        <Blank Num="1" UId="670" />
+        <Token Text="=&gt;" UId="671" />
+        <Blank Num="1" UId="672" />
+        <Access Scope="LocalVariable" UId="673">
+          <Symbol UId="674">
+            <Component Name="closeDoor" UId="675" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="669" />
-      <NewLine Num="1" UId="670" />
-      <Blank Num="13" UId="671" />
-      <Parameter Name="open" UId="672">
-        <Blank Num="1" UId="673" />
-        <Token Text=":=" UId="674" />
-        <Blank Num="1" UId="675" />
-        <Access Scope="LocalVariable" UId="676">
-          <Symbol UId="677">
-            <Component Name="tmpOpen" UId="678" />
+      <Token Text="," UId="676" />
+      <NewLine Num="1" UId="677" />
+      <Blank Num="13" UId="678" />
+      <Parameter Name="open" UId="679">
+        <Blank Num="1" UId="680" />
+        <Token Text=":=" UId="681" />
+        <Blank Num="1" UId="682" />
+        <Access Scope="LocalVariable" UId="683">
+          <Symbol UId="684">
+            <Component Name="tmpOpen" UId="685" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="679" />
-      <NewLine Num="1" UId="680" />
-      <Blank Num="13" UId="681" />
-      <Parameter Name="close" UId="682">
-        <Blank Num="1" UId="683" />
-        <Token Text=":=" UId="684" />
-        <Blank Num="1" UId="685" />
-        <Access Scope="LocalVariable" UId="686">
-          <Symbol UId="687">
-            <Component Name="tmpClose" UId="688" />
+      <Token Text="," UId="686" />
+      <NewLine Num="1" UId="687" />
+      <Blank Num="13" UId="688" />
+      <Parameter Name="close" UId="689">
+        <Blank Num="1" UId="690" />
+        <Token Text=":=" UId="691" />
+        <Blank Num="1" UId="692" />
+        <Access Scope="LocalVariable" UId="693">
+          <Symbol UId="694">
+            <Component Name="tmpClose" UId="695" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text="," UId="689" />
-      <NewLine Num="1" UId="690" />
-      <Blank Num="13" UId="691" />
-      <Parameter Name="stopAlarm" UId="692">
-        <Blank Num="1" UId="693" />
-        <Token Text=":=" UId="694" />
-        <Blank Num="1" UId="695" />
-        <Access Scope="LocalVariable" UId="696">
-          <Symbol UId="697">
-            <Component Name="alarmStop" UId="698" />
+      <Token Text="," UId="696" />
+      <NewLine Num="1" UId="697" />
+      <Blank Num="13" UId="698" />
+      <Parameter Name="stopAlarm" UId="699">
+        <Blank Num="1" UId="700" />
+        <Token Text=":=" UId="701" />
+        <Blank Num="1" UId="702" />
+        <Access Scope="LocalVariable" UId="703">
+          <Symbol UId="704">
+            <Component Name="alarmStop" UId="705" />
           </Symbol>
         </Access>
       </Parameter>
-      <Token Text=")" UId="701" />
+      <Token Text=")" UId="708" />
     </CallInfo>
   </Access>
-  <Token Text=";" UId="702" />
-  <NewLine Num="1" UId="703" />
-  <Blank Num="4" UId="704" />
-  <NewLine Num="2" UId="705" />
+  <Token Text=";" UId="709" />
+  <NewLine Num="1" UId="710" />
+  <Blank Num="4" UId="711" />
+  <NewLine Num="2" UId="712" />
 </StructuredText></NetworkSource>
           <ProgrammingLanguage>SCL</ProgrammingLanguage>
         </AttributeList>
